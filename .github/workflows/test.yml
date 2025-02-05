@@ -1,0 +1,25 @@
+---
+name: Test consistency
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.ttl'
+      - '.github/workflows/test.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**.ttl'
+      - '.github/workflows/test.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container: obolibrary/odklite
+    steps:
+      - uses: actions/checkout@v4
+      - run: check-rdfxml ${{ github.event.repository.name }}.ttl
+      - run: robot report --profile qc_report/profile.txt -i ${{ github.event.repository.name }}.ttl

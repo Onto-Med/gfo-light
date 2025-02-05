@@ -1,0 +1,54 @@
+---
+name: Prepare release files
+
+on:
+  release:
+    types:
+      - created
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Download widoco
+        run: wget -q -O widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.25/widoco-1.4.25-jar-with-dependencies_JDK-17.jar
+      - name: Compile documentation
+        run: |
+          java -jar widoco.jar \
+          -ontFile ${{ github.event.repository.name }}.ttl \
+          -outFolder output \
+          -includeAnnotationProperties \
+          -rewriteAll \
+          -includeImportedOntologies \
+          -uniteSections \
+          -noPlaceHolderText
+          mv output/index-en.html output/index.html
+          rm output/readme.md
+      - name: Prepare ontology files
+        run: |
+          ls output/ontology.* | sed -e 'p;s/ontology/${{ github.event.repository.name }}/' | xargs -n2 mv
+          sed -i 's/ontology\./${{ github.event.repository.name }}./g' output/index.html
+      - name: Prepare version documentation
+        run: |
+          mkdir public
+          cp -r output/ public/${{ github.event.release.tag_name }}
+      - name: Prepare latest documentation
+        if: '!github.event.release.prerelease'
+        run: cp -r output/ public/latest
+      - name: Upload release artifacts
+        uses: svenstaro/upload-release-action@v2
+        with:
+          tag: ${{ github.ref }}
+          file: output/${{ github.event.repository.name }}.*
+          file_glob: true
+          overwrite: true
+      - name: Deploy documentation
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          keep_files: true

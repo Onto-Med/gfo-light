@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: If you use the content of this repository, please cite it using these metadata.
+title: General Formal Ontology (light version)
+abstract: |
+  The Core Ontology of Phenotyping (COP) defines core entities and their relationships that
+  are relevant for modelling phenotypic knowledge and developing phenotyping software.
+authors:
+  - affiliation: Leipzig University
+    family-names: Uciteli
+    given-names: Alexandr
+    orcid: https://orcid.org/0000-0001-9558-5352
+  - affiliation: Leipzig University
+    family-names: Beger
+    given-names: Christoph
+    orcid: https://orcid.org/0000-0002-1166-0368
+  - family-names: Loebe
+    given-names: Frank
+    orcid: https://orcid.org/0000-0003-4537-5212
+  - affiliation: Leipzig University
+    family-names: Matthies
+    given-names: Franz
+    orcid: https://orcid.org/0000-0001-7196-506X
+  - family-names: Herre
+    given-names: Heinrich
+  - affiliation: Leipzig University
+    family-names: Höffner
+    given-names: Konrad
+    orcid: https://orcid.org/0000-0001-7358-3217
+  - family-names: Burek
+    given-names: Patryk
+    orcid: https://orcid.org/0000-0001-8165-0272
+  - affiliation: Leipzig University
+    family-names: Schäfermeier
+    given-names: Ralph
+    orcid: https://orcid.org/0000-0002-4349-6726
+date-released: 2025-02-05
+keywords:
+  - ontology
+  - top-level-ontology
+  - ontology-languages
+license: CC-BY-4.0
+# TODO: set DOI
+# doi: 10.5281/zenodo._
