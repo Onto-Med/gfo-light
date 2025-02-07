@@ -1,0 +1,3320 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>General Formal Ontology Light (GFO-light)</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/gfo-light","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/gfo-light","name":"General Formal Ontology Light (GFO-light)", "headline":"Document describing the ontology https://w3id.org/gfo-light", "dateReleased":"Fri Feb 07 12:49:38 UTC 2025", "version":"2025-01-06", "license":"http://creativecommons.org/licenses/by/4.0/", "codeRepository":"https://github.com/Onto-Med/gfo-light", "author":[{"@type":"Person","name":"Alexandr Uciteli"},{"@type":"Person","name":"Christoph Beger"},{"@type":"Person","name":"Frank Loebe"},{"@type":"Person","name":"Franz Matthies"},{"@type":"Person","name":"Heinrich Herre"},{"@type":"Person","name":"Konrad Höffner"},{"@type":"Person","name":"Patryk Burek"},{"@type":"Person","name":"Ralph Schäfermeier"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>General Formal Ontology Light (GFO-light)</h1>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/gfo-light/release/2025-01-06">https://w3id.org/gfo-light/release/2025-01-06</a></dd>
+<dt>Revision:</dt>
+<dd>2025-01-06</dd>
+<dt>Authors:</dt>
+<dd>Alexandr Uciteli</dd><dd>Christoph Beger</dd><dd>Frank Loebe</dd><dd>Franz Matthies</dd><dd>Heinrich Herre</dd><dd>Konrad Höffner</dd><dd>Patryk Burek</dd><dd>Ralph Schäfermeier</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="gfo-light.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="gfo-light.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="gfo-light.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="gfo-light.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by/4.0/-blue.svg" alt="http://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Alexandr Uciteli, Christoph Beger, Frank Loebe, Franz Matthies, Heinrich Herre, Konrad Höffner, Patryk Burek, Ralph Schäfermeier. General Formal Ontology Light (GFO-light). Revision: 2025-01-06. Retrieved from: https://w3id.org/gfo-light/release/2025-01-06</dd>
+<dt>Vocabulary maintained at:</dt>
+<dd><a href="https://github.com/Onto-Med/gfo-light">https://github.com/Onto-Med/gfo-light</a></dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div><div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">GFO-light: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a>
+   </li>
+   <li>
+      <a href="#/Category" title="https://w3id.org/gfo-light/Category">Category</a>
+   </li>
+   <li>
+      <a href="#/Chronoid" title="https://w3id.org/gfo-light/Chronoid">Chronoid</a>
+   </li>
+   <li>
+      <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-light/ConcreteIndividual">Concrete individual</a>
+   </li>
+   <li>
+      <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a>
+   </li>
+   <li>
+      <a href="#/ContinuantPartRole" title="https://w3id.org/gfo-light/ContinuantPartRole">Continuant part role</a>
+   </li>
+   <li>
+      <a href="#/Entity" title="https://w3id.org/gfo-light/Entity">Entity</a>
+   </li>
+   <li>
+      <a href="#/ImmaterialContinuant" title="https://w3id.org/gfo-light/ImmaterialContinuant">Immaterial continuant</a>
+   </li>
+   <li>
+      <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a>
+   </li>
+   <li>
+      <a href="#/Line" title="https://w3id.org/gfo-light/Line">Line</a>
+   </li>
+   <li>
+      <a href="#/MaterialAggregate" title="https://w3id.org/gfo-light/MaterialAggregate">Material aggregate</a>
+   </li>
+   <li>
+      <a href="#/MaterialContinuant" title="https://w3id.org/gfo-light/MaterialContinuant">Material continuant</a>
+   </li>
+   <li>
+      <a href="#/MaterialObject" title="https://w3id.org/gfo-light/MaterialObject">Material object</a>
+   </li>
+   <li>
+      <a href="#/MaterialPart" title="https://w3id.org/gfo-light/MaterialPart">Material part</a>
+   </li>
+   <li>
+      <a href="#/Point" title="https://w3id.org/gfo-light/Point">Point</a>
+   </li>
+   <li>
+      <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a>
+   </li>
+   <li>
+      <a href="#/ProcessualRole" title="https://w3id.org/gfo-light/ProcessualRole">Processual role</a>
+   </li>
+   <li>
+      <a href="#/Quality" title="https://w3id.org/gfo-light/Quality">Quality</a>
+   </li>
+   <li>
+      <a href="#/RelationalRole" title="https://w3id.org/gfo-light/RelationalRole">Relational role</a>
+   </li>
+   <li>
+      <a href="#/Relator" title="https://w3id.org/gfo-light/Relator">Relator</a>
+   </li>
+   <li>
+      <a href="#/Role" title="https://w3id.org/gfo-light/Role">Role</a>
+   </li>
+   <li>
+      <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a>
+   </li>
+   <li>
+      <a href="#/SituationalRole" title="https://w3id.org/gfo-light/SituationalRole">Situational role</a>
+   </li>
+   <li>
+      <a href="#/Surface" title="https://w3id.org/gfo-light/Surface">Surface</a>
+   </li>
+   <li>
+      <a href="#/TimeBoundary" title="https://w3id.org/gfo-light/TimeBoundary">Time boundary</a>
+   </li>
+   <li>
+      <a href="#/TimeEntity" title="https://w3id.org/gfo-light/TimeEntity">Time entity</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#/after" title="https://w3id.org/gfo-light/after">after</a>
+   </li>
+   <li>
+      <a href="#/attributiveOf" title="https://w3id.org/gfo-light/attributiveOf">attributive of</a>
+   </li>
+   <li>
+      <a href="#/before" title="https://w3id.org/gfo-light/before">before</a>
+   </li>
+   <li>
+      <a href="#/boundaryOf" title="https://w3id.org/gfo-light/boundaryOf">boundary of</a>
+   </li>
+   <li>
+      <a href="#/causedBy" title="https://w3id.org/gfo-light/causedBy">caused by</a>
+   </li>
+   <li>
+      <a href="#/causes" title="https://w3id.org/gfo-light/causes">causes</a>
+   </li>
+   <li>
+      <a href="#/containsRole" title="https://w3id.org/gfo-light/containsRole">contains role</a>
+   </li>
+   <li>
+      <a href="#/during" title="https://w3id.org/gfo-light/during">during</a>
+   </li>
+   <li>
+      <a href="#/hasAttributive" title="https://w3id.org/gfo-light/hasAttributive">has attributive</a>
+   </li>
+   <li>
+      <a href="#/hasBoundary" title="https://w3id.org/gfo-light/hasBoundary">has boundary</a>
+   </li>
+   <li>
+      <a href="#/hasInnerBoundary" title="https://w3id.org/gfo-light/hasInnerBoundary">has inner boundary</a>
+   </li>
+   <li>
+      <a href="#/hasMember" title="https://w3id.org/gfo-light/hasMember">has member</a>
+   </li>
+   <li>
+      <a href="#/hasNaturalBoundary" title="https://w3id.org/gfo-light/hasNaturalBoundary">has natural boundary</a>
+   </li>
+   <li>
+      <a href="#/hasOwner" title="https://w3id.org/gfo-light/hasOwner">has owner</a>
+   </li>
+   <li>
+      <a href="#/hasPart" title="https://w3id.org/gfo-light/hasPart">has part</a>
+   </li>
+   <li>
+      <a href="#/hasParticipant" title="https://w3id.org/gfo-light/hasParticipant">has participant</a>
+   </li>
+   <li>
+      <a href="#/hasProcessPart" title="https://w3id.org/gfo-light/hasProcessPart">has process part</a>
+   </li>
+   <li>
+      <a href="#/hasQuality" title="https://w3id.org/gfo-light/hasQuality">has quality</a>
+   </li>
+   <li>
+      <a href="#/hasSituationPart" title="https://w3id.org/gfo-light/hasSituationPart">has situation part</a>
+   </li>
+   <li>
+      <a href="#/hasTemporalPart" title="https://w3id.org/gfo-light/hasTemporalPart">has temporal part</a>
+   </li>
+   <li>
+      <a href="#/hasTime" title="https://w3id.org/gfo-light/hasTime">has time</a>
+   </li>
+   <li>
+      <a href="#/innerBoundaryOf" title="https://w3id.org/gfo-light/innerBoundaryOf">inner boundary of</a>
+   </li>
+   <li>
+      <a href="#/instanceOf" title="https://w3id.org/gfo-light/instanceOf">instance of</a>
+   </li>
+   <li>
+      <a href="#/instantiatedBy" title="https://w3id.org/gfo-light/instantiatedBy">instantiated by</a>
+   </li>
+   <li>
+      <a href="#/leadsTo" title="https://w3id.org/gfo-light/leadsTo">leads to</a>
+   </li>
+   <li>
+      <a href="#/locatedIn" title="https://w3id.org/gfo-light/locatedIn">located in</a>
+   </li>
+   <li>
+      <a href="#/locationOf" title="https://w3id.org/gfo-light/locationOf">location of</a>
+   </li>
+   <li>
+      <a href="#/memberOf" title="https://w3id.org/gfo-light/memberOf">member of</a>
+   </li>
+   <li>
+      <a href="#/naturalBoundaryOf" title="https://w3id.org/gfo-light/naturalBoundaryOf">natural boundary of</a>
+   </li>
+   <li>
+      <a href="#/ownerOf" title="https://w3id.org/gfo-light/ownerOf">owner of</a>
+   </li>
+   <li>
+      <a href="#/partOf" title="https://w3id.org/gfo-light/partOf">part of</a>
+   </li>
+   <li>
+      <a href="#/participatesIn" title="https://w3id.org/gfo-light/participatesIn">participates in</a>
+   </li>
+   <li>
+      <a href="#/playedBy" title="https://w3id.org/gfo-light/playedBy">played by</a>
+   </li>
+   <li>
+      <a href="#/plays" title="https://w3id.org/gfo-light/plays">plays</a>
+   </li>
+   <li>
+      <a href="#/processPartOf" title="https://w3id.org/gfo-light/processPartOf">process part of</a>
+   </li>
+   <li>
+      <a href="#/qualityOf" title="https://w3id.org/gfo-light/qualityOf">quality of</a>
+   </li>
+   <li>
+      <a href="#/relatedBy" title="https://w3id.org/gfo-light/relatedBy">related by</a>
+   </li>
+   <li>
+      <a href="#/relates" title="https://w3id.org/gfo-light/relates">relates</a>
+   </li>
+   <li>
+      <a href="#/resultsFrom" title="https://w3id.org/gfo-light/resultsFrom">results from</a>
+   </li>
+   <li>
+      <a href="#/roleIn" title="https://w3id.org/gfo-light/roleIn">role in</a>
+   </li>
+   <li>
+      <a href="#/situationPartOf" title="https://w3id.org/gfo-light/situationPartOf">situation part of</a>
+   </li>
+   <li>
+      <a href="#/spatiallyEndsOn" title="https://w3id.org/gfo-light/spatiallyEndsOn">spatially ends on</a>
+   </li>
+   <li>
+      <a href="#/spatiallyPassesThrough"
+         title="https://w3id.org/gfo-light/spatiallyPassesThrough">spatially passes through</a>
+   </li>
+   <li>
+      <a href="#/spatiallyStartsOn" title="https://w3id.org/gfo-light/spatiallyStartsOn">spatially starts on</a>
+   </li>
+   <li>
+      <a href="#/temporalPartOf" title="https://w3id.org/gfo-light/temporalPartOf">temporal part of</a>
+   </li>
+   <li>
+      <a href="#/temporallyContains" title="https://w3id.org/gfo-light/temporallyContains">temporally contains</a>
+   </li>
+   <li>
+      <a href="#/temporallyEqual" title="https://w3id.org/gfo-light/temporallyEqual">temporally equal</a>
+   </li>
+   <li>
+      <a href="#/temporallyFinishedBy" title="https://w3id.org/gfo-light/temporallyFinishedBy">temporally finished by</a>
+   </li>
+   <li>
+      <a href="#/temporallyFinishes" title="https://w3id.org/gfo-light/temporallyFinishes">temporally finishes</a>
+   </li>
+   <li>
+      <a href="#/temporallyMeets" title="https://w3id.org/gfo-light/temporallyMeets">temporally meets</a>
+   </li>
+   <li>
+      <a href="#/temporallyMetBy" title="https://w3id.org/gfo-light/temporallyMetBy">temporally met by</a>
+   </li>
+   <li>
+      <a href="#/temporallyOverlappedBy"
+         title="https://w3id.org/gfo-light/temporallyOverlappedBy">temporally overlapped by</a>
+   </li>
+   <li>
+      <a href="#/temporallyOverlaps" title="https://w3id.org/gfo-light/temporallyOverlaps">temporally overlaps</a>
+   </li>
+   <li>
+      <a href="#/temporallyRelatedWith"
+         title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a>
+   </li>
+   <li>
+      <a href="#/temporallyStartedBy" title="https://w3id.org/gfo-light/temporallyStartedBy">temporally started by</a>
+   </li>
+   <li>
+      <a href="#/temporallyStarts" title="https://w3id.org/gfo-light/temporallyStarts">temporally starts</a>
+   </li>
+   <li>
+      <a href="#/timeOf" title="https://w3id.org/gfo-light/timeOf">time of</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#/afterDateTimeValue" title="https://w3id.org/gfo-light/afterDateTimeValue">after date time value</a>
+   </li>
+   <li>
+      <a href="#/beforeDateTimeValue" title="https://w3id.org/gfo-light/beforeDateTimeValue">before date time value</a>
+   </li>
+   <li>
+      <a href="#/booleanValue" title="https://w3id.org/gfo-light/booleanValue">boolean value</a>
+   </li>
+   <li>
+      <a href="#/containsDateTimeValue"
+         title="https://w3id.org/gfo-light/containsDateTimeValue">contains date time value</a>
+   </li>
+   <li>
+      <a href="#/dateTimeValue" title="https://w3id.org/gfo-light/dateTimeValue">date time value</a>
+   </li>
+   <li>
+      <a href="#/decimalValue" title="https://w3id.org/gfo-light/decimalValue">decimal value</a>
+   </li>
+   <li>
+      <a href="#/finishedByDateTimeValue"
+         title="https://w3id.org/gfo-light/finishedByDateTimeValue">finished by date time value</a>
+   </li>
+   <li>
+      <a href="#/hasTemporalPartDateTimeValue"
+         title="https://w3id.org/gfo-light/hasTemporalPartDateTimeValue">has temporal part date time value</a>
+   </li>
+   <li>
+      <a href="#/startedByDateTimeValue"
+         title="https://w3id.org/gfo-light/startedByDateTimeValue">started by date time value</a>
+   </li>
+   <li>
+      <a href="#/stringValue" title="https://w3id.org/gfo-light/stringValue">string value</a>
+   </li>
+   <li>
+      <a href="#/unit" title="https://w3id.org/gfo-light/unit">unit</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel">
+         <span>alt Label</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2000/01/rdf-schema#comment" title="http://www.w3.org/2000/01/rdf-schema#comment">
+         <span>comment</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/created" title="http://purl.org/dc/elements/1.1/created">
+         <span>created</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#definition" title="http://www.w3.org/2004/02/skos/core#definition">
+         <span>definition</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/doi" title="http://purl.org/ontology/bibo/doi">
+         <span>doi</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#example" title="http://www.w3.org/2004/02/skos/core#example">
+         <span>example</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">
+         <span>homepage</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/modified" title="http://purl.org/dc/elements/1.1/modified">
+         <span>modified</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+         title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+         <span>preferred Namespace Prefix</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespaceURI" title="http://purl.org/vocab/vann/preferredNamespaceURI">
+         <span>preferred Namespace U R I</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://usefulinc.com/ns/doap#repository" title="http://usefulinc.com/ns/doap#repository">
+         <span>repository</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title">
+         <span>title</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2002/07/owl#versionInfo" title="http://www.w3.org/2002/07/owl#versionInfo">
+         <span>version Info</span>
+      </a>
+   </li>
+</ul>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">GFO-light: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO) and is designed as a framework for the efficient development and foundation of domain/application ontologies.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for GFO-light classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by GFO-light.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a></li>
+  <li><a href="#/Category" title="https://w3id.org/gfo-light/Category">Category</a></li>
+  <li><a href="#/Chronoid" title="https://w3id.org/gfo-light/Chronoid">Chronoid</a></li>
+  <li><a href="#/ConcreteIndividual" title="https://w3id.org/gfo-light/ConcreteIndividual">Concrete individual</a></li>
+  <li><a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a></li>
+  <li><a href="#/ContinuantPartRole" title="https://w3id.org/gfo-light/ContinuantPartRole">Continuant part role</a></li>
+  <li><a href="#/Entity" title="https://w3id.org/gfo-light/Entity">Entity</a></li>
+  <li><a href="#/ImmaterialContinuant" title="https://w3id.org/gfo-light/ImmaterialContinuant">Immaterial continuant</a></li>
+  <li><a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a></li>
+  <li><a href="#/Line" title="https://w3id.org/gfo-light/Line">Line</a></li>
+  <li><a href="#/MaterialAggregate" title="https://w3id.org/gfo-light/MaterialAggregate">Material aggregate</a></li>
+  <li><a href="#/MaterialContinuant" title="https://w3id.org/gfo-light/MaterialContinuant">Material continuant</a></li>
+  <li><a href="#/MaterialObject" title="https://w3id.org/gfo-light/MaterialObject">Material object</a></li>
+  <li><a href="#/MaterialPart" title="https://w3id.org/gfo-light/MaterialPart">Material part</a></li>
+  <li><a href="#/Point" title="https://w3id.org/gfo-light/Point">Point</a></li>
+  <li><a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a></li>
+  <li><a href="#/ProcessualRole" title="https://w3id.org/gfo-light/ProcessualRole">Processual role</a></li>
+  <li><a href="#/Quality" title="https://w3id.org/gfo-light/Quality">Quality</a></li>
+  <li><a href="#/RelationalRole" title="https://w3id.org/gfo-light/RelationalRole">Relational role</a></li>
+  <li><a href="#/Relator" title="https://w3id.org/gfo-light/Relator">Relator</a></li>
+  <li><a href="#/Role" title="https://w3id.org/gfo-light/Role">Role</a></li>
+  <li><a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a></li>
+  <li><a href="#/SituationalRole" title="https://w3id.org/gfo-light/SituationalRole">Situational role</a></li>
+  <li><a href="#/Surface" title="https://w3id.org/gfo-light/Surface">Surface</a></li>
+  <li><a href="#/TimeBoundary" title="https://w3id.org/gfo-light/TimeBoundary">Time boundary</a></li>
+  <li><a href="#/TimeEntity" title="https://w3id.org/gfo-light/TimeEntity">Time entity</a></li>
+ </ul>
+ <div class="entity" id="/Attributive">
+  <h3>Attributive<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Attributive</p>
+  <div class="comment">
+   <span class="markdown">Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category Attributive.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Attributives are individuals that depend on other individuals by some kind of dependency relation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-light/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/Quality" title="https://w3id.org/gfo-light/Quality">Quality</a> <sup class="type-c" title="class">c</sup>, <a href="#/Relator" title="https://w3id.org/gfo-light/Relator">Relator</a> <sup class="type-c" title="class">c</sup>, <a href="#/Role" title="https://w3id.org/gfo-light/Role">Role</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/attributiveOf" title="https://w3id.org/gfo-light/attributiveOf">attributive of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/booleanValue" title="https://w3id.org/gfo-light/booleanValue">boolean value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/decimalValue" title="https://w3id.org/gfo-light/decimalValue">decimal value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/processPartOf" title="https://w3id.org/gfo-light/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/situationPartOf" title="https://w3id.org/gfo-light/situationPartOf">situation part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/stringValue" title="https://w3id.org/gfo-light/stringValue">string value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/unit" title="https://w3id.org/gfo-light/unit">unit</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasAttributive" title="https://w3id.org/gfo-light/hasAttributive">has attributive</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasProcessPart" title="https://w3id.org/gfo-light/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasSituationPart" title="https://w3id.org/gfo-light/hasSituationPart">has situation part</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Category">
+  <h3>Category<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Category</p>
+  <div class="comment">
+   <span class="markdown">The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Entity" title="https://w3id.org/gfo-light/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/instantiatedBy" title="https://w3id.org/gfo-light/instantiatedBy">instantiated by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/instanceOf" title="https://w3id.org/gfo-light/instanceOf">instance of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Chronoid">
+  <h3>Chronoid<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Chronoid</p>
+  <div class="comment">
+   <span class="markdown">Chronoids are real-valued time intervals with endpoints.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>The time (extension) of a football match (from the start point in time to the end point in time)</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/TimeEntity" title="https://w3id.org/gfo-light/TimeEntity">Time entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/ConcreteIndividual">
+  <h3>Concrete individual<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/ConcreteIndividual</p>
+  <div class="comment">
+   <span class="markdown">Concrete individuals are entities that have an immediate relation to time or to space-time. They exist in time.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>, <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>, <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup>, <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasTime" title="https://w3id.org/gfo-light/hasTime">has time</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/timeOf" title="https://w3id.org/gfo-light/timeOf">time of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Continuant">
+  <h3>Continuant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Continuant</p>
+  <div class="comment">
+   <span class="markdown">Material three-dimensional objects, their aggregates (groups) and parts as well as immaterial two-, one- and zero-dimensional entities (i.e., surfaces, lines and points) are subsumed under the category Continuant.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-light/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/ImmaterialContinuant" title="https://w3id.org/gfo-light/ImmaterialContinuant">Immaterial continuant</a> <sup class="type-c" title="class">c</sup>, <a href="#/MaterialContinuant" title="https://w3id.org/gfo-light/MaterialContinuant">Material continuant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/containsRole" title="https://w3id.org/gfo-light/containsRole">contains role</a> <sup class="type-op" title="object property">op</sup>, <a href="#/participatesIn" title="https://w3id.org/gfo-light/participatesIn">participates in</a> <sup class="type-op" title="object property">op</sup>, <a href="#/plays" title="https://w3id.org/gfo-light/plays">plays</a> <sup class="type-op" title="object property">op</sup>, <a href="#/relatedBy" title="https://w3id.org/gfo-light/relatedBy">related by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasParticipant" title="https://w3id.org/gfo-light/hasParticipant">has participant</a> <sup class="type-op" title="object property">op</sup>, <a href="#/playedBy" title="https://w3id.org/gfo-light/playedBy">played by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/relates" title="https://w3id.org/gfo-light/relates">relates</a> <sup class="type-op" title="object property">op</sup>, <a href="#/roleIn" title="https://w3id.org/gfo-light/roleIn">role in</a> <sup class="type-op" title="object property">op</sup>, <a href="#/spatiallyPassesThrough" title="https://w3id.org/gfo-light/spatiallyPassesThrough">spatially passes through</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/ContinuantPartRole">
+  <h3>Continuant part role<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/ContinuantPartRole</p>
+  <div class="comment">
+   <span class="markdown">A continuant part role is the role that a continuant part plays in the whole continuant.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>John is part/member of the football team and plays the role of midfielder.</pre>
+   </dd>
+   <dd>
+    <pre>The processor is part of the computer and has the task/function/role to process commands.</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Role" title="https://w3id.org/gfo-light/Role">Role</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Entity">
+  <h3>Entity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Entity</p>
+  <div class="comment">
+   <span class="markdown">Everything that exists is called an entity.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/Category" title="https://w3id.org/gfo-light/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/instanceOf" title="https://w3id.org/gfo-light/instanceOf">instance of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/instantiatedBy" title="https://w3id.org/gfo-light/instantiatedBy">instantiated by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/ImmaterialContinuant">
+  <h3>Immaterial continuant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/ImmaterialContinuant</p>
+  <div class="comment">
+   <span class="markdown">Immaterial continuants can border material continuants (natural boundaries) or be located inside them (inner boundaries). Boundaries of material continuants are surfaces, boundaries of surfaces are lines and boundaries of lines are points.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Immaterial continuants are 0-, 1-, or 2-dimensional immaterial (visible or imaginary) entities (i.e., points, lines and surfaces) that are located on material continuants or in them.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/Line" title="https://w3id.org/gfo-light/Line">Line</a> <sup class="type-c" title="class">c</sup>, <a href="#/Point" title="https://w3id.org/gfo-light/Point">Point</a> <sup class="type-c" title="class">c</sup>, <a href="#/Surface" title="https://w3id.org/gfo-light/Surface">Surface</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/boundaryOf" title="https://w3id.org/gfo-light/boundaryOf">boundary of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasOwner" title="https://w3id.org/gfo-light/hasOwner">has owner</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasBoundary" title="https://w3id.org/gfo-light/hasBoundary">has boundary</a> <sup class="type-op" title="object property">op</sup>, <a href="#/ownerOf" title="https://w3id.org/gfo-light/ownerOf">owner of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Individual">
+  <h3>Individual<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Individual</p>
+  <div class="comment">
+   <span class="markdown">Individuals are entities which cannot be further instantiated.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Entity" title="https://w3id.org/gfo-light/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-light/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>, <a href="#/TimeEntity" title="https://w3id.org/gfo-light/TimeEntity">Time entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/dateTimeValue" title="https://w3id.org/gfo-light/dateTimeValue">date time value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/hasAttributive" title="https://w3id.org/gfo-light/hasAttributive">has attributive</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasPart" title="https://w3id.org/gfo-light/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasQuality" title="https://w3id.org/gfo-light/hasQuality">has quality</a> <sup class="type-op" title="object property">op</sup>, <a href="#/partOf" title="https://w3id.org/gfo-light/partOf">part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/attributiveOf" title="https://w3id.org/gfo-light/attributiveOf">attributive of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasPart" title="https://w3id.org/gfo-light/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/partOf" title="https://w3id.org/gfo-light/partOf">part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/qualityOf" title="https://w3id.org/gfo-light/qualityOf">quality of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Line">
+  <h3>Line<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Line</p>
+  <div class="comment">
+   <span class="markdown">Lines are not necessarily straight. They can be, for example, curves or broken lines that pass through various points and form a corner, a triangle or a polygon.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A line is a 1-dimensional immaterial continuant.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Boundary line of the football field</pre>
+   </dd>
+   <dd>
+    <pre>Longitudinal axis of the human skeleton</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/ImmaterialContinuant" title="https://w3id.org/gfo-light/ImmaterialContinuant">Immaterial continuant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasBoundary" title="https://w3id.org/gfo-light/hasBoundary">has boundary</a> <sup class="type-op" title="object property">op</sup>, <a href="#/spatiallyPassesThrough" title="https://w3id.org/gfo-light/spatiallyPassesThrough">spatially passes through</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/boundaryOf" title="https://w3id.org/gfo-light/boundaryOf">boundary of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/MaterialAggregate">
+  <h3>Material aggregate<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/MaterialAggregate</p>
+  <div class="comment">
+   <span class="markdown">The members of a material aggregate are regarded as its parts, similar to the parts of an object (e.g., John is part/member of the football team and plays the role of forward).</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A material aggregate is a unit consisting of multiple material objects or further aggregates.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Research group</pre>
+   </dd>
+   <dd>
+    <pre>Sports team</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/MaterialContinuant" title="https://w3id.org/gfo-light/MaterialContinuant">Material continuant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasMember" title="https://w3id.org/gfo-light/hasMember">has member</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/memberOf" title="https://w3id.org/gfo-light/memberOf">member of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/MaterialContinuant">
+  <h3>Material continuant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/MaterialContinuant</p>
+  <div class="comment">
+   <span class="markdown">Usually, connected objects are considered as single material objects, i.e., the object parts are firmly connected to the whole object, while loose objects can form a group/aggregate. When modelling a person, for example, you could consider their skeleton as a (connected) material object and as part of the human body. However, if we look at bone finds in the context of anthropology, the skeleton can be modelled as an aggregate of individual bones.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Material continuants are any 3-dimensional material objects, aggregates and parts.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/MaterialAggregate" title="https://w3id.org/gfo-light/MaterialAggregate">Material aggregate</a> <sup class="type-c" title="class">c</sup>, <a href="#/MaterialObject" title="https://w3id.org/gfo-light/MaterialObject">Material object</a> <sup class="type-c" title="class">c</sup>, <a href="#/MaterialPart" title="https://w3id.org/gfo-light/MaterialPart">Material part</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/memberOf" title="https://w3id.org/gfo-light/memberOf">member of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/ownerOf" title="https://w3id.org/gfo-light/ownerOf">owner of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasMember" title="https://w3id.org/gfo-light/hasMember">has member</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasOwner" title="https://w3id.org/gfo-light/hasOwner">has owner</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/MaterialObject">
+  <h3>Material object<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/MaterialObject</p>
+  <div class="comment">
+   <span class="markdown">Material objects are connected material entities that consist of an amount of stuff and have a natural boundary.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Bone</pre>
+   </dd>
+   <dd>
+    <pre>Chopstick</pre>
+   </dd>
+   <dd>
+    <pre>Computer</pre>
+   </dd>
+   <dd>
+    <pre>Person</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/MaterialContinuant" title="https://w3id.org/gfo-light/MaterialContinuant">Material continuant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasBoundary" title="https://w3id.org/gfo-light/hasBoundary">has boundary</a> <sup class="type-op" title="object property">op</sup>, <a href="#/locatedIn" title="https://w3id.org/gfo-light/locatedIn">located in</a> <sup class="type-op" title="object property">op</sup>, <a href="#/locationOf" title="https://w3id.org/gfo-light/locationOf">location of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/boundaryOf" title="https://w3id.org/gfo-light/boundaryOf">boundary of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/locatedIn" title="https://w3id.org/gfo-light/locatedIn">located in</a> <sup class="type-op" title="object property">op</sup>, <a href="#/locationOf" title="https://w3id.org/gfo-light/locationOf">location of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/MaterialPart">
+  <h3>Material part<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/MaterialPart</p>
+  <div class="comment">
+   <span class="markdown">Material parts are parts of material objects that have no natural boundary with the whole object (e.g., part of a bone).</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Part of a bone</pre>
+   </dd>
+   <dd>
+    <pre>Part of a chopstick</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/MaterialContinuant" title="https://w3id.org/gfo-light/MaterialContinuant">Material continuant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Point">
+  <h3>Point<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Point</p>
+  <div class="comment">
+   <span class="markdown">A point is a 0-dimensional immaterial continuant.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Gonion</pre>
+   </dd>
+   <dd>
+    <pre>Penalty spot</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/ImmaterialContinuant" title="https://w3id.org/gfo-light/ImmaterialContinuant">Immaterial continuant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Process">
+  <h3>Process<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Process</p>
+  <div class="comment">
+   <span class="markdown">Processes represent dynamic knowledge.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Processes are concrete individuals that happen in time and have a temporal extension (a chronoid).</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>A treatment of a patient in a hospital</pre>
+   </dd>
+   <dd>
+    <pre>Football match</pre>
+   </dd>
+   <dd>
+    <pre>The course of an illness</pre>
+   </dd>
+   <dd>
+    <pre>The first half of the match</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-light/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/containsRole" title="https://w3id.org/gfo-light/containsRole">contains role</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasParticipant" title="https://w3id.org/gfo-light/hasParticipant">has participant</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasProcessPart" title="https://w3id.org/gfo-light/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/leadsTo" title="https://w3id.org/gfo-light/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>, <a href="#/locatedIn" title="https://w3id.org/gfo-light/locatedIn">located in</a> <sup class="type-op" title="object property">op</sup>, <a href="#/processPartOf" title="https://w3id.org/gfo-light/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/resultsFrom" title="https://w3id.org/gfo-light/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasProcessPart" title="https://w3id.org/gfo-light/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/leadsTo" title="https://w3id.org/gfo-light/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>, <a href="#/locationOf" title="https://w3id.org/gfo-light/locationOf">location of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/participatesIn" title="https://w3id.org/gfo-light/participatesIn">participates in</a> <sup class="type-op" title="object property">op</sup>, <a href="#/processPartOf" title="https://w3id.org/gfo-light/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/resultsFrom" title="https://w3id.org/gfo-light/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>, <a href="#/roleIn" title="https://w3id.org/gfo-light/roleIn">role in</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/ProcessualRole">
+  <h3>Processual role<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/ProcessualRole</p>
+  <div class="comment">
+   <span class="markdown">A processual role is the role that a participant plays in a process.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Team A plays the home team role and team B plays the visiting team role in a football match.</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Role" title="https://w3id.org/gfo-light/Role">Role</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#/RelationalRole" title="https://w3id.org/gfo-light/RelationalRole">Relational role</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Quality">
+  <h3>Quality<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Quality</p>
+  <div class="comment">
+   <span class="markdown">Qualities can possess values.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Qualities are attributives that typically inhere in its bearer.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Observable or measurable characteristics of single objects, e.g., persons, (such as weight and height, laboratory parameters or symptoms)</pre>
+   </dd>
+   <dd>
+    <pre>Qualities of object groups (e.g., goals scored by a football team in a match)</pre>
+   </dd>
+   <dd>
+    <pre>Qualities of processes (e.g., the number of spectators as quality of a football match)</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/qualityOf" title="https://w3id.org/gfo-light/qualityOf">quality of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasQuality" title="https://w3id.org/gfo-light/hasQuality">has quality</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/RelationalRole">
+  <h3>Relational role<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/RelationalRole</p>
+  <div class="comment">
+   <span class="markdown">A relational role is the role that an entity plays in a relation (relator).</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Target object role and reference object role of a relative location relator (describes the relative location of an object playing the target object role in relation to another object playing the reference object role)</pre>
+   </dd>
+   <dd>
+    <pre>Wife role and husband role of the marriage relator</pre>
+   </dd>
+   <dd>
+    <pre>Winner team role and loser team role of the winner-loser relator</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Role" title="https://w3id.org/gfo-light/Role">Role</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is disjoint with
+   </dt>
+   <dd>
+    <a href="#/ProcessualRole" title="https://w3id.org/gfo-light/ProcessualRole">Processual role</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Relator">
+  <h3>Relator<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Relator</p>
+  <div class="comment">
+   <span class="markdown">A relator represents an individual relation instance.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Relators are attributives that connect other entities (role players) by relational roles (played by role players).</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>A relator describing the relative location of an object (playing the target object role) in relation to another object (playing the reference object role), e.g., the location of a person relative to the city centre or the location of an anatomical structure relative to the longitudinal axis</pre>
+   </dd>
+   <dd>
+    <pre>A winner-loser relator connecting a winner and a loser team by a winner and a loser role</pre>
+   </dd>
+   <dd>
+    <pre>The marriage (relator) of John and Mary (in which Mary plays the wife role and John the husband role)</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/containsRole" title="https://w3id.org/gfo-light/containsRole">contains role</a> <sup class="type-op" title="object property">op</sup>, <a href="#/relates" title="https://w3id.org/gfo-light/relates">relates</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/relatedBy" title="https://w3id.org/gfo-light/relatedBy">related by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/roleIn" title="https://w3id.org/gfo-light/roleIn">role in</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Role">
+  <h3>Role<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Role</p>
+  <div class="comment">
+   <span class="markdown">We distinguish between continuant part roles, processual roles, situational roles and relational roles.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">A role is a relational entity that links a continuant (role player) with some context, in which the continuant plays that role.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/ContinuantPartRole" title="https://w3id.org/gfo-light/ContinuantPartRole">Continuant part role</a> <sup class="type-c" title="class">c</sup>, <a href="#/ProcessualRole" title="https://w3id.org/gfo-light/ProcessualRole">Processual role</a> <sup class="type-c" title="class">c</sup>, <a href="#/RelationalRole" title="https://w3id.org/gfo-light/RelationalRole">Relational role</a> <sup class="type-c" title="class">c</sup>, <a href="#/SituationalRole" title="https://w3id.org/gfo-light/SituationalRole">Situational role</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/playedBy" title="https://w3id.org/gfo-light/playedBy">played by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/roleIn" title="https://w3id.org/gfo-light/roleIn">role in</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/containsRole" title="https://w3id.org/gfo-light/containsRole">contains role</a> <sup class="type-op" title="object property">op</sup>, <a href="#/plays" title="https://w3id.org/gfo-light/plays">plays</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Situation">
+  <h3>Situation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Situation</p>
+  <div class="comment">
+   <span class="markdown">A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Situations are combinations/constellations of attributives that belong together in the context of the use case under consideration.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>A risk situation when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time</pre>
+   </dd>
+   <dd>
+    <pre>The situation after the wedding of John and Mary (i.e., the situation in which they are married containing the marriage relator with a husband and a wife role)</pre>
+   </dd>
+   <dd>
+    <pre>The situation at the end of a football match containing players' qualities (e.g., number of goals or assists), teams' qualities (e.g., number of goals or ball possession) and a winner-loser relator with one team playing the winner role and the other team playing the loser role</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-light/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/containsRole" title="https://w3id.org/gfo-light/containsRole">contains role</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasParticipant" title="https://w3id.org/gfo-light/hasParticipant">has participant</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasSituationPart" title="https://w3id.org/gfo-light/hasSituationPart">has situation part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/leadsTo" title="https://w3id.org/gfo-light/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>, <a href="#/locatedIn" title="https://w3id.org/gfo-light/locatedIn">located in</a> <sup class="type-op" title="object property">op</sup>, <a href="#/processPartOf" title="https://w3id.org/gfo-light/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/resultsFrom" title="https://w3id.org/gfo-light/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>, <a href="#/situationPartOf" title="https://w3id.org/gfo-light/situationPartOf">situation part of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasProcessPart" title="https://w3id.org/gfo-light/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasSituationPart" title="https://w3id.org/gfo-light/hasSituationPart">has situation part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/leadsTo" title="https://w3id.org/gfo-light/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>, <a href="#/locationOf" title="https://w3id.org/gfo-light/locationOf">location of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/participatesIn" title="https://w3id.org/gfo-light/participatesIn">participates in</a> <sup class="type-op" title="object property">op</sup>, <a href="#/resultsFrom" title="https://w3id.org/gfo-light/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>, <a href="#/roleIn" title="https://w3id.org/gfo-light/roleIn">role in</a> <sup class="type-op" title="object property">op</sup>, <a href="#/situationPartOf" title="https://w3id.org/gfo-light/situationPartOf">situation part of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/SituationalRole">
+  <h3>Situational role<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/SituationalRole</p>
+  <div class="comment">
+   <span class="markdown">A situational role is the role that a participant plays in a situation.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Roles played by a doctor and a patient in a risk/adverse situation in hospital</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Role" title="https://w3id.org/gfo-light/Role">Role</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Surface">
+  <h3>Surface<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/Surface</p>
+  <div class="comment">
+   <span class="markdown">A surface is a 2-dimensional immaterial continuant.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Frontal plane of the human skeleton</pre>
+   </dd>
+   <dd>
+    <pre>Surface of the football field</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/ImmaterialContinuant" title="https://w3id.org/gfo-light/ImmaterialContinuant">Immaterial continuant</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasBoundary" title="https://w3id.org/gfo-light/hasBoundary">has boundary</a> <sup class="type-op" title="object property">op</sup>, <a href="#/spatiallyPassesThrough" title="https://w3id.org/gfo-light/spatiallyPassesThrough">spatially passes through</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/boundaryOf" title="https://w3id.org/gfo-light/boundaryOf">boundary of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/TimeBoundary">
+  <h3>Time boundary<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/TimeBoundary</p>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Start point in time of a football match</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/TimeEntity" title="https://w3id.org/gfo-light/TimeEntity">Time entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/TimeEntity">
+  <h3>Time entity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/TimeEntity</p>
+  <div class="comment">
+   <span class="markdown">The time entities defined in GFO-light are points in time (time boundaries) and time intervals/periods (chronoids), which consist of points in time.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/Chronoid" title="https://w3id.org/gfo-light/Chronoid">Chronoid</a> <sup class="type-c" title="class">c</sup>, <a href="#/TimeBoundary" title="https://w3id.org/gfo-light/TimeBoundary">Time boundary</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/timeOf" title="https://w3id.org/gfo-light/timeOf">time of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasTime" title="https://w3id.org/gfo-light/hasTime">has time</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#/after" title="https://w3id.org/gfo-light/after">after</a></li>
+  <li><a href="#/attributiveOf" title="https://w3id.org/gfo-light/attributiveOf">attributive of</a></li>
+  <li><a href="#/before" title="https://w3id.org/gfo-light/before">before</a></li>
+  <li><a href="#/boundaryOf" title="https://w3id.org/gfo-light/boundaryOf">boundary of</a></li>
+  <li><a href="#/causedBy" title="https://w3id.org/gfo-light/causedBy">caused by</a></li>
+  <li><a href="#/causes" title="https://w3id.org/gfo-light/causes">causes</a></li>
+  <li><a href="#/containsRole" title="https://w3id.org/gfo-light/containsRole">contains role</a></li>
+  <li><a href="#/during" title="https://w3id.org/gfo-light/during">during</a></li>
+  <li><a href="#/hasAttributive" title="https://w3id.org/gfo-light/hasAttributive">has attributive</a></li>
+  <li><a href="#/hasBoundary" title="https://w3id.org/gfo-light/hasBoundary">has boundary</a></li>
+  <li><a href="#/hasInnerBoundary" title="https://w3id.org/gfo-light/hasInnerBoundary">has inner boundary</a></li>
+  <li><a href="#/hasMember" title="https://w3id.org/gfo-light/hasMember">has member</a></li>
+  <li><a href="#/hasNaturalBoundary" title="https://w3id.org/gfo-light/hasNaturalBoundary">has natural boundary</a></li>
+  <li><a href="#/hasOwner" title="https://w3id.org/gfo-light/hasOwner">has owner</a></li>
+  <li><a href="#/hasPart" title="https://w3id.org/gfo-light/hasPart">has part</a></li>
+  <li><a href="#/hasParticipant" title="https://w3id.org/gfo-light/hasParticipant">has participant</a></li>
+  <li><a href="#/hasProcessPart" title="https://w3id.org/gfo-light/hasProcessPart">has process part</a></li>
+  <li><a href="#/hasQuality" title="https://w3id.org/gfo-light/hasQuality">has quality</a></li>
+  <li><a href="#/hasSituationPart" title="https://w3id.org/gfo-light/hasSituationPart">has situation part</a></li>
+  <li><a href="#/hasTemporalPart" title="https://w3id.org/gfo-light/hasTemporalPart">has temporal part</a></li>
+  <li><a href="#/hasTime" title="https://w3id.org/gfo-light/hasTime">has time</a></li>
+  <li><a href="#/innerBoundaryOf" title="https://w3id.org/gfo-light/innerBoundaryOf">inner boundary of</a></li>
+  <li><a href="#/instanceOf" title="https://w3id.org/gfo-light/instanceOf">instance of</a></li>
+  <li><a href="#/instantiatedBy" title="https://w3id.org/gfo-light/instantiatedBy">instantiated by</a></li>
+  <li><a href="#/leadsTo" title="https://w3id.org/gfo-light/leadsTo">leads to</a></li>
+  <li><a href="#/locatedIn" title="https://w3id.org/gfo-light/locatedIn">located in</a></li>
+  <li><a href="#/locationOf" title="https://w3id.org/gfo-light/locationOf">location of</a></li>
+  <li><a href="#/memberOf" title="https://w3id.org/gfo-light/memberOf">member of</a></li>
+  <li><a href="#/naturalBoundaryOf" title="https://w3id.org/gfo-light/naturalBoundaryOf">natural boundary of</a></li>
+  <li><a href="#/ownerOf" title="https://w3id.org/gfo-light/ownerOf">owner of</a></li>
+  <li><a href="#/partOf" title="https://w3id.org/gfo-light/partOf">part of</a></li>
+  <li><a href="#/participatesIn" title="https://w3id.org/gfo-light/participatesIn">participates in</a></li>
+  <li><a href="#/playedBy" title="https://w3id.org/gfo-light/playedBy">played by</a></li>
+  <li><a href="#/plays" title="https://w3id.org/gfo-light/plays">plays</a></li>
+  <li><a href="#/processPartOf" title="https://w3id.org/gfo-light/processPartOf">process part of</a></li>
+  <li><a href="#/qualityOf" title="https://w3id.org/gfo-light/qualityOf">quality of</a></li>
+  <li><a href="#/relatedBy" title="https://w3id.org/gfo-light/relatedBy">related by</a></li>
+  <li><a href="#/relates" title="https://w3id.org/gfo-light/relates">relates</a></li>
+  <li><a href="#/resultsFrom" title="https://w3id.org/gfo-light/resultsFrom">results from</a></li>
+  <li><a href="#/roleIn" title="https://w3id.org/gfo-light/roleIn">role in</a></li>
+  <li><a href="#/situationPartOf" title="https://w3id.org/gfo-light/situationPartOf">situation part of</a></li>
+  <li><a href="#/spatiallyEndsOn" title="https://w3id.org/gfo-light/spatiallyEndsOn">spatially ends on</a></li>
+  <li><a href="#/spatiallyPassesThrough" title="https://w3id.org/gfo-light/spatiallyPassesThrough">spatially passes through</a></li>
+  <li><a href="#/spatiallyStartsOn" title="https://w3id.org/gfo-light/spatiallyStartsOn">spatially starts on</a></li>
+  <li><a href="#/temporalPartOf" title="https://w3id.org/gfo-light/temporalPartOf">temporal part of</a></li>
+  <li><a href="#/temporallyContains" title="https://w3id.org/gfo-light/temporallyContains">temporally contains</a></li>
+  <li><a href="#/temporallyEqual" title="https://w3id.org/gfo-light/temporallyEqual">temporally equal</a></li>
+  <li><a href="#/temporallyFinishedBy" title="https://w3id.org/gfo-light/temporallyFinishedBy">temporally finished by</a></li>
+  <li><a href="#/temporallyFinishes" title="https://w3id.org/gfo-light/temporallyFinishes">temporally finishes</a></li>
+  <li><a href="#/temporallyMeets" title="https://w3id.org/gfo-light/temporallyMeets">temporally meets</a></li>
+  <li><a href="#/temporallyMetBy" title="https://w3id.org/gfo-light/temporallyMetBy">temporally met by</a></li>
+  <li><a href="#/temporallyOverlappedBy" title="https://w3id.org/gfo-light/temporallyOverlappedBy">temporally overlapped by</a></li>
+  <li><a href="#/temporallyOverlaps" title="https://w3id.org/gfo-light/temporallyOverlaps">temporally overlaps</a></li>
+  <li><a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a></li>
+  <li><a href="#/temporallyStartedBy" title="https://w3id.org/gfo-light/temporallyStartedBy">temporally started by</a></li>
+  <li><a href="#/temporallyStarts" title="https://w3id.org/gfo-light/temporallyStarts">temporally starts</a></li>
+  <li><a href="#/timeOf" title="https://w3id.org/gfo-light/timeOf">time of</a></li>
+ </ul>
+ <div class="entity" id="/after">
+  <h3>after<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/after</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/before" title="https://w3id.org/gfo-light/before">before</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/attributiveOf">
+  <h3>attributive of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/attributiveOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/playedBy" title="https://w3id.org/gfo-light/playedBy">played by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/qualityOf" title="https://w3id.org/gfo-light/qualityOf">quality of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/relates" title="https://w3id.org/gfo-light/relates">relates</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasAttributive" title="https://w3id.org/gfo-light/hasAttributive">has attributive</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/before">
+  <h3>before<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/before</p>
+  <div class="comment">
+   <span class="markdown">X before Y: Xf &lt; Ys</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/after" title="https://w3id.org/gfo-light/after">after</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/boundaryOf">
+  <h3>boundary of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/boundaryOf</p>
+  <div class="comment">
+   <span class="markdown">Immaterial continuants can be considered as (outer or inner) boundaries (boundaryOf). Note that surfaces are boundaries of material continuants, lines are boundaries of surfaces and points are boundaries of lines.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/innerBoundaryOf" title="https://w3id.org/gfo-light/innerBoundaryOf">inner boundary of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/naturalBoundaryOf" title="https://w3id.org/gfo-light/naturalBoundaryOf">natural boundary of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/ImmaterialContinuant" title="https://w3id.org/gfo-light/ImmaterialContinuant">Immaterial continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Line" title="https://w3id.org/gfo-light/Line">Line</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/MaterialObject" title="https://w3id.org/gfo-light/MaterialObject">Material object</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Surface" title="https://w3id.org/gfo-light/Surface">Surface</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasBoundary" title="https://w3id.org/gfo-light/hasBoundary">has boundary</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/causedBy">
+  <h3>caused by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/causedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/resultsFrom" title="https://w3id.org/gfo-light/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/causes" title="https://w3id.org/gfo-light/causes">causes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/causes">
+  <h3>causes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/causes</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/leadsTo" title="https://w3id.org/gfo-light/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/causedBy" title="https://w3id.org/gfo-light/causedBy">caused by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/containsRole">
+  <h3>contains role<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/containsRole</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Relator" title="https://w3id.org/gfo-light/Relator">Relator</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Role" title="https://w3id.org/gfo-light/Role">Role</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/roleIn" title="https://w3id.org/gfo-light/roleIn">role in</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/during">
+  <h3>during<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/during</p>
+  <div class="comment">
+   <span class="markdown">X during Y: Xs &gt; Ys and Xf &lt; Yf</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporalPartOf" title="https://w3id.org/gfo-light/temporalPartOf">temporal part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyContains" title="https://w3id.org/gfo-light/temporallyContains">temporally contains</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasAttributive">
+  <h3>has attributive<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasAttributive</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/hasQuality" title="https://w3id.org/gfo-light/hasQuality">has quality</a> <sup class="type-op" title="object property">op</sup>, <a href="#/plays" title="https://w3id.org/gfo-light/plays">plays</a> <sup class="type-op" title="object property">op</sup>, <a href="#/relatedBy" title="https://w3id.org/gfo-light/relatedBy">related by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/attributiveOf" title="https://w3id.org/gfo-light/attributiveOf">attributive of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasBoundary">
+  <h3>has boundary<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasBoundary</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/hasInnerBoundary" title="https://w3id.org/gfo-light/hasInnerBoundary">has inner boundary</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasNaturalBoundary" title="https://w3id.org/gfo-light/hasNaturalBoundary">has natural boundary</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Line" title="https://w3id.org/gfo-light/Line">Line</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/MaterialObject" title="https://w3id.org/gfo-light/MaterialObject">Material object</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Surface" title="https://w3id.org/gfo-light/Surface">Surface</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/ImmaterialContinuant" title="https://w3id.org/gfo-light/ImmaterialContinuant">Immaterial continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/boundaryOf" title="https://w3id.org/gfo-light/boundaryOf">boundary of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasInnerBoundary">
+  <h3>has inner boundary<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasInnerBoundary</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasBoundary" title="https://w3id.org/gfo-light/hasBoundary">has boundary</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/innerBoundaryOf" title="https://w3id.org/gfo-light/innerBoundaryOf">inner boundary of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasMember">
+  <h3>has member<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasMember</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasPart" title="https://w3id.org/gfo-light/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/MaterialAggregate" title="https://w3id.org/gfo-light/MaterialAggregate">Material aggregate</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/MaterialContinuant" title="https://w3id.org/gfo-light/MaterialContinuant">Material continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/memberOf" title="https://w3id.org/gfo-light/memberOf">member of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasNaturalBoundary">
+  <h3>has natural boundary<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasNaturalBoundary</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasBoundary" title="https://w3id.org/gfo-light/hasBoundary">has boundary</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/naturalBoundaryOf" title="https://w3id.org/gfo-light/naturalBoundaryOf">natural boundary of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasOwner">
+  <h3>has owner<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasOwner</p>
+  <div class="comment">
+   <span class="markdown">Immaterial continuants can be assigned to a corresponding material continuant using the object property hasOwner.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/ImmaterialContinuant" title="https://w3id.org/gfo-light/ImmaterialContinuant">Immaterial continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/MaterialContinuant" title="https://w3id.org/gfo-light/MaterialContinuant">Material continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/ownerOf" title="https://w3id.org/gfo-light/ownerOf">owner of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasPart">
+  <h3>has part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasPart</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/hasMember" title="https://w3id.org/gfo-light/hasMember">has member</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasProcessPart" title="https://w3id.org/gfo-light/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasSituationPart" title="https://w3id.org/gfo-light/hasSituationPart">has situation part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/partOf" title="https://w3id.org/gfo-light/partOf">part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasParticipant">
+  <h3>has participant<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasParticipant</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/participatesIn" title="https://w3id.org/gfo-light/participatesIn">participates in</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasProcessPart">
+  <h3>has process part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasProcessPart</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasPart" title="https://w3id.org/gfo-light/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/processPartOf" title="https://w3id.org/gfo-light/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasQuality">
+  <h3>has quality<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasQuality</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasAttributive" title="https://w3id.org/gfo-light/hasAttributive">has attributive</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Quality" title="https://w3id.org/gfo-light/Quality">Quality</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/qualityOf" title="https://w3id.org/gfo-light/qualityOf">quality of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasSituationPart">
+  <h3>has situation part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasSituationPart</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasPart" title="https://w3id.org/gfo-light/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/situationPartOf" title="https://w3id.org/gfo-light/situationPartOf">situation part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasTemporalPart">
+  <h3>has temporal part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasTemporalPart</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyContains" title="https://w3id.org/gfo-light/temporallyContains">temporally contains</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyFinishedBy" title="https://w3id.org/gfo-light/temporallyFinishedBy">temporally finished by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyStartedBy" title="https://w3id.org/gfo-light/temporallyStartedBy">temporally started by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporalPartOf" title="https://w3id.org/gfo-light/temporalPartOf">temporal part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasTime">
+  <h3>has time<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasTime</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-light/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/TimeEntity" title="https://w3id.org/gfo-light/TimeEntity">Time entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/timeOf" title="https://w3id.org/gfo-light/timeOf">time of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/innerBoundaryOf">
+  <h3>inner boundary of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/innerBoundaryOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/boundaryOf" title="https://w3id.org/gfo-light/boundaryOf">boundary of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasInnerBoundary" title="https://w3id.org/gfo-light/hasInnerBoundary">has inner boundary</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/instanceOf">
+  <h3>instance of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/instanceOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Entity" title="https://w3id.org/gfo-light/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Category" title="https://w3id.org/gfo-light/Category">Category</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/instantiatedBy" title="https://w3id.org/gfo-light/instantiatedBy">instantiated by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/instantiatedBy">
+  <h3>instantiated by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/instantiatedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Category" title="https://w3id.org/gfo-light/Category">Category</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Entity" title="https://w3id.org/gfo-light/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/instanceOf" title="https://w3id.org/gfo-light/instanceOf">instance of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/leadsTo">
+  <h3>leads to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/leadsTo</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/causes" title="https://w3id.org/gfo-light/causes">causes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/resultsFrom" title="https://w3id.org/gfo-light/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/locatedIn">
+  <h3>located in<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/locatedIn</p>
+  <div class="comment">
+   <span class="markdown">Material objects can be located in other material objects (locatedIn, e.g., the driver is located in the car).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/MaterialObject" title="https://w3id.org/gfo-light/MaterialObject">Material object</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/MaterialObject" title="https://w3id.org/gfo-light/MaterialObject">Material object</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/locationOf" title="https://w3id.org/gfo-light/locationOf">location of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/locationOf">
+  <h3>location of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/locationOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/MaterialObject" title="https://w3id.org/gfo-light/MaterialObject">Material object</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/MaterialObject" title="https://w3id.org/gfo-light/MaterialObject">Material object</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/locatedIn" title="https://w3id.org/gfo-light/locatedIn">located in</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/memberOf">
+  <h3>member of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/memberOf</p>
+  <div class="comment">
+   <span class="markdown">To model the membership of a member in a group/aggregate, the more specific object properties hasMember/memberOf should be used instead of hasPart/PartOf.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/partOf" title="https://w3id.org/gfo-light/partOf">part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/MaterialContinuant" title="https://w3id.org/gfo-light/MaterialContinuant">Material continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/MaterialAggregate" title="https://w3id.org/gfo-light/MaterialAggregate">Material aggregate</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasMember" title="https://w3id.org/gfo-light/hasMember">has member</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/naturalBoundaryOf">
+  <h3>natural boundary of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/naturalBoundaryOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/boundaryOf" title="https://w3id.org/gfo-light/boundaryOf">boundary of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasNaturalBoundary" title="https://w3id.org/gfo-light/hasNaturalBoundary">has natural boundary</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/ownerOf">
+  <h3>owner of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/ownerOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/MaterialContinuant" title="https://w3id.org/gfo-light/MaterialContinuant">Material continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/ImmaterialContinuant" title="https://w3id.org/gfo-light/ImmaterialContinuant">Immaterial continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasOwner" title="https://w3id.org/gfo-light/hasOwner">has owner</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/partOf">
+  <h3>part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/partOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/memberOf" title="https://w3id.org/gfo-light/memberOf">member of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/processPartOf" title="https://w3id.org/gfo-light/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/situationPartOf" title="https://w3id.org/gfo-light/situationPartOf">situation part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasPart" title="https://w3id.org/gfo-light/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/participatesIn">
+  <h3>participates in<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/participatesIn</p>
+  <div class="comment">
+   <span class="markdown">Continuants can participate in processes and situations (participatesIn, hasParticipant).</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Player A1 participates in a goal situation.</pre>
+   </dd>
+   <dd>
+    <pre>Teams A and B participate in a football match.</pre>
+   </dd>
+  </dl>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasParticipant" title="https://w3id.org/gfo-light/hasParticipant">has participant</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/playedBy">
+  <h3>played by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/playedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/attributiveOf" title="https://w3id.org/gfo-light/attributiveOf">attributive of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Role" title="https://w3id.org/gfo-light/Role">Role</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/plays" title="https://w3id.org/gfo-light/plays">plays</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/plays">
+  <h3>plays<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/plays</p>
+  <div class="comment">
+   <span class="markdown">The role players are associated with the roles they play using object properties plays or playedBy.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasAttributive" title="https://w3id.org/gfo-light/hasAttributive">has attributive</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Role" title="https://w3id.org/gfo-light/Role">Role</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/playedBy" title="https://w3id.org/gfo-light/playedBy">played by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/processPartOf">
+  <h3>process part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/processPartOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/partOf" title="https://w3id.org/gfo-light/partOf">part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasProcessPart" title="https://w3id.org/gfo-light/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/qualityOf">
+  <h3>quality of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/qualityOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/attributiveOf" title="https://w3id.org/gfo-light/attributiveOf">attributive of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Quality" title="https://w3id.org/gfo-light/Quality">Quality</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasQuality" title="https://w3id.org/gfo-light/hasQuality">has quality</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/relatedBy">
+  <h3>related by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/relatedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasAttributive" title="https://w3id.org/gfo-light/hasAttributive">has attributive</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Relator" title="https://w3id.org/gfo-light/Relator">Relator</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/relates" title="https://w3id.org/gfo-light/relates">relates</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/relates">
+  <h3>relates<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/relates</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/attributiveOf" title="https://w3id.org/gfo-light/attributiveOf">attributive of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Relator" title="https://w3id.org/gfo-light/Relator">Relator</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/relatedBy" title="https://w3id.org/gfo-light/relatedBy">related by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/resultsFrom">
+  <h3>results from<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/resultsFrom</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/causedBy" title="https://w3id.org/gfo-light/causedBy">caused by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/leadsTo" title="https://w3id.org/gfo-light/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/roleIn">
+  <h3>role in<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/roleIn</p>
+  <div class="comment">
+   <span class="markdown">Roles are assigned to the corresponding context entity (continuant, process, situation, relator) using object properties roleIn or containsRole.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Role" title="https://w3id.org/gfo-light/Role">Role</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Process" title="https://w3id.org/gfo-light/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Relator" title="https://w3id.org/gfo-light/Relator">Relator</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/containsRole" title="https://w3id.org/gfo-light/containsRole">contains role</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/situationPartOf">
+  <h3>situation part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/situationPartOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/partOf" title="https://w3id.org/gfo-light/partOf">part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Situation" title="https://w3id.org/gfo-light/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasSituationPart" title="https://w3id.org/gfo-light/hasSituationPart">has situation part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/spatiallyEndsOn">
+  <h3>spatially ends on<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/spatiallyEndsOn</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/spatiallyPassesThrough" title="https://w3id.org/gfo-light/spatiallyPassesThrough">spatially passes through</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/spatiallyPassesThrough">
+  <h3>spatially passes through<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/spatiallyPassesThrough</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/spatiallyEndsOn" title="https://w3id.org/gfo-light/spatiallyEndsOn">spatially ends on</a> <sup class="type-op" title="object property">op</sup>, <a href="#/spatiallyStartsOn" title="https://w3id.org/gfo-light/spatiallyStartsOn">spatially starts on</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Line" title="https://w3id.org/gfo-light/Line">Line</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Surface" title="https://w3id.org/gfo-light/Surface">Surface</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Continuant" title="https://w3id.org/gfo-light/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/spatiallyStartsOn">
+  <h3>spatially starts on<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/spatiallyStartsOn</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/spatiallyPassesThrough" title="https://w3id.org/gfo-light/spatiallyPassesThrough">spatially passes through</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporalPartOf">
+  <h3>temporal part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporalPartOf</p>
+  <div class="comment">
+   <span class="markdown">X temporal part of Y: X starts Y or X finishes Y or X during Y</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/during" title="https://w3id.org/gfo-light/during">during</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyFinishes" title="https://w3id.org/gfo-light/temporallyFinishes">temporally finishes</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyStarts" title="https://w3id.org/gfo-light/temporallyStarts">temporally starts</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPart" title="https://w3id.org/gfo-light/hasTemporalPart">has temporal part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyContains">
+  <h3>temporally contains<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporallyContains</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPart" title="https://w3id.org/gfo-light/hasTemporalPart">has temporal part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/during" title="https://w3id.org/gfo-light/during">during</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyEqual">
+  <h3>temporally equal<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporallyEqual</p>
+  <div class="comment">
+   <span class="markdown">X equal Y: Xs = Ys and Xf = Yf</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyFinishedBy">
+  <h3>temporally finished by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporallyFinishedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPart" title="https://w3id.org/gfo-light/hasTemporalPart">has temporal part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyFinishes" title="https://w3id.org/gfo-light/temporallyFinishes">temporally finishes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyFinishes">
+  <h3>temporally finishes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporallyFinishes</p>
+  <div class="comment">
+   <span class="markdown">X finishes Y: Xs &gt; Ys and Xf = Yf</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporalPartOf" title="https://w3id.org/gfo-light/temporalPartOf">temporal part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyFinishedBy" title="https://w3id.org/gfo-light/temporallyFinishedBy">temporally finished by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyMeets">
+  <h3>temporally meets<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporallyMeets</p>
+  <div class="comment">
+   <span class="markdown">X meets Y: Xf = Ys</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyMetBy" title="https://w3id.org/gfo-light/temporallyMetBy">temporally met by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyMetBy">
+  <h3>temporally met by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporallyMetBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyMeets" title="https://w3id.org/gfo-light/temporallyMeets">temporally meets</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyOverlappedBy">
+  <h3>temporally overlapped by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporallyOverlappedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyOverlaps" title="https://w3id.org/gfo-light/temporallyOverlaps">temporally overlaps</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyOverlaps">
+  <h3>temporally overlaps<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporallyOverlaps</p>
+  <div class="comment">
+   <span class="markdown">X overlaps Y: Xs &lt; Ys and Xf &gt; Ys and Xf &lt; Yf</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-light/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyOverlappedBy" title="https://w3id.org/gfo-light/temporallyOverlappedBy">temporally overlapped by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyRelatedWith">
+  <h3>temporally related with<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporallyRelatedWith</p>
+  <div class="comment">
+   <span class="markdown">If a temporal relation is applied to other concrete individuals as time intervals (attributive, continuant, process, situation), it is propagated to their existence times (hasTime).</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Temporal relations between time intervals based on Allen, J. F. (1983). Maintaining knowledge about temporal intervals. Communications of the ACM, 26(11), 832-843.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/after" title="https://w3id.org/gfo-light/after">after</a> <sup class="type-op" title="object property">op</sup>, <a href="#/before" title="https://w3id.org/gfo-light/before">before</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasTemporalPart" title="https://w3id.org/gfo-light/hasTemporalPart">has temporal part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporalPartOf" title="https://w3id.org/gfo-light/temporalPartOf">temporal part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyEqual" title="https://w3id.org/gfo-light/temporallyEqual">temporally equal</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyMeets" title="https://w3id.org/gfo-light/temporallyMeets">temporally meets</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyMetBy" title="https://w3id.org/gfo-light/temporallyMetBy">temporally met by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyOverlappedBy" title="https://w3id.org/gfo-light/temporallyOverlappedBy">temporally overlapped by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyOverlaps" title="https://w3id.org/gfo-light/temporallyOverlaps">temporally overlaps</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyStartedBy">
+  <h3>temporally started by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporallyStartedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPart" title="https://w3id.org/gfo-light/hasTemporalPart">has temporal part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyStarts" title="https://w3id.org/gfo-light/temporallyStarts">temporally starts</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyStarts">
+  <h3>temporally starts<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/temporallyStarts</p>
+  <div class="comment">
+   <span class="markdown">X starts Y: Xs = Ys and Xf &lt; Yf</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporalPartOf" title="https://w3id.org/gfo-light/temporalPartOf">temporal part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyStartedBy" title="https://w3id.org/gfo-light/temporallyStartedBy">temporally started by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/timeOf">
+  <h3>time of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/timeOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/TimeEntity" title="https://w3id.org/gfo-light/TimeEntity">Time entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-light/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasTime" title="https://w3id.org/gfo-light/hasTime">has time</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#/afterDateTimeValue" title="https://w3id.org/gfo-light/afterDateTimeValue">after date time value</a></li>
+  <li><a href="#/beforeDateTimeValue" title="https://w3id.org/gfo-light/beforeDateTimeValue">before date time value</a></li>
+  <li><a href="#/booleanValue" title="https://w3id.org/gfo-light/booleanValue">boolean value</a></li>
+  <li><a href="#/containsDateTimeValue" title="https://w3id.org/gfo-light/containsDateTimeValue">contains date time value</a></li>
+  <li><a href="#/dateTimeValue" title="https://w3id.org/gfo-light/dateTimeValue">date time value</a></li>
+  <li><a href="#/decimalValue" title="https://w3id.org/gfo-light/decimalValue">decimal value</a></li>
+  <li><a href="#/finishedByDateTimeValue" title="https://w3id.org/gfo-light/finishedByDateTimeValue">finished by date time value</a></li>
+  <li><a href="#/hasTemporalPartDateTimeValue" title="https://w3id.org/gfo-light/hasTemporalPartDateTimeValue">has temporal part date time value</a></li>
+  <li><a href="#/startedByDateTimeValue" title="https://w3id.org/gfo-light/startedByDateTimeValue">started by date time value</a></li>
+  <li><a href="#/stringValue" title="https://w3id.org/gfo-light/stringValue">string value</a></li>
+  <li><a href="#/unit" title="https://w3id.org/gfo-light/unit">unit</a></li>
+ </ul>
+ <div class="entity" id="/afterDateTimeValue">
+  <h3>after date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/afterDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'after'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/dateTimeValue" title="https://w3id.org/gfo-light/dateTimeValue">date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/beforeDateTimeValue">
+  <h3>before date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/beforeDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'before'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/dateTimeValue" title="https://w3id.org/gfo-light/dateTimeValue">date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/booleanValue">
+  <h3>boolean value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/booleanValue</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/containsDateTimeValue">
+  <h3>contains date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/containsDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'temporallyContains'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPartDateTimeValue" title="https://w3id.org/gfo-light/hasTemporalPartDateTimeValue">has temporal part date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/dateTimeValue">
+  <h3>date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/dateTimeValue</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/afterDateTimeValue" title="https://w3id.org/gfo-light/afterDateTimeValue">after date time value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/beforeDateTimeValue" title="https://w3id.org/gfo-light/beforeDateTimeValue">before date time value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/hasTemporalPartDateTimeValue" title="https://w3id.org/gfo-light/hasTemporalPartDateTimeValue">has temporal part date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-light/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/decimalValue">
+  <h3>decimal value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/decimalValue</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/finishedByDateTimeValue">
+  <h3>finished by date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/finishedByDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'temporallyFinishedBy'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPartDateTimeValue" title="https://w3id.org/gfo-light/hasTemporalPartDateTimeValue">has temporal part date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasTemporalPartDateTimeValue">
+  <h3>has temporal part date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/hasTemporalPartDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'hasTemporalPart'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/dateTimeValue" title="https://w3id.org/gfo-light/dateTimeValue">date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/containsDateTimeValue" title="https://w3id.org/gfo-light/containsDateTimeValue">contains date time value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/finishedByDateTimeValue" title="https://w3id.org/gfo-light/finishedByDateTimeValue">finished by date time value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/startedByDateTimeValue" title="https://w3id.org/gfo-light/startedByDateTimeValue">started by date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/startedByDateTimeValue">
+  <h3>started by date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/startedByDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'temporallyStartedBy'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPartDateTimeValue" title="https://w3id.org/gfo-light/hasTemporalPartDateTimeValue">has temporal part date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/stringValue">
+  <h3>string value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/stringValue</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/unit">
+  <h3>unit<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-light/unit</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-light/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel"> <span>alt Label</span> </a></li>
+  <li><a href="#http://www.w3.org/2000/01/rdf-schema#comment" title="http://www.w3.org/2000/01/rdf-schema#comment"> <span>comment</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/created" title="http://purl.org/dc/elements/1.1/created"> <span>created</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#definition" title="http://www.w3.org/2004/02/skos/core#definition"> <span>definition</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description"> <span>description</span> </a></li>
+  <li><a href="#http://purl.org/ontology/bibo/doi" title="http://purl.org/ontology/bibo/doi"> <span>doi</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#example" title="http://www.w3.org/2004/02/skos/core#example"> <span>example</span> </a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage"> <span>homepage</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/modified" title="http://purl.org/dc/elements/1.1/modified"> <span>modified</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespaceURI" title="http://purl.org/vocab/vann/preferredNamespaceURI"> <span>preferred Namespace U R I</span> </a></li>
+  <li><a href="#http://usefulinc.com/ns/doap#repository" title="http://usefulinc.com/ns/doap#repository"> <span>repository</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title"> <span>title</span> </a></li>
+  <li><a href="#http://www.w3.org/2002/07/owl#versionInfo" title="http://www.w3.org/2002/07/owl#versionInfo"> <span>version Info</span> </a></li>
+ </ul>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#altLabel">
+  <h3>alt Label<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#altLabel</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2000/01/rdf-schema#comment">
+  <h3>comment<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2000/01/rdf-schema#comment</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/created">
+  <h3>created<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/created</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/creator">
+  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/creator</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#definition">
+  <h3>definition<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#definition</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/description">
+  <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/description</p>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/doi">
+  <h3>doi<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/doi</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#example">
+  <h3>example<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#example</p>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/homepage">
+  <h3>homepage<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/homepage</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/license">
+  <h3>license<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/modified">
+  <h3>modified<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/modified</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
+  <h3>preferred Namespace Prefix<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceURI">
+  <h3>preferred Namespace U R I<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceURI</p>
+ </div>
+ <div class="entity" id="http://usefulinc.com/ns/doap#repository">
+  <h3>repository<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://usefulinc.com/ns/doap#repository</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/title">
+  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/title</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2002/07/owl#versionInfo">
+  <h3>version Info<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2002/07/owl#versionInfo</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>
