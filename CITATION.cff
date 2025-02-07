@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: If you use the content of this repository, please cite it using these metadata.
 title: General Formal Ontology (light version)
 abstract: |
-  The Core Ontology of Phenotyping (COP) defines core entities and their relationships that
-  are relevant for modelling phenotypic knowledge and developing phenotyping software.
+  GFO-light contains simplifications compared to the full version of GFO and is designed as
+  a framework for the efficient development and foundation of domain/application ontologies.
 authors:
   - affiliation: Leipzig University
     family-names: Uciteli
@@ -33,7 +33,7 @@ authors:
     family-names: Schäfermeier
     given-names: Ralph
     orcid: https://orcid.org/0000-0002-4349-6726
-date-released: 2025-02-05
+date-released: 2025-02-07
 keywords:
   - ontology
   - top-level-ontology
