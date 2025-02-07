@@ -28,7 +28,7 @@
                               dc:modified "2025-01-06" ;
                               dc:title "General Formal Ontology Light (GFO-light)"@en ;
                               terms:license <http://creativecommons.org/licenses/by/4.0/> ;
-                              # bibo:doi "10.5281/zenodo._" ;
+                              bibo:doi "10.5281/zenodo.14833002" ;
                               vann:preferredNamespacePrefix "gfo-light" ;
                               vann:preferredNamespaceURI "https://w3id.org/gfo-light/" ;
                               doap:repository <https://github.com/Onto-Med/gfo-light> ;

@@ -2,8 +2,7 @@
 
 [![Test consistency](https://github.com/Onto-Med/gfo-light/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Onto-Med/gfo-light/actions/workflows/test.yml)
 
-<!-- TODO: add DOI badge -->
-<!-- [![DOI](https://zenodo.org/badge/_.svg)](https://zenodo.org/badge/latestdoi/_) -->
+[![DOI](https://zenodo.org/badge/927218818.svg)](https://doi.org/10.5281/zenodo.14833002)
 
 ## Introduction
 
