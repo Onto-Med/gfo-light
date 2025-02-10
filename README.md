@@ -1,8 +1,6 @@
 # General Formal Ontology (light version)
 
-[![Test consistency](https://github.com/Onto-Med/gfo-light/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Onto-Med/gfo-light/actions/workflows/test.yml)
-
-[![DOI](https://zenodo.org/badge/927218818.svg)](https://doi.org/10.5281/zenodo.14833002)
+[![Test consistency](https://github.com/Onto-Med/gfo-light/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/Onto-Med/gfo-light/actions/workflows/test.yml) [![DOI](https://zenodo.org/badge/927218818.svg)](https://doi.org/10.5281/zenodo.14833002)
 
 ## Introduction
 
@@ -16,7 +14,7 @@ You just need to import this ontology into your domain-specific ontology via the
 
 When developing a domain-specific ontology using GFO-light, please create your classes as subclasses of _Continuant_, _Attributive_, _Process_, _Situation_, and _TimeEntity_ (or their subclasses, the more specific the better). You can also create the desired object or data properties (if possible as subproperties of GFO-light properties).
 
-For more information, see the [ontology documentation](https://onto-med.github.io/gfo-light/latest/) and our [user guide](docs/guide.md).
+For more information, see the [ontology documentation](https://onto-med.github.io/gfo-light/latest/) and our [user guide](docs/README.md).
 
 Individual IRIs of GFO-light classes and properties (e.g., https://w3id.org/gfo-light/Category) are pointing to the RDF browser [RickView](https://github.com/KonradHoeffner/rickview).
 
