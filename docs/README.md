@@ -1,20 +1,26 @@
 # GFO-light: General Formal Ontology (light version)
 
-GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO, [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)) and is designed as a framework for the efficient development and foundation of domain/application ontologies. This guide describes the structure and a possible use of this lightweight top-level ontology in domain-specific projects, also for users who are not familiar with the basics of formal ontologies. GFO-light is primarily concerned with categories of concrete individuals ([continuant](#continuant), [process](#process), [attributive](#attributive) and [situation](#situation)), i.e., entities that have an immediate relation to time ([time entity](#time-entity)) or to space-time.
+GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO, [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)) and is designed as a framework for the efficient development and foundation of domain/application ontologies. This guide describes the structure and a possible use of this lightweight top-level ontology in domain-specific projects, also for users who are not familiar with the basics of formal ontologies. GFO-light is primarily concerned with categories of concrete individuals ([Continuant](#continuant), [Processual Entity](#processual-entity), [Attributive](#attributive) and [Situational Entity](#situational-entity)), i.e., entities that have an immediate relation to time ([Time Entity](#time-entity)) or to space-time.
 
-⚠ When developing a domain-specific ontology using GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *Process*, *Situation* and *TimeEntity* (or their subclasses, the more specific the better). You can also create the desired object or data properties (if possible as subproperties of GFO-light properties).
+⚠ When developing a domain-specific ontology using GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *ProcessualEntity*, *SituationalEntity* and *TimeEntity* (or their subclasses, the more specific the better). You can also create the desired object or data properties (if possible as subproperties of GFO-light properties).
 
 ## Overview
 
 ![GFO-light overview](images/gfo-light.svg)
 
+### Core Level
+
+![GFO-light core](images/gfo-light-core.svg)
+
+The core level of GFO-light contains the core GFO entities and serves as an interface to GFO (full), i.e., it forms a common basis for both GFO versions. For some use cases, it may be sufficient to use only the core level as a kind of minimal top-level ontology.
+
 ### Detailed Module Views
 
 <table width="100%">
-    <tr><td width="60%"><img src="images/gfo-light-individual.svg"></td><td><b>Individual</b></br></br>Individuals are quality bearers (<i>hasQuality</i>, <i>qualityOf</i>, see <a href="#user-content-attributive">attributive</a>) and can be temporally related to other individuals (subproperties of <i>temporallyRelatedWith</i>, see <a href="#user-content-time-entity">time entity</a>). Concrete individuals are related to time (<i>hasTime</i>, see <a href="#user-content-time-entity">time entity</a>).</td></tr>
-    <tr><td width="60%"><img src="images/gfo-light-continuant.svg"></td><td><b>Continuant</b></br></br>Object parts can be specified using the object properties <i>hasPart</i> or <i>partOf</i>. To model the membership of a member in a group/aggregate, the object properties <i>hasMember</i>/<i>memberOf</i> should be used. Material objects can be located in other material objects (<i>locatedIn</i>). Boundaries of material objects are surfaces, boundaries of surfaces are lines and boundaries of lines are points. Lines can pass through (<i>spatiallyPassesThrough</i>, <i>spatiallyStartsOn</i>, <i>spatiallyEndsOn</i>) various points. Immaterial continuants can be assigned to a corresponding material continuant using the object property <i>hasOwner</i>. (see <a href="#user-content-continuant">continuant</a>)</td></tr>
-    <tr><td width="60%"><img src="images/gfo-light-role.svg"></td><td><b>Role</b></br></br>A role is a relational entity that links a continuant (role player) with some context (continuant, process, situation, relator), in which the continuant plays that role. Roles are assigned to the corresponding context entity using object properties <i>roleIn</i> or <i>containsRole</i>. The role players are associated with the roles they play using object properties <i>plays</i> or <i>playedBy</i>. Continuants participate in situations and processes (<i>participatesIn</i>, <i>hasParticipant</i>) and are related by relators (<i>relatedBy</i>, <i>relates</i>) in which they play a role. (see <a href="#user-content-attributive">attributive</a>)</td></tr>
-    <tr><td width="60%"><img src="images/gfo-light-situation-process.svg"></td><td><b>Situation/Process</b></br></br>Situations represent static knowledge, while processes represent dynamic knowledge. Continuants can participate in situations and processes (<i>participatesIn</i>, <i>hasParticipant</i>). Situations can have attributives and further situations as parts (<i>hasSituationPart</i>, <i>situationPartOf</i>). Processes can have attributives, situations and further processes as parts (<i>hasProcessPart</i>, <i>processPartOf</i>). Processes and situations can lead to (<i>leadsTo</i>, <i>resultsFrom</i>) or cause (<i>causes</i>, <i>causedBy</i>) further processes and situations. (see <a href="#user-content-situation">situation</a>, <a href="#user-content-process">process</a>)</td></tr>
+    <tr><td width="60%"><img src="images/gfo-light-individual.svg"></td><td><b>Individual</b></br></br>Individuals are quality bearers (<i>hasQuality</i>, <i>qualityOf</i>, see <a href="#user-content-attributive">Attributive</a>) and can be temporally related to other individuals (subproperties of <i>temporallyRelatedWith</i>, see <a href="#user-content-time-entity">Time Entity</a>). Concrete individuals are related to time (<i>hasTime</i>, see <a href="#user-content-time-entity">Time Entity</a>).</td></tr>
+    <tr><td width="60%"><img src="images/gfo-light-continuant.svg"></td><td><b>Continuant</b></br></br>Object parts can be specified using the object properties <i>hasPart</i> or <i>partOf</i>. To model the membership of a member in a group/aggregate, the object properties <i>hasMember</i>/<i>memberOf</i> should be used. Material objects can be located in other material objects (<i>locatedIn</i>). Boundaries of material objects are surfaces, boundaries of surfaces are lines and boundaries of lines are points. Lines can pass through (<i>spatiallyPassesThrough</i>, <i>spatiallyStartsOn</i>, <i>spatiallyEndsOn</i>) various points. Immaterial continuants can be assigned to a corresponding material continuant using the object property <i>hasOwner</i>. (see <a href="#user-content-continuant">Continuant</a>)</td></tr>
+    <tr><td width="60%"><img src="images/gfo-light-role.svg"></td><td><b>Role</b></br></br>A role is a relational entity that links a continuant (role player) with some context (continuant, process, situation, relator), in which the continuant plays that role. Roles are assigned to the corresponding context entity using object properties <i>roleIn</i> or <i>containsRole</i>. The role players are associated with the roles they play using object properties <i>plays</i> or <i>playedBy</i>. Continuants participate in situations and processes (<i>participatesIn</i>, <i>hasParticipant</i>) and are related by relators (<i>relatedBy</i>, <i>relates</i>) in which they play a role. (see <a href="#user-content-attributive">Attributive</a>)</td></tr>
+    <tr><td width="60%"><img src="images/gfo-light-situation-process.svg"></td><td><b>Situation/Process</b></br></br>Situations represent static knowledge, while processes represent dynamic knowledge. Continuants can participate in situations and processes (<i>participatesIn</i>, <i>hasParticipant</i>). Situations can have attributives and further situations as parts (<i>hasSituationPart</i>, <i>situationPartOf</i>). Processes can have attributives, situations and further processes as parts (<i>hasProcessPart</i>, <i>processPartOf</i>). Processes and situations can lead to (<i>leadsTo</i>, <i>resultsFrom</i>) or cause (<i>causes</i>, <i>causedBy</i>) further processes and situations. (see <a href="#user-content-situational-entity">Situational Entity</a>, <a href="#user-content-processual-entity">Processual Entity</a>)</td></tr>
 </table>
 
 ## Continuant
@@ -61,7 +67,9 @@ The object parts can be specified using the object properties *hasPart* or *part
 
 ⚠ GFO (full) includes a sophisticated space module based on the dual nature of space (phenomenal vs. extensional space) and distinguishes between boundaries of material objects and boundaries of spatial regions (see [Baumann, R. et al. (2016). Towards an Ontology of Space for GFO.](https://doi.org/10.3233/978-1-61499-660-6-53), [Loebe, F. et al. (2021). Developing GFO 2.0 Further – Initiating the Modules of Space and Material Objects.](https://ceur-ws.org/Vol-2969/paper69-FOUST.pdf)). For simplicity, GFO-light only considers boundaries of material objects.
 
-## Process
+## Processual Entity
+
+Processual entities include processes and processual aggregates.
 
 Processes are concrete individuals that happen in time and have a temporal extension (chronoid/time interval). Processes represent dynamic knowledge. A football match, a treatment of a patient in a hospital or the course of an illness are examples of processes.  
 
@@ -97,6 +105,8 @@ Processes can have parts (*hasProcessPart*, *processPartOf*), which are situatio
 </table>
 
 **Example 2b.** *Process instances.*
+
+Processual aggregates are sets (*hasMember*) of processes that are contextually related but not temporally connected (e.g., a series of lectures in a semester or all football matches in a league season).
 
 ## Attributive
 
@@ -184,7 +194,9 @@ Similar to qualities, relations can also be represented by simple object propert
 
 If the individual roles (regardless of the type, i.e., continuant part roles, processual roles, situational roles or relational roles) do not have an existence time to be defined and are no parts of situations or processes, they can likewise be represented by object properties. The relative position relator (see above) can, for example, be linked directly to the corresponding objects using the object properties *hasTargetObject* and *hasReferenceObject*. Similarly, football players can be assigned directly to a team using the properties *forwardOf*, *defenderOf*, etc. It also works with processual roles, the two playing teams can be associated to the football match by properties *homeTeamOf* and *visitingTeamOf*.
 
-## Situation
+## Situational Entity
+
+Situational entities include situations and situational aggregates.
 
 Situations are combinations/constellations of attributives that belong together in the context of the use case under consideration. Situations represent static knowledge. A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation (e.g., a goal situation as a result of an attack in a football match). Situations can lead to (*leadsTo*, *resultsFrom*) or cause (*causes*, *causedBy*) further situations and processes.
 
@@ -216,6 +228,8 @@ At the end of a football match (process), for example, a situation may arise in 
 
 **Example 4b.** *Situation instance. The situation at the end of the match contains all relevant attributives: winner-loser relator, teams’ qualities (aGoalsEndOfMatch, aBallPossessionEndOfMatch), teams’ processual roles in match (teamARole, teamBRole), players’ qualities (a1GoalsEndOfMatch, a2AssistsEndOfMatch), players’ continuant part roles in team (a1RoleImTeam, a22RoleImTeam, a33RoleImTeam).*
 
+Situational aggregates are sets (*hasMember*) of situations that are contextually related but not temporally connected (e.g., all phases of increased temperature in the course of an illness).
+
 ⚠ In GFO (full), both static and dynamic situations (object situations, presentic situations and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)). GFO-light does not distinguish between different situation types. To make it easier for domain experts to choose an appropriate GFO-light category for a specific use case, it is recommended to use situations for modelling static knowledge and processes for modelling dynamic knowledge.
 
 ## Time Entity
@@ -246,3 +260,5 @@ Concrete individuals have an existence time (time boundary/point in time or chro
 **Example 5b.** *Time instance.*
 
 GFO-light defined temporal relations between individuals based on [Allen, J. F. (1983). Maintaining knowledge about temporal intervals.](https://doi.org/10.1145/182.358434). For this purpose, 13 subproperties of the object property *temporallyRelatedWith* were introduced (*after*, *before*, *during*, *temporallyContains*, *temporallyEqual*, *temporallyFinishedBy*, *temporallyFinishes*, *temporallyMeets*, *temporallyMetBy*, *temporallyOverlappedBy*, *temporallyOverlaps*, *temporallyStartedBy* and *temporallyStarts*). In addition, object properties *hasTemporalPart* (as a shortcut for *temporallyStartedBy or temporallyFinishedBy or temporallyContains*) and *temporalPartOf* (as a shortcut for *temporallyStarts or temporallyFinishes or during*) were defined. If a temporal relation is applied to other concrete individuals as time intervals (i.e., attributive, continuant, process or situation), it is propagated to their existence times. *'StartOfMatch temporallyStarts Match'* (Examples 5a and 5b) means that the time of the match (a chronoid) starts at the defined point of time. Some temporal relations can also be applied to points in time (*before*/*after*, *temporallyEqual*) or a point in time and a time interval (*before*, *temporallyStarts*, *temporallyFinishes*, *during* or their inverse relations). For some temporal relations (object properties), corresponding shortcuts (data properties) are defined for direct use in data property assertions (*afterDateTimeValue*, *beforeDateTimeValue*, *containsDateTimeValue*, *finishedByDateTimeValue*, *startedByDateTimeValue*, *hasTemporalPartDateTimeValue*).
+
+⚠ The basic theory of phenomenal time in GFO (full) is inspired by the ideas of Franz Brentano ([Baumann, R. et al. (2014). Axiomatic theories of the ontology of time in GFO.](https://journals.sagepub.com/doi/10.3233/AO-140136)). According to this theory, each chronoid has exactly two extremal time boundaries (which can be understood as its first and last time point) and infinitely many inner time boundaries. Time boundaries can coincide, i.e., have a temporal distance of zero, although they are different entities. GFO-light shares this view, but also provides a simplified option for modelling a point in time simultaneously as the end of a time interval and the start of the following time interval. In addition, GFO-light allows the application of some Allen's relations to points in time, so that, for example, *temporallyEqual*, applied to points in time, can be understood as equivalent to *coincidesWith* from GFO (full).
