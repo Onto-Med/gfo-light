@@ -25,13 +25,15 @@ The core level of GFO-light contains the core GFO entities and serves as an inte
 
 ## Continuant
 
-Social or material (three-dimensional) objects, their groups/aggregates and parts as well as their boundaries (two-, one- and zero-dimensional entities, i.e., surfaces, lines and points) are subsumed under the category *Continuant*. Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime). 
+Social or material (three-dimensional) objects, their groups/aggregates, parts and boundaries (two-, one- and zero-dimensional entities, i.e., surfaces, lines and points) are subsumed under the category *Continuant*. Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime). 
 
-**Objects** are social or material continuants that can exist independently of other continuants (e.g., a person, a computer, a chopstick or a football stadium). **Tokens** are specific objects that instantiate a symbolic structure. These are not only texts, but generally representations or specifications, such as a UML model or a computer programme.
+**Objects** are social or material entities that can exist independently of each other (e.g., a person, a computer, a chopstick or a football stadium). Objects can be located in other objects (*locatedIn*, e.g., the driver is located in the car). **Tokens** are specific objects that instantiate a symbolic structure. These are not only texts, but generally representations or specifications, such as a UML model or a computer programme. Tokens represent other entities (*represents/representedBy*).
 
-**Object aggregates** are groups of objects that together form a unit (e.g., a research group at a university or a sports team).
+**Object aggregates** are groups of objects that together form a unit (e.g., a research group at a university or a sports team). To model the membership of a member in a group/aggregate, the object properties *memberOf*/*hasMember* should be used (Example 1b, playerA1).
 
-**Object parts** are continuants that cannot exist independently of the whole object of which they are parts. (e.g., part of a bone or of a chopstick).
+**Object parts** are material entities that cannot exist independently of the corresponding whole object (e.g., part of a bone or of a chopstick). The relation between an object and its parts can be specified using the object properties *hasPart*/*partOf*.
+
+While the object parts are firmly connected to the entire object, the aggregate members are loose objects. When modelling a person, for example, you could consider their skeleton as an object and as part of the human body. However, if we look at bone finds in the context of anthropology, the skeleton can be modelled as an aggregate of individual bones. Another example is a computer. A kit of computer components is an object aggregate before assembly and an object (a computer) afterwards. However, if the components are thrown into the case without being correctly connected, it is not a computer, but the components are simply located in (*locatedIn*) the case.
 
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
@@ -43,10 +45,6 @@ Social or material (three-dimensional) objects, their groups/aggregates and part
 </table>
 
 **Example 1a.** *Continuant classes.*
-
-Usually, connected objects are considered as single objects, i.e., the object parts are firmly connected to the whole object, while loose objects can form a group/aggregate. When modelling a person, for example, you could consider their skeleton as a (connected) object and as part of the human body. However, if we look at bone finds in the context of anthropology, the skeleton can be modelled as an aggregate of individual bones.
-
-The object parts can be specified using the object properties *hasPart* or *partOf*. To model the membership of a member in a group/aggregate, the object properties *hasMember*/*memberOf* should be used (Example 1b, playerA1). Objects can be located in other objects (*locatedIn*, e.g., the driver is located in the car).
 
 **Object boundaries** are 0-, 1-, or 2-dimensional (visible or imaginary) entities (i.e., points, lines and surfaces) that border objects (natural boundaries) or are located inside them (inner boundaries). In the anthropology use case, for example, these can be certain planes (e.g., frontal plane), axes (e.g., longitudinal axis) and points (e.g., gonion) of the human skeleton. Other examples are the surface and the boundary lines of the football field or the penalty spot. Boundaries of objects are surfaces, boundaries of surfaces are lines and boundaries of lines are points. Such relationships are specified using object properties *boundaryOf*, *innerBoundaryOf* or *naturalBoundaryOf*. Lines are not necessarily straight. They can be, for example, curves or broken lines that pass through (*spatiallyPassesThrough*, *spatiallyStartsOn*, *spatiallyEndsOn*) various points and form a corner, a triangle or a polygon. Object boundaries can be assigned to a corresponding object using the object property *hasOwner*. 
 
@@ -71,7 +69,7 @@ The object parts can be specified using the object properties *hasPart* or *part
 
 Processual entities include processes and process aggregates.
 
-Processes are concrete individuals that happen in time and have a temporal extension (chronoid/time interval). Processes represent dynamic knowledge. A football match, a treatment of a patient in a hospital or the course of an illness are examples of processes.  
+**Processes** are concrete individuals that happen in time and have a temporal extension (chronoid/time interval). Processes represent dynamic knowledge. A football match, a treatment of a patient in a hospital or the course of an illness are examples of processes.  
 
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
@@ -106,7 +104,7 @@ Processes can have parts (*hasProcessPart*, *processPartOf*), which are situatio
 
 **Example 2b.** *Process instances.*
 
-Process aggregates are sets (*hasMember*) of processes that are contextually related but not temporally connected (e.g., a series of lectures in a semester or all football matches in a league season).
+**Process aggregates** are sets (*hasMember*) of processes that are contextually related but not temporally connected (e.g., a series of lectures in a semester or all football matches in a league season).
 
 ## Attributive
 
@@ -198,7 +196,7 @@ If the individual roles (regardless of the type, i.e., continuant part roles, pr
 
 Situational entities include situations and situation aggregates.
 
-Situations are combinations/constellations of attributives that belong together in the context of the use case under consideration. Situations represent static knowledge. A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation (e.g., a goal situation as a result of an attack in a football match). Situations can lead to (*leadsTo*, *resultsFrom*) or cause (*causes*, *causedBy*) further situations and processes.
+**Situations** are combinations/constellations of attributives that belong together in the context of the use case under consideration. Situations represent static knowledge. A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation (e.g., a goal situation as a result of an attack in a football match). Situations can lead to (*leadsTo*, *resultsFrom*) or cause (*causes*, *causedBy*) further situations and processes.
 
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
@@ -228,7 +226,7 @@ At the end of a football match (process), for example, a situation may arise in 
 
 **Example 4b.** *Situation instance. The situation at the end of the match contains all relevant attributives: winner-loser relator, teams’ qualities (aGoalsEndOfMatch, aBallPossessionEndOfMatch), teams’ processual roles in match (teamARole, teamBRole), players’ qualities (a1GoalsEndOfMatch, a2AssistsEndOfMatch), players’ continuant part roles in team (a1RoleImTeam, a22RoleImTeam, a33RoleImTeam).*
 
-Situation aggregates are sets (*hasMember*) of situations that are contextually related but not temporally connected (e.g., all phases of increased temperature in the course of an illness).
+**Situation aggregates** are sets (*hasMember*) of situations that are contextually related but not temporally connected (e.g., all phases of increased temperature in the course of an illness).
 
 ⚠ In GFO (full), both static and dynamic situations (object situations, presentic situations and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. et al. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)). GFO-light does not distinguish between different situation types. To make it easier for domain experts to choose an appropriate GFO-light category for a specific use case, it is recommended to use situations for modelling static knowledge and processes for modelling dynamic knowledge.
 
