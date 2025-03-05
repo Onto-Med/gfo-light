@@ -246,7 +246,7 @@ gfo-light-exam:PlayerQuality rdf:type owl:Class ;
 
 ###  https://w3id.org/gfo-light/football_match_exam/PlayerRoleInGoal
 gfo-light-exam:PlayerRoleInGoal rdf:type owl:Class ;
-                                rdfs:subClassOf gfo-light:SituationalRole ,
+                                rdfs:subClassOf gfo-light:Role ,
                                                 [ rdf:type owl:Restriction ;
                                                   owl:onProperty gfo-light:playedBy ;
                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -271,7 +271,7 @@ gfo-light-exam:PlayerRoleInGoal rdf:type owl:Class ;
 
 ###  https://w3id.org/gfo-light/football_match_exam/PlayerRoleInTeam
 gfo-light-exam:PlayerRoleInTeam rdf:type owl:Class ;
-                                rdfs:subClassOf gfo-light:ContinuantPartRole ,
+                                rdfs:subClassOf gfo-light:Role ,
                                                 [ rdf:type owl:Restriction ;
                                                   owl:onProperty gfo-light:playedBy ;
                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -291,7 +291,7 @@ gfo-light-exam:PlayerRoleInTeam rdf:type owl:Class ;
 
 ###  https://w3id.org/gfo-light/football_match_exam/ReferenceObjectRole
 gfo-light-exam:ReferenceObjectRole rdf:type owl:Class ;
-                                   rdfs:subClassOf gfo-light:RelationalRole ,
+                                   rdfs:subClassOf gfo-light:Role ,
                                                    [ rdf:type owl:Restriction ;
                                                      owl:onProperty gfo-light:roleIn ;
                                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -371,7 +371,7 @@ gfo-light-exam:StartOfSecondHalf rdf:type owl:Class ;
 
 ###  https://w3id.org/gfo-light/football_match_exam/TargetObjectRole
 gfo-light-exam:TargetObjectRole rdf:type owl:Class ;
-                                rdfs:subClassOf gfo-light:RelationalRole ,
+                                rdfs:subClassOf gfo-light:Role ,
                                                 [ rdf:type owl:Restriction ;
                                                   owl:onProperty gfo-light:roleIn ;
                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -410,7 +410,7 @@ gfo-light-exam:TeamQuality rdf:type owl:Class ;
 
 ###  https://w3id.org/gfo-light/football_match_exam/TeamRoleInMatch
 gfo-light-exam:TeamRoleInMatch rdf:type owl:Class ;
-                               rdfs:subClassOf gfo-light:ProcessualRole ,
+                               rdfs:subClassOf gfo-light:Role ,
                                                [ rdf:type owl:Restriction ;
                                                  owl:onProperty gfo-light:playedBy ;
                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -430,7 +430,7 @@ gfo-light-exam:TeamRoleInMatch rdf:type owl:Class ;
 
 ###  https://w3id.org/gfo-light/football_match_exam/TeamRoleInWinnerLoserRelator
 gfo-light-exam:TeamRoleInWinnerLoserRelator rdf:type owl:Class ;
-                                            rdfs:subClassOf gfo-light:RelationalRole ,
+                                            rdfs:subClassOf gfo-light:Role ,
                                                             [ rdf:type owl:Restriction ;
                                                               owl:onProperty gfo-light:playedBy ;
                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -808,7 +808,6 @@ gfo-light-exam:sectorBFieldBoundary rdf:type owl:NamedIndividual ,
 ###  https://w3id.org/gfo-light/football_match_exam/situationEndOfFirstHalf
 gfo-light-exam:situationEndOfFirstHalf rdf:type owl:NamedIndividual ,
                                                 gfo-light-exam:MatchSituation ;
-                                       gfo-light:hasTime gfo-light-exam:endOfFirstHalf ;
                                        gfo-light:hasSituationPart gfo-light-exam:a1GoalsEndOfFirstHalf ,
                                                                   gfo-light-exam:a1RoleInTeam ,
                                                                   gfo-light-exam:a2AssistsEndOfFirstHalf ,
@@ -816,13 +815,13 @@ gfo-light-exam:situationEndOfFirstHalf rdf:type owl:NamedIndividual ,
                                                                   gfo-light-exam:a3RoleInTeam ,
                                                                   gfo-light-exam:aBallPossessionEndOfFirstHalf ,
                                                                   gfo-light-exam:aGoalsEndOfFirstHalf ;
+                                       gfo-light:hasTime gfo-light-exam:endOfFirstHalf ;
                                        gfo-light:processPartOf gfo-light-exam:matchX .
 
 
 ###  https://w3id.org/gfo-light/football_match_exam/situationEndOfMatch
 gfo-light-exam:situationEndOfMatch rdf:type owl:NamedIndividual ,
                                             gfo-light-exam:MatchSituation ;
-                                   gfo-light:hasTime gfo-light-exam:endOfMatch ;
                                    gfo-light:hasSituationPart gfo-light-exam:a1GoalsEndOfMatch ,
                                                               gfo-light-exam:a1RoleInTeam ,
                                                               gfo-light-exam:a22RoleInTeam ,
@@ -833,6 +832,7 @@ gfo-light-exam:situationEndOfMatch rdf:type owl:NamedIndividual ,
                                                               gfo-light-exam:teamARole ,
                                                               gfo-light-exam:teamBRole ,
                                                               gfo-light-exam:winnerLoserRelatorEndOfMatch ;
+                                   gfo-light:hasTime gfo-light-exam:endOfMatch ;
                                    gfo-light:processPartOf gfo-light-exam:matchX .
 
 

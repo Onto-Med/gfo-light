@@ -141,7 +141,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                        :Surface
                                      )
                        ] ;
-            rdfs:comment "Immaterial continuants can be considered as (outer or inner) boundaries (boundaryOf). Note that surfaces are boundaries of material continuants, lines are boundaries of surfaces and points are boundaries of lines."@en ;
             rdfs:label "boundary of"@en .
 
 
@@ -162,7 +161,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :containsRole rdf:type owl:ObjectProperty ;
               owl:inverseOf :roleIn ;
               rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( :Continuant
+                            owl:unionOf ( :Object
+                                          :ObjectAggregate
                                           :ProcessualEntity
                                           :Relator
                                           :SituationalEntity
@@ -211,8 +211,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
            owl:inverseOf :memberOf ;
            rdfs:domain [ rdf:type owl:Class ;
                          owl:unionOf ( :ObjectAggregate
-                                       :ProcessualAggregate
-                                       :SituationalAggregate
+                                       :ProcessAggregate
+                                       :SituationAggregate
                                      )
                        ] ;
            rdfs:range [ rdf:type owl:Class ;
@@ -237,7 +237,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
           owl:inverseOf :ownerOf ;
           rdfs:domain :ObjectBoundary ;
           rdfs:range :Object ;
-          rdfs:comment "Immaterial continuants can be assigned to a corresponding material continuant using the object property hasOwner."@en ;
           rdfs:label "has owner"@en .
 
 
@@ -387,11 +386,10 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                       ] ;
           rdfs:range [ rdf:type owl:Class ;
                        owl:unionOf ( :ObjectAggregate
-                                     :ProcessualAggregate
-                                     :SituationalAggregate
+                                     :ProcessAggregate
+                                     :SituationAggregate
                                    )
                      ] ;
-          rdfs:comment "To model the membership of a member in a group/aggregate, the more specific object properties hasMember/memberOf should be used instead of hasPart/PartOf."@en ;
           rdfs:label "member of"@en .
 
 
@@ -423,10 +421,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                            :SituationalEntity
                                          )
                            ] ;
-                rdfs:comment "Continuants can participate in processes and situations (participatesIn, hasParticipant)."@en ;
-                rdfs:label "participates in"@en ;
-                skos:example "Player A1 participates in a goal situation."@en ,
-                             "Teams A and B participate in a football match."@en .
+                rdfs:label "participates in"@en .
 
 
 ###  https://w3id.org/gfo-light/playedBy
@@ -443,7 +438,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
        rdfs:subPropertyOf :hasAttributive ;
        rdfs:domain :Continuant ;
        rdfs:range :Role ;
-       rdfs:comment "The role players are associated with the roles they play using object properties plays or playedBy."@en ;
        rdfs:label "plays"@en .
 
 
@@ -519,13 +513,13 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :roleIn rdf:type owl:ObjectProperty ;
         rdfs:domain :Role ;
         rdfs:range [ rdf:type owl:Class ;
-                     owl:unionOf ( :Continuant
+                     owl:unionOf ( :Object
+                                   :ObjectAggregate
                                    :ProcessualEntity
                                    :Relator
                                    :SituationalEntity
                                  )
                    ] ;
-        rdfs:comment "Roles are assigned to the corresponding context entity (continuant, process, situation, relator) using object properties roleIn or containsRole."@en ;
         rdfs:label "role in"@en .
 
 
@@ -875,20 +869,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
             skos:definition "Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime)."@en .
 
 
-###  https://w3id.org/gfo-light/ContinuantPartRole
-:ContinuantPartRole rdf:type owl:Class ;
-                    rdfs:subClassOf :Role ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty :roleIn ;
-                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onClass :Continuant
-                                    ] ;
-                    rdfs:label "Role in continuant"@en ;
-                    skos:definition "A role in continuant is the role that a continuant part or member plays in the corresponding superordinate continuant."@en ;
-                    skos:example "John is part/member of the football team and plays the role of midfielder."@en ,
-                                 "The processor is part of the computer and has the task/function/role to process commands."@en .
-
-
 ###  https://w3id.org/gfo-light/Entity
 :Entity rdf:type owl:Class ;
         rdfs:label "Entity"@en ;
@@ -1009,17 +989,17 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                       "The first half of the match"@en .
 
 
-###  https://w3id.org/gfo-light/ProcessualAggregate
-:ProcessualAggregate rdf:type owl:Class ;
-                     rdfs:subClassOf :ProcessualEntity ,
-                                     [ rdf:type owl:Restriction ;
-                                       owl:onProperty :hasMember ;
-                                       owl:someValuesFrom :ProcessualEntity
-                                     ] ;
-                     rdfs:label "Process aggregate"@en ;
-                     skos:definition "Process aggregates are sets of processes that are contextually related but not temporally connected."@en ;
-                     skos:example "All football matches in a league season"@en ,
-                                  "Series of lectures in a semester"@en .
+###  https://w3id.org/gfo-light/ProcessAggregate
+:ProcessAggregate rdf:type owl:Class ;
+                  rdfs:subClassOf :ProcessualEntity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasMember ;
+                                    owl:someValuesFrom :ProcessualEntity
+                                  ] ;
+                  rdfs:label "Process aggregate"@en ;
+                  skos:definition "Process aggregates are sets of processes that are contextually related but not temporally connected."@en ;
+                  skos:example "All football matches in a league season"@en ,
+                               "Series of lectures in a semester"@en .
 
 
 ###  https://w3id.org/gfo-light/ProcessualEntity
@@ -1054,20 +1034,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                   skos:definition "Processual entities include processes and processual aggregates."@en .
 
 
-###  https://w3id.org/gfo-light/ProcessualRole
-:ProcessualRole rdf:type owl:Class ;
-                rdfs:subClassOf :Role ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :roleIn ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass :ProcessualEntity
-                                ] ;
-                owl:disjointWith :RelationalRole ;
-                rdfs:label "Processual role"@en ;
-                skos:definition "A processual role is the role that a participant plays in a process."@en ;
-                skos:example "Team A plays the home team role and team B plays the visiting team role in a football match."@en .
-
-
 ###  https://w3id.org/gfo-light/Quality
 :Quality rdf:type owl:Class ;
          rdfs:subClassOf :Attributive ,
@@ -1089,27 +1055,12 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                       "Qualities of processes (e.g., the number of spectators as quality of a football match)"@en .
 
 
-###  https://w3id.org/gfo-light/RelationalRole
-:RelationalRole rdf:type owl:Class ;
-                rdfs:subClassOf :Role ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :roleIn ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass :Relator
-                                ] ;
-                rdfs:label "Relational role"@en ;
-                skos:definition "A relational role is the role that an entity plays in a relation (relator)."@en ;
-                skos:example "Target object role and reference object role of a relative location relator (describes the relative location of an object playing the target object role in relation to another object playing the reference object role)"@en ,
-                             "Wife role and husband role of the marriage relator"@en ,
-                             "Winner team role and loser team role of the winner-loser relator"@en .
-
-
 ###  https://w3id.org/gfo-light/Relator
 :Relator rdf:type owl:Class ;
          rdfs:subClassOf :Attributive ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :containsRole ;
-                           owl:someValuesFrom :RelationalRole
+                           owl:someValuesFrom :Role
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :relates ;
@@ -1131,10 +1082,29 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                         owl:onProperty :playedBy ;
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onClass :Continuant
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :roleIn ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( :Object
+                                                    :ObjectAggregate
+                                                    :ProcessualEntity
+                                                    :Relator
+                                                    :SituationalEntity
+                                                  )
+                                    ]
                       ] ;
-      rdfs:comment "We distinguish between continuant part roles, processual roles, situational roles and relational roles."@en ;
+      rdfs:comment "An object part can play a (e.g., functional) role in the whole object (e.g., the processor is part of the computer and has the task/function/role to process commands). A member (object) of a social group (object aggregate) can play a social role in that group (e.g., John is member of the football team and plays the role of midfielder). Objects can play processual or situational roles in processes (e.g., team A plays the home team role and team B plays the visiting team role in a football match) or situations (e.g., scorer and assistant role in a goal situation or roles played by a doctor and a patient in a risk/adverse situation in hospital) in which they participate. Objects can play relational roles in a relation/relator (e.g., wife role and husband role of the marriage relator)."@en ;
       rdfs:label "Role"@en ;
-      skos:definition "A role is a relational entity that links a continuant (role player) with some context, in which the continuant plays that role."@en .
+      skos:definition "A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, processual entity, situational entity, relator), in which the continuant plays that role."@en ;
+      skos:example "John is member of the football team and plays the role of midfielder."@en ,
+                   "Roles played by a doctor and a patient in a risk/adverse situation in hospital"@en ,
+                   "Target object role and reference object role of a relative location relator (describes the relative location of an object playing the target object role in relation to another object playing the reference object role)"@en ,
+                   "Team A plays the home team role and team B plays the visiting team role in a football match."@en ,
+                   "The processor is part of the computer and has the task/function/role to process commands."@en ,
+                   "Wife role and husband role of the marriage relator"@en ,
+                   "Winner team role and loser team role of the winner-loser relator"@en .
 
 
 ###  https://w3id.org/gfo-light/Situation
@@ -1157,16 +1127,16 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                         "The situation at the end of a football match containing players' qualities (e.g., number of goals or assists), teams' qualities (e.g., number of goals or ball possession) and a winner-loser relator with one team playing the winner role and the other team playing the loser role"@en .
 
 
-###  https://w3id.org/gfo-light/SituationalAggregate
-:SituationalAggregate rdf:type owl:Class ;
-                      rdfs:subClassOf :SituationalEntity ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :hasMember ;
-                                        owl:someValuesFrom :SituationalEntity
-                                      ] ;
-                      rdfs:label "Situation aggregate"@en ;
-                      skos:definition "Situation aggregates are sets of situations that are contextually related but not temporally connected."@en ;
-                      skos:example "All phases of increased temperature in the course of an illness"@en .
+###  https://w3id.org/gfo-light/SituationAggregate
+:SituationAggregate rdf:type owl:Class ;
+                    rdfs:subClassOf :SituationalEntity ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasMember ;
+                                      owl:someValuesFrom :SituationalEntity
+                                    ] ;
+                    rdfs:label "Situation aggregate"@en ;
+                    skos:definition "Situation aggregates are sets of situations that are contextually related but not temporally connected."@en ;
+                    skos:example "All phases of increased temperature in the course of an illness"@en .
 
 
 ###  https://w3id.org/gfo-light/SituationalEntity
@@ -1178,19 +1148,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                    ] ;
                    rdfs:label "Situational entity"@en ;
                    skos:definition "Situational entities include situations and situational aggregates."@en .
-
-
-###  https://w3id.org/gfo-light/SituationalRole
-:SituationalRole rdf:type owl:Class ;
-                 rdfs:subClassOf :Role ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty :roleIn ;
-                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass :SituationalEntity
-                                 ] ;
-                 rdfs:label "Situational role"@en ;
-                 skos:definition "A situational role is the role that a participant plays in a situation."@en ;
-                 skos:example "Roles played by a doctor and a patient in a risk/adverse situation in hospital"@en .
 
 
 ###  https://w3id.org/gfo-light/Surface

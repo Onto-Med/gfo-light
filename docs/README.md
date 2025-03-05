@@ -19,7 +19,7 @@ The core level of GFO-light contains the core GFO entities and serves as an inte
 <table width="100%">
     <tr><td width="60%"><img src="images/gfo-light-individual.svg"></td><td><b>Individual</b></br></br>Individuals are quality bearers (<i>hasQuality</i>, <i>qualityOf</i>, see <a href="#user-content-attributive">Attributive</a>) and can be temporally related to other individuals (subproperties of <i>temporallyRelatedWith</i>, see <a href="#user-content-time-entity">Time Entity</a>). Concrete individuals are related to time (<i>hasTime</i>, see <a href="#user-content-time-entity">Time Entity</a>).</td></tr>
     <tr><td width="60%"><img src="images/gfo-light-continuant.svg"></td><td><b>Continuant</b></br></br>Object parts can be specified using the object properties <i>hasPart</i> or <i>partOf</i>. To model the membership of a member in a group/aggregate, the object properties <i>hasMember</i>/<i>memberOf</i> should be used. Objects can be located in other objects (<i>locatedIn</i>). Boundaries of objects are surfaces, boundaries of surfaces are lines and boundaries of lines are points. Lines can pass through (<i>spatiallyPassesThrough</i>, <i>spatiallyStartsOn</i>, <i>spatiallyEndsOn</i>) various points. Object boundaries can be assigned to the corresponding object using the object property <i>hasOwner</i>. (see <a href="#user-content-continuant">Continuant</a>)</td></tr>
-    <tr><td width="60%"><img src="images/gfo-light-role.svg"></td><td><b>Role</b></br></br>A role is a relational entity that links a continuant (role player) with some context (continuant, processual entity, situational entity, relator), in which the continuant plays that role. Roles are assigned to the corresponding context entity using object properties <i>roleIn</i> or <i>containsRole</i>. The role players are associated with the roles they play using object properties <i>plays</i> or <i>playedBy</i>. Continuants participate in processual and situational entities (<i>participatesIn</i>, <i>hasParticipant</i>) and are related by relators (<i>relatedBy</i>, <i>relates</i>) in which they play relational roles. (see <a href="#user-content-attributive">Attributive</a>)</td></tr>
+    <tr><td width="60%"><img src="images/gfo-light-role.svg"></td><td><b>Role</b></br></br>A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, processual entity, situational entity, relator), in which the continuant plays that role. Roles are assigned to the corresponding context entity using object properties <i>roleIn</i> or <i>containsRole</i>. The role players are associated with the roles they play using object properties <i>plays</i> or <i>playedBy</i>. Continuants participate in processual and situational entities (<i>participatesIn</i>, <i>hasParticipant</i>) and are related by relators (<i>relatedBy</i>, <i>relates</i>) in which they play a role. (see <a href="#user-content-attributive">Attributive</a>)</td></tr>
     <tr><td width="60%"><img src="images/gfo-light-situation-process.svg"></td><td><b>Situation/Process</b></br></br>Situations represent static knowledge, while processes represent dynamic knowledge. Continuants can participate in situations and processes (<i>participatesIn</i>, <i>hasParticipant</i>). Situations can have attributives and further situations as parts (<i>hasSituationPart</i>, <i>situationPartOf</i>). Processes can have attributives, situations and further processes as parts (<i>hasProcessPart</i>, <i>processPartOf</i>). Processes and situations can lead to (<i>leadsTo</i>, <i>resultsFrom</i>) or cause (<i>causes</i>, <i>causedBy</i>) further processes and situations. (see <a href="#user-content-situational-entity">Situational Entity</a>, <a href="#user-content-processual-entity">Processual Entity</a>)</td></tr>
 </table>
 
@@ -130,23 +130,23 @@ Qualities are attributives that typically inhere in its bearer and can possess v
     <tr><td>PlayerRoleInTeam</br>
 			→ Defender</br>
 			→ Forward</br>
-			→ Midfielder</td><td>RoleInContinuant</td><td><i>roleIn exactly 1 Team</br>
+			→ Midfielder</td><td>Role</td><td><i>roleIn exactly 1 Team</br>
 															   playedBy exactly 1 Player</br>
 															   processPartOf exactly 1 Match</i></td></tr>
     <tr><td>TeamRoleInMatch</br>
 			→ HomeTeamRole</br>
-			→ VisitingTeamRole</td><td>ProcessualRole</td><td><i>roleIn exactly 1 Match</br>
+			→ VisitingTeamRole</td><td>Role</td><td><i>roleIn exactly 1 Match</br>
 																 playedBy exactly 1 Team</br>
 																 processPartOf exactly 1 Match</i></td></tr>
     <tr><td>PlayerRoleInGoal</br>
 			→ AssistantRole</br>
-			→ ScorerRole</td><td>SituationalRole</td><td><i>roleIn exactly 1 Goal</br>
+			→ ScorerRole</td><td>Role</td><td><i>roleIn exactly 1 Goal</br>
 															playedBy exactly 1 Player</br>
 															situationPartOf exactly 1 Goal</br>
 															processPartOf exactly 1 Match</i></td></tr>
     <tr><td>TeamRoleInWinnerLoserRelator</br>
 			→ WinnerRole</br>
-			→ LoserRole</td><td>RelationalRole</td><td><i>roleIn exactly 1 WinnerLoserRelator</br>
+			→ LoserRole</td><td>Role</td><td><i>roleIn exactly 1 WinnerLoserRelator</br>
 														  playedBy exactly 1 Team</br>
 														  processPartOf exactly 1 Match</i></td></tr>
 </table>
@@ -155,7 +155,13 @@ Qualities are attributives that typically inhere in its bearer and can possess v
 
 ### Role
 
-A role is a relational entity that links a continuant (role player) with some context, in which the continuant plays that role. We distinguish between continuant part/member roles (*RoleInContinuant*), processual roles, situational roles and relational roles. A **role in continuant** is the role that a continuant part or member plays in the corresponding superordinate continuant (e.g., the processor is part of the computer and has the task/function/role to process commands or John is member of the football team and plays the role of midfielder, Example 3b, a2RoleImTeam). A **processual role** is the role that a participant plays in a process (e.g., team A plays the home team role and team B plays the visiting team role in a football match, Example 3b, teamARole). A **situational role** is the role that a participant plays in a situation (e.g., scorer and assistant role in a goal situation or roles played by a doctor and a patient in a risk/adverse situation in hospital). A **relational role** is the role that an entity plays in a relation (relator, see the next paragraph). Roles are assigned to the corresponding **context entity** (continuant, process, situation, relator) using object properties *roleIn* or *containsRole*. The role players are associated with the roles they play using object properties *plays* or *playedBy*.
+A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, processual entity, situational entity, relator), in which the continuant plays that role. 
+- An object part can play a (e.g., **functional**) role in the whole object (e.g., the processor is part of the computer and has the task/function/role to process commands).
+- A member (object) of a social group (object aggregate) can play a **social** role in that group (e.g., John is member of the football team and plays the role of midfielder, Example 3b, a2RoleInTeam).
+- Objects can play **processual** or **situational** roles in processes (e.g., team A plays the home team role and team B plays the visiting team role in a football match, Example 3b, teamARole) or situations (e.g., scorer and assistant role in a goal situation or roles played by a doctor and a patient in a risk/adverse situation in hospital) in which they participate. 
+- Objects can play **relational** roles in a relation (relator, see the next paragraph).
+
+Roles are assigned to the corresponding context entity (object, object aggregate, processual entity, situational entity, relator) using object properties *roleIn* or *containsRole*. The role players are associated with the roles they play using object properties *plays* or *playedBy*.
 
 <table>
     <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
@@ -180,17 +186,17 @@ A role is a relational entity that links a continuant (role player) with some co
 													  playedBy teamA</i></td></tr>
 </table>
 
-**Example 3b.** *Attributive instances. a1GoalsEndOfFirstHalf represents the number of goals of playerA1 in the time period between his first and second goal. a1GoalsEndOfMatch is the number of goals of playerA1 after the second goal. a2RoleImTeam is a midfielder (continuant part) role in teamA that is played by playerA2 (this role has an end time due to substitution). teamARole is the home team (processual) role in matchX that is played by teamA. aWinnerRole is the winner (relational) role in winnerLoserRelatorEndOfMatch that is also played by teamA.*
+**Example 3b.** *Attributive instances. a1GoalsEndOfFirstHalf represents the number of goals of playerA1 in the time period between his first and second goal. a1GoalsEndOfMatch is the number of goals of playerA1 after the second goal. a2RoleInTeam is a midfielder (social) role in teamA that is played by playerA2 (this role has an end time due to substitution). teamARole is the home team (processual) role in matchX that is played by teamA. aWinnerRole is the winner (relational) role in winnerLoserRelatorEndOfMatch that is also played by teamA.*
 
-⚠ GFO-light uses a simplified role model compared to GFO (full). In GFO (full) there are three types of roles (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Loebe, F. (2007). Abstract vs. social roles: Towards a general theoretical account of roles.](https://doi.org/10.3233/APO-2007-031)): relational role as sibling of quality and subclass of attributive, processual role as subclass of process, and social role as social/socio continuant. However, all 4 GFO-light role types are considered as subclasses of role, and role as a subclass of attributive. *RoleInContinuant* can be used to describe both the parts of an object and the members (e.g., social roles) of an object aggregate. 
+⚠ GFO-light uses a simplified role model compared to GFO (full). In GFO (full) there are three types of roles (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Loebe, F. (2007). Abstract vs. social roles: Towards a general theoretical account of roles.](https://doi.org/10.3233/APO-2007-031)): relational role as sibling of quality and subclass of attributive, processual role as subclass of process, and social role as social/socio continuant. In GFO-light, no role types (no subclasses of *Role*) are explicitly defined. The roles are implicitly differentiated by their assignment (*roleIn*) to the corresponding context entities (object, object aggregate, processual entity, situational entity, relator).
 
 ### Relator
 
 Relators are attributives that connect other entities (role players) by relational roles (played by role players), i.e., represent individual relation instances. For example, a relator could be defined that describes the relative location of an object (playing the target object role) in relation to another object (playing the reference object role), e.g., the location of a person relative to the city centre or the location of an anatomical structure relative to the longitudinal axis. Such relators can be further classified, e.g., according to direction (in anthropology/anatomy, e.g., dorsal, ventral or lateral). Other examples are the marriage (relator) of John and Mary (in which Mary plays the wife role and John the husband role) or the winner-loser relator (Example 3b, winnerLoserRelatorEndOfMatch, aWinnerRole).
 
-Similar to qualities, relations can also be represented by simple object properties (such as *hasPart*). However, if the existence time of the relation is relevant or it (or its roles) are parts of some situations, a relator (e.g., with a part and a whole role) should be used instead. An existence time can be defined both for relators themselves and for the individual roles (Example 3b, winnerLoserRelatorEndOfMatch, a2RoleImTeam). 
+Similar to qualities, relations can also be represented by simple object properties (such as *hasPart*). However, if the existence time of the relation is relevant or it (or its roles) are parts of some situations, a relator (e.g., with a part and a whole role) should be used instead. An existence time can be defined both for relators themselves and for the individual roles (Example 3b, winnerLoserRelatorEndOfMatch, a2RoleInTeam). 
 
-If the individual roles (regardless of the type, i.e., continuant part roles, processual roles, situational roles or relational roles) do not have an existence time to be defined and are no parts of situations or processes, they can likewise be represented by object properties. The relative position relator (see above) can, for example, be linked directly to the corresponding objects using the object properties *hasTargetObject* and *hasReferenceObject*. Similarly, football players can be assigned directly to a team using the properties *forwardOf*, *defenderOf*, etc. It also works with processual roles, the two playing teams can be associated to the football match by properties *homeTeamOf* and *visitingTeamOf*.
+If the individual roles do not have an existence time to be defined and are no parts of situations or processes, they can likewise be represented by object properties. The relative position relator (see above) can, for example, be linked directly to the corresponding objects using the object properties *hasTargetObject* and *hasReferenceObject*. Similarly, football players can be assigned directly to a team using the properties *forwardOf*, *defenderOf*, etc. It also works with processual roles, the two playing teams can be associated to the football match by properties *homeTeamOf* and *visitingTeamOf*.
 
 ## Situational Entity
 
@@ -217,14 +223,14 @@ At the end of a football match (process), for example, a situation may arise in 
 																  hasSituationPart teamBRole</br>
 																  hasSituationPart a1GoalsEndOfMatch</br>
 																  hasSituationPart a2AssistsEndOfMatch</br>
-																  hasSituationPart a1RoleImTeam</br>
-																  hasSituationPart a22RoleImTeam</br>
-																  hasSituationPart a33RoleImTeam</br>
+																  hasSituationPart a1RoleInTeam</br>
+																  hasSituationPart a22RoleInTeam</br>
+																  hasSituationPart a33RoleInTeam</br>
 																  hasTime endOfMatch</br>
 																  processPartOf matchX</i></td></tr>
 </table>
 
-**Example 4b.** *Situation instance. The situation at the end of the match contains all relevant attributives: winner-loser relator, teams’ qualities (aGoalsEndOfMatch, aBallPossessionEndOfMatch), teams’ processual roles in match (teamARole, teamBRole), players’ qualities (a1GoalsEndOfMatch, a2AssistsEndOfMatch), players’ continuant part roles in team (a1RoleImTeam, a22RoleImTeam, a33RoleImTeam).*
+**Example 4b.** *Situation instance. The situation at the end of the match contains all relevant attributives: winner-loser relator, teams’ qualities (aGoalsEndOfMatch, aBallPossessionEndOfMatch), teams’ processual roles in match (teamARole, teamBRole), players’ qualities (a1GoalsEndOfMatch, a2AssistsEndOfMatch), players’ social roles in team (a1RoleInTeam, a22RoleInTeam, a33RoleInTeam).*
 
 **Situation aggregates** are sets (*hasMember*) of situations that are contextually related but not temporally connected (e.g., all phases of increased temperature in the course of an illness).
 
@@ -246,7 +252,7 @@ The time entities defined in GFO-light are points in time (time boundaries) and 
 
 **Example 5a.** *Time classes.*
 
-Concrete individuals have an existence time (time boundary/point in time or chronoid/time interval). There are two ways for assigning a timestamp or a time interval/period to concrete individuals in a domain-specific ontology. The simplest option is to use the data property *dateTimeValue* (or its specific subproperties, e.g., *startedByDateTimeValue*/*finishedByDateTimeValue*) in the data property assertion (e.g., Example 3b a1GoalsEndOfFirstHalf/a1GoalsEndOfMatch/a2RoleImTeam). However, if a timestamp or time interval is to be defined once and reused several times for different individuals, instances of the classes *TimeBoundary* or *Chronoid* must be created, data property assertions based on the aforementioned data properties must be defined for them (Example 5b) and the instances must then be used in the object property assertions of the desired individuals based on the object properties such as *hasTime*, *temporallyStartedBy* or *temporallyFinishedBy* (Example 2b half1, Example 3b winnerLoserRelatorEndOfMatch, Example 4b). If an attributive or a situation is assigned to a process or another situation using the object properties *situationPartOf* or *processPartOf* without defining an existence time, this instance exists in the entire time of the process or situation. In the Example 3b (a2RoleImTeam), only the end time of the player’s role in team is defined. The start time of the role coincides with the start of the match and does not need to be defined.
+Concrete individuals have an existence time (time boundary/point in time or chronoid/time interval). There are two ways for assigning a timestamp or a time interval/period to concrete individuals in a domain-specific ontology. The simplest option is to use the data property *dateTimeValue* (or its specific subproperties, e.g., *startedByDateTimeValue*/*finishedByDateTimeValue*) in the data property assertion (e.g., Example 3b a1GoalsEndOfFirstHalf/a1GoalsEndOfMatch/a2RoleInTeam). However, if a timestamp or time interval is to be defined once and reused several times for different individuals, instances of the classes *TimeBoundary* or *Chronoid* must be created, data property assertions based on the aforementioned data properties must be defined for them (Example 5b) and the instances must then be used in the object property assertions of the desired individuals based on the object properties such as *hasTime*, *temporallyStartedBy* or *temporallyFinishedBy* (Example 2b half1, Example 3b winnerLoserRelatorEndOfMatch, Example 4b). If an attributive or a situation is assigned to a process or another situation using the object properties *situationPartOf* or *processPartOf* without defining an existence time, this instance exists in the entire time of the process or situation. In the Example 3b (a2RoleInTeam), only the end time of the player’s role in team is defined. The start time of the role coincides with the start of the match and does not need to be defined.
 
 <table>
     <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
