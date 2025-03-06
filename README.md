@@ -12,7 +12,7 @@ GFO-light contains some simplifications compared to the full version of General 
 
 You just need to import this ontology into your domain-specific ontology via the IRI https://w3id.org/gfo-light. For each [release](https://github.com/Onto-Med/gfo-light/releases) of this ontology, a version IRI is available with the format `https://w3id.org/gfo-light/release/<VERSION>`. In addition, the version IRI <https://w3id.org/gfo-light/release/latest> always represents the latest version.
 
-When developing a domain-specific ontology using GFO-light, please create your classes as subclasses of _Continuant_, _Attributive_, _Process_, _Situation_, and _TimeEntity_ (or their subclasses, the more specific the better). You can also create the desired object or data properties (if possible as subproperties of GFO-light properties).
+When developing a domain-specific ontology using GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *ProcessualEntity*, *SituationalEntity* and *TimeEntity* (or their subclasses, the more specific the better). You can also create the desired object or data properties (if possible as subproperties of GFO-light properties).
 
 For more information, see the [ontology documentation](https://onto-med.github.io/gfo-light/latest/) and our [user guide](docs/README.md).
 
