@@ -25,7 +25,7 @@ Here is a selection of ontologies we maintain that are founded in GFO-light and 
 | Ontology                                 | Repository                             | IRI                             |
 | ---------------------------------------- | -------------------------------------- | ------------------------------- |
 | Anthropological Notation Ontology (ANNO) | https://github.com/annosaxfdm/ontology | https://annosaxfdm.de/ontology/ |
-| Risk Ontology (RIO)                      | https://github.com/Onto-Med/RIO        | https://w3id.org/rio/           |
+| Risk Identification Ontology (RIO)       | https://github.com/Onto-Med/RIO        | https://w3id.org/rio/           |
 
 Additional [examples](examples) are available.
 
