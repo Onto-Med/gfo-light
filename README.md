@@ -26,6 +26,7 @@ Here is a selection of ontologies we maintain that are founded in GFO-light and 
 | ---------------------------------------- | -------------------------------------- | ------------------------------- |
 | Anthropological Notation Ontology (ANNO) | https://github.com/annosaxfdm/ontology | https://annosaxfdm.de/ontology/ |
 | Risk Identification Ontology (RIO)       | https://github.com/Onto-Med/RIO        | https://w3id.org/rio/           |
+| Core Ontology of Phenotyping (COP)       | https://github.com/Onto-Med/COP        | https://w3id.org/cop/           |
 
 Additional [examples](examples) are available.
 
