@@ -14,7 +14,7 @@
 @base <https://w3id.org/gfo-light/> .
 
 <https://w3id.org/gfo-light> rdf:type owl:Ontology ;
-                              owl:versionIRI <https://w3id.org/gfo-light/release/2025-01-06> ;
+                              owl:versionIRI <https://w3id.org/gfo-light/release/2025-03-17> ;
                               dc:created "2023-01-01" ;
                               dc:creator "Alexandr Uciteli" ,
                                          "Christoph Beger" ,
@@ -25,7 +25,7 @@
                                          "Patryk Burek" ,
                                          "Ralph Schäfermeier" ;
                               dc:description "GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO) and is designed as a framework for the efficient development and foundation of domain/application ontologies."@en ;
-                              dc:modified "2025-01-06" ;
+                              dc:modified "2025-03-17" ;
                               dc:title "General Formal Ontology Light (GFO-light)"@en ;
                               terms:license <http://creativecommons.org/licenses/by/4.0/> ;
                               bibo:doi "10.5281/zenodo.14833002" ;
@@ -33,7 +33,8 @@
                               vann:preferredNamespaceURI "https://w3id.org/gfo-light/" ;
                               doap:repository <https://github.com/Onto-Med/gfo-light> ;
                               rdfs:label "GFO-light"@en ;
-                              owl:versionInfo "2025-01-06" ;
+                              owl:priorVersion <https://w3id.org/gfo-light/release/2025-01-06> ;
+                              owl:versionInfo "2025-03-17" ;
                               foaf:homepage "https://github.com/Onto-Med/gfo-light" .
 
 #################################################################
@@ -133,14 +134,13 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/gfo-light/boundaryOf
 :boundaryOf rdf:type owl:ObjectProperty ;
             owl:inverseOf :hasBoundary ;
-            rdfs:domain :ImmaterialContinuant ;
+            rdfs:domain :ObjectBoundary ;
             rdfs:range [ rdf:type owl:Class ;
                          owl:unionOf ( :Line
-                                       :MaterialObject
+                                       :Object
                                        :Surface
                                      )
                        ] ;
-            rdfs:comment "Immaterial continuants can be considered as (outer or inner) boundaries (boundaryOf). Note that surfaces are boundaries of material continuants, lines are boundaries of surfaces and points are boundaries of lines."@en ;
             rdfs:label "boundary of"@en .
 
 
@@ -161,10 +161,11 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :containsRole rdf:type owl:ObjectProperty ;
               owl:inverseOf :roleIn ;
               rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( :Continuant
-                                          :Process
+                            owl:unionOf ( :Object
+                                          :ObjectAggregate
+                                          :ProcessualEntity
                                           :Relator
-                                          :Situation
+                                          :SituationalEntity
                                         )
                           ] ;
               rdfs:range :Role ;
@@ -190,11 +191,11 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :hasBoundary rdf:type owl:ObjectProperty ;
              rdfs:domain [ rdf:type owl:Class ;
                            owl:unionOf ( :Line
-                                         :MaterialObject
+                                         :Object
                                          :Surface
                                        )
                          ] ;
-             rdfs:range :ImmaterialContinuant ;
+             rdfs:range :ObjectBoundary ;
              rdfs:label "has boundary"@en .
 
 
@@ -207,10 +208,20 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo-light/hasMember
 :hasMember rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :hasPart ;
            owl:inverseOf :memberOf ;
-           rdfs:domain :MaterialAggregate ;
-           rdfs:range :MaterialContinuant ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :ObjectAggregate
+                                       :ProcessAggregate
+                                       :SituationAggregate
+                                     )
+                       ] ;
+           rdfs:range [ rdf:type owl:Class ;
+                        owl:unionOf ( :Object
+                                      :ObjectAggregate
+                                      :ProcessualEntity
+                                      :SituationalEntity
+                                    )
+                      ] ;
            rdfs:label "has member"@en .
 
 
@@ -224,9 +235,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/gfo-light/hasOwner
 :hasOwner rdf:type owl:ObjectProperty ;
           owl:inverseOf :ownerOf ;
-          rdfs:domain :ImmaterialContinuant ;
-          rdfs:range :MaterialContinuant ;
-          rdfs:comment "Immaterial continuants can be assigned to a corresponding material continuant using the object property hasOwner."@en ;
+          rdfs:domain :ObjectBoundary ;
+          rdfs:range :Object ;
           rdfs:label "has owner"@en .
 
 
@@ -242,8 +252,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :hasParticipant rdf:type owl:ObjectProperty ;
                 owl:inverseOf :participatesIn ;
                 rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( :Process
-                                            :Situation
+                              owl:unionOf ( :ProcessualEntity
+                                            :SituationalEntity
                                           )
                             ] ;
                 rdfs:range :Continuant ;
@@ -286,7 +296,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                   rdfs:label "has situation part"@en .
 
 
-###  https://w3id.org/gfo/light/hasTemporalPart
+###  https://w3id.org/gfo-light/hasTemporalPart
 :hasTemporalPart rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :temporallyRelatedWith ;
                  owl:inverseOf :temporalPartOf ;
@@ -326,13 +336,13 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :leadsTo rdf:type owl:ObjectProperty ;
          owl:inverseOf :resultsFrom ;
          rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( :Process
-                                     :Situation
+                       owl:unionOf ( :ProcessualEntity
+                                     :SituationalEntity
                                    )
                      ] ;
          rdfs:range [ rdf:type owl:Class ;
-                      owl:unionOf ( :Process
-                                    :Situation
+                      owl:unionOf ( :ProcessualEntity
+                                    :SituationalEntity
                                   )
                     ] ;
          rdfs:label "leads to"@en .
@@ -342,12 +352,12 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :locatedIn rdf:type owl:ObjectProperty ;
            owl:inverseOf :locationOf ;
            rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( :MaterialObject
-                                       :Process
-                                       :Situation
+                         owl:unionOf ( :Object
+                                       :ProcessualEntity
+                                       :SituationalEntity
                                      )
                        ] ;
-           rdfs:range :MaterialObject ;
+           rdfs:range :Object ;
            rdfs:comment "Material objects can be located in other material objects (locatedIn, e.g., the driver is located in the car)."@en ,
                         "Processes and situations can take place (locatedIn) in material objects (e.g., a football match in a stadium or an illness in a person)."@en ;
            rdfs:label "located in"@en .
@@ -355,11 +365,11 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo-light/locationOf
 :locationOf rdf:type owl:ObjectProperty ;
-            rdfs:domain :MaterialObject ;
+            rdfs:domain :Object ;
             rdfs:range [ rdf:type owl:Class ;
-                         owl:unionOf ( :MaterialObject
-                                       :Process
-                                       :Situation
+                         owl:unionOf ( :Object
+                                       :ProcessualEntity
+                                       :SituationalEntity
                                      )
                        ] ;
             rdfs:label "location of"@en .
@@ -367,10 +377,19 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo-light/memberOf
 :memberOf rdf:type owl:ObjectProperty ;
-          rdfs:subPropertyOf :partOf ;
-          rdfs:domain :MaterialContinuant ;
-          rdfs:range :MaterialAggregate ;
-          rdfs:comment "To model the membership of a member in a group/aggregate, the more specific object properties hasMember/memberOf should be used instead of hasPart/PartOf."@en ;
+          rdfs:domain [ rdf:type owl:Class ;
+                        owl:unionOf ( :Object
+                                      :ObjectAggregate
+                                      :ProcessualEntity
+                                      :SituationalEntity
+                                    )
+                      ] ;
+          rdfs:range [ rdf:type owl:Class ;
+                       owl:unionOf ( :ObjectAggregate
+                                     :ProcessAggregate
+                                     :SituationAggregate
+                                   )
+                     ] ;
           rdfs:label "member of"@en .
 
 
@@ -382,8 +401,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo-light/ownerOf
 :ownerOf rdf:type owl:ObjectProperty ;
-         rdfs:domain :MaterialContinuant ;
-         rdfs:range :ImmaterialContinuant ;
+         rdfs:domain :Object ;
+         rdfs:range :ObjectBoundary ;
          rdfs:label "owner of"@en .
 
 
@@ -398,14 +417,11 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :participatesIn rdf:type owl:ObjectProperty ;
                 rdfs:domain :Continuant ;
                 rdfs:range [ rdf:type owl:Class ;
-                             owl:unionOf ( :Process
-                                           :Situation
+                             owl:unionOf ( :ProcessualEntity
+                                           :SituationalEntity
                                          )
                            ] ;
-                rdfs:comment "Continuants can participate in processes and situations (participatesIn, hasParticipant)."@en ;
-                rdfs:label "participates in"@en ;
-                skos:example "Player A1 participates in a goal situation."@en ,
-                             "Teams A and B participate in a football match."@en .
+                rdfs:label "participates in"@en .
 
 
 ###  https://w3id.org/gfo-light/playedBy
@@ -422,7 +438,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
        rdfs:subPropertyOf :hasAttributive ;
        rdfs:domain :Continuant ;
        rdfs:range :Role ;
-       rdfs:comment "The role players are associated with the roles they play using object properties plays or playedBy."@en ;
        rdfs:label "plays"@en .
 
 
@@ -464,16 +479,31 @@ foaf:homepage rdf:type owl:AnnotationProperty .
          rdfs:label "relates"@en .
 
 
+###  https://w3id.org/gfo-light/representedBy
+:representedBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf :represents ;
+               rdfs:domain :Entity ;
+               rdfs:range :InformationObject ;
+               rdfs:label "represented by"@en .
+
+
+###  https://w3id.org/gfo-light/represents
+:represents rdf:type owl:ObjectProperty ;
+            rdfs:domain :InformationObject ;
+            rdfs:range :Entity ;
+            rdfs:label "represents"@en .
+
+
 ###  https://w3id.org/gfo-light/resultsFrom
 :resultsFrom rdf:type owl:ObjectProperty ;
              rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :Process
-                                         :Situation
+                           owl:unionOf ( :ProcessualEntity
+                                         :SituationalEntity
                                        )
                          ] ;
              rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( :Process
-                                        :Situation
+                          owl:unionOf ( :ProcessualEntity
+                                        :SituationalEntity
                                       )
                         ] ;
              rdfs:label "results from"@en .
@@ -483,13 +513,13 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 :roleIn rdf:type owl:ObjectProperty ;
         rdfs:domain :Role ;
         rdfs:range [ rdf:type owl:Class ;
-                     owl:unionOf ( :Continuant
-                                   :Process
+                     owl:unionOf ( :Object
+                                   :ObjectAggregate
+                                   :ProcessualEntity
                                    :Relator
-                                   :Situation
+                                   :SituationalEntity
                                  )
                    ] ;
-        rdfs:comment "Roles are assigned to the corresponding context entity (continuant, process, situation, relator) using object properties roleIn or containsRole."@en ;
         rdfs:label "role in"@en .
 
 
@@ -528,7 +558,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                    rdfs:label "spatially starts on"@en .
 
 
-###  https://w3id.org/gfo/light/temporalPartOf
+###  https://w3id.org/gfo-light/temporalPartOf
 :temporalPartOf rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf :temporallyRelatedWith ;
                 rdfs:label "temporal part of"@en ;
@@ -675,7 +705,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                          rdfs:label "finished by date time value"@en .
 
 
-###  https://w3id.org/gfo/light/hasTemporalPartDateTimeValue
+###  https://w3id.org/gfo-light/hasTemporalPartDateTimeValue
 :hasTemporalPartDateTimeValue rdf:type owl:DatatypeProperty ;
                               rdfs:subPropertyOf :dateTimeValue ;
                               rdfs:comment "Shortcut for 'hasTemporalPart'"@en ;
@@ -833,44 +863,16 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                             ]
                                           )
                             ] ;
-            rdfs:comment "Material three-dimensional objects, their aggregates (groups) and parts as well as immaterial two-, one- and zero-dimensional entities (i.e., surfaces, lines and points) are subsumed under the category Continuant."@en ;
+            rdfs:comment "Social or material (three-dimensional) objects, their groups/aggregates, parts and boundaries (two-, one- and zero-dimensional entities, i.e., surfaces, lines and points) are subsumed under the category Continuant."@en ,
+                         "While the object parts are firmly connected to the entire object, the aggregate members are loose objects. When modelling a person, for example, you could consider their skeleton as an object and as part of the human body. However, if we look at bone finds in the context of anthropology, the skeleton can be modelled as an aggregate of individual bones. Another example is a computer. A kit of computer components is an object aggregate before assembly and an object (a computer) afterwards. However, if the components are thrown into the case without being correctly connected, it is not a computer, but the components are simply located in the case."@en ;
             rdfs:label "Continuant"@en ;
-            skos:altLabel "Object"@en ;
             skos:definition "Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime)."@en .
-
-
-###  https://w3id.org/gfo-light/ContinuantPartRole
-:ContinuantPartRole rdf:type owl:Class ;
-                    rdfs:subClassOf :Role ,
-                                    [ rdf:type owl:Restriction ;
-                                      owl:onProperty :roleIn ;
-                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onClass :Continuant
-                                    ] ;
-                    rdfs:label "Continuant part role"@en ;
-                    skos:altLabel "Object part role"@en ;
-                    skos:definition "A continuant part role is the role that a continuant part plays in the whole continuant."@en ;
-                    skos:example "John is part/member of the football team and plays the role of midfielder."@en ,
-                                 "The processor is part of the computer and has the task/function/role to process commands."@en .
 
 
 ###  https://w3id.org/gfo-light/Entity
 :Entity rdf:type owl:Class ;
         rdfs:label "Entity"@en ;
         skos:definition "Everything that exists is called an entity."@en .
-
-
-###  https://w3id.org/gfo-light/ImmaterialContinuant
-:ImmaterialContinuant rdf:type owl:Class ;
-                      rdfs:subClassOf :Continuant ,
-                                      [ rdf:type owl:Restriction ;
-                                        owl:onProperty :hasOwner ;
-                                        owl:someValuesFrom :MaterialContinuant
-                                      ] ;
-                      rdfs:comment "Immaterial continuants can border material continuants (natural boundaries) or be located inside them (inner boundaries). Boundaries of material continuants are surfaces, boundaries of surfaces are lines and boundaries of lines are points."@en ;
-                      rdfs:label "Immaterial continuant"@en ;
-                      skos:altLabel "Object boundary"@en ;
-                      skos:definition "Immaterial continuants are 0-, 1-, or 2-dimensional immaterial (visible or imaginary) entities (i.e., points, lines and surfaces) that are located on material continuants or in them."@en .
 
 
 ###  https://w3id.org/gfo-light/Individual
@@ -884,110 +886,107 @@ foaf:homepage rdf:type owl:AnnotationProperty .
             skos:definition "Individuals are entities which cannot be further instantiated."@en .
 
 
+###  https://w3id.org/gfo-light/InformationObject
+:InformationObject rdf:type owl:Class ;
+                   rdfs:subClassOf :Object ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :represents ;
+                                     owl:someValuesFrom :Entity
+                                   ] ;
+                   rdfs:label "Information object"@en ;
+                   skos:definition "Information objects are symbolic entities that denote/designate, describe, specify or represent other entities."@en ;
+                   skos:example "Computer programme"@en ,
+                                "Description"@en ,
+                                "Diagram"@en ,
+                                "Model"@en ,
+                                "Title"@en .
+
+
 ###  https://w3id.org/gfo-light/Line
 :Line rdf:type owl:Class ;
-      rdfs:subClassOf :ImmaterialContinuant ,
+      rdfs:subClassOf :ObjectBoundary ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :boundaryOf ;
                         owl:allValuesFrom :Surface
                       ] ;
       rdfs:comment "Lines are not necessarily straight. They can be, for example, curves or broken lines that pass through various points and form a corner, a triangle or a polygon."@en ;
       rdfs:label "Line"@en ;
-      skos:definition "A line is a 1-dimensional immaterial continuant."@en ;
+      skos:definition "A line is a 1-dimensional object boundary."@en ;
       skos:example "Boundary line of the football field"@en ,
                    "Longitudinal axis of the human skeleton"@en .
 
 
-###  https://w3id.org/gfo-light/MaterialAggregate
-:MaterialAggregate rdf:type owl:Class ;
-                   rdfs:subClassOf :MaterialContinuant ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty :hasMember ;
-                                     owl:someValuesFrom :MaterialContinuant
-                                   ] ;
-                   rdfs:comment "The members of a material aggregate are regarded as its parts, similar to the parts of an object (e.g., John is part/member of the football team and plays the role of forward)."@en ;
-                   rdfs:label "Material aggregate"@en ;
-                   skos:altLabel "Collective"@en ,
-                                 "Group"@en ;
-                   skos:definition "A material aggregate is a unit consisting of multiple material objects or further aggregates."@en ;
-                   skos:example "Research group"@en ,
-                                "Sports team"@en .
+###  https://w3id.org/gfo-light/Object
+:Object rdf:type owl:Class ;
+        rdfs:subClassOf :Continuant ;
+        rdfs:label "Object"@en ;
+        skos:definition "Objects are social or material entities that can exist independently of each other."@en ;
+        skos:example "Bone"@en ,
+                     "Chopstick"@en ,
+                     "Computer"@en ,
+                     "Person"@en .
 
 
-###  https://w3id.org/gfo-light/MaterialContinuant
-:MaterialContinuant rdf:type owl:Class ;
-                    rdfs:subClassOf :Continuant ;
-                    rdfs:comment "Usually, connected objects are considered as single material objects, i.e., the object parts are firmly connected to the whole object, while loose objects can form a group/aggregate. When modelling a person, for example, you could consider their skeleton as a (connected) material object and as part of the human body. However, if we look at bone finds in the context of anthropology, the skeleton can be modelled as an aggregate of individual bones."@en ;
-                    rdfs:label "Material continuant"@en ;
-                    skos:definition "Material continuants are any 3-dimensional material objects, aggregates and parts."@en .
+###  https://w3id.org/gfo-light/ObjectAggregate
+:ObjectAggregate rdf:type owl:Class ;
+                 rdfs:subClassOf :Continuant ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasMember ;
+                                   owl:someValuesFrom [ rdf:type owl:Class ;
+                                                        owl:unionOf ( :Object
+                                                                      :ObjectAggregate
+                                                                    )
+                                                      ]
+                                 ] ;
+                 rdfs:label "Object aggregate"@en ;
+                 skos:altLabel "Collection"@en ,
+                               "Collective"@en ,
+                               "Group"@en ;
+                 skos:definition "Object aggregates are groups of objects that together form a unit."@en ;
+                 skos:example "Research group"@en ,
+                              "Sports team"@en .
 
 
-###  https://w3id.org/gfo-light/MaterialObject
-:MaterialObject rdf:type owl:Class ;
-                rdfs:subClassOf :MaterialContinuant ,
+###  https://w3id.org/gfo-light/ObjectBoundary
+:ObjectBoundary rdf:type owl:Class ;
+                rdfs:subClassOf :Continuant ,
                                 [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasNaturalBoundary ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass :Surface
+                                  owl:onProperty :hasOwner ;
+                                  owl:someValuesFrom :Object
                                 ] ;
-                rdfs:label "Material object"@en ;
-                skos:definition "Material objects are connected material entities that consist of an amount of stuff and have a natural boundary."@en ;
-                skos:example "Bone"@en ,
-                             "Chopstick"@en ,
-                             "Computer"@en ,
-                             "Person"@en .
+                rdfs:label "Object boundary"@en ;
+                skos:definition "Object boundaries are 0-, 1-, or 2-dimensional (visible or imaginary) entities (i.e., points, lines and surfaces) that border objects (natural boundaries) or are located inside them (inner boundaries)."@en .
 
 
-###  https://w3id.org/gfo-light/MaterialPart
-:MaterialPart rdf:type owl:Class ;
-              rdfs:subClassOf :MaterialContinuant ,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty :partOf ;
-                                owl:someValuesFrom :MaterialObject
-                              ] ;
-              rdfs:label "Material part"@en ;
-              skos:definition "Material parts are parts of material objects that have no natural boundary with the whole object (e.g., part of a bone)."@en ;
-              skos:example "Part of a bone"@en ,
-                           "Part of a chopstick"@en .
+###  https://w3id.org/gfo-light/ObjectPart
+:ObjectPart rdf:type owl:Class ;
+            rdfs:subClassOf :Continuant ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :partOf ;
+                              owl:someValuesFrom :Object
+                            ] ;
+            rdfs:label "Object part"@en ;
+            skos:definition "Object parts are material entities that cannot exist independently of the corresponding whole object."@en ;
+            skos:example "Part of a bone"@en ,
+                         "Part of a chopstick"@en .
 
 
 ###  https://w3id.org/gfo-light/Point
 :Point rdf:type owl:Class ;
-       rdfs:subClassOf :ImmaterialContinuant ,
+       rdfs:subClassOf :ObjectBoundary ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :boundaryOf ;
                          owl:allValuesFrom :Line
                        ] ;
        rdfs:label "Point"@en ;
-       skos:definition "A point is a 0-dimensional immaterial continuant."@en ;
+       skos:definition "A point is a 0-dimensional object boundary."@en ;
        skos:example "Gonion"@en ,
                     "Penalty spot"@en .
 
 
 ###  https://w3id.org/gfo-light/Process
 :Process rdf:type owl:Class ;
-         rdfs:subClassOf :ConcreteIndividual ,
-                         [ rdf:type owl:Class ;
-                           owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty :finishedByDateTimeValue ;
-                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                  owl:onDataRange xsd:dateTime
-                                                                ]
-                                                                [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty :startedByDateTimeValue ;
-                                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                  owl:onDataRange xsd:dateTime
-                                                                ]
-                                                              ) ;
-                                           rdf:type owl:Class
-                                         ]
-                                         [ rdf:type owl:Restriction ;
-                                           owl:onProperty :hasTime ;
-                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                           owl:onClass :Chronoid
-                                         ]
-                                       )
-                         ] ,
+         rdfs:subClassOf :ProcessualEntity ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :hasProcessPart ;
                            owl:someValuesFrom [ rdf:type owl:Class ;
@@ -996,10 +995,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                                               :Situation
                                                             )
                                               ]
-                         ] ,
-                         [ rdf:type owl:Restriction ;
-                           owl:onProperty :hasParticipant ;
-                           owl:allValuesFrom :Continuant
                          ] ;
          rdfs:comment "Processes represent dynamic knowledge."@en ;
          rdfs:label "Process"@en ;
@@ -1010,18 +1005,49 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                       "The first half of the match"@en .
 
 
-###  https://w3id.org/gfo-light/ProcessualRole
-:ProcessualRole rdf:type owl:Class ;
-                rdfs:subClassOf :Role ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :roleIn ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass :Process
-                                ] ;
-                owl:disjointWith :RelationalRole ;
-                rdfs:label "Processual role"@en ;
-                skos:definition "A processual role is the role that a participant plays in a process."@en ;
-                skos:example "Team A plays the home team role and team B plays the visiting team role in a football match."@en .
+###  https://w3id.org/gfo-light/ProcessAggregate
+:ProcessAggregate rdf:type owl:Class ;
+                  rdfs:subClassOf :ProcessualEntity ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasMember ;
+                                    owl:someValuesFrom :ProcessualEntity
+                                  ] ;
+                  rdfs:label "Process aggregate"@en ;
+                  skos:definition "Process aggregates are sets of processes that are contextually related but not temporally connected."@en ;
+                  skos:example "All football matches in a league season"@en ,
+                               "Series of lectures in a semester"@en .
+
+
+###  https://w3id.org/gfo-light/ProcessualEntity
+:ProcessualEntity rdf:type owl:Class ;
+                  rdfs:subClassOf :ConcreteIndividual ,
+                                  [ rdf:type owl:Class ;
+                                    owl:unionOf ( [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :finishedByDateTimeValue ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:dateTime
+                                                                         ]
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :startedByDateTimeValue ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:dateTime
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasTime ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass :Chronoid
+                                                  ]
+                                                )
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasParticipant ;
+                                    owl:allValuesFrom :Continuant
+                                  ] ;
+                  rdfs:label "Processual entity"@en ;
+                  skos:definition "Processual entities include processes and processual aggregates."@en .
 
 
 ###  https://w3id.org/gfo-light/Quality
@@ -1045,27 +1071,12 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                       "Qualities of processes (e.g., the number of spectators as quality of a football match)"@en .
 
 
-###  https://w3id.org/gfo-light/RelationalRole
-:RelationalRole rdf:type owl:Class ;
-                rdfs:subClassOf :Role ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :roleIn ;
-                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                  owl:onClass :Relator
-                                ] ;
-                rdfs:label "Relational role"@en ;
-                skos:definition "A relational role is the role that an entity plays in a relation (relator)."@en ;
-                skos:example "Target object role and reference object role of a relative location relator (describes the relative location of an object playing the target object role in relation to another object playing the reference object role)"@en ,
-                             "Wife role and husband role of the marriage relator"@en ,
-                             "Winner team role and loser team role of the winner-loser relator"@en .
-
-
 ###  https://w3id.org/gfo-light/Relator
 :Relator rdf:type owl:Class ;
          rdfs:subClassOf :Attributive ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :containsRole ;
-                           owl:someValuesFrom :RelationalRole
+                           owl:someValuesFrom :Role
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :relates ;
@@ -1087,15 +1098,34 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                         owl:onProperty :playedBy ;
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onClass :Continuant
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :roleIn ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass [ rdf:type owl:Class ;
+                                      owl:unionOf ( :Object
+                                                    :ObjectAggregate
+                                                    :ProcessualEntity
+                                                    :Relator
+                                                    :SituationalEntity
+                                                  )
+                                    ]
                       ] ;
-      rdfs:comment "We distinguish between continuant part roles, processual roles, situational roles and relational roles."@en ;
+      rdfs:comment "An object part can play a (e.g., functional) role in the whole object (e.g., the processor is part of the computer and has the task/function/role to process commands). A member (object) of a social group (object aggregate) can play a social role in that group (e.g., John is member of the football team and plays the role of midfielder). Objects can play processual or situational roles in processes (e.g., team A plays the home team role and team B plays the visiting team role in a football match) or situations (e.g., scorer and assistant role in a goal situation or roles played by a doctor and a patient in a risk/adverse situation in hospital) in which they participate. Objects can play relational roles in a relation/relator (e.g., wife role and husband role of the marriage relator)."@en ;
       rdfs:label "Role"@en ;
-      skos:definition "A role is a relational entity that links a continuant (role player) with some context, in which the continuant plays that role."@en .
+      skos:definition "A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, processual entity, situational entity, relator), in which the continuant plays that role."@en ;
+      skos:example "John is member of the football team and plays the role of midfielder."@en ,
+                   "Roles played by a doctor and a patient in a risk/adverse situation in hospital"@en ,
+                   "Target object role and reference object role of a relative location relator (describes the relative location of an object playing the target object role in relation to another object playing the reference object role)"@en ,
+                   "Team A plays the home team role and team B plays the visiting team role in a football match."@en ,
+                   "The processor is part of the computer and has the task/function/role to process commands."@en ,
+                   "Wife role and husband role of the marriage relator"@en ,
+                   "Winner team role and loser team role of the winner-loser relator"@en .
 
 
 ###  https://w3id.org/gfo-light/Situation
 :Situation rdf:type owl:Class ;
-           rdfs:subClassOf :ConcreteIndividual ,
+           rdfs:subClassOf :SituationalEntity ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasSituationPart ;
                              owl:someValuesFrom [ rdf:type owl:Class ;
@@ -1103,10 +1133,6 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                                                 :Situation
                                                               )
                                                 ]
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty :hasParticipant ;
-                             owl:allValuesFrom :Continuant
                            ] ;
            rdfs:comment "A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation."@en ,
                         "Situations represent static knowledge."@en ;
@@ -1117,28 +1143,38 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                         "The situation at the end of a football match containing players' qualities (e.g., number of goals or assists), teams' qualities (e.g., number of goals or ball possession) and a winner-loser relator with one team playing the winner role and the other team playing the loser role"@en .
 
 
-###  https://w3id.org/gfo-light/SituationalRole
-:SituationalRole rdf:type owl:Class ;
-                 rdfs:subClassOf :Role ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty :roleIn ;
-                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onClass :Situation
-                                 ] ;
-                 rdfs:label "Situational role"@en ;
-                 skos:definition "A situational role is the role that a participant plays in a situation."@en ;
-                 skos:example "Roles played by a doctor and a patient in a risk/adverse situation in hospital"@en .
+###  https://w3id.org/gfo-light/SituationAggregate
+:SituationAggregate rdf:type owl:Class ;
+                    rdfs:subClassOf :SituationalEntity ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasMember ;
+                                      owl:someValuesFrom :SituationalEntity
+                                    ] ;
+                    rdfs:label "Situation aggregate"@en ;
+                    skos:definition "Situation aggregates are sets of situations that are contextually related but not temporally connected."@en ;
+                    skos:example "All phases of increased temperature in the course of an illness"@en .
+
+
+###  https://w3id.org/gfo-light/SituationalEntity
+:SituationalEntity rdf:type owl:Class ;
+                   rdfs:subClassOf :ConcreteIndividual ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasParticipant ;
+                                     owl:allValuesFrom :Continuant
+                                   ] ;
+                   rdfs:label "Situational entity"@en ;
+                   skos:definition "Situational entities include situations and situational aggregates."@en .
 
 
 ###  https://w3id.org/gfo-light/Surface
 :Surface rdf:type owl:Class ;
-         rdfs:subClassOf :ImmaterialContinuant ,
+         rdfs:subClassOf :ObjectBoundary ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :boundaryOf ;
-                           owl:allValuesFrom :MaterialObject
+                           owl:allValuesFrom :Object
                          ] ;
          rdfs:label "Surface"@en ;
-         skos:definition "A surface is a 2-dimensional immaterial continuant."@en ;
+         skos:definition "A surface is a 2-dimensional object boundary."@en ;
          skos:example "Frontal plane of the human skeleton"@en ,
                       "Surface of the football field"@en .
 
