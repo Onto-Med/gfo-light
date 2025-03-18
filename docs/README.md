@@ -1,8 +1,11 @@
 # GFO-light: General Formal Ontology (light version)
 
-GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO, [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)) and is designed as a framework for the efficient development and foundation of domain/application ontologies. This guide describes the structure and a possible use of this lightweight top-level ontology in domain-specific projects, also for users who are not familiar with the basics of formal ontologies. GFO-light is primarily concerned with categories of concrete individuals ([Continuant](#continuant), [Processual Entity](#processual-entity), [Attributive](#attributive) and [Situational Entity](#situational-entity)), i.e., entities that have an immediate relation to time ([Time Entity](#time-entity)) or to space-time.
+GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO, [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)) and is designed as a framework for the efficient development and foundation of domain/application ontologies.
+This guide describes the structure and a possible use of this lightweight top-level ontology in domain-specific projects, also for users who are not familiar with the basics of formal ontologies.
+GFO-light is primarily concerned with categories of concrete individuals ([Continuant](#continuant), [Processual Entity](#processual-entity), [Attributive](#attributive) and [Situational Entity](#situational-entity)), i.e., entities that have an immediate relation to time ([Time Entity](#time-entity)) or to space-time.
 
-⚠ When developing a domain-specific ontology using GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *ProcessualEntity*, *SituationalEntity* and *TimeEntity* (or their subclasses, the more specific the better). You can also create the desired object or data properties (if possible as subproperties of GFO-light properties).
+⚠ When developing a domain-specific ontology using GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *ProcessualEntity*, *SituationalEntity* and *TimeEntity* (or their subclasses, the more specific the better).
+You can also create the desired object or data properties (if possible as subproperties of GFO-light properties).
 
 ## Overview
 
@@ -12,30 +15,56 @@ GFO-light contains some simplifications compared to the full version of General 
 
 ![GFO-light core](images/gfo-light-core.svg)
 
-The core level of GFO-light contains the core GFO entities and serves as an interface to GFO (full), i.e., it forms a common basis for both GFO versions. For some use cases, it may be sufficient to use only the core level as a kind of minimal top-level ontology.
+The core level of GFO-light contains the core GFO entities and serves as an interface to GFO (full), i.e., it forms a common basis for both GFO versions.
+For some use cases, it may be sufficient to use only the core level as a kind of minimal top-level ontology.
 
 ### Detailed Module Views
 
 <table width="100%">
-    <tr><td width="50%"><img src="images/gfo-light-individual.svg"></td><td><b>Individual</b></br></br>Individuals are quality bearers (<i>hasQuality</i>, <i>qualityOf</i>, see <a href="#user-content-attributive">Attributive</a>) and can be temporally related to other individuals (subproperties of <i>temporallyRelatedWith</i>, see <a href="#user-content-time-entity">Time Entity</a>). Concrete individuals are related to time (<i>hasTime</i>, see <a href="#user-content-time-entity">Time Entity</a>).</td></tr>
-    <tr><td width="50%"><img src="images/gfo-light-continuant.svg"></td><td><b>Continuant</b></br></br>Object parts can be specified using the object properties <i>hasPart</i> or <i>partOf</i>. To model the membership of a member in a group/aggregate, the object properties <i>hasMember</i>/<i>memberOf</i> should be used. Objects can be located in other objects (<i>locatedIn</i>). Boundaries of objects are surfaces, boundaries of surfaces are lines and boundaries of lines are points. Lines can pass through (<i>spatiallyPassesThrough</i>, <i>spatiallyStartsOn</i>, <i>spatiallyEndsOn</i>) various points. Object boundaries can be assigned to the corresponding object using the object property <i>hasOwner</i>. (see <a href="#user-content-continuant">Continuant</a>)</td></tr>
-    <tr><td width="50%"><img src="images/gfo-light-role.svg"></td><td><b>Role</b></br></br>A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, processual entity, situational entity, relator), in which the continuant plays that role. Roles are assigned to the corresponding context entity using object properties <i>roleIn</i> or <i>containsRole</i>. The role players are associated with the roles they play using object properties <i>plays</i> or <i>playedBy</i>. Continuants are related by relators (<i>relatedBy</i>, <i>relates</i>) in which they play a role. (see <a href="#user-content-attributive">Attributive</a>)</td></tr>
-    <tr><td width="50%"><img src="images/gfo-light-situation-process.svg"></td><td><b>Situation/Process</b></br></br>Situations represent static knowledge, while processes represent dynamic knowledge. Continuants can participate in situations and processes (<i>participatesIn</i>, <i>hasParticipant</i>). Situations can have attributives and further situations as parts (<i>hasSituationPart</i>, <i>situationPartOf</i>). Processes can have attributives, situations and further processes as parts (<i>hasProcessPart</i>, <i>processPartOf</i>). Processes and situations can lead to (<i>leadsTo</i>, <i>resultsFrom</i>) or cause (<i>causes</i>, <i>causedBy</i>) further processes and situations. (see <a href="#user-content-situational-entity">Situational Entity</a>, <a href="#user-content-processual-entity">Processual Entity</a>)</td></tr>
+    <tr><td width="50%"><img src="images/gfo-light-individual.svg"></td><td><b>Individual</b></br></br>Individuals are quality bearers (<i>hasQuality</i>, <i>qualityOf</i>, see <a href="#user-content-attributive">Attributive</a>) and can be temporally related to other individuals (subproperties of <i>temporallyRelatedWith</i>, see <a href="#user-content-time-entity">Time Entity</a>).
+Concrete individuals are related to time (<i>hasTime</i>, see <a href="#user-content-time-entity">Time Entity</a>).</td></tr>
+    <tr><td width="50%"><img src="images/gfo-light-continuant.svg"></td><td><b>Continuant</b></br></br>Object parts can be specified using the object properties <i>hasPart</i> or <i>partOf</i>.
+To model the membership of a member in a group/aggregate, the object properties <i>hasMember</i>/<i>memberOf</i> should be used.
+Objects can be located in other objects (<i>locatedIn</i>).
+Boundaries of objects are surfaces, boundaries of surfaces are lines and boundaries of lines are points.
+Lines can pass through (<i>spatiallyPassesThrough</i>, <i>spatiallyStartsOn</i>, <i>spatiallyEndsOn</i>) various points.
+Object boundaries can be assigned to the corresponding object using the object property <i>hasOwner</i>.
+(see <a href="#user-content-continuant">Continuant</a>)</td></tr>
+    <tr><td width="50%"><img src="images/gfo-light-role.svg"></td><td><b>Role</b></br></br>A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, processual entity, situational entity, relator), in which the continuant plays that role.
+Roles are assigned to the corresponding context entity using object properties <i>roleIn</i> or <i>containsRole</i>.
+The role players are associated with the roles they play using object properties <i>plays</i> or <i>playedBy</i>.
+Continuants are related by relators (<i>relatedBy</i>, <i>relates</i>) in which they play a role. (see <a href="#user-content-attributive">Attributive</a>)</td></tr>
+    <tr><td width="50%"><img src="images/gfo-light-situation-process.svg"></td><td><b>Situation/Process</b></br></br>Situations represent static knowledge, while processes represent dynamic knowledge.
+Continuants can participate in situations and processes (<i>participatesIn</i>, <i>hasParticipant</i>).
+Situations can have attributives and further situations as parts (<i>hasSituationPart</i>, <i>situationPartOf</i>).
+Processes can have attributives, situations and further processes as parts (<i>hasProcessPart</i>, <i>processPartOf</i>).
+Processes and situations can lead to (<i>leadsTo</i>, <i>resultsFrom</i>) or cause (<i>causes</i>, <i>causedBy</i>) further processes and situations. (see <a href="#user-content-situational-entity">Situational Entity</a>, <a href="#user-content-processual-entity">Processual Entity</a>)</td></tr>
 </table>
 
 ## Continuant
 
-Social or material (three-dimensional) objects, their groups/aggregates, parts and boundaries (two-, one- and zero-dimensional entities, i.e., surfaces, lines and points) are subsumed under the category *Continuant*. Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime). 
+Social or material (three-dimensional) objects, their groups/aggregates, parts and boundaries (two-, one- and zero-dimensional entities, i.e., surfaces, lines and points) are subsumed under the category *Continuant*.
+Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime). 
 
-**Objects** are social or material entities that can exist independently of each other (e.g., a person, a computer, a chopstick or a football stadium). Objects can be located in other objects (*locatedIn*, e.g., the driver is located in the car). **Information objects** are symbolic entities that denote/designate, describe, specify or represent (*represents/representedBy*) other entities. Titles, descriptions, specifications (e.g., the specification of an algorithm), models (e.g., UML models) or computer programmes are examples of information objects.
+**Objects** are social or material entities that can exist independently of each other (e.g., a person, a computer, a chopstick or a football stadium).
+Objects can be located in other objects (*locatedIn*, e.g., the driver is located in the car).
+**Information objects** are symbolic entities that denote/designate, describe, specify or represent (*represents/representedBy*) other entities.
+Titles, descriptions, specifications (e.g., the specification of an algorithm), models (e.g., UML models) or computer programmes are examples of information objects.
 
 ⚠ The category *InformationObject* is a simplified way of modelling symbolic objects, their parts and the entities they represent, without distinguishing between, for example, content and information carriers. For advanced use cases, please use specific information artefact ontologies such as [Design Science Artifact Ontology (DS-AO)](https://ceur-ws.org/Vol-3155/short5.pdf) or [Information Artifact Ontology (IAO)](https://ceur-ws.org/Vol-1515/regular10.pdf).
 
-**Object aggregates** are groups of objects that together form a unit (e.g., a research group at a university or a sports team). To model the membership of a member in a group/aggregate, the object properties *memberOf*/*hasMember* should be used (Example 1b, playerA1).
+**Object aggregates** are groups of objects that together form a unit (e.g., a research group at a university or a sports team).
+To model the membership of a member in a group/aggregate, the object properties *memberOf*/*hasMember* should be used (Example 1b, playerA1).
 
-**Object parts** are material entities that cannot exist independently of the corresponding whole object (e.g., part of a bone or of a chopstick). The relation between an object and its parts can be specified using the object properties *hasPart*/*partOf*.
+**Object parts** are material entities that cannot exist independently of the corresponding whole object (e.g., part of a bone or of a chopstick).
+The relation between an object and its parts can be specified using the object properties *hasPart*/*partOf*.
 
-While the object parts are firmly connected to the entire object, the aggregate members are loose objects. When modelling a person, for example, you could consider their skeleton as an object and as part of the human body. However, if we look at bone finds in the context of anthropology, the skeleton can be modelled as an aggregate of individual bones. Another example is a computer. A kit of computer components is an object aggregate before assembly and an object (a computer) afterwards. However, if the components are thrown into the case without being correctly connected, it is not a computer, but the components are simply located in (*locatedIn*) the case.
+While the object parts are firmly connected to the entire object, the aggregate members are loose objects.
+When modelling a person, for example, you could consider their skeleton as an object and as part of the human body.
+However, if we look at bone finds in the context of anthropology, the skeleton can be modelled as an aggregate of individual bones.
+Another example is a computer.
+A kit of computer components is an object aggregate before assembly and an object (a computer) afterwards.
+However, if the components are thrown into the case without being correctly connected, it is not a computer, but the components are simply located in (*locatedIn*) the case.
 
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
@@ -48,7 +77,14 @@ While the object parts are firmly connected to the entire object, the aggregate 
 
 **Example 1a.** *Continuant classes.*
 
-**Object boundaries** are 0-, 1-, or 2-dimensional (visible or imaginary) entities (i.e., points, lines and surfaces) that border objects (natural boundaries) or are located inside them (inner boundaries). In the anthropology use case, for example, these can be certain planes (e.g., frontal plane), axes (e.g., longitudinal axis) and points (e.g., gonion) of the human skeleton. Other examples are the surface and the boundary lines of the football field or the penalty spot. Boundaries of objects are surfaces, boundaries of surfaces are lines and boundaries of lines are points. Such relationships are specified using object properties *boundaryOf*, *innerBoundaryOf* or *naturalBoundaryOf*. Lines are not necessarily straight. They can be, for example, curves or broken lines that pass through (*spatiallyPassesThrough*, *spatiallyStartsOn*, *spatiallyEndsOn*) various points and form a corner, a triangle or a polygon. Object boundaries can be assigned to a corresponding object using the object property *hasOwner*. 
+**Object boundaries** are 0-, 1-, or 2-dimensional (visible or imaginary) entities (i.e., points, lines and surfaces) that border objects (natural boundaries) or are located inside them (inner boundaries).
+In the anthropology use case, for example, these can be certain planes (e.g., frontal plane), axes (e.g., longitudinal axis) and points (e.g., gonion) of the human skeleton.
+Other examples are the surface and the boundary lines of the football field or the penalty spot.
+Boundaries of objects are surfaces, boundaries of surfaces are lines and boundaries of lines are points.
+Such relationships are specified using object properties *boundaryOf*, *innerBoundaryOf* or *naturalBoundaryOf*.
+Lines are not necessarily straight.
+They can be, for example, curves or broken lines that pass through (*spatiallyPassesThrough*, *spatiallyStartsOn*, *spatiallyEndsOn*) various points and form a corner, a triangle or a polygon.
+Object boundaries can be assigned to a corresponding object using the object property *hasOwner*. 
 
 <table>
     <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
@@ -63,7 +99,8 @@ While the object parts are firmly connected to the entire object, the aggregate 
 
 **Example 1b.** *Continuant instances.*
 
-⚠ In contrast to GFO (full) (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)), GFO-light does not support presentic objects (presentials) but only temporally extended objects (continuats). However, GFO-light enables you to define the validity/existence time of attributives of the objects and situations in which they participate, either as a time interval or as a point in time.
+⚠ In contrast to GFO (full) (see [Loebe, F.
+et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)), GFO-light does not support presentic objects (presentials) but only temporally extended objects (continuats). However, GFO-light enables you to define the validity/existence time of attributives of the objects and situations in which they participate, either as a time interval or as a point in time.
 
 ⚠ GFO (full) includes a sophisticated space module based on the dual nature of space (phenomenal vs. extensional space) and distinguishes between boundaries of material objects and boundaries of spatial regions (see [Baumann, R. et al. (2016). Towards an Ontology of Space for GFO.](https://doi.org/10.3233/978-1-61499-660-6-53), [Loebe, F. et al. (2021). Developing GFO 2.0 Further – Initiating the Modules of Space and Material Objects.](https://ceur-ws.org/Vol-2969/paper69-FOUST.pdf)). For simplicity, GFO-light only considers boundaries of material objects.
 
@@ -71,7 +108,9 @@ While the object parts are firmly connected to the entire object, the aggregate 
 
 Processual entities include processes and process aggregates.
 
-**Processes** are concrete individuals that happen in time and have a temporal extension (chronoid/time interval). Processes represent dynamic knowledge. A football match, a treatment of a patient in a hospital or the course of an illness are examples of processes.  
+**Processes** are concrete individuals that happen in time and have a temporal extension (chronoid/time interval).
+Processes represent dynamic knowledge.
+A football match, a treatment of a patient in a hospital or the course of an illness are examples of processes.  
 
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
@@ -91,7 +130,10 @@ Processual entities include processes and process aggregates.
 
 **Example 2a.** *Process classes.*
 
-Processes can have parts (*hasProcessPart*, *processPartOf*), which are situations, attributives or further processes, e.g., the first half and the goal situations are parts of the match. Continuants can participate in processes (*participatesIn*, *hasParticipant*), e.g., the teams A and B participate in the football match (Example 1b, teamA). Processes can take place (*locatedIn*) in objects (e.g., a football match in a stadium or an illness in a person). Processes can lead to (*leadsTo*, *resultsFrom*) or cause (*causes*, *causedBy*) further processes and situations.
+Processes can have parts (*hasProcessPart*, *processPartOf*), which are situations, attributives or further processes, e.g., the first half and the goal situations are parts of the match.
+Continuants can participate in processes (*participatesIn*, *hasParticipant*), e.g., the teams A and B participate in the football match (Example 1b, teamA).
+Processes can take place (*locatedIn*) in objects (e.g., a football match in a stadium or an illness in a person).
+Processes can lead to (*leadsTo*, *resultsFrom*) or cause (*causes*, *causedBy*) further processes and situations.
 
 <table>
     <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
@@ -110,11 +152,18 @@ Processes can have parts (*hasProcessPart*, *processPartOf*), which are situatio
 
 ## Attributive
 
-Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category *Attributive*. Attributives are individuals that depend on other individuals by some kind of dependency relation.
+Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category *Attributive*.
+Attributives are individuals that depend on other individuals by some kind of dependency relation.
 
 ### Quality
 
-Qualities are attributives that typically inhere in its bearer and can possess values. Examples are observable or measurable characteristics of single objects, e.g., persons, (such as weight and height, laboratory parameters or symptoms), qualities of object groups (e.g., goals scored by a football team in a match) or of processes (e.g., the number of spectators as quality of a football match). The qualities can be defined in two ways. If they have a value (representable as a number, string, date, etc.), do not require the specification of existence time and are no parts of situations, domain-specific data properties can simply be defined as subproperties of *decimalValue* (e.g., *numberOfSpectators*), *stringValue*, *dateTimeValue*, etc. These domain-specific properties can then be used in data property assertions for a direct assignment of the value to the corresponding bearer (Example 2b, matchX). In all other cases, a separate domain-specific class (e.g., *PlayerGoals*) must be created as a subclass of *Quality* and its instances can be assigned to the bearers using the object properties *qualityOf* or *hasQuality*. In this case, the existence time can be specified for the quality instances (Example 3b, a1GoalsEndOfFirstHalf, a1GoalsEndOfMatch).
+Qualities are attributives that typically inhere in its bearer and can possess values.
+Examples are observable or measurable characteristics of single objects, e.g., persons, (such as weight and height, laboratory parameters or symptoms), qualities of object groups (e.g., goals scored by a football team in a match) or of processes (e.g., the number of spectators as quality of a football match).
+The qualities can be defined in two ways.
+If they have a value (representable as a number, string, date, etc.), do not require the specification of existence time and are no parts of situations, domain-specific data properties can simply be defined as subproperties of *decimalValue* (e.g., *numberOfSpectators*), *stringValue*, *dateTimeValue*, etc.
+These domain-specific properties can then be used in data property assertions for a direct assignment of the value to the corresponding bearer (Example 2b, matchX).
+In all other cases, a separate domain-specific class (e.g., *PlayerGoals*) must be created as a subclass of *Quality* and its instances can be assigned to the bearers using the object properties *qualityOf* or *hasQuality*.
+In this case, the existence time can be specified for the quality instances (Example 3b, a1GoalsEndOfFirstHalf, a1GoalsEndOfMatch).
 
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
@@ -163,7 +212,8 @@ A role is a relational entity that links a continuant (role player) with some co
 - Objects can play **processual** or **situational** roles in processes (e.g., team A plays the home team role and team B plays the visiting team role in a football match, Example 3b, teamARole) or situations (e.g., scorer and assistant role in a goal situation or roles played by a doctor and a patient in a risk/adverse situation in hospital) in which they participate. 
 - Objects can play **relational** roles in a relation (relator, see the next paragraph).
 
-Roles are assigned to the corresponding context entity (object, object aggregate, processual entity, situational entity, relator) using object properties *roleIn* or *containsRole*. The role players are associated with the roles they play using object properties *plays* or *playedBy*.
+Roles are assigned to the corresponding context entity (object, object aggregate, processual entity, situational entity, relator) using object properties *roleIn* or *containsRole*.
+The role players are associated with the roles they play using object properties *plays* or *playedBy*.
 
 <table>
     <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
@@ -188,9 +238,16 @@ Roles are assigned to the corresponding context entity (object, object aggregate
 													  playedBy teamA</i></td></tr>
 </table>
 
-**Example 3b.** *Attributive instances. a1GoalsEndOfFirstHalf represents the number of goals of playerA1 in the time period between his first and second goal. a1GoalsEndOfMatch is the number of goals of playerA1 after the second goal. a2RoleInTeam is a midfielder (social) role in teamA that is played by playerA2 (this role has an end time due to substitution). teamARole is the home team (processual) role in matchX that is played by teamA. aWinnerRole is the winner (relational) role in winnerLoserRelatorEndOfMatch that is also played by teamA.*
+**Example 3b.** *Attributive instances.
+a1GoalsEndOfFirstHalf represents the number of goals of playerA1 in the time period between his first and second goal.
+a1GoalsEndOfMatch is the number of goals of playerA1 after the second goal.
+a2RoleInTeam is a midfielder (social) role in teamA that is played by playerA2 (this role has an end time due to substitution).
+teamARole is the home team (processual) role in matchX that is played by teamA.
+aWinnerRole is the winner (relational) role in winnerLoserRelatorEndOfMatch that is also played by teamA.*
 
-⚠ GFO-light uses a simplified role model compared to GFO (full). In GFO (full) there are three types of roles (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Loebe, F. (2007). Abstract vs. social roles: Towards a general theoretical account of roles.](https://doi.org/10.3233/APO-2007-031)): relational role as sibling of quality and subclass of attributive, processual role as subclass of process, and social role as social/socio continuant. In GFO-light, no role types (no subclasses of *Role*) are explicitly defined. The roles are implicitly differentiated by their assignment (*roleIn*) to the corresponding context entities (object, object aggregate, processual entity, situational entity, relator).
+⚠ GFO-light uses a simplified role model compared to GFO (full).
+In GFO (full) there are three types of roles (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Loebe, F. (2007). Abstract vs. social roles: Towards a general theoretical account of roles.](https://doi.org/10.3233/APO-2007-031)): relational role as sibling of quality and subclass of attributive, processual role as subclass of process, and social role as social/socio continuant.
+In GFO-light, no role types (no subclasses of *Role*) are explicitly defined. The roles are implicitly differentiated by their assignment (*roleIn*) to the corresponding context entities (object, object aggregate, processual entity, situational entity, relator).
 
 ### Relator
 
