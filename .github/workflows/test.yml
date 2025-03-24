@@ -19,7 +19,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     container: obolibrary/odklite
+    strategy:
+      matrix:
+        ontology: [ 'gfo-core.ttl', 'gfo-light.ttl' ]
     steps:
       - uses: actions/checkout@v4
-      - run: check-rdfxml ${{ github.event.repository.name }}.ttl
-      - run: robot report --profile qc_report/profile.txt -i ${{ github.event.repository.name }}.ttl
+      - run: check-rdfxml ${{ matrix.ontology }}
+      - run: robot report --profile qc_report/profile.txt -i ${{ matrix.ontology }}
