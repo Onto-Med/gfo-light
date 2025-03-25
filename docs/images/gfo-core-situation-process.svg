@@ -49,8 +49,15 @@
       <path fill="none" d="M1006.0568 535.2676 L1006.0568 472.3005 L981.8123 472.3005" clip-path="url(#clipPath2)"/>
       <path d="M973.8123 472.3005 L985.8123 477.3005 L982.8123 472.3005 L985.8123 467.3005 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <text x="979.2684" xml:space="preserve" y="465.9339" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">hasProcessPart</text>
-      <text x="993.8558" y="616.5343" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none" font-weight="bold" xml:space="preserve">Chronoid</text>
-      <rect x="988.492" y="601.8205" clip-path="url(#clipPath2)" fill="none" width="64.048" rx="4" ry="4" height="20" stroke="rgb(43,138,132)"/>
+    </g>
+    <g fill="rgb(43,138,132)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(2,0,0,2,-1506,-896)" stroke="rgb(43,138,132)">
+      <rect x="988.492" y="601.8205" clip-path="url(#clipPath2)" width="64.048" rx="4" ry="4" height="20" stroke="none"/>
+    </g>
+    <g stroke-linecap="butt" transform="matrix(2,0,0,2,-1506,-896)" fill="white" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" stroke="white" font-weight="bold" stroke-miterlimit="1.45">
+      <text x="993.8558" xml:space="preserve" y="616.5343" clip-path="url(#clipPath2)" stroke="none">Chronoid</text>
+    </g>
+    <g stroke-linecap="butt" transform="matrix(2,0,0,2,-1506,-896)" fill="rgb(43,138,132)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" stroke="rgb(43,138,132)" stroke-miterlimit="1.45">
+      <rect x="988.492" y="601.8205" clip-path="url(#clipPath2)" fill="none" width="64.048" rx="4" ry="4" height="20"/>
     </g>
     <g fill="rgb(247,149,29)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(2,0,0,2,-1506,-896)" stroke="rgb(247,149,29)">
       <rect x="988.492" y="535.2605" clip-path="url(#clipPath2)" width="64.048" rx="4" ry="4" height="20" stroke="none"/>
