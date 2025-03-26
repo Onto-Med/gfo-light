@@ -4,25 +4,40 @@ GFO-light contains some simplifications compared to the full version of General 
 This guide describes the structure and a possible use of this lightweight top-level ontology in domain-specific projects, also for users who are not familiar with the basics of formal ontologies.
 GFO-light is primarily concerned with categories of concrete individuals ([Continuant](#continuant), [Processual Entity](#processual-entity), [Attributive](#attributive) and [Situational Entity](#situational-entity)), i.e., entities that have an immediate relation to time ([Time Entity](#time-entity)) or to space-time.
 
+⚠ GFO-light extends GFO-core (i.e., adopts all GFO-core axioms), which contains the core GFO entities and serves as a common basis for both GFO variants (light and full). For some use cases it may be sufficient to use only GFO-core as a kind of minimal top-level ontology.
+
 ⚠ When developing a domain-specific ontology using GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *ProcessualEntity*, *SituationalEntity* and *TimeEntity* (or their subclasses, the more specific the better).
 You can also create the desired object or data properties (if possible as subproperties of GFO-light properties).
 
 ## Overview
 
-![GFO-light overview](images/gfo-light.svg)
+### GFO-core
 
-### Core Level
+![GFO-core](images/gfo-core.svg)
 
-![GFO-light core](images/gfo-light-core.svg)
+**Fig. 1. GFO-core overview** (all categories and selected relations)
 
-The core level of GFO-light contains the core GFO entities and serves as an interface to GFO (full), i.e., it forms a common basis for both GFO versions.
-For some use cases, it may be sufficient to use only the core level as a kind of minimal top-level ontology.
-
-### Detailed Module Views
+#### Detailed Module Views
 
 <table width="100%">
-    <tr><td width="50%"><img src="images/gfo-light-individual.svg"></td><td><b>Individual</b></br></br>Individuals are quality bearers (<i>hasQuality</i>, <i>qualityOf</i>, see <a href="#user-content-attributive">Attributive</a>) and can be temporally related to other individuals (subproperties of <i>temporallyRelatedWith</i>, see <a href="#user-content-time-entity">Time Entity</a>).
+    <tr><td width="50%"><img src="images/gfo-core-individual.svg"></td><td><b>Individual</b></br></br>Individuals are bearers of attributives (<i>hasAttributive</i>, <i>attributiveOf</i>, see <a href="#user-content-attributive">Attributive</a>) and can be temporally related to other individuals (subproperties of <i>temporallyRelatedWith</i>, see <a href="#user-content-time-entity">Time Entity</a>).
 Concrete individuals are related to time (<i>hasTime</i>, see <a href="#user-content-time-entity">Time Entity</a>).</td></tr>
+    <tr><td width="50%"><img src="images/gfo-core-situation-process.svg"></td><td><b>Situation/Process</b></br></br>Situations represent static knowledge, while processes represent dynamic knowledge.
+Continuants can participate in situations and processes (<i>participatesIn</i>, <i>hasParticipant</i>).
+Situations can have attributives and further situations as parts (<i>hasSituationPart</i>, <i>situationPartOf</i>).
+Processes can have attributives, situations and further processes as parts (<i>hasProcessPart</i>, <i>processPartOf</i>).
+Processes and situations can lead to (<i>leadsTo</i>, <i>resultsFrom</i>) or cause (<i>causes</i>, <i>causedBy</i>) further processes and situations. (see <a href="#user-content-situational-entity">Situational Entity</a>, <a href="#user-content-processual-entity">Processual Entity</a>)</td></tr>
+</table>
+
+### GFO-light
+
+![GFO-light](images/gfo-light.svg)
+
+**Fig. 2. GFO-light overview** (all categories and selected relations)
+
+#### Detailed Module Views
+
+<table width="100%">
     <tr><td width="50%"><img src="images/gfo-light-continuant.svg"></td><td><b>Continuant</b></br></br>Object parts can be specified using the object properties <i>hasPart</i> or <i>partOf</i>.
 To model the membership of a member in a group/aggregate, the object properties <i>hasMember</i>/<i>memberOf</i> should be used.
 Objects can be located in other objects (<i>locatedIn</i>).
@@ -30,15 +45,12 @@ Boundaries of objects are surfaces, boundaries of surfaces are lines and boundar
 Lines can pass through (<i>spatiallyPassesThrough</i>, <i>spatiallyStartsOn</i>, <i>spatiallyEndsOn</i>) various points.
 Object boundaries can be assigned to the corresponding object using the object property <i>hasOwner</i>.
 (see <a href="#user-content-continuant">Continuant</a>)</td></tr>
-    <tr><td width="50%"><img src="images/gfo-light-role.svg"></td><td><b>Role</b></br></br>A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, processual entity, situational entity, relator), in which the continuant plays that role.
+    <tr><td width="50%"><img src="images/gfo-light-attributive.svg"></td><td><b>Attributive</b></br></br>Qualities, relators and roles are attributives.
+A role is a relational entity that links an individual (role player) with some context (object, object aggregate, process, situation, relator), in which the individual plays that role.
 Roles are assigned to the corresponding context entity using object properties <i>roleIn</i> or <i>containsRole</i>.
 The role players are associated with the roles they play using object properties <i>plays</i> or <i>playedBy</i>.
-Continuants are related by relators (<i>relatedBy</i>, <i>relates</i>) in which they play a role. (see <a href="#user-content-attributive">Attributive</a>)</td></tr>
-    <tr><td width="50%"><img src="images/gfo-light-situation-process.svg"></td><td><b>Situation/Process</b></br></br>Situations represent static knowledge, while processes represent dynamic knowledge.
-Continuants can participate in situations and processes (<i>participatesIn</i>, <i>hasParticipant</i>).
-Situations can have attributives and further situations as parts (<i>hasSituationPart</i>, <i>situationPartOf</i>).
-Processes can have attributives, situations and further processes as parts (<i>hasProcessPart</i>, <i>processPartOf</i>).
-Processes and situations can lead to (<i>leadsTo</i>, <i>resultsFrom</i>) or cause (<i>causes</i>, <i>causedBy</i>) further processes and situations. (see <a href="#user-content-situational-entity">Situational Entity</a>, <a href="#user-content-processual-entity">Processual Entity</a>)</td></tr>
+Individuals are quality bearers (<i>hasQuality</i>, <i>qualityOf</i>) and are related by relators (<i>relatedBy</i>, <i>relates</i>) in which they play a role. 
+(see <a href="#user-content-attributive">Attributive</a>)</td></tr>
 </table>
 
 ## Continuant
