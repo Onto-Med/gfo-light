@@ -7,7 +7,7 @@ GFO-light is primarily concerned with categories of concrete individuals ([Conti
 ⚠ GFO-light extends GFO-core (i.e., adopts all GFO-core axioms), which contains the core GFO entities and serves as a common basis for both GFO variants (light and full).
 For some use cases, it may be sufficient to use GFO-core alone as a kind of minimal top-level ontology.
 
-⚠ When developing a domain-specific ontology using GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *Process*, *Situation* and *TimeEntity* (or their subclasses, the more specific the better).
+⚠ When developing a domain-specific ontology using GFO-core or GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *Process*, *Situation* and *TimeEntity* (or their subclasses, the more specific the better).
 You can also create the desired object or data properties (if possible as subproperties of GFO-core or GFO-light properties).
 
 ## Overview
