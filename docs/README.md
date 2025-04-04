@@ -123,8 +123,8 @@ et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220
 Processes are concrete individuals that happen in time and have a temporal extension (chronoid/time interval).
 Processes represent dynamic knowledge.
 
-We distinguish between continuous processes and process aggregates.
-**Continuous processes** (e.g., a football match, a treatment of a patient in a hospital or the course of an illness) are temporally connected, while **process aggregates** (e.g., a series of lectures in a semester or all football matches in a league season) consist (*hasMember*) of further contextually related but not temporally connected processes.
+We distinguish between cohesive processes and process aggregates.
+A **cohesive process** (e.g., a football match, a treatment of a patient in a hospital or the course of an illness) is causally and temporally connected, while a **process aggregate** (e.g., a series of lectures in a semester or all football matches in a league season) consists (*hasMember*) of other contextually but not necessarily temporally interconnected processes.
 
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
@@ -274,8 +274,8 @@ If the individual roles do not have an existence time to be defined and are no p
 Situations are combinations of attributives that belong together in the context of the use case under consideration.
 Situations represent static knowledge.
 
-We distinguish between continuous situations and situation aggregates.
-**Continuous situations** (e.g., a phase of increased temperature) are temporally connected, while **situation aggregates** (e.g., all phases of increased temperature in the course of an illness) consist (*hasMember*) of further contextually related but not temporally connected situations.
+We distinguish between cohesive situations and situation aggregates.
+A **cohesive situation** (e.g., a phase of increased temperature) is causally and temporally connected, while a **situation aggregate** (e.g., all phases of increased temperature in the course of an illness) consists (*hasMember*) of other contextually but not necessarily temporally interconnected situations.
 
 A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation (e.g., a goal situation as a result of an attack in a football match). Situations can lead to (*leadsTo*, *resultsFrom*) or cause (*causes*, *causedBy*) further situations and processes.
 
