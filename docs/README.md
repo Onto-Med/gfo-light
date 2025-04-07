@@ -21,7 +21,7 @@ You can also create the desired object or data properties (if possible as subpro
 #### Detailed Module Views
 
 <table width="100%">
-    <tr><td width="50%"><img src="images/gfo-core-individual.svg"></td><td><b>Individual</b></br></br>Individuals are bearers of attributives (<i>hasAttributive</i>, <i>attributiveOf</i>, see <a href="#user-content-attributive">Attributive</a>) and can be temporally related to other individuals (subproperties of <i>temporallyRelatedWith</i>, see <a href="#user-content-time-entity">Time Entity</a>). 
+    <tr><td width="50%"><img src="images/gfo-core-individual.svg"></td><td><b>Individual</b></br></br>Individuals are bearers of attributives (<i>hasAttributive</i>, <i>attributiveOf</i>, see <a href="#user-content-attributive">Attributive</a>), can consist of parts (<i>hasPart</i>, <i>partOf</i>) and can be temporally related to other individuals (subproperties of <i>temporallyRelatedWith</i>, see <a href="#user-content-time-entity">Time Entity</a>). 
 Concrete individuals are related to time (<i>hasTime</i>, see <a href="#user-content-time-entity">Time Entity</a>).</td></tr>
     <tr><td width="50%"><img src="images/gfo-core-situation-process.svg"></td><td><b>Situation/Process</b></br></br>Situations represent static knowledge, while processes represent dynamic knowledge. 
 Continuants can participate in situations and processes (<i>participatesIn</i>, <i>hasParticipant</i>). 
@@ -271,7 +271,7 @@ If the individual roles do not have an existence time to be defined and are no p
 
 ## Situation
 
-Situations are combinations of attributives that belong together in the context of the use case under consideration.
+Situations are combinations of contextually related attributives.
 Situations represent static knowledge.
 
 We distinguish between cohesive situations and situation aggregates.
