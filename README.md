@@ -20,13 +20,14 @@ For some use cases, it may be sufficient to use GFO-core alone as a kind of mini
 You just need to import this ontology into your domain-specific ontology via the IRI https://w3id.org/gfo-light.
 For each [release](https://github.com/Onto-Med/gfo-light/releases) of this ontology, a version IRI is available with the format `https://w3id.org/gfo-light/release/<VERSION>`.
 In addition, the version IRI <https://w3id.org/gfo-light/release/latest> always represents the latest version.
+If you want to import only GFO-core, please use the IRI https://w3id.org/gfo-core in the same way.
 
 When developing a domain-specific ontology using GFO-core or GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *Process*, *Situation* and *TimeEntity* (or their subclasses, the more specific the better).
 You can also create the desired object or data properties (if possible as subproperties of GFO-core or GFO-light properties).
 
-For more information, see our [user guide](docs/README.md), the [GFO-core documentation](https://w3id.org/gfo-core) or the [GFO-light documentation](https://w3id.org/gfo-light).
+For more information, see our [user guide](docs/README.md), the [GFO-light documentation](https://w3id.org/gfo-light) or the [GFO-core documentation](https://w3id.org/gfo-core).
 
-Individual IRIs of GFO-core or GFO-light classes and properties (e.g., https://w3id.org/gfo-light/Quality) are pointing to the RDF browser [RickView](https://github.com/KonradHoeffner/rickview).
+Individual IRIs of GFO-core and GFO-light classes and properties (e.g., https://w3id.org/gfo-light/Quality) are pointing to the RDF browser [RickView](https://github.com/KonradHoeffner/rickview).
 
 ## Examples
 
