@@ -398,7 +398,7 @@ gfo-core:Situation rdf:type owl:Class .
                  rdfs:subClassOf gfo-core:Process ;
                  rdfs:label "Cohesive process"@en ;
                  skos:altLabel "Temporally connected process"@en ;
-                 skos:definition "A cohesive process is causally and temporally connected."@en ;
+                 skos:definition "A cohesive process is a causally and temporally connected process."@en ;
                  skos:example "A treatment of a patient in a hospital"@en ,
                               "Football match"@en ,
                               "The course of an illness"@en ,
@@ -410,7 +410,7 @@ gfo-core:Situation rdf:type owl:Class .
                    rdfs:subClassOf gfo-core:Situation ;
                    rdfs:label "Cohesive situation"@en ;
                    skos:altLabel "Temporally connected situation"@en ;
-                   skos:definition "A cohesive situation is causally and temporally connected."@en ;
+                   skos:definition "A cohesive situation is a causally and temporally connected situation."@en ;
                    skos:example "A risk situation when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time"@en ,
                                 "The situation after the wedding of John and Mary (i.e., the situation in which they are married containing the marriage relator with a husband and a wife role)"@en ,
                                 "The situation at the end of a football match containing players' qualities (e.g., number of goals or assists), teams' qualities (e.g., number of goals or ball possession) and a winner-loser relator with one team playing the winner role and the other team playing the loser role"@en .
@@ -481,6 +481,15 @@ gfo-core:Situation rdf:type owl:Class .
 :ObjectBoundary rdf:type owl:Class ;
                 rdfs:subClassOf gfo-core:Continuant ,
                                 [ rdf:type owl:Restriction ;
+                                  owl:onProperty :boundaryOf ;
+                                  owl:someValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( :Line
+                                                                     :Object
+                                                                     :Surface
+                                                                   )
+                                                     ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
                                   owl:onProperty :hasOwner ;
                                   owl:someValuesFrom :Object
                                 ] ;
@@ -522,9 +531,9 @@ gfo-core:Situation rdf:type owl:Class .
                                     owl:someValuesFrom gfo-core:Process
                                   ] ;
                   rdfs:label "Process aggregate"@en ;
-                  skos:definition "A process aggregate consists of other contextually but not necessarily temporally interconnected processes."@en ;
-                  skos:example "All football matches in a league season"@en ,
-                               "Series of lectures in a semester"@en .
+                  skos:definition "A process aggregate is a process that consists of other contextually but not necessarily temporally interconnected processes."@en ;
+                  skos:example "A football league season, consisting of all matches"@en ,
+                               "A series of lectures in a semester"@en .
 
 
 ###  https://w3id.org/gfo-light/Quality
@@ -609,8 +618,8 @@ gfo-core:Situation rdf:type owl:Class .
                                       owl:someValuesFrom gfo-core:Situation
                                     ] ;
                     rdfs:label "Situation aggregate"@en ;
-                    skos:definition "A situation aggregate consists of other contextually but not necessarily temporally interconnected situations."@en ;
-                    skos:example "All phases of increased temperature in the course of an illness"@en .
+                    skos:definition "A situation aggregate is a situation that consists of other contextually but not necessarily temporally interconnected situations."@en ;
+                    skos:example "A situation of increased temperature during the course of an illness, consisting of all not necessarily temporally connected phases"@en .
 
 
 ###  https://w3id.org/gfo-light/Surface

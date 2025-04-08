@@ -502,11 +502,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 
 ###  https://w3id.org/gfo-core/Category
 :Category rdf:type owl:Class ;
-          rdfs:subClassOf :Entity ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :instantiatedBy ;
-                            owl:allValuesFrom :Entity
-                          ] ;
+          rdfs:subClassOf :Entity ;
           rdfs:label "Category"@en ;
           skos:altLabel "Class"@en ,
                         "Kind"@en ,
@@ -659,16 +655,16 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :hasParticipant ;
-                           owl:allValuesFrom :Continuant
+                           owl:someValuesFrom :Continuant
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :hasProcessPart ;
-                           owl:allValuesFrom [ rdf:type owl:Class ;
-                                               owl:unionOf ( :Attributive
-                                                             :Process
-                                                             :Situation
-                                                           )
-                                             ]
+                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                owl:unionOf ( :Attributive
+                                                              :Process
+                                                              :Situation
+                                                            )
+                                              ]
                          ] ;
          rdfs:comment "Processes represent dynamic knowledge."@en ,
                       "We distinguish between cohesive processes and process aggregates."@en ;
@@ -681,15 +677,15 @@ foaf:homepage rdf:type owl:AnnotationProperty .
            rdfs:subClassOf :ConcreteIndividual ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasParticipant ;
-                             owl:allValuesFrom :Continuant
+                             owl:someValuesFrom :Continuant
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasSituationPart ;
-                             owl:allValuesFrom [ rdf:type owl:Class ;
-                                                 owl:unionOf ( :Attributive
-                                                               :Situation
-                                                             )
-                                               ]
+                             owl:someValuesFrom [ rdf:type owl:Class ;
+                                                  owl:unionOf ( :Attributive
+                                                                :Situation
+                                                              )
+                                                ]
                            ] ;
            rdfs:comment "A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation."@en ,
                         "Situations represent static knowledge."@en ,
