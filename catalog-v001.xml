@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
-    <uri id="gfo-core" name="https://w3id.org/gfo-core/release/2025-04-07" uri="../gfo-core.ttl"/>
+    <uri id="gfo-core" name="https://w3id.org/gfo-core/release/2025-04-07" uri="gfo-core.ttl"/>
 </catalog>

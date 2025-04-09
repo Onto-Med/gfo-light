@@ -25,4 +25,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: check-rdfxml ${{ matrix.ontology }}
-      - run: robot report --profile qc_report/profile.txt --catalog qc_report/catalog.xml -i ${{ matrix.ontology }}
+      - run: robot report --profile qc_report/profile.txt -i ${{ matrix.ontology }}
