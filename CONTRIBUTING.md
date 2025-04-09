@@ -23,7 +23,7 @@ If you want to contribute changes, please do so by:
    Ensure your changes are well-documented and understandable.
    You can run the following command with docker to check your changes locally:
 
-       docker run -it -v .:/gfo -w /gfo obolibrary/odklite robot report --input gfo-light.ttl --profile qc_report/profile.txt
+       docker run -it --rm -v .:/gfo -w /gfo obolibrary/odklite robot report --input gfo-light.ttl --profile qc_report/profile.txt
 
 4. Commit and push all changes.
 5. Create a [pull request](https://github.com/Onto-Med/gfo-light/pulls).
