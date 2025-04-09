@@ -39,10 +39,10 @@ jobs:
       - name: Prepare version documentation
         run: |
           mkdir public
-          cp -r output/ public/${{ github.event.release.tag_name }}/${{ matrix.artifact}}
+          cp -r output/ public/${{ matrix.artifact}}/${{ github.event.release.tag_name }}
       - name: Prepare latest documentation
         if: '!github.event.release.prerelease'
-        run: cp -r output/ public/latest/${{ matrix.artifact }}
+        run: cp -r output/ public/${{ matrix.artifact }}/latest
       - name: Upload release artifacts
         uses: svenstaro/upload-release-action@v2
         with:
