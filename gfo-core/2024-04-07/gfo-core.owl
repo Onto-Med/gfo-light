@@ -1,0 +1,1095 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://w3id.org/gfo-core#"
+     xml:base="https://w3id.org/gfo-core"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://w3id.org/gfo-core">
+        <owl:versionIRI rdf:resource="https://w3id.org/gfo-core/release/2025-04-07"/>
+        <dc:created>2025-04-07</dc:created>
+        <dc:creator>Alexandr Uciteli</dc:creator>
+        <dc:creator>Christoph Beger</dc:creator>
+        <dc:creator>Frank Loebe</dc:creator>
+        <dc:creator>Franz Matthies</dc:creator>
+        <dc:creator>Heinrich Herre</dc:creator>
+        <dc:creator>Konrad Höffner</dc:creator>
+        <dc:creator>Patryk Burek</dc:creator>
+        <dc:creator>Ralph Schäfermeier</dc:creator>
+        <dc:description xml:lang="en">GFO-core contains the core GFO entities and serves as a common basis for both GFO variants (light and full). For some use cases, it may be sufficient to use GFO-core alone as a kind of minimal top-level ontology.</dc:description>
+        <dc:modified>2025-04-07</dc:modified>
+        <dc:title xml:lang="en">General Formal Ontology Core (GFO-core)</dc:title>
+        <terms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+        <bibo:doi>10.5281/zenodo.14833002</bibo:doi>
+        <vann:preferredNamespacePrefix>gfo-core</vann:preferredNamespacePrefix>
+        <vann:preferredNamespaceURI>https://w3id.org/gfo-core/</vann:preferredNamespaceURI>
+        <doap:repository rdf:resource="https://github.com/Onto-Med/gfo-light"/>
+        <rdfs:label xml:lang="en">GFO-core</rdfs:label>
+        <owl:versionInfo>2025-04-07</owl:versionInfo>
+        <foaf:homepage>https://github.com/Onto-Med/gfo-light</foaf:homepage>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/created -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/created"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/modified -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/ontology/bibo/doi -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ontology/bibo/doi"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespacePrefix -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespacePrefix"/>
+    
+
+
+    <!-- http://purl.org/vocab/vann/preferredNamespaceURI -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/vocab/vann/preferredNamespaceURI"/>
+    
+
+
+    <!-- http://usefulinc.com/ns/doap#repository -->
+
+
+    <owl:AnnotationProperty rdf:about="http://usefulinc.com/ns/doap#repository"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment"/>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#definition"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#example -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#example"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/homepage -->
+
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/gfo-core/after -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/after">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporallyRelatedWith"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/before"/>
+        <rdfs:label xml:lang="en">after</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/attributiveOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/attributiveOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/hasAttributive"/>
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Attributive"/>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/Individual"/>
+        <rdfs:label xml:lang="en">attributive of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/before -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/before">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporallyRelatedWith"/>
+        <rdfs:label xml:lang="en">before</rdfs:label>
+        <skos:definition xml:lang="en">X before Y: Xf &lt; Ys</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/causedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/causedBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/resultsFrom"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/causes"/>
+        <rdfs:label xml:lang="en">caused by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/causes -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/causes">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/leadsTo"/>
+        <rdfs:label xml:lang="en">causes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/during -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/during">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporalPartOf"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/temporallyContains"/>
+        <rdfs:label xml:lang="en">during</rdfs:label>
+        <skos:definition xml:lang="en">X during Y: Xs &gt; Ys and Xf &lt; Yf</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/hasAttributive -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/hasAttributive">
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Individual"/>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/Attributive"/>
+        <rdfs:label xml:lang="en">has attributive</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/hasPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/hasPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/partOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Individual"/>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/Individual"/>
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/hasParticipant -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/hasParticipant">
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/participatesIn"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Process"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/Continuant"/>
+        <rdfs:label xml:lang="en">has participant</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/hasProcessPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/hasProcessPart">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/hasPart"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/processPartOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Process"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Attributive"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Process"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has process part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/hasSituationPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/hasSituationPart">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/hasPart"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/situationPartOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Situation"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Attributive"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has situation part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/hasTemporalPart -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/hasTemporalPart">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporallyRelatedWith"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/temporalPartOf"/>
+        <rdfs:label xml:lang="en">has temporal part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/hasTime -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/hasTime">
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/timeOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/ConcreteIndividual"/>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/TimeEntity"/>
+        <rdfs:label xml:lang="en">has time</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/instanceOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/instanceOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/instantiatedBy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Entity"/>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/Category"/>
+        <rdfs:label xml:lang="en">instance of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/instantiatedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/instantiatedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Category"/>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/Entity"/>
+        <rdfs:label xml:lang="en">instantiated by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/leadsTo -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/leadsTo">
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/resultsFrom"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Process"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Process"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">leads to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/partOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/partOf">
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Individual"/>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/Individual"/>
+        <rdfs:label xml:lang="en">part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/participatesIn -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/participatesIn">
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Continuant"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Process"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">participates in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/processPartOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/processPartOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/partOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Attributive"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Process"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/Process"/>
+        <rdfs:label xml:lang="en">process part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/resultsFrom -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/resultsFrom">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Process"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Process"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">results from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/situationPartOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/situationPartOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/partOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Attributive"/>
+                    <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/Situation"/>
+        <rdfs:label xml:lang="en">situation part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporalPartOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporalPartOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporallyRelatedWith"/>
+        <rdfs:label xml:lang="en">temporal part of</rdfs:label>
+        <skos:definition xml:lang="en">X temporal part of Y: X starts Y or X finishes Y or X during Y</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporallyContains -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporallyContains">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/hasTemporalPart"/>
+        <rdfs:label xml:lang="en">temporally contains</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporallyEqual -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporallyEqual">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporallyRelatedWith"/>
+        <rdfs:label xml:lang="en">temporally equal</rdfs:label>
+        <skos:definition xml:lang="en">X equal Y: Xs = Ys and Xf = Yf</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporallyFinishedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporallyFinishedBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/hasTemporalPart"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/temporallyFinishes"/>
+        <rdfs:label xml:lang="en">temporally finished by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporallyFinishes -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporallyFinishes">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporalPartOf"/>
+        <rdfs:label xml:lang="en">temporally finishes</rdfs:label>
+        <skos:definition xml:lang="en">X finishes Y: Xs &gt; Ys and Xf = Yf</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporallyMeets -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporallyMeets">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporallyRelatedWith"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/temporallyMetBy"/>
+        <rdfs:label xml:lang="en">temporally meets</rdfs:label>
+        <skos:definition xml:lang="en">X meets Y: Xf = Ys</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporallyMetBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporallyMetBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporallyRelatedWith"/>
+        <rdfs:label xml:lang="en">temporally met by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporallyOverlappedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporallyOverlappedBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporallyRelatedWith"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/temporallyOverlaps"/>
+        <rdfs:label xml:lang="en">temporally overlapped by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporallyOverlaps -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporallyOverlaps">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporallyRelatedWith"/>
+        <rdfs:label xml:lang="en">temporally overlaps</rdfs:label>
+        <skos:definition xml:lang="en">X overlaps Y: Xs &lt; Ys and Xf &gt; Ys and Xf &lt; Yf</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporallyRelatedWith -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporallyRelatedWith">
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Individual"/>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/Individual"/>
+        <rdfs:comment xml:lang="en">If a temporal relation is applied to other concrete individuals as time intervals (attributive, continuant, process, situation), it is propagated to their existence times (hasTime).</rdfs:comment>
+        <rdfs:comment xml:lang="en">In the definitions of the relations, the variables Xs, Xf, Ys and Yf represent the start (s) and finish (f) of the time intervals X and Y.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Some temporal relations can also be applied to points in time (before/after, equal) or a point in time and a time interval (before, starts, finishes, during or their inverse relations).</rdfs:comment>
+        <rdfs:label xml:lang="en">temporally related with</rdfs:label>
+        <skos:definition xml:lang="en">Temporal relations between time intervals based on Allen, J. F. (1983). Maintaining knowledge about temporal intervals. Communications of the ACM, 26(11), 832-843.</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporallyStartedBy -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporallyStartedBy">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/hasTemporalPart"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/gfo-core/temporallyStarts"/>
+        <rdfs:label xml:lang="en">temporally started by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/temporallyStarts -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/temporallyStarts">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/temporalPartOf"/>
+        <rdfs:label xml:lang="en">temporally starts</rdfs:label>
+        <skos:definition xml:lang="en">X starts Y: Xs = Ys and Xf &lt; Yf</skos:definition>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/timeOf -->
+
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/gfo-core/timeOf">
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/TimeEntity"/>
+        <rdfs:range rdf:resource="https://w3id.org/gfo-core/ConcreteIndividual"/>
+        <rdfs:label xml:lang="en">time of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/gfo-core/afterDateTimeValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/gfo-core/afterDateTimeValue">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/dateTimeValue"/>
+        <rdfs:comment xml:lang="en">Shortcut for &apos;after&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">after date time value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/beforeDateTimeValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/gfo-core/beforeDateTimeValue">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/dateTimeValue"/>
+        <rdfs:comment xml:lang="en">Shortcut for &apos;before&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">before date time value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/booleanValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/gfo-core/booleanValue">
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Attributive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">boolean value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/containsDateTimeValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/gfo-core/containsDateTimeValue">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/hasTemporalPartDateTimeValue"/>
+        <rdfs:comment xml:lang="en">Shortcut for &apos;temporallyContains&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">contains date time value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/dateTimeValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/gfo-core/dateTimeValue">
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Individual"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">date time value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/decimalValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/gfo-core/decimalValue">
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Attributive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:label xml:lang="en">decimal value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/finishedByDateTimeValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/gfo-core/finishedByDateTimeValue">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/hasTemporalPartDateTimeValue"/>
+        <rdfs:comment xml:lang="en">Shortcut for &apos;temporallyFinishedBy&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">finished by date time value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/hasTemporalPartDateTimeValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/gfo-core/hasTemporalPartDateTimeValue">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/dateTimeValue"/>
+        <rdfs:comment xml:lang="en">Shortcut for &apos;hasTemporalPart&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">has temporal part date time value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/startedByDateTimeValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/gfo-core/startedByDateTimeValue">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/gfo-core/hasTemporalPartDateTimeValue"/>
+        <rdfs:comment xml:lang="en">Shortcut for &apos;temporallyStartedBy&apos;</rdfs:comment>
+        <rdfs:label xml:lang="en">started by date time value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/stringValue -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/gfo-core/stringValue">
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Attributive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">string value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/gfo-core/unit -->
+
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/gfo-core/unit">
+        <rdfs:domain rdf:resource="https://w3id.org/gfo-core/Attributive"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">unit</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://w3id.org/gfo-core/Attributive -->
+
+
+    <owl:Class rdf:about="https://w3id.org/gfo-core/Attributive">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/gfo-core/ConcreteIndividual"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/attributiveOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/gfo-core/Individual"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category Attributive.</rdfs:comment>
+        <rdfs:label xml:lang="en">Attributive</rdfs:label>
+        <skos:definition xml:lang="en">Attributives are individuals that depend on other individuals by some kind of dependency relation.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/gfo-core/Category -->
+
+
+    <owl:Class rdf:about="https://w3id.org/gfo-core/Category">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/gfo-core/Entity"/>
+        <rdfs:label xml:lang="en">Category</rdfs:label>
+        <skos:altLabel xml:lang="en">Class</skos:altLabel>
+        <skos:altLabel xml:lang="en">Kind</skos:altLabel>
+        <skos:altLabel xml:lang="en">Type</skos:altLabel>
+        <skos:definition xml:lang="en">The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/gfo-core/Chronoid -->
+
+
+    <owl:Class rdf:about="https://w3id.org/gfo-core/Chronoid">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/gfo-core/TimeEntity"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/temporallyFinishedBy"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onClass rdf:resource="https://w3id.org/gfo-core/TimeBoundary"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/temporallyStartedBy"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onClass rdf:resource="https://w3id.org/gfo-core/TimeBoundary"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/finishedByDateTimeValue"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/startedByDateTimeValue"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Chronoid</rdfs:label>
+        <skos:altLabel xml:lang="en">Time interval</skos:altLabel>
+        <skos:altLabel xml:lang="en">Time period</skos:altLabel>
+        <skos:definition xml:lang="en">Chronoids are real-valued time intervals with endpoints.</skos:definition>
+        <skos:example xml:lang="en">The time (extension) of a football match (from the start point in time to the end point in time)</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/gfo-core/ConcreteIndividual -->
+
+
+    <owl:Class rdf:about="https://w3id.org/gfo-core/ConcreteIndividual">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/gfo-core/Individual"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/finishedByDateTimeValue"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/startedByDateTimeValue"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/gfo-core/hasTime"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/gfo-core/TimeEntity"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/gfo-core/dateTimeValue"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Concrete individual</rdfs:label>
+        <skos:definition xml:lang="en">Concrete individuals are entities that have an immediate relation to time or to space-time. They exist in time.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/gfo-core/Continuant -->
+
+
+    <owl:Class rdf:about="https://w3id.org/gfo-core/Continuant">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/gfo-core/ConcreteIndividual"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/finishedByDateTimeValue"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/startedByDateTimeValue"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/gfo-core/hasTime"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/gfo-core/Chronoid"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Social or material (three-dimensional) objects, their groups/aggregates, parts and boundaries (two-, one- and zero-dimensional entities, i.e., surfaces, lines and points) are subsumed under the category Continuant.</rdfs:comment>
+        <rdfs:comment xml:lang="en">While the object parts are firmly connected to the entire object, the aggregate members are loose objects. When modelling a person, for example, you could consider their skeleton as an object and as part of the human body. However, if we look at bone finds in the context of anthropology, the skeleton can be modelled as an aggregate of individual bones. Another example is a computer. A kit of computer components is an object aggregate before assembly and an object (a computer) afterwards. However, if the components are thrown into the case without being correctly connected, it is not a computer, but the components are simply located in the case.</rdfs:comment>
+        <rdfs:label xml:lang="en">Continuant</rdfs:label>
+        <skos:definition xml:lang="en">Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/gfo-core/Entity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/gfo-core/Entity">
+        <rdfs:label xml:lang="en">Entity</rdfs:label>
+        <skos:definition xml:lang="en">Everything that exists is called an entity.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/gfo-core/Individual -->
+
+
+    <owl:Class rdf:about="https://w3id.org/gfo-core/Individual">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/gfo-core/Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/instanceOf"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/gfo-core/Category"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Individual</rdfs:label>
+        <skos:definition xml:lang="en">Individuals are entities which cannot be further instantiated.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/gfo-core/Process -->
+
+
+    <owl:Class rdf:about="https://w3id.org/gfo-core/Process">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/gfo-core/ConcreteIndividual"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/finishedByDateTimeValue"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/startedByDateTimeValue"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="https://w3id.org/gfo-core/hasTime"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="https://w3id.org/gfo-core/Chronoid"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/hasParticipant"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/gfo-core/Continuant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/hasProcessPart"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/gfo-core/Attributive"/>
+                            <rdf:Description rdf:about="https://w3id.org/gfo-core/Process"/>
+                            <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Processes represent dynamic knowledge.</rdfs:comment>
+        <rdfs:comment xml:lang="en">We distinguish between cohesive processes and process aggregates.</rdfs:comment>
+        <rdfs:label xml:lang="en">Process</rdfs:label>
+        <skos:definition xml:lang="en">Processes are concrete individuals that happen in time and have a temporal extension (chronoid/time interval).</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/gfo-core/Situation -->
+
+
+    <owl:Class rdf:about="https://w3id.org/gfo-core/Situation">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/gfo-core/ConcreteIndividual"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/hasParticipant"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/gfo-core/Continuant"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/hasSituationPart"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://w3id.org/gfo-core/Attributive"/>
+                            <rdf:Description rdf:about="https://w3id.org/gfo-core/Situation"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Situations represent static knowledge.</rdfs:comment>
+        <rdfs:comment xml:lang="en">We distinguish between cohesive situations and situation aggregates.</rdfs:comment>
+        <rdfs:label xml:lang="en">Situation</rdfs:label>
+        <skos:definition xml:lang="en">Situations are combinations of contextually related attributives.</skos:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/gfo-core/TimeBoundary -->
+
+
+    <owl:Class rdf:about="https://w3id.org/gfo-core/TimeBoundary">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/gfo-core/TimeEntity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/gfo-core/dateTimeValue"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Time boundary</rdfs:label>
+        <skos:altLabel xml:lang="en">Point in time</skos:altLabel>
+        <skos:altLabel xml:lang="en">Time point</skos:altLabel>
+        <skos:example xml:lang="en">Start point in time of a football match</skos:example>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/gfo-core/TimeEntity -->
+
+
+    <owl:Class rdf:about="https://w3id.org/gfo-core/TimeEntity">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/gfo-core/Individual"/>
+        <rdfs:comment xml:lang="en">The time entities defined in GFO-core are points in time (time boundaries) and time intervals/periods (chronoids), which consist of points in time.</rdfs:comment>
+        <rdfs:label xml:lang="en">Time entity</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

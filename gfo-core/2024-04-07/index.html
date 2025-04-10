@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>General Formal Ontology Core (GFO-core)</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/gfo-core","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/gfo-core","name":"General Formal Ontology Core (GFO-core)", "headline":"Document describing the ontology https://w3id.org/gfo-core", "dateReleased":"Thu Apr 10 13:08:09 UTC 2025", "version":"2025-04-07", "license":"http://creativecommons.org/licenses/by/4.0/", "codeRepository":"https://github.com/Onto-Med/gfo-light", "author":[{"@type":"Person","name":"Alexandr Uciteli"},{"@type":"Person","name":"Christoph Beger"},{"@type":"Person","name":"Frank Loebe"},{"@type":"Person","name":"Franz Matthies"},{"@type":"Person","name":"Heinrich Herre"},{"@type":"Person","name":"Konrad Höffner"},{"@type":"Person","name":"Patryk Burek"},{"@type":"Person","name":"Ralph Schäfermeier"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Table of contents</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>General Formal Ontology Core (GFO-core)</h1>
+
+
+<dl>
+<dt>This version:</dt>
+<dd><a href="https://w3id.org/gfo-core/release/2025-04-07">https://w3id.org/gfo-core/release/2025-04-07</a></dd>
+<dt>Revision:</dt>
+<dd>2025-04-07</dd>
+<dt>Authors:</dt>
+<dd>Alexandr Uciteli</dd><dd>Christoph Beger</dd><dd>Frank Loebe</dd><dd>Franz Matthies</dd><dd>Heinrich Herre</dd><dd>Konrad Höffner</dd><dd>Patryk Burek</dd><dd>Ralph Schäfermeier</dd>
+
+<dt>Download serialization:</dt><dd><span><a href="gfo-core.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="gfo-core.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="gfo-core.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="gfo-core.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>License:</dt><dd><a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-http://creativecommons.org/licenses/by/4.0/-blue.svg" alt="http://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Cite as:</dt>
+<dd>Alexandr Uciteli, Christoph Beger, Frank Loebe, Franz Matthies, Heinrich Herre, Konrad Höffner, Patryk Burek, Ralph Schäfermeier. General Formal Ontology Core (GFO-core). Revision: 2025-04-07. Retrieved from: https://w3id.org/gfo-core/release/2025-04-07</dd>
+<dt>DOI:</dt>
+<dd><a href="http://dx.doi.org/10.5281/zenodo.14833002"><img src ="https://img.shields.io/badge/DOI-10.5281/zenodo.14833002-blue.svg" alt="10.5281/zenodo.14833002" /></a></dd>
+<dt>Vocabulary maintained at:</dt>
+<dd><a href="https://github.com/Onto-Med/gfo-light">https://github.com/Onto-Med/gfo-light</a></dd>
+</dl>
+
+<a href="provenance/provenance-en.html" target="_blank">Provenance of this page</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div><div id="toc"></div>  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">GFO-core: Overview <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span class="markdown">
+This ontology has the following classes and properties.</span>
+<h4>Classes</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a>
+   </li>
+   <li>
+      <a href="#/Category" title="https://w3id.org/gfo-core/Category">Category</a>
+   </li>
+   <li>
+      <a href="#/Chronoid" title="https://w3id.org/gfo-core/Chronoid">Chronoid</a>
+   </li>
+   <li>
+      <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-core/ConcreteIndividual">Concrete individual</a>
+   </li>
+   <li>
+      <a href="#/Continuant" title="https://w3id.org/gfo-core/Continuant">Continuant</a>
+   </li>
+   <li>
+      <a href="#/Entity" title="https://w3id.org/gfo-core/Entity">Entity</a>
+   </li>
+   <li>
+      <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a>
+   </li>
+   <li>
+      <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a>
+   </li>
+   <li>
+      <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a>
+   </li>
+   <li>
+      <a href="#/TimeBoundary" title="https://w3id.org/gfo-core/TimeBoundary">Time boundary</a>
+   </li>
+   <li>
+      <a href="#/TimeEntity" title="https://w3id.org/gfo-core/TimeEntity">Time entity</a>
+   </li>
+</ul><h4>Object Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#/after" title="https://w3id.org/gfo-core/after">after</a>
+   </li>
+   <li>
+      <a href="#/attributiveOf" title="https://w3id.org/gfo-core/attributiveOf">attributive of</a>
+   </li>
+   <li>
+      <a href="#/before" title="https://w3id.org/gfo-core/before">before</a>
+   </li>
+   <li>
+      <a href="#/causedBy" title="https://w3id.org/gfo-core/causedBy">caused by</a>
+   </li>
+   <li>
+      <a href="#/causes" title="https://w3id.org/gfo-core/causes">causes</a>
+   </li>
+   <li>
+      <a href="#/during" title="https://w3id.org/gfo-core/during">during</a>
+   </li>
+   <li>
+      <a href="#/hasAttributive" title="https://w3id.org/gfo-core/hasAttributive">has attributive</a>
+   </li>
+   <li>
+      <a href="#/hasPart" title="https://w3id.org/gfo-core/hasPart">has part</a>
+   </li>
+   <li>
+      <a href="#/hasParticipant" title="https://w3id.org/gfo-core/hasParticipant">has participant</a>
+   </li>
+   <li>
+      <a href="#/hasProcessPart" title="https://w3id.org/gfo-core/hasProcessPart">has process part</a>
+   </li>
+   <li>
+      <a href="#/hasSituationPart" title="https://w3id.org/gfo-core/hasSituationPart">has situation part</a>
+   </li>
+   <li>
+      <a href="#/hasTemporalPart" title="https://w3id.org/gfo-core/hasTemporalPart">has temporal part</a>
+   </li>
+   <li>
+      <a href="#/hasTime" title="https://w3id.org/gfo-core/hasTime">has time</a>
+   </li>
+   <li>
+      <a href="#/instanceOf" title="https://w3id.org/gfo-core/instanceOf">instance of</a>
+   </li>
+   <li>
+      <a href="#/instantiatedBy" title="https://w3id.org/gfo-core/instantiatedBy">instantiated by</a>
+   </li>
+   <li>
+      <a href="#/leadsTo" title="https://w3id.org/gfo-core/leadsTo">leads to</a>
+   </li>
+   <li>
+      <a href="#/partOf" title="https://w3id.org/gfo-core/partOf">part of</a>
+   </li>
+   <li>
+      <a href="#/participatesIn" title="https://w3id.org/gfo-core/participatesIn">participates in</a>
+   </li>
+   <li>
+      <a href="#/processPartOf" title="https://w3id.org/gfo-core/processPartOf">process part of</a>
+   </li>
+   <li>
+      <a href="#/resultsFrom" title="https://w3id.org/gfo-core/resultsFrom">results from</a>
+   </li>
+   <li>
+      <a href="#/situationPartOf" title="https://w3id.org/gfo-core/situationPartOf">situation part of</a>
+   </li>
+   <li>
+      <a href="#/temporalPartOf" title="https://w3id.org/gfo-core/temporalPartOf">temporal part of</a>
+   </li>
+   <li>
+      <a href="#/temporallyContains" title="https://w3id.org/gfo-core/temporallyContains">temporally contains</a>
+   </li>
+   <li>
+      <a href="#/temporallyEqual" title="https://w3id.org/gfo-core/temporallyEqual">temporally equal</a>
+   </li>
+   <li>
+      <a href="#/temporallyFinishedBy" title="https://w3id.org/gfo-core/temporallyFinishedBy">temporally finished by</a>
+   </li>
+   <li>
+      <a href="#/temporallyFinishes" title="https://w3id.org/gfo-core/temporallyFinishes">temporally finishes</a>
+   </li>
+   <li>
+      <a href="#/temporallyMeets" title="https://w3id.org/gfo-core/temporallyMeets">temporally meets</a>
+   </li>
+   <li>
+      <a href="#/temporallyMetBy" title="https://w3id.org/gfo-core/temporallyMetBy">temporally met by</a>
+   </li>
+   <li>
+      <a href="#/temporallyOverlappedBy" title="https://w3id.org/gfo-core/temporallyOverlappedBy">temporally overlapped by</a>
+   </li>
+   <li>
+      <a href="#/temporallyOverlaps" title="https://w3id.org/gfo-core/temporallyOverlaps">temporally overlaps</a>
+   </li>
+   <li>
+      <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a>
+   </li>
+   <li>
+      <a href="#/temporallyStartedBy" title="https://w3id.org/gfo-core/temporallyStartedBy">temporally started by</a>
+   </li>
+   <li>
+      <a href="#/temporallyStarts" title="https://w3id.org/gfo-core/temporallyStarts">temporally starts</a>
+   </li>
+   <li>
+      <a href="#/timeOf" title="https://w3id.org/gfo-core/timeOf">time of</a>
+   </li>
+</ul><h4>Data Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#/afterDateTimeValue" title="https://w3id.org/gfo-core/afterDateTimeValue">after date time value</a>
+   </li>
+   <li>
+      <a href="#/beforeDateTimeValue" title="https://w3id.org/gfo-core/beforeDateTimeValue">before date time value</a>
+   </li>
+   <li>
+      <a href="#/booleanValue" title="https://w3id.org/gfo-core/booleanValue">boolean value</a>
+   </li>
+   <li>
+      <a href="#/containsDateTimeValue" title="https://w3id.org/gfo-core/containsDateTimeValue">contains date time value</a>
+   </li>
+   <li>
+      <a href="#/dateTimeValue" title="https://w3id.org/gfo-core/dateTimeValue">date time value</a>
+   </li>
+   <li>
+      <a href="#/decimalValue" title="https://w3id.org/gfo-core/decimalValue">decimal value</a>
+   </li>
+   <li>
+      <a href="#/finishedByDateTimeValue"
+         title="https://w3id.org/gfo-core/finishedByDateTimeValue">finished by date time value</a>
+   </li>
+   <li>
+      <a href="#/hasTemporalPartDateTimeValue"
+         title="https://w3id.org/gfo-core/hasTemporalPartDateTimeValue">has temporal part date time value</a>
+   </li>
+   <li>
+      <a href="#/startedByDateTimeValue" title="https://w3id.org/gfo-core/startedByDateTimeValue">started by date time value</a>
+   </li>
+   <li>
+      <a href="#/stringValue" title="https://w3id.org/gfo-core/stringValue">string value</a>
+   </li>
+   <li>
+      <a href="#/unit" title="https://w3id.org/gfo-core/unit">unit</a>
+   </li>
+</ul><h4>Annotation Properties</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel">
+         <span>alt Label</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2000/01/rdf-schema#comment" title="http://www.w3.org/2000/01/rdf-schema#comment">
+         <span>comment</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/created" title="http://purl.org/dc/elements/1.1/created">
+         <span>created</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#definition" title="http://www.w3.org/2004/02/skos/core#definition">
+         <span>definition</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/ontology/bibo/doi" title="http://purl.org/ontology/bibo/doi">
+         <span>doi</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#example" title="http://www.w3.org/2004/02/skos/core#example">
+         <span>example</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage">
+         <span>homepage</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/modified" title="http://purl.org/dc/elements/1.1/modified">
+         <span>modified</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+         title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+         <span>preferred Namespace Prefix</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespaceURI" title="http://purl.org/vocab/vann/preferredNamespaceURI">
+         <span>preferred Namespace U R I</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://usefulinc.com/ns/doap#repository" title="http://usefulinc.com/ns/doap#repository">
+         <span>repository</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title">
+         <span>title</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2002/07/owl#versionInfo" title="http://www.w3.org/2002/07/owl#versionInfo">
+         <span>version Info</span>
+      </a>
+   </li>
+</ul>
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">GFO-core: Description <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+
+<span class="markdown">GFO-core contains the core GFO entities and serves as a common basis for both GFO variants (light and full). For some use cases, it may be sufficient to use GFO-core alone as a kind of minimal top-level gfo-core.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">Cross-reference for GFO-core classes, object properties and data properties <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+This section provides details for each class and property defined by GFO-core.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Classes</h3>
+ <ul class="hlist">
+  <li><a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a></li>
+  <li><a href="#/Category" title="https://w3id.org/gfo-core/Category">Category</a></li>
+  <li><a href="#/Chronoid" title="https://w3id.org/gfo-core/Chronoid">Chronoid</a></li>
+  <li><a href="#/ConcreteIndividual" title="https://w3id.org/gfo-core/ConcreteIndividual">Concrete individual</a></li>
+  <li><a href="#/Continuant" title="https://w3id.org/gfo-core/Continuant">Continuant</a></li>
+  <li><a href="#/Entity" title="https://w3id.org/gfo-core/Entity">Entity</a></li>
+  <li><a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a></li>
+  <li><a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a></li>
+  <li><a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a></li>
+  <li><a href="#/TimeBoundary" title="https://w3id.org/gfo-core/TimeBoundary">Time boundary</a></li>
+  <li><a href="#/TimeEntity" title="https://w3id.org/gfo-core/TimeEntity">Time entity</a></li>
+ </ul>
+ <div class="entity" id="/Attributive">
+  <h3>Attributive<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/Attributive</p>
+  <div class="comment">
+   <span class="markdown">Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category Attributive.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Attributives are individuals that depend on other individuals by some kind of dependency relation.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-core/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/attributiveOf" title="https://w3id.org/gfo-core/attributiveOf">attributive of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/booleanValue" title="https://w3id.org/gfo-core/booleanValue">boolean value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/decimalValue" title="https://w3id.org/gfo-core/decimalValue">decimal value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/processPartOf" title="https://w3id.org/gfo-core/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/situationPartOf" title="https://w3id.org/gfo-core/situationPartOf">situation part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/stringValue" title="https://w3id.org/gfo-core/stringValue">string value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/unit" title="https://w3id.org/gfo-core/unit">unit</a> <sup class="type-dp" title="data property">dp</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasAttributive" title="https://w3id.org/gfo-core/hasAttributive">has attributive</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasProcessPart" title="https://w3id.org/gfo-core/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasSituationPart" title="https://w3id.org/gfo-core/hasSituationPart">has situation part</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Category">
+  <h3>Category<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/Category</p>
+  <div class="comment">
+   <span class="markdown">The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Entity" title="https://w3id.org/gfo-core/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/instantiatedBy" title="https://w3id.org/gfo-core/instantiatedBy">instantiated by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/instanceOf" title="https://w3id.org/gfo-core/instanceOf">instance of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Chronoid">
+  <h3>Chronoid<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/Chronoid</p>
+  <div class="comment">
+   <span class="markdown">Chronoids are real-valued time intervals with endpoints.</span>
+  </div>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>The time (extension) of a football match (from the start point in time to the end point in time)</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/TimeEntity" title="https://w3id.org/gfo-core/TimeEntity">Time entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/ConcreteIndividual">
+  <h3>Concrete individual<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/ConcreteIndividual</p>
+  <div class="comment">
+   <span class="markdown">Concrete individuals are entities that have an immediate relation to time or to space-time. They exist in time.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>, <a href="#/Continuant" title="https://w3id.org/gfo-core/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>, <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a> <sup class="type-c" title="class">c</sup>, <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasTime" title="https://w3id.org/gfo-core/hasTime">has time</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/timeOf" title="https://w3id.org/gfo-core/timeOf">time of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Continuant">
+  <h3>Continuant<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/Continuant</p>
+  <div class="comment">
+   <span class="markdown">Social or material (three-dimensional) objects, their groups/aggregates, parts and boundaries (two-, one- and zero-dimensional entities, i.e., surfaces, lines and points) are subsumed under the category Continuant.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-core/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/participatesIn" title="https://w3id.org/gfo-core/participatesIn">participates in</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasParticipant" title="https://w3id.org/gfo-core/hasParticipant">has participant</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Entity">
+  <h3>Entity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/Entity</p>
+  <div class="comment">
+   <span class="markdown">Everything that exists is called an entity.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/Category" title="https://w3id.org/gfo-core/Category">Category</a> <sup class="type-c" title="class">c</sup>, <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/instanceOf" title="https://w3id.org/gfo-core/instanceOf">instance of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/instantiatedBy" title="https://w3id.org/gfo-core/instantiatedBy">instantiated by</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Individual">
+  <h3>Individual<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/Individual</p>
+  <div class="comment">
+   <span class="markdown">Individuals are entities which cannot be further instantiated.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Entity" title="https://w3id.org/gfo-core/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-core/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>, <a href="#/TimeEntity" title="https://w3id.org/gfo-core/TimeEntity">Time entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/dateTimeValue" title="https://w3id.org/gfo-core/dateTimeValue">date time value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/hasAttributive" title="https://w3id.org/gfo-core/hasAttributive">has attributive</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasPart" title="https://w3id.org/gfo-core/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/partOf" title="https://w3id.org/gfo-core/partOf">part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/attributiveOf" title="https://w3id.org/gfo-core/attributiveOf">attributive of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasPart" title="https://w3id.org/gfo-core/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/partOf" title="https://w3id.org/gfo-core/partOf">part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Process">
+  <h3>Process<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/Process</p>
+  <div class="comment">
+   <span class="markdown">Processes represent dynamic knowledge.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Processes are concrete individuals that happen in time and have a temporal extension (chronoid/time interval).</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-core/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasParticipant" title="https://w3id.org/gfo-core/hasParticipant">has participant</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasProcessPart" title="https://w3id.org/gfo-core/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/leadsTo" title="https://w3id.org/gfo-core/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>, <a href="#/processPartOf" title="https://w3id.org/gfo-core/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/resultsFrom" title="https://w3id.org/gfo-core/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasProcessPart" title="https://w3id.org/gfo-core/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/leadsTo" title="https://w3id.org/gfo-core/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>, <a href="#/participatesIn" title="https://w3id.org/gfo-core/participatesIn">participates in</a> <sup class="type-op" title="object property">op</sup>, <a href="#/processPartOf" title="https://w3id.org/gfo-core/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/resultsFrom" title="https://w3id.org/gfo-core/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/Situation">
+  <h3>Situation<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/Situation</p>
+  <div class="comment">
+   <span class="markdown">A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation.</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Situations are combinations of contextually related attributives.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-core/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/hasParticipant" title="https://w3id.org/gfo-core/hasParticipant">has participant</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasSituationPart" title="https://w3id.org/gfo-core/hasSituationPart">has situation part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/leadsTo" title="https://w3id.org/gfo-core/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>, <a href="#/processPartOf" title="https://w3id.org/gfo-core/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/resultsFrom" title="https://w3id.org/gfo-core/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>, <a href="#/situationPartOf" title="https://w3id.org/gfo-core/situationPartOf">situation part of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasProcessPart" title="https://w3id.org/gfo-core/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasSituationPart" title="https://w3id.org/gfo-core/hasSituationPart">has situation part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/leadsTo" title="https://w3id.org/gfo-core/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>, <a href="#/participatesIn" title="https://w3id.org/gfo-core/participatesIn">participates in</a> <sup class="type-op" title="object property">op</sup>, <a href="#/resultsFrom" title="https://w3id.org/gfo-core/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>, <a href="#/situationPartOf" title="https://w3id.org/gfo-core/situationPartOf">situation part of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/TimeBoundary">
+  <h3>Time boundary<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/TimeBoundary</p>
+  <dl>
+   <dt>
+    Example
+   </dt>
+   <dd>
+    <pre>Start point in time of a football match</pre>
+   </dd>
+  </dl>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/TimeEntity" title="https://w3id.org/gfo-core/TimeEntity">Time entity</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="/TimeEntity">
+  <h3>Time entity<sup class="type-c" title="class">c</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/TimeEntity</p>
+  <div class="comment">
+   <span class="markdown">The time entities defined in GFO-core are points in time (time boundaries) and time intervals/periods (chronoids), which consist of points in time.</span>
+  </div>
+  <dl class="description">
+   <dt>
+    has super-classes
+   </dt>
+   <dd>
+    <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    has sub-classes
+   </dt>
+   <dd>
+    <a href="#/Chronoid" title="https://w3id.org/gfo-core/Chronoid">Chronoid</a> <sup class="type-c" title="class">c</sup>, <a href="#/TimeBoundary" title="https://w3id.org/gfo-core/TimeBoundary">Time boundary</a> <sup class="type-c" title="class">c</sup>
+   </dd>
+   <dt>
+    is in domain of
+   </dt>
+   <dd>
+    <a href="#/timeOf" title="https://w3id.org/gfo-core/timeOf">time of</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+   <dt>
+    is in range of
+   </dt>
+   <dd>
+    <a href="#/hasTime" title="https://w3id.org/gfo-core/hasTime">has time</a> <sup class="type-op" title="object property">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h3 id="properties" class="list">Object Properties</h3>
+ <ul class="hlist">
+  <li><a href="#/after" title="https://w3id.org/gfo-core/after">after</a></li>
+  <li><a href="#/attributiveOf" title="https://w3id.org/gfo-core/attributiveOf">attributive of</a></li>
+  <li><a href="#/before" title="https://w3id.org/gfo-core/before">before</a></li>
+  <li><a href="#/causedBy" title="https://w3id.org/gfo-core/causedBy">caused by</a></li>
+  <li><a href="#/causes" title="https://w3id.org/gfo-core/causes">causes</a></li>
+  <li><a href="#/during" title="https://w3id.org/gfo-core/during">during</a></li>
+  <li><a href="#/hasAttributive" title="https://w3id.org/gfo-core/hasAttributive">has attributive</a></li>
+  <li><a href="#/hasPart" title="https://w3id.org/gfo-core/hasPart">has part</a></li>
+  <li><a href="#/hasParticipant" title="https://w3id.org/gfo-core/hasParticipant">has participant</a></li>
+  <li><a href="#/hasProcessPart" title="https://w3id.org/gfo-core/hasProcessPart">has process part</a></li>
+  <li><a href="#/hasSituationPart" title="https://w3id.org/gfo-core/hasSituationPart">has situation part</a></li>
+  <li><a href="#/hasTemporalPart" title="https://w3id.org/gfo-core/hasTemporalPart">has temporal part</a></li>
+  <li><a href="#/hasTime" title="https://w3id.org/gfo-core/hasTime">has time</a></li>
+  <li><a href="#/instanceOf" title="https://w3id.org/gfo-core/instanceOf">instance of</a></li>
+  <li><a href="#/instantiatedBy" title="https://w3id.org/gfo-core/instantiatedBy">instantiated by</a></li>
+  <li><a href="#/leadsTo" title="https://w3id.org/gfo-core/leadsTo">leads to</a></li>
+  <li><a href="#/partOf" title="https://w3id.org/gfo-core/partOf">part of</a></li>
+  <li><a href="#/participatesIn" title="https://w3id.org/gfo-core/participatesIn">participates in</a></li>
+  <li><a href="#/processPartOf" title="https://w3id.org/gfo-core/processPartOf">process part of</a></li>
+  <li><a href="#/resultsFrom" title="https://w3id.org/gfo-core/resultsFrom">results from</a></li>
+  <li><a href="#/situationPartOf" title="https://w3id.org/gfo-core/situationPartOf">situation part of</a></li>
+  <li><a href="#/temporalPartOf" title="https://w3id.org/gfo-core/temporalPartOf">temporal part of</a></li>
+  <li><a href="#/temporallyContains" title="https://w3id.org/gfo-core/temporallyContains">temporally contains</a></li>
+  <li><a href="#/temporallyEqual" title="https://w3id.org/gfo-core/temporallyEqual">temporally equal</a></li>
+  <li><a href="#/temporallyFinishedBy" title="https://w3id.org/gfo-core/temporallyFinishedBy">temporally finished by</a></li>
+  <li><a href="#/temporallyFinishes" title="https://w3id.org/gfo-core/temporallyFinishes">temporally finishes</a></li>
+  <li><a href="#/temporallyMeets" title="https://w3id.org/gfo-core/temporallyMeets">temporally meets</a></li>
+  <li><a href="#/temporallyMetBy" title="https://w3id.org/gfo-core/temporallyMetBy">temporally met by</a></li>
+  <li><a href="#/temporallyOverlappedBy" title="https://w3id.org/gfo-core/temporallyOverlappedBy">temporally overlapped by</a></li>
+  <li><a href="#/temporallyOverlaps" title="https://w3id.org/gfo-core/temporallyOverlaps">temporally overlaps</a></li>
+  <li><a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a></li>
+  <li><a href="#/temporallyStartedBy" title="https://w3id.org/gfo-core/temporallyStartedBy">temporally started by</a></li>
+  <li><a href="#/temporallyStarts" title="https://w3id.org/gfo-core/temporallyStarts">temporally starts</a></li>
+  <li><a href="#/timeOf" title="https://w3id.org/gfo-core/timeOf">time of</a></li>
+ </ul>
+ <div class="entity" id="/after">
+  <h3>after<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/after</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/before" title="https://w3id.org/gfo-core/before">before</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/attributiveOf">
+  <h3>attributive of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/attributiveOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasAttributive" title="https://w3id.org/gfo-core/hasAttributive">has attributive</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/before">
+  <h3>before<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/before</p>
+  <div class="comment">
+   <span class="markdown">X before Y: Xf &lt; Ys</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/after" title="https://w3id.org/gfo-core/after">after</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/causedBy">
+  <h3>caused by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/causedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/resultsFrom" title="https://w3id.org/gfo-core/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/causes" title="https://w3id.org/gfo-core/causes">causes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/causes">
+  <h3>causes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/causes</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/leadsTo" title="https://w3id.org/gfo-core/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/causedBy" title="https://w3id.org/gfo-core/causedBy">caused by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/during">
+  <h3>during<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/during</p>
+  <div class="comment">
+   <span class="markdown">X during Y: Xs &gt; Ys and Xf &lt; Yf</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporalPartOf" title="https://w3id.org/gfo-core/temporalPartOf">temporal part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyContains" title="https://w3id.org/gfo-core/temporallyContains">temporally contains</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasAttributive">
+  <h3>has attributive<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/hasAttributive</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/attributiveOf" title="https://w3id.org/gfo-core/attributiveOf">attributive of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasPart">
+  <h3>has part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/hasPart</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/hasProcessPart" title="https://w3id.org/gfo-core/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasSituationPart" title="https://w3id.org/gfo-core/hasSituationPart">has situation part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/partOf" title="https://w3id.org/gfo-core/partOf">part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasParticipant">
+  <h3>has participant<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/hasParticipant</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Continuant" title="https://w3id.org/gfo-core/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/participatesIn" title="https://w3id.org/gfo-core/participatesIn">participates in</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasProcessPart">
+  <h3>has process part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/hasProcessPart</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasPart" title="https://w3id.org/gfo-core/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/processPartOf" title="https://w3id.org/gfo-core/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasSituationPart">
+  <h3>has situation part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/hasSituationPart</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasPart" title="https://w3id.org/gfo-core/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/situationPartOf" title="https://w3id.org/gfo-core/situationPartOf">situation part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasTemporalPart">
+  <h3>has temporal part<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/hasTemporalPart</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyContains" title="https://w3id.org/gfo-core/temporallyContains">temporally contains</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyFinishedBy" title="https://w3id.org/gfo-core/temporallyFinishedBy">temporally finished by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyStartedBy" title="https://w3id.org/gfo-core/temporallyStartedBy">temporally started by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporalPartOf" title="https://w3id.org/gfo-core/temporalPartOf">temporal part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasTime">
+  <h3>has time<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/hasTime</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-core/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/TimeEntity" title="https://w3id.org/gfo-core/TimeEntity">Time entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/timeOf" title="https://w3id.org/gfo-core/timeOf">time of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/instanceOf">
+  <h3>instance of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/instanceOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Entity" title="https://w3id.org/gfo-core/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Category" title="https://w3id.org/gfo-core/Category">Category</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/instantiatedBy" title="https://w3id.org/gfo-core/instantiatedBy">instantiated by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/instantiatedBy">
+  <h3>instantiated by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/instantiatedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Category" title="https://w3id.org/gfo-core/Category">Category</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Entity" title="https://w3id.org/gfo-core/Entity">Entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/instanceOf" title="https://w3id.org/gfo-core/instanceOf">instance of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/leadsTo">
+  <h3>leads to<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/leadsTo</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/causes" title="https://w3id.org/gfo-core/causes">causes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/resultsFrom" title="https://w3id.org/gfo-core/resultsFrom">results from</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/partOf">
+  <h3>part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/partOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/processPartOf" title="https://w3id.org/gfo-core/processPartOf">process part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/situationPartOf" title="https://w3id.org/gfo-core/situationPartOf">situation part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasPart" title="https://w3id.org/gfo-core/hasPart">has part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/participatesIn">
+  <h3>participates in<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/participatesIn</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Continuant" title="https://w3id.org/gfo-core/Continuant">Continuant</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasParticipant" title="https://w3id.org/gfo-core/hasParticipant">has participant</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/processPartOf">
+  <h3>process part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/processPartOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/partOf" title="https://w3id.org/gfo-core/partOf">part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasProcessPart" title="https://w3id.org/gfo-core/hasProcessPart">has process part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/resultsFrom">
+  <h3>results from<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/resultsFrom</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/causedBy" title="https://w3id.org/gfo-core/causedBy">caused by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Process" title="https://w3id.org/gfo-core/Process">Process</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/leadsTo" title="https://w3id.org/gfo-core/leadsTo">leads to</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/situationPartOf">
+  <h3>situation part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/situationPartOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/partOf" title="https://w3id.org/gfo-core/partOf">part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup> <span class="logic">or</span> <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Situation" title="https://w3id.org/gfo-core/Situation">Situation</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasSituationPart" title="https://w3id.org/gfo-core/hasSituationPart">has situation part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporalPartOf">
+  <h3>temporal part of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporalPartOf</p>
+  <div class="comment">
+   <span class="markdown">X temporal part of Y: X starts Y or X finishes Y or X during Y</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/during" title="https://w3id.org/gfo-core/during">during</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyFinishes" title="https://w3id.org/gfo-core/temporallyFinishes">temporally finishes</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyStarts" title="https://w3id.org/gfo-core/temporallyStarts">temporally starts</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPart" title="https://w3id.org/gfo-core/hasTemporalPart">has temporal part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyContains">
+  <h3>temporally contains<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporallyContains</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPart" title="https://w3id.org/gfo-core/hasTemporalPart">has temporal part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/during" title="https://w3id.org/gfo-core/during">during</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyEqual">
+  <h3>temporally equal<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporallyEqual</p>
+  <div class="comment">
+   <span class="markdown">X equal Y: Xs = Ys and Xf = Yf</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyFinishedBy">
+  <h3>temporally finished by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporallyFinishedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPart" title="https://w3id.org/gfo-core/hasTemporalPart">has temporal part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyFinishes" title="https://w3id.org/gfo-core/temporallyFinishes">temporally finishes</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyFinishes">
+  <h3>temporally finishes<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporallyFinishes</p>
+  <div class="comment">
+   <span class="markdown">X finishes Y: Xs &gt; Ys and Xf = Yf</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporalPartOf" title="https://w3id.org/gfo-core/temporalPartOf">temporal part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyFinishedBy" title="https://w3id.org/gfo-core/temporallyFinishedBy">temporally finished by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyMeets">
+  <h3>temporally meets<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporallyMeets</p>
+  <div class="comment">
+   <span class="markdown">X meets Y: Xf = Ys</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyMetBy" title="https://w3id.org/gfo-core/temporallyMetBy">temporally met by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyMetBy">
+  <h3>temporally met by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporallyMetBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyMeets" title="https://w3id.org/gfo-core/temporallyMeets">temporally meets</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyOverlappedBy">
+  <h3>temporally overlapped by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporallyOverlappedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyOverlaps" title="https://w3id.org/gfo-core/temporallyOverlaps">temporally overlaps</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyOverlaps">
+  <h3>temporally overlaps<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporallyOverlaps</p>
+  <div class="comment">
+   <span class="markdown">X overlaps Y: Xs &lt; Ys and Xf &gt; Ys and Xf &lt; Yf</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporallyRelatedWith" title="https://w3id.org/gfo-core/temporallyRelatedWith">temporally related with</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyOverlappedBy" title="https://w3id.org/gfo-core/temporallyOverlappedBy">temporally overlapped by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyRelatedWith">
+  <h3>temporally related with<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporallyRelatedWith</p>
+  <div class="comment">
+   <span class="markdown">If a temporal relation is applied to other concrete individuals as time intervals (attributive, continuant, process, situation), it is propagated to their existence times (hasTime).</span>
+  </div>
+  <div class="comment">
+   <span class="markdown">Temporal relations between time intervals based on Allen, J. F. (1983). Maintaining knowledge about temporal intervals. Communications of the ACM, 26(11), 832-843.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/after" title="https://w3id.org/gfo-core/after">after</a> <sup class="type-op" title="object property">op</sup>, <a href="#/before" title="https://w3id.org/gfo-core/before">before</a> <sup class="type-op" title="object property">op</sup>, <a href="#/hasTemporalPart" title="https://w3id.org/gfo-core/hasTemporalPart">has temporal part</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporalPartOf" title="https://w3id.org/gfo-core/temporalPartOf">temporal part of</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyEqual" title="https://w3id.org/gfo-core/temporallyEqual">temporally equal</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyMeets" title="https://w3id.org/gfo-core/temporallyMeets">temporally meets</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyMetBy" title="https://w3id.org/gfo-core/temporallyMetBy">temporally met by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyOverlappedBy" title="https://w3id.org/gfo-core/temporallyOverlappedBy">temporally overlapped by</a> <sup class="type-op" title="object property">op</sup>, <a href="#/temporallyOverlaps" title="https://w3id.org/gfo-core/temporallyOverlaps">temporally overlaps</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyStartedBy">
+  <h3>temporally started by<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporallyStartedBy</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPart" title="https://w3id.org/gfo-core/hasTemporalPart">has temporal part</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyStarts" title="https://w3id.org/gfo-core/temporallyStarts">temporally starts</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/temporallyStarts">
+  <h3>temporally starts<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/temporallyStarts</p>
+  <div class="comment">
+   <span class="markdown">X starts Y: Xs = Ys and Xf &lt; Yf</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/temporalPartOf" title="https://w3id.org/gfo-core/temporalPartOf">temporal part of</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/temporallyStartedBy" title="https://w3id.org/gfo-core/temporallyStartedBy">temporally started by</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/timeOf">
+  <h3>time of<sup class="type-op" title="object property">op</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/timeOf</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/TimeEntity" title="https://w3id.org/gfo-core/TimeEntity">Time entity</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="#/ConcreteIndividual" title="https://w3id.org/gfo-core/ConcreteIndividual">Concrete individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     is inverse of
+    </dt>
+    <dd>
+     <a href="#/hasTime" title="https://w3id.org/gfo-core/hasTime">has time</a> <sup class="type-op" title="object property">op</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Data Properties</h3>
+ <ul class="hlist">
+  <li><a href="#/afterDateTimeValue" title="https://w3id.org/gfo-core/afterDateTimeValue">after date time value</a></li>
+  <li><a href="#/beforeDateTimeValue" title="https://w3id.org/gfo-core/beforeDateTimeValue">before date time value</a></li>
+  <li><a href="#/booleanValue" title="https://w3id.org/gfo-core/booleanValue">boolean value</a></li>
+  <li><a href="#/containsDateTimeValue" title="https://w3id.org/gfo-core/containsDateTimeValue">contains date time value</a></li>
+  <li><a href="#/dateTimeValue" title="https://w3id.org/gfo-core/dateTimeValue">date time value</a></li>
+  <li><a href="#/decimalValue" title="https://w3id.org/gfo-core/decimalValue">decimal value</a></li>
+  <li><a href="#/finishedByDateTimeValue" title="https://w3id.org/gfo-core/finishedByDateTimeValue">finished by date time value</a></li>
+  <li><a href="#/hasTemporalPartDateTimeValue" title="https://w3id.org/gfo-core/hasTemporalPartDateTimeValue">has temporal part date time value</a></li>
+  <li><a href="#/startedByDateTimeValue" title="https://w3id.org/gfo-core/startedByDateTimeValue">started by date time value</a></li>
+  <li><a href="#/stringValue" title="https://w3id.org/gfo-core/stringValue">string value</a></li>
+  <li><a href="#/unit" title="https://w3id.org/gfo-core/unit">unit</a></li>
+ </ul>
+ <div class="entity" id="/afterDateTimeValue">
+  <h3>after date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/afterDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'after'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/dateTimeValue" title="https://w3id.org/gfo-core/dateTimeValue">date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/beforeDateTimeValue">
+  <h3>before date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/beforeDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'before'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/dateTimeValue" title="https://w3id.org/gfo-core/dateTimeValue">date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/booleanValue">
+  <h3>boolean value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/booleanValue</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#boolean" target="_blank" title="http://www.w3.org/2001/XMLSchema#boolean">boolean</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/containsDateTimeValue">
+  <h3>contains date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/containsDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'temporallyContains'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPartDateTimeValue" title="https://w3id.org/gfo-core/hasTemporalPartDateTimeValue">has temporal part date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/dateTimeValue">
+  <h3>date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/dateTimeValue</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/afterDateTimeValue" title="https://w3id.org/gfo-core/afterDateTimeValue">after date time value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/beforeDateTimeValue" title="https://w3id.org/gfo-core/beforeDateTimeValue">before date time value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/hasTemporalPartDateTimeValue" title="https://w3id.org/gfo-core/hasTemporalPartDateTimeValue">has temporal part date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Individual" title="https://w3id.org/gfo-core/Individual">Individual</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">date Time</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/decimalValue">
+  <h3>decimal value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/decimalValue</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#decimal" target="_blank" title="http://www.w3.org/2001/XMLSchema#decimal">decimal</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/finishedByDateTimeValue">
+  <h3>finished by date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/finishedByDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'temporallyFinishedBy'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPartDateTimeValue" title="https://w3id.org/gfo-core/hasTemporalPartDateTimeValue">has temporal part date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/hasTemporalPartDateTimeValue">
+  <h3>has temporal part date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/hasTemporalPartDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'hasTemporalPart'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/dateTimeValue" title="https://w3id.org/gfo-core/dateTimeValue">date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+    <dt>
+     has sub-properties
+    </dt>
+    <dd>
+     <a href="#/containsDateTimeValue" title="https://w3id.org/gfo-core/containsDateTimeValue">contains date time value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/finishedByDateTimeValue" title="https://w3id.org/gfo-core/finishedByDateTimeValue">finished by date time value</a> <sup class="type-dp" title="data property">dp</sup>, <a href="#/startedByDateTimeValue" title="https://w3id.org/gfo-core/startedByDateTimeValue">started by date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/startedByDateTimeValue">
+  <h3>started by date time value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/startedByDateTimeValue</p>
+  <div class="comment">
+   <span class="markdown">Shortcut for 'temporallyStartedBy'</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     has super-properties
+    </dt>
+    <dd>
+     <a href="#/hasTemporalPartDateTimeValue" title="https://w3id.org/gfo-core/hasTemporalPartDateTimeValue">has temporal part date time value</a> <sup class="type-dp" title="data property">dp</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/stringValue">
+  <h3>string value<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/stringValue</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="/unit">
+  <h3>unit<sup class="type-dp" title="data property">dp</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> https://w3id.org/gfo-core/unit</p>
+  <div class="description">
+   <dl>
+    <dt>
+     has domain
+    </dt>
+    <dd>
+     <a href="#/Attributive" title="https://w3id.org/gfo-core/Attributive">Attributive</a> <sup class="type-c" title="class">c</sup>
+    </dd>
+    <dt>
+     has range
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h3 id="annotationproperties" class="list">Annotation Properties</h3>
+ <ul class="hlist">
+  <li><a href="#http://www.w3.org/2004/02/skos/core#altLabel" title="http://www.w3.org/2004/02/skos/core#altLabel"> <span>alt Label</span> </a></li>
+  <li><a href="#http://www.w3.org/2000/01/rdf-schema#comment" title="http://www.w3.org/2000/01/rdf-schema#comment"> <span>comment</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/created" title="http://purl.org/dc/elements/1.1/created"> <span>created</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/creator" title="http://purl.org/dc/elements/1.1/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#definition" title="http://www.w3.org/2004/02/skos/core#definition"> <span>definition</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/description" title="http://purl.org/dc/elements/1.1/description"> <span>description</span> </a></li>
+  <li><a href="#http://purl.org/ontology/bibo/doi" title="http://purl.org/ontology/bibo/doi"> <span>doi</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#example" title="http://www.w3.org/2004/02/skos/core#example"> <span>example</span> </a></li>
+  <li><a href="#http://xmlns.com/foaf/0.1/homepage" title="http://xmlns.com/foaf/0.1/homepage"> <span>homepage</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/modified" title="http://purl.org/dc/elements/1.1/modified"> <span>modified</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespaceURI" title="http://purl.org/vocab/vann/preferredNamespaceURI"> <span>preferred Namespace U R I</span> </a></li>
+  <li><a href="#http://usefulinc.com/ns/doap#repository" title="http://usefulinc.com/ns/doap#repository"> <span>repository</span> </a></li>
+  <li><a href="#http://purl.org/dc/elements/1.1/title" title="http://purl.org/dc/elements/1.1/title"> <span>title</span> </a></li>
+  <li><a href="#http://www.w3.org/2002/07/owl#versionInfo" title="http://www.w3.org/2002/07/owl#versionInfo"> <span>version Info</span> </a></li>
+ </ul>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#altLabel">
+  <h3>alt Label<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#altLabel</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2000/01/rdf-schema#comment">
+  <h3>comment<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2000/01/rdf-schema#comment</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/created">
+  <h3>created<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/created</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/creator">
+  <h3>creator<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/creator</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#definition">
+  <h3>definition<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#definition</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/description">
+  <h3>description<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/description</p>
+ </div>
+ <div class="entity" id="http://purl.org/ontology/bibo/doi">
+  <h3>doi<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/ontology/bibo/doi</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#example">
+  <h3>example<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#example</p>
+ </div>
+ <div class="entity" id="http://xmlns.com/foaf/0.1/homepage">
+  <h3>homepage<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://xmlns.com/foaf/0.1/homepage</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/license">
+  <h3>license<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/modified">
+  <h3>modified<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/modified</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
+  <h3>preferred Namespace Prefix<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceURI">
+  <h3>preferred Namespace U R I<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceURI</p>
+ </div>
+ <div class="entity" id="http://usefulinc.com/ns/doap#repository">
+  <h3>repository<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://usefulinc.com/ns/doap#repository</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/elements/1.1/title">
+  <h3>title<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/elements/1.1/title</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2002/07/owl#versionInfo">
+  <h3>version Info<sup class="type-ap" title="annotation property">ap</sup> <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2002/07/owl#versionInfo</p>
+ </div>
+</div><div id="legend">
+<h2>Legend <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Classes">c</sup>: Classes <br/>
+<sup class="type-op" title="Object Properties">op</sup>: Object Properties <br/>
+<sup class="type-dp" title="Data Properties">dp</sup>: Data Properties <br/>
+</div>
+</div>
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Acknowledgments <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<p>
+The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="https://w3id.org/people/dgarijo">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the template used in this documentation.</p>
+</div>
+
+
+</div>
+</body>
+</html>

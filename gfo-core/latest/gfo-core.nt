@@ -1,0 +1,742 @@
+<https://w3id.org/gfo-core> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/gfo-core> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/gfo-core/release/2025-04-07> .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/created> "2025-04-07" .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/creator> "Alexandr Uciteli" .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/creator> "Christoph Beger" .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/creator> "Frank Loebe" .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/creator> "Franz Matthies" .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/creator> "Heinrich Herre" .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/creator> "Konrad Höffner" .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/creator> "Patryk Burek" .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/creator> "Ralph Schäfermeier" .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/description> "GFO-core contains the core GFO entities and serves as a common basis for both GFO variants (light and full). For some use cases, it may be sufficient to use GFO-core alone as a kind of minimal top-level ontology."@en .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/modified> "2025-04-07" .
+<https://w3id.org/gfo-core> <http://purl.org/dc/elements/1.1/title> "General Formal Ontology Core (GFO-core)"@en .
+<https://w3id.org/gfo-core> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/gfo-core> <http://purl.org/ontology/bibo/doi> "10.5281/zenodo.14833002" .
+<https://w3id.org/gfo-core> <http://purl.org/vocab/vann/preferredNamespacePrefix> "gfo-core" .
+<https://w3id.org/gfo-core> <http://purl.org/vocab/vann/preferredNamespaceURI> "https://w3id.org/gfo-core/" .
+<https://w3id.org/gfo-core> <http://usefulinc.com/ns/doap#repository> <https://github.com/Onto-Med/gfo-light> .
+<https://w3id.org/gfo-core> <http://www.w3.org/2000/01/rdf-schema#label> "GFO-core"@en .
+<https://w3id.org/gfo-core> <http://www.w3.org/2002/07/owl#versionInfo> "2025-04-07" .
+<https://w3id.org/gfo-core> <http://xmlns.com/foaf/0.1/homepage> "https://github.com/Onto-Med/gfo-light" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/created
+<http://purl.org/dc/elements/1.1/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/modified
+<http://purl.org/dc/elements/1.1/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceURI
+<http://purl.org/vocab/vann/preferredNamespaceURI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://usefulinc.com/ns/doap#repository
+<http://usefulinc.com/ns/doap#repository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#comment
+<http://www.w3.org/2000/01/rdf-schema#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionInfo
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/homepage
+<http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/gfo-core/after
+<https://w3id.org/gfo-core/after> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/after> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporallyRelatedWith> .
+<https://w3id.org/gfo-core/after> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/before> .
+<https://w3id.org/gfo-core/after> <http://www.w3.org/2000/01/rdf-schema#label> "after"@en .
+# 
+# https://w3id.org/gfo-core/attributiveOf
+<https://w3id.org/gfo-core/attributiveOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/attributiveOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/hasAttributive> .
+<https://w3id.org/gfo-core/attributiveOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Attributive> .
+<https://w3id.org/gfo-core/attributiveOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Individual> .
+<https://w3id.org/gfo-core/attributiveOf> <http://www.w3.org/2000/01/rdf-schema#label> "attributive of"@en .
+# 
+# https://w3id.org/gfo-core/before
+<https://w3id.org/gfo-core/before> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/before> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporallyRelatedWith> .
+<https://w3id.org/gfo-core/before> <http://www.w3.org/2000/01/rdf-schema#label> "before"@en .
+<https://w3id.org/gfo-core/before> <http://www.w3.org/2004/02/skos/core#definition> "X before Y: Xf < Ys"@en .
+# 
+# https://w3id.org/gfo-core/causedBy
+<https://w3id.org/gfo-core/causedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/causedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/resultsFrom> .
+<https://w3id.org/gfo-core/causedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/causes> .
+<https://w3id.org/gfo-core/causedBy> <http://www.w3.org/2000/01/rdf-schema#label> "caused by"@en .
+# 
+# https://w3id.org/gfo-core/causes
+<https://w3id.org/gfo-core/causes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/causes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/leadsTo> .
+<https://w3id.org/gfo-core/causes> <http://www.w3.org/2000/01/rdf-schema#label> "causes"@en .
+# 
+# https://w3id.org/gfo-core/during
+<https://w3id.org/gfo-core/during> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/during> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporalPartOf> .
+<https://w3id.org/gfo-core/during> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/temporallyContains> .
+<https://w3id.org/gfo-core/during> <http://www.w3.org/2000/01/rdf-schema#label> "during"@en .
+<https://w3id.org/gfo-core/during> <http://www.w3.org/2004/02/skos/core#definition> "X during Y: Xs > Ys and Xf < Yf"@en .
+# 
+# https://w3id.org/gfo-core/hasAttributive
+<https://w3id.org/gfo-core/hasAttributive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/hasAttributive> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Individual> .
+<https://w3id.org/gfo-core/hasAttributive> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Attributive> .
+<https://w3id.org/gfo-core/hasAttributive> <http://www.w3.org/2000/01/rdf-schema#label> "has attributive"@en .
+# 
+# https://w3id.org/gfo-core/hasPart
+<https://w3id.org/gfo-core/hasPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/hasPart> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/partOf> .
+<https://w3id.org/gfo-core/hasPart> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Individual> .
+<https://w3id.org/gfo-core/hasPart> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Individual> .
+<https://w3id.org/gfo-core/hasPart> <http://www.w3.org/2000/01/rdf-schema#label> "has part"@en .
+# 
+# https://w3id.org/gfo-core/hasParticipant
+<https://w3id.org/gfo-core/hasParticipant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/hasParticipant> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/participatesIn> .
+<https://w3id.org/gfo-core/hasParticipant> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/hasParticipant> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Continuant> .
+<https://w3id.org/gfo-core/hasParticipant> <http://www.w3.org/2000/01/rdf-schema#label> "has participant"@en .
+# 
+# https://w3id.org/gfo-core/hasProcessPart
+<https://w3id.org/gfo-core/hasProcessPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/hasProcessPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/hasPart> .
+<https://w3id.org/gfo-core/hasProcessPart> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/processPartOf> .
+<https://w3id.org/gfo-core/hasProcessPart> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Process> .
+<https://w3id.org/gfo-core/hasProcessPart> <http://www.w3.org/2000/01/rdf-schema#range> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#unionOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Attributive> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/hasProcessPart> <http://www.w3.org/2000/01/rdf-schema#label> "has process part"@en .
+# 
+# https://w3id.org/gfo-core/hasSituationPart
+<https://w3id.org/gfo-core/hasSituationPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/hasSituationPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/hasPart> .
+<https://w3id.org/gfo-core/hasSituationPart> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/situationPartOf> .
+<https://w3id.org/gfo-core/hasSituationPart> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Situation> .
+<https://w3id.org/gfo-core/hasSituationPart> <http://www.w3.org/2000/01/rdf-schema#range> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#unionOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Attributive> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/hasSituationPart> <http://www.w3.org/2000/01/rdf-schema#label> "has situation part"@en .
+# 
+# https://w3id.org/gfo-core/hasTemporalPart
+<https://w3id.org/gfo-core/hasTemporalPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/hasTemporalPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporallyRelatedWith> .
+<https://w3id.org/gfo-core/hasTemporalPart> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/temporalPartOf> .
+<https://w3id.org/gfo-core/hasTemporalPart> <http://www.w3.org/2000/01/rdf-schema#label> "has temporal part"@en .
+# 
+# https://w3id.org/gfo-core/hasTime
+<https://w3id.org/gfo-core/hasTime> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/hasTime> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/timeOf> .
+<https://w3id.org/gfo-core/hasTime> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/ConcreteIndividual> .
+<https://w3id.org/gfo-core/hasTime> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/TimeEntity> .
+<https://w3id.org/gfo-core/hasTime> <http://www.w3.org/2000/01/rdf-schema#label> "has time"@en .
+# 
+# https://w3id.org/gfo-core/instanceOf
+<https://w3id.org/gfo-core/instanceOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/instanceOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/instantiatedBy> .
+<https://w3id.org/gfo-core/instanceOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Entity> .
+<https://w3id.org/gfo-core/instanceOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Category> .
+<https://w3id.org/gfo-core/instanceOf> <http://www.w3.org/2000/01/rdf-schema#label> "instance of"@en .
+# 
+# https://w3id.org/gfo-core/instantiatedBy
+<https://w3id.org/gfo-core/instantiatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/instantiatedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Category> .
+<https://w3id.org/gfo-core/instantiatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Entity> .
+<https://w3id.org/gfo-core/instantiatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "instantiated by"@en .
+# 
+# https://w3id.org/gfo-core/leadsTo
+<https://w3id.org/gfo-core/leadsTo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/leadsTo> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/resultsFrom> .
+<https://w3id.org/gfo-core/leadsTo> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#unionOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/leadsTo> <http://www.w3.org/2000/01/rdf-schema#range> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#unionOf> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/leadsTo> <http://www.w3.org/2000/01/rdf-schema#label> "leads to"@en .
+# 
+# https://w3id.org/gfo-core/partOf
+<https://w3id.org/gfo-core/partOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/partOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Individual> .
+<https://w3id.org/gfo-core/partOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Individual> .
+<https://w3id.org/gfo-core/partOf> <http://www.w3.org/2000/01/rdf-schema#label> "part of"@en .
+# 
+# https://w3id.org/gfo-core/participatesIn
+<https://w3id.org/gfo-core/participatesIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/participatesIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Continuant> .
+<https://w3id.org/gfo-core/participatesIn> <http://www.w3.org/2000/01/rdf-schema#range> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#unionOf> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/participatesIn> <http://www.w3.org/2000/01/rdf-schema#label> "participates in"@en .
+# 
+# https://w3id.org/gfo-core/processPartOf
+<https://w3id.org/gfo-core/processPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/processPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/partOf> .
+<https://w3id.org/gfo-core/processPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#unionOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Attributive> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/processPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Process> .
+<https://w3id.org/gfo-core/processPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "process part of"@en .
+# 
+# https://w3id.org/gfo-core/resultsFrom
+<https://w3id.org/gfo-core/resultsFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/resultsFrom> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#unionOf> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/resultsFrom> <http://www.w3.org/2000/01/rdf-schema#range> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#unionOf> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/resultsFrom> <http://www.w3.org/2000/01/rdf-schema#label> "results from"@en .
+# 
+# https://w3id.org/gfo-core/situationPartOf
+<https://w3id.org/gfo-core/situationPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/situationPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/partOf> .
+<https://w3id.org/gfo-core/situationPartOf> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#unionOf> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Attributive> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/situationPartOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Situation> .
+<https://w3id.org/gfo-core/situationPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "situation part of"@en .
+# 
+# https://w3id.org/gfo-core/temporalPartOf
+<https://w3id.org/gfo-core/temporalPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporalPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporallyRelatedWith> .
+<https://w3id.org/gfo-core/temporalPartOf> <http://www.w3.org/2000/01/rdf-schema#label> "temporal part of"@en .
+<https://w3id.org/gfo-core/temporalPartOf> <http://www.w3.org/2004/02/skos/core#definition> "X temporal part of Y: X starts Y or X finishes Y or X during Y"@en .
+# 
+# https://w3id.org/gfo-core/temporallyContains
+<https://w3id.org/gfo-core/temporallyContains> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporallyContains> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/hasTemporalPart> .
+<https://w3id.org/gfo-core/temporallyContains> <http://www.w3.org/2000/01/rdf-schema#label> "temporally contains"@en .
+# 
+# https://w3id.org/gfo-core/temporallyEqual
+<https://w3id.org/gfo-core/temporallyEqual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporallyEqual> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporallyRelatedWith> .
+<https://w3id.org/gfo-core/temporallyEqual> <http://www.w3.org/2000/01/rdf-schema#label> "temporally equal"@en .
+<https://w3id.org/gfo-core/temporallyEqual> <http://www.w3.org/2004/02/skos/core#definition> "X equal Y: Xs = Ys and Xf = Yf"@en .
+# 
+# https://w3id.org/gfo-core/temporallyFinishedBy
+<https://w3id.org/gfo-core/temporallyFinishedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporallyFinishedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/hasTemporalPart> .
+<https://w3id.org/gfo-core/temporallyFinishedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/temporallyFinishes> .
+<https://w3id.org/gfo-core/temporallyFinishedBy> <http://www.w3.org/2000/01/rdf-schema#label> "temporally finished by"@en .
+# 
+# https://w3id.org/gfo-core/temporallyFinishes
+<https://w3id.org/gfo-core/temporallyFinishes> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporallyFinishes> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporalPartOf> .
+<https://w3id.org/gfo-core/temporallyFinishes> <http://www.w3.org/2000/01/rdf-schema#label> "temporally finishes"@en .
+<https://w3id.org/gfo-core/temporallyFinishes> <http://www.w3.org/2004/02/skos/core#definition> "X finishes Y: Xs > Ys and Xf = Yf"@en .
+# 
+# https://w3id.org/gfo-core/temporallyMeets
+<https://w3id.org/gfo-core/temporallyMeets> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporallyMeets> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporallyRelatedWith> .
+<https://w3id.org/gfo-core/temporallyMeets> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/temporallyMetBy> .
+<https://w3id.org/gfo-core/temporallyMeets> <http://www.w3.org/2000/01/rdf-schema#label> "temporally meets"@en .
+<https://w3id.org/gfo-core/temporallyMeets> <http://www.w3.org/2004/02/skos/core#definition> "X meets Y: Xf = Ys"@en .
+# 
+# https://w3id.org/gfo-core/temporallyMetBy
+<https://w3id.org/gfo-core/temporallyMetBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporallyMetBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporallyRelatedWith> .
+<https://w3id.org/gfo-core/temporallyMetBy> <http://www.w3.org/2000/01/rdf-schema#label> "temporally met by"@en .
+# 
+# https://w3id.org/gfo-core/temporallyOverlappedBy
+<https://w3id.org/gfo-core/temporallyOverlappedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporallyOverlappedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporallyRelatedWith> .
+<https://w3id.org/gfo-core/temporallyOverlappedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/temporallyOverlaps> .
+<https://w3id.org/gfo-core/temporallyOverlappedBy> <http://www.w3.org/2000/01/rdf-schema#label> "temporally overlapped by"@en .
+# 
+# https://w3id.org/gfo-core/temporallyOverlaps
+<https://w3id.org/gfo-core/temporallyOverlaps> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporallyOverlaps> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporallyRelatedWith> .
+<https://w3id.org/gfo-core/temporallyOverlaps> <http://www.w3.org/2000/01/rdf-schema#label> "temporally overlaps"@en .
+<https://w3id.org/gfo-core/temporallyOverlaps> <http://www.w3.org/2004/02/skos/core#definition> "X overlaps Y: Xs < Ys and Xf > Ys and Xf < Yf"@en .
+# 
+# https://w3id.org/gfo-core/temporallyRelatedWith
+<https://w3id.org/gfo-core/temporallyRelatedWith> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporallyRelatedWith> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Individual> .
+<https://w3id.org/gfo-core/temporallyRelatedWith> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Individual> .
+<https://w3id.org/gfo-core/temporallyRelatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "If a temporal relation is applied to other concrete individuals as time intervals (attributive, continuant, process, situation), it is propagated to their existence times (hasTime)."@en .
+<https://w3id.org/gfo-core/temporallyRelatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "In the definitions of the relations, the variables Xs, Xf, Ys and Yf represent the start (s) and finish (f) of the time intervals X and Y."@en .
+<https://w3id.org/gfo-core/temporallyRelatedWith> <http://www.w3.org/2000/01/rdf-schema#comment> "Some temporal relations can also be applied to points in time (before/after, equal) or a point in time and a time interval (before, starts, finishes, during or their inverse relations)."@en .
+<https://w3id.org/gfo-core/temporallyRelatedWith> <http://www.w3.org/2000/01/rdf-schema#label> "temporally related with"@en .
+<https://w3id.org/gfo-core/temporallyRelatedWith> <http://www.w3.org/2004/02/skos/core#definition> "Temporal relations between time intervals based on Allen, J. F. (1983). Maintaining knowledge about temporal intervals. Communications of the ACM, 26(11), 832-843."@en .
+# 
+# https://w3id.org/gfo-core/temporallyStartedBy
+<https://w3id.org/gfo-core/temporallyStartedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporallyStartedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/hasTemporalPart> .
+<https://w3id.org/gfo-core/temporallyStartedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-core/temporallyStarts> .
+<https://w3id.org/gfo-core/temporallyStartedBy> <http://www.w3.org/2000/01/rdf-schema#label> "temporally started by"@en .
+# 
+# https://w3id.org/gfo-core/temporallyStarts
+<https://w3id.org/gfo-core/temporallyStarts> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/temporallyStarts> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/temporalPartOf> .
+<https://w3id.org/gfo-core/temporallyStarts> <http://www.w3.org/2000/01/rdf-schema#label> "temporally starts"@en .
+<https://w3id.org/gfo-core/temporallyStarts> <http://www.w3.org/2004/02/skos/core#definition> "X starts Y: Xs = Ys and Xf < Yf"@en .
+# 
+# https://w3id.org/gfo-core/timeOf
+<https://w3id.org/gfo-core/timeOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-core/timeOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/TimeEntity> .
+<https://w3id.org/gfo-core/timeOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/ConcreteIndividual> .
+<https://w3id.org/gfo-core/timeOf> <http://www.w3.org/2000/01/rdf-schema#label> "time of"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/gfo-core/afterDateTimeValue
+<https://w3id.org/gfo-core/afterDateTimeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/gfo-core/afterDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/dateTimeValue> .
+<https://w3id.org/gfo-core/afterDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Shortcut for 'after'"@en .
+<https://w3id.org/gfo-core/afterDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#label> "after date time value"@en .
+# 
+# https://w3id.org/gfo-core/beforeDateTimeValue
+<https://w3id.org/gfo-core/beforeDateTimeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/gfo-core/beforeDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/dateTimeValue> .
+<https://w3id.org/gfo-core/beforeDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Shortcut for 'before'"@en .
+<https://w3id.org/gfo-core/beforeDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#label> "before date time value"@en .
+# 
+# https://w3id.org/gfo-core/booleanValue
+<https://w3id.org/gfo-core/booleanValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/gfo-core/booleanValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Attributive> .
+<https://w3id.org/gfo-core/booleanValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#boolean> .
+<https://w3id.org/gfo-core/booleanValue> <http://www.w3.org/2000/01/rdf-schema#label> "boolean value"@en .
+# 
+# https://w3id.org/gfo-core/containsDateTimeValue
+<https://w3id.org/gfo-core/containsDateTimeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/gfo-core/containsDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/hasTemporalPartDateTimeValue> .
+<https://w3id.org/gfo-core/containsDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Shortcut for 'temporallyContains'"@en .
+<https://w3id.org/gfo-core/containsDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#label> "contains date time value"@en .
+# 
+# https://w3id.org/gfo-core/dateTimeValue
+<https://w3id.org/gfo-core/dateTimeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/gfo-core/dateTimeValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Individual> .
+<https://w3id.org/gfo-core/dateTimeValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#dateTime> .
+<https://w3id.org/gfo-core/dateTimeValue> <http://www.w3.org/2000/01/rdf-schema#label> "date time value"@en .
+# 
+# https://w3id.org/gfo-core/decimalValue
+<https://w3id.org/gfo-core/decimalValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/gfo-core/decimalValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Attributive> .
+<https://w3id.org/gfo-core/decimalValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#decimal> .
+<https://w3id.org/gfo-core/decimalValue> <http://www.w3.org/2000/01/rdf-schema#label> "decimal value"@en .
+# 
+# https://w3id.org/gfo-core/finishedByDateTimeValue
+<https://w3id.org/gfo-core/finishedByDateTimeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/gfo-core/finishedByDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/hasTemporalPartDateTimeValue> .
+<https://w3id.org/gfo-core/finishedByDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Shortcut for 'temporallyFinishedBy'"@en .
+<https://w3id.org/gfo-core/finishedByDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#label> "finished by date time value"@en .
+# 
+# https://w3id.org/gfo-core/hasTemporalPartDateTimeValue
+<https://w3id.org/gfo-core/hasTemporalPartDateTimeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/gfo-core/hasTemporalPartDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/dateTimeValue> .
+<https://w3id.org/gfo-core/hasTemporalPartDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Shortcut for 'hasTemporalPart'"@en .
+<https://w3id.org/gfo-core/hasTemporalPartDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#label> "has temporal part date time value"@en .
+# 
+# https://w3id.org/gfo-core/startedByDateTimeValue
+<https://w3id.org/gfo-core/startedByDateTimeValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/gfo-core/startedByDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/hasTemporalPartDateTimeValue> .
+<https://w3id.org/gfo-core/startedByDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#comment> "Shortcut for 'temporallyStartedBy'"@en .
+<https://w3id.org/gfo-core/startedByDateTimeValue> <http://www.w3.org/2000/01/rdf-schema#label> "started by date time value"@en .
+# 
+# https://w3id.org/gfo-core/stringValue
+<https://w3id.org/gfo-core/stringValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/gfo-core/stringValue> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Attributive> .
+<https://w3id.org/gfo-core/stringValue> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/gfo-core/stringValue> <http://www.w3.org/2000/01/rdf-schema#label> "string value"@en .
+# 
+# https://w3id.org/gfo-core/unit
+<https://w3id.org/gfo-core/unit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://w3id.org/gfo-core/unit> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Attributive> .
+<https://w3id.org/gfo-core/unit> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+<https://w3id.org/gfo-core/unit> <http://www.w3.org/2000/01/rdf-schema#label> "unit"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/gfo-core/Attributive
+<https://w3id.org/gfo-core/Attributive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/Attributive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/ConcreteIndividual> .
+<https://w3id.org/gfo-core/Attributive> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid33 .
+_:genid33 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/gfo-core/Individual> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/attributiveOf> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-core/Attributive> <http://www.w3.org/2000/01/rdf-schema#comment> "Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category Attributive."@en .
+<https://w3id.org/gfo-core/Attributive> <http://www.w3.org/2000/01/rdf-schema#label> "Attributive"@en .
+<https://w3id.org/gfo-core/Attributive> <http://www.w3.org/2004/02/skos/core#definition> "Attributives are individuals that depend on other individuals by some kind of dependency relation."@en .
+# 
+# https://w3id.org/gfo-core/Category
+<https://w3id.org/gfo-core/Category> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/Category> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Entity> .
+<https://w3id.org/gfo-core/Category> <http://www.w3.org/2000/01/rdf-schema#label> "Category"@en .
+<https://w3id.org/gfo-core/Category> <http://www.w3.org/2004/02/skos/core#altLabel> "Class"@en .
+<https://w3id.org/gfo-core/Category> <http://www.w3.org/2004/02/skos/core#altLabel> "Kind"@en .
+<https://w3id.org/gfo-core/Category> <http://www.w3.org/2004/02/skos/core#altLabel> "Type"@en .
+<https://w3id.org/gfo-core/Category> <http://www.w3.org/2004/02/skos/core#definition> "The notion of category covers all abstract entities that can be instantiated by or are predicated of other entities."@en .
+# 
+# https://w3id.org/gfo-core/Chronoid
+<https://w3id.org/gfo-core/Chronoid> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/Chronoid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/TimeEntity> .
+<https://w3id.org/gfo-core/Chronoid> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid34 .
+_:genid34 <http://www.w3.org/2002/07/owl#unionOf> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid36 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid38 .
+_:genid38 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid38 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/startedByDateTimeValue> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid40 .
+_:genid40 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid40 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid40 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/finishedByDateTimeValue> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid42 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid44 .
+_:genid44 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/gfo-core/TimeBoundary> .
+_:genid44 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid44 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/temporallyStartedBy> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid46 .
+_:genid46 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/gfo-core/TimeBoundary> .
+_:genid46 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid46 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/temporallyFinishedBy> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/Chronoid> <http://www.w3.org/2000/01/rdf-schema#label> "Chronoid"@en .
+<https://w3id.org/gfo-core/Chronoid> <http://www.w3.org/2004/02/skos/core#altLabel> "Time interval"@en .
+<https://w3id.org/gfo-core/Chronoid> <http://www.w3.org/2004/02/skos/core#altLabel> "Time period"@en .
+<https://w3id.org/gfo-core/Chronoid> <http://www.w3.org/2004/02/skos/core#definition> "Chronoids are real-valued time intervals with endpoints."@en .
+<https://w3id.org/gfo-core/Chronoid> <http://www.w3.org/2004/02/skos/core#example> "The time (extension) of a football match (from the start point in time to the end point in time)"@en .
+# 
+# https://w3id.org/gfo-core/ConcreteIndividual
+<https://w3id.org/gfo-core/ConcreteIndividual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/ConcreteIndividual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Individual> .
+<https://w3id.org/gfo-core/ConcreteIndividual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid47 .
+_:genid47 <http://www.w3.org/2002/07/owl#unionOf> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid50 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid48 .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid49 .
+_:genid49 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid49 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid49 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/dateTimeValue> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid51 .
+_:genid51 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/gfo-core/TimeEntity> .
+_:genid51 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid51 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/hasTime> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid53 .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid53 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid56 .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid54 .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid55 .
+_:genid55 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid55 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid55 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/startedByDateTimeValue> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid57 .
+_:genid57 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid57 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid57 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/finishedByDateTimeValue> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/ConcreteIndividual> <http://www.w3.org/2000/01/rdf-schema#label> "Concrete individual"@en .
+<https://w3id.org/gfo-core/ConcreteIndividual> <http://www.w3.org/2004/02/skos/core#definition> "Concrete individuals are entities that have an immediate relation to time or to space-time. They exist in time."@en .
+# 
+# https://w3id.org/gfo-core/Continuant
+<https://w3id.org/gfo-core/Continuant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/Continuant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/ConcreteIndividual> .
+<https://w3id.org/gfo-core/Continuant> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid58 .
+_:genid58 <http://www.w3.org/2002/07/owl#unionOf> _:genid61 .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid59 .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid60 .
+_:genid60 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/gfo-core/Chronoid> .
+_:genid60 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid60 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/hasTime> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid62 .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid62 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid65 .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid63 .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid64 .
+_:genid64 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid64 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid64 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/startedByDateTimeValue> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid66 .
+_:genid66 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid66 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid66 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/finishedByDateTimeValue> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/Continuant> <http://www.w3.org/2000/01/rdf-schema#comment> "Social or material (three-dimensional) objects, their groups/aggregates, parts and boundaries (two-, one- and zero-dimensional entities, i.e., surfaces, lines and points) are subsumed under the category Continuant."@en .
+<https://w3id.org/gfo-core/Continuant> <http://www.w3.org/2000/01/rdf-schema#comment> "While the object parts are firmly connected to the entire object, the aggregate members are loose objects. When modelling a person, for example, you could consider their skeleton as an object and as part of the human body. However, if we look at bone finds in the context of anthropology, the skeleton can be modelled as an aggregate of individual bones. Another example is a computer. A kit of computer components is an object aggregate before assembly and an object (a computer) afterwards. However, if the components are thrown into the case without being correctly connected, it is not a computer, but the components are simply located in the case."@en .
+<https://w3id.org/gfo-core/Continuant> <http://www.w3.org/2000/01/rdf-schema#label> "Continuant"@en .
+<https://w3id.org/gfo-core/Continuant> <http://www.w3.org/2004/02/skos/core#definition> "Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime)."@en .
+# 
+# https://w3id.org/gfo-core/Entity
+<https://w3id.org/gfo-core/Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/Entity> <http://www.w3.org/2000/01/rdf-schema#label> "Entity"@en .
+<https://w3id.org/gfo-core/Entity> <http://www.w3.org/2004/02/skos/core#definition> "Everything that exists is called an entity."@en .
+# 
+# https://w3id.org/gfo-core/Individual
+<https://w3id.org/gfo-core/Individual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/Individual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Entity> .
+<https://w3id.org/gfo-core/Individual> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid67 .
+_:genid67 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/gfo-core/Category> .
+_:genid67 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/instanceOf> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-core/Individual> <http://www.w3.org/2000/01/rdf-schema#label> "Individual"@en .
+<https://w3id.org/gfo-core/Individual> <http://www.w3.org/2004/02/skos/core#definition> "Individuals are entities which cannot be further instantiated."@en .
+# 
+# https://w3id.org/gfo-core/Process
+<https://w3id.org/gfo-core/Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/ConcreteIndividual> .
+<https://w3id.org/gfo-core/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid68 .
+_:genid68 <http://www.w3.org/2002/07/owl#unionOf> _:genid71 .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid69 .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid70 .
+_:genid70 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/gfo-core/Chronoid> .
+_:genid70 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid70 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/hasTime> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid72 .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid72 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid75 .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid73 .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid74 .
+_:genid74 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid74 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid74 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/startedByDateTimeValue> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid76 .
+_:genid76 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid76 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid76 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/finishedByDateTimeValue> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid77 .
+_:genid77 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/gfo-core/Continuant> .
+_:genid77 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/hasParticipant> .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-core/Process> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid78 .
+_:genid78 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid79 .
+_:genid79 <http://www.w3.org/2002/07/owl#unionOf> _:genid82 .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid81 .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid80 .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid80 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid81 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Attributive> .
+_:genid82 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid79 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid78 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/hasProcessPart> .
+_:genid78 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-core/Process> <http://www.w3.org/2000/01/rdf-schema#comment> "Processes represent dynamic knowledge."@en .
+<https://w3id.org/gfo-core/Process> <http://www.w3.org/2000/01/rdf-schema#comment> "We distinguish between cohesive processes and process aggregates."@en .
+<https://w3id.org/gfo-core/Process> <http://www.w3.org/2000/01/rdf-schema#label> "Process"@en .
+<https://w3id.org/gfo-core/Process> <http://www.w3.org/2004/02/skos/core#definition> "Processes are concrete individuals that happen in time and have a temporal extension (chronoid/time interval)."@en .
+# 
+# https://w3id.org/gfo-core/Situation
+<https://w3id.org/gfo-core/Situation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/Situation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/ConcreteIndividual> .
+<https://w3id.org/gfo-core/Situation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid83 .
+_:genid83 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/gfo-core/Continuant> .
+_:genid83 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/hasParticipant> .
+_:genid83 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-core/Situation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid84 .
+_:genid84 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid85 .
+_:genid85 <http://www.w3.org/2002/07/owl#unionOf> _:genid87 .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid86 .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid86 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Attributive> .
+_:genid87 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid85 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid84 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/hasSituationPart> .
+_:genid84 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-core/Situation> <http://www.w3.org/2000/01/rdf-schema#comment> "A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation."@en .
+<https://w3id.org/gfo-core/Situation> <http://www.w3.org/2000/01/rdf-schema#comment> "Situations represent static knowledge."@en .
+<https://w3id.org/gfo-core/Situation> <http://www.w3.org/2000/01/rdf-schema#comment> "We distinguish between cohesive situations and situation aggregates."@en .
+<https://w3id.org/gfo-core/Situation> <http://www.w3.org/2000/01/rdf-schema#label> "Situation"@en .
+<https://w3id.org/gfo-core/Situation> <http://www.w3.org/2004/02/skos/core#definition> "Situations are combinations of contextually related attributives."@en .
+# 
+# https://w3id.org/gfo-core/TimeBoundary
+<https://w3id.org/gfo-core/TimeBoundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/TimeBoundary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/TimeEntity> .
+<https://w3id.org/gfo-core/TimeBoundary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid88 .
+_:genid88 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#dateTime> .
+_:genid88 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid88 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/dateTimeValue> .
+_:genid88 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-core/TimeBoundary> <http://www.w3.org/2000/01/rdf-schema#label> "Time boundary"@en .
+<https://w3id.org/gfo-core/TimeBoundary> <http://www.w3.org/2004/02/skos/core#altLabel> "Point in time"@en .
+<https://w3id.org/gfo-core/TimeBoundary> <http://www.w3.org/2004/02/skos/core#altLabel> "Time point"@en .
+<https://w3id.org/gfo-core/TimeBoundary> <http://www.w3.org/2004/02/skos/core#example> "Start point in time of a football match"@en .
+# 
+# https://w3id.org/gfo-core/TimeEntity
+<https://w3id.org/gfo-core/TimeEntity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-core/TimeEntity> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Individual> .
+<https://w3id.org/gfo-core/TimeEntity> <http://www.w3.org/2000/01/rdf-schema#comment> "The time entities defined in GFO-core are points in time (time boundaries) and time intervals/periods (chronoids), which consist of points in time."@en .
+<https://w3id.org/gfo-core/TimeEntity> <http://www.w3.org/2000/01/rdf-schema#label> "Time entity"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
