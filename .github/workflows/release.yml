@@ -38,7 +38,7 @@ jobs:
           sed -i 's/ontology\./${{ matrix.artifact }}./g' output/index.html
       - name: Prepare version documentation
         run: |
-          mkdir public
+          mkdir -p public/${{ matrix.artifact}}
           cp -r output/ public/${{ matrix.artifact}}/${{ github.event.release.tag_name }}
       - name: Prepare latest documentation
         if: '!github.event.release.prerelease'
