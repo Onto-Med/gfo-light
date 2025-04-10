@@ -9,6 +9,9 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        artifact: [ 'gfo-core', 'gfo-light' ]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -20,7 +23,7 @@ jobs:
       - name: Compile documentation
         run: |
           java -jar widoco.jar \
-          -ontFile ${{ github.event.repository.name }}.ttl \
+          -ontFile ${{ matrix.artifact }}.ttl \
           -outFolder output \
           -includeAnnotationProperties \
           -rewriteAll \
@@ -31,20 +34,20 @@ jobs:
           rm output/readme.md
       - name: Prepare ontology files
         run: |
-          ls output/ontology.* | sed -e 'p;s/ontology/${{ github.event.repository.name }}/' | xargs -n2 mv
-          sed -i 's/ontology\./${{ github.event.repository.name }}./g' output/index.html
+          ls output/ontology.* | sed -e 'p;s/ontology/${{ matrix.artifact }}/' | xargs -n2 mv
+          sed -i 's/ontology\./${{ matrix.artifact }}./g' output/index.html
       - name: Prepare version documentation
         run: |
           mkdir public
-          cp -r output/ public/${{ github.event.release.tag_name }}
+          cp -r output/ public/${{ matrix.artifact}}/${{ github.event.release.tag_name }}
       - name: Prepare latest documentation
         if: '!github.event.release.prerelease'
-        run: cp -r output/ public/latest
+        run: cp -r output/ public/${{ matrix.artifact }}/latest
       - name: Upload release artifacts
         uses: svenstaro/upload-release-action@v2
         with:
-          tag: ${{ github.ref }}
-          file: output/${{ github.event.repository.name }}.*
+          tag: ${{ github.event.release.tag_name }}
+          file: output/${{ matrix.artifact }}.*
           file_glob: true
           overwrite: true
       - name: Deploy documentation
