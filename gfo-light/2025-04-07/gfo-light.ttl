@@ -1,0 +1,630 @@
+@prefix : <https://w3id.org/gfo-light#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://w3id.org/gfo-light#> .
+
+<https://w3id.org/gfo-light> rdf:type owl:Ontology ;
+                              owl:versionIRI <https://w3id.org/gfo-light/release/2025-04-07> ;
+                              owl:imports <https://w3id.org/gfo-core/release/2025-04-07> ;
+                              <http://purl.org/dc/elements/1.1/created> "2023-01-01" ;
+                              <http://purl.org/dc/elements/1.1/creator> "Alexandr Uciteli" ,
+                                                                        "Christoph Beger" ,
+                                                                        "Frank Loebe" ,
+                                                                        "Franz Matthies" ,
+                                                                        "Heinrich Herre" ,
+                                                                        "Konrad Höffner" ,
+                                                                        "Patryk Burek" ,
+                                                                        "Ralph Schäfermeier" ;
+                              <http://purl.org/dc/elements/1.1/description> "GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO) and is designed as a framework for the efficient development and foundation of domain/application ontologies."@en ;
+                              <http://purl.org/dc/elements/1.1/modified> "2025-04-07" ;
+                              <http://purl.org/dc/elements/1.1/title> "General Formal Ontology Light (GFO-light)"@en ;
+                              <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> ;
+                              <http://purl.org/ontology/bibo/doi> "10.5281/zenodo.14833002" ;
+                              <http://purl.org/vocab/vann/preferredNamespacePrefix> "gfo-light" ;
+                              <http://purl.org/vocab/vann/preferredNamespaceURI> "https://w3id.org/gfo-light/" ;
+                              <http://usefulinc.com/ns/doap#repository> <https://github.com/Onto-Med/gfo-light> ;
+                              rdfs:label "GFO-light"@en ;
+                              owl:priorVersion <https://w3id.org/gfo-light/release/2025-03-17> ;
+                              owl:versionInfo "2025-04-07" ;
+                              <http://xmlns.com/foaf/0.1/homepage> "https://github.com/Onto-Med/gfo-light" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/created
+<http://purl.org/dc/elements/1.1/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/modified
+<http://purl.org/dc/elements/1.1/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceURI
+<http://purl.org/vocab/vann/preferredNamespaceURI> rdf:type owl:AnnotationProperty .
+
+
+###  http://usefulinc.com/ns/doap#repository
+<http://usefulinc.com/ns/doap#repository> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/homepage
+<http://xmlns.com/foaf/0.1/homepage> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/gfo-core/attributiveOf
+<https://w3id.org/gfo-core/attributiveOf> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/gfo-core/hasAttributive
+<https://w3id.org/gfo-core/hasAttributive> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/gfo-core/partOf
+<https://w3id.org/gfo-core/partOf> rdf:type owl:ObjectProperty .
+
+
+###  https://w3id.org/gfo-light/boundaryOf
+<https://w3id.org/gfo-light/boundaryOf> rdf:type owl:ObjectProperty ;
+                                        owl:inverseOf <https://w3id.org/gfo-light/hasBoundary> ;
+                                        rdfs:domain <https://w3id.org/gfo-light/ObjectBoundary> ;
+                                        rdfs:range [ rdf:type owl:Class ;
+                                                     owl:unionOf ( <https://w3id.org/gfo-light/Line>
+                                                                   <https://w3id.org/gfo-light/Object>
+                                                                   <https://w3id.org/gfo-light/Surface>
+                                                                 )
+                                                   ] ;
+                                        rdfs:label "boundary of"@en .
+
+
+###  https://w3id.org/gfo-light/containsRole
+<https://w3id.org/gfo-light/containsRole> rdf:type owl:ObjectProperty ;
+                                          owl:inverseOf <https://w3id.org/gfo-light/roleIn> ;
+                                          rdfs:domain [ rdf:type owl:Class ;
+                                                        owl:unionOf ( <https://w3id.org/gfo-core/Process>
+                                                                      <https://w3id.org/gfo-core/Situation>
+                                                                      <https://w3id.org/gfo-light/Object>
+                                                                      <https://w3id.org/gfo-light/ObjectAggregate>
+                                                                      <https://w3id.org/gfo-light/Relator>
+                                                                    )
+                                                      ] ;
+                                          rdfs:range <https://w3id.org/gfo-light/Role> ;
+                                          rdfs:label "contains role"@en .
+
+
+###  https://w3id.org/gfo-light/hasBoundary
+<https://w3id.org/gfo-light/hasBoundary> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain [ rdf:type owl:Class ;
+                                                       owl:unionOf ( <https://w3id.org/gfo-light/Line>
+                                                                     <https://w3id.org/gfo-light/Object>
+                                                                     <https://w3id.org/gfo-light/Surface>
+                                                                   )
+                                                     ] ;
+                                         rdfs:range <https://w3id.org/gfo-light/ObjectBoundary> ;
+                                         rdfs:label "has boundary"@en .
+
+
+###  https://w3id.org/gfo-light/hasInnerBoundary
+<https://w3id.org/gfo-light/hasInnerBoundary> rdf:type owl:ObjectProperty ;
+                                              rdfs:subPropertyOf <https://w3id.org/gfo-light/hasBoundary> ;
+                                              owl:inverseOf <https://w3id.org/gfo-light/innerBoundaryOf> ;
+                                              rdfs:label "has inner boundary"@en .
+
+
+###  https://w3id.org/gfo-light/hasMember
+<https://w3id.org/gfo-light/hasMember> rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf <https://w3id.org/gfo-light/memberOf> ;
+                                       rdfs:domain [ rdf:type owl:Class ;
+                                                     owl:unionOf ( <https://w3id.org/gfo-light/ObjectAggregate>
+                                                                   <https://w3id.org/gfo-light/ProcessAggregate>
+                                                                   <https://w3id.org/gfo-light/SituationAggregate>
+                                                                 )
+                                                   ] ;
+                                       rdfs:range [ rdf:type owl:Class ;
+                                                    owl:unionOf ( <https://w3id.org/gfo-core/Process>
+                                                                  <https://w3id.org/gfo-core/Situation>
+                                                                  <https://w3id.org/gfo-light/Object>
+                                                                  <https://w3id.org/gfo-light/ObjectAggregate>
+                                                                )
+                                                  ] ;
+                                       rdfs:label "has member"@en .
+
+
+###  https://w3id.org/gfo-light/hasNaturalBoundary
+<https://w3id.org/gfo-light/hasNaturalBoundary> rdf:type owl:ObjectProperty ;
+                                                rdfs:subPropertyOf <https://w3id.org/gfo-light/hasBoundary> ;
+                                                owl:inverseOf <https://w3id.org/gfo-light/naturalBoundaryOf> ;
+                                                rdfs:label "has natural boundary"@en .
+
+
+###  https://w3id.org/gfo-light/hasOwner
+<https://w3id.org/gfo-light/hasOwner> rdf:type owl:ObjectProperty ;
+                                      owl:inverseOf <https://w3id.org/gfo-light/ownerOf> ;
+                                      rdfs:domain <https://w3id.org/gfo-light/ObjectBoundary> ;
+                                      rdfs:range <https://w3id.org/gfo-light/Object> ;
+                                      rdfs:label "has owner"@en .
+
+
+###  https://w3id.org/gfo-light/hasQuality
+<https://w3id.org/gfo-light/hasQuality> rdf:type owl:ObjectProperty ;
+                                        rdfs:subPropertyOf <https://w3id.org/gfo-core/hasAttributive> ;
+                                        owl:inverseOf <https://w3id.org/gfo-light/qualityOf> ;
+                                        rdfs:range <https://w3id.org/gfo-light/Quality> ;
+                                        rdfs:label "has quality"@en .
+
+
+###  https://w3id.org/gfo-light/innerBoundaryOf
+<https://w3id.org/gfo-light/innerBoundaryOf> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <https://w3id.org/gfo-light/boundaryOf> ;
+                                             rdfs:label "inner boundary of"@en .
+
+
+###  https://w3id.org/gfo-light/locatedIn
+<https://w3id.org/gfo-light/locatedIn> rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf <https://w3id.org/gfo-light/locationOf> ;
+                                       rdfs:domain [ rdf:type owl:Class ;
+                                                     owl:unionOf ( <https://w3id.org/gfo-core/Process>
+                                                                   <https://w3id.org/gfo-core/Situation>
+                                                                   <https://w3id.org/gfo-light/Object>
+                                                                 )
+                                                   ] ;
+                                       rdfs:range <https://w3id.org/gfo-light/Object> ;
+                                       rdfs:comment "Material objects can be located in other material objects (locatedIn, e.g., the driver is located in the car)."@en ,
+                                                    "Processes and situations can take place (locatedIn) in material objects (e.g., a football match in a stadium or an illness in a person)."@en ;
+                                       rdfs:label "located in"@en .
+
+
+###  https://w3id.org/gfo-light/locationOf
+<https://w3id.org/gfo-light/locationOf> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <https://w3id.org/gfo-light/Object> ;
+                                        rdfs:range [ rdf:type owl:Class ;
+                                                     owl:unionOf ( <https://w3id.org/gfo-core/Process>
+                                                                   <https://w3id.org/gfo-core/Situation>
+                                                                   <https://w3id.org/gfo-light/Object>
+                                                                 )
+                                                   ] ;
+                                        rdfs:label "location of"@en .
+
+
+###  https://w3id.org/gfo-light/memberOf
+<https://w3id.org/gfo-light/memberOf> rdf:type owl:ObjectProperty ;
+                                      rdfs:domain [ rdf:type owl:Class ;
+                                                    owl:unionOf ( <https://w3id.org/gfo-core/Process>
+                                                                  <https://w3id.org/gfo-core/Situation>
+                                                                  <https://w3id.org/gfo-light/Object>
+                                                                  <https://w3id.org/gfo-light/ObjectAggregate>
+                                                                )
+                                                  ] ;
+                                      rdfs:range [ rdf:type owl:Class ;
+                                                   owl:unionOf ( <https://w3id.org/gfo-light/ObjectAggregate>
+                                                                 <https://w3id.org/gfo-light/ProcessAggregate>
+                                                                 <https://w3id.org/gfo-light/SituationAggregate>
+                                                               )
+                                                 ] ;
+                                      rdfs:label "member of"@en .
+
+
+###  https://w3id.org/gfo-light/naturalBoundaryOf
+<https://w3id.org/gfo-light/naturalBoundaryOf> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <https://w3id.org/gfo-light/boundaryOf> ;
+                                               rdfs:label "natural boundary of"@en .
+
+
+###  https://w3id.org/gfo-light/ownerOf
+<https://w3id.org/gfo-light/ownerOf> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <https://w3id.org/gfo-light/Object> ;
+                                     rdfs:range <https://w3id.org/gfo-light/ObjectBoundary> ;
+                                     rdfs:label "owner of"@en .
+
+
+###  https://w3id.org/gfo-light/playedBy
+<https://w3id.org/gfo-light/playedBy> rdf:type owl:ObjectProperty ;
+                                      rdfs:subPropertyOf <https://w3id.org/gfo-core/attributiveOf> ;
+                                      owl:inverseOf <https://w3id.org/gfo-light/plays> ;
+                                      rdfs:domain <https://w3id.org/gfo-light/Role> ;
+                                      rdfs:label "played by"@en .
+
+
+###  https://w3id.org/gfo-light/plays
+<https://w3id.org/gfo-light/plays> rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf <https://w3id.org/gfo-core/hasAttributive> ;
+                                   rdfs:range <https://w3id.org/gfo-light/Role> ;
+                                   rdfs:label "plays"@en .
+
+
+###  https://w3id.org/gfo-light/qualityOf
+<https://w3id.org/gfo-light/qualityOf> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf <https://w3id.org/gfo-core/attributiveOf> ;
+                                       rdfs:domain <https://w3id.org/gfo-light/Quality> ;
+                                       rdfs:label "quality of"@en .
+
+
+###  https://w3id.org/gfo-light/relatedBy
+<https://w3id.org/gfo-light/relatedBy> rdf:type owl:ObjectProperty ;
+                                       rdfs:subPropertyOf <https://w3id.org/gfo-core/hasAttributive> ;
+                                       owl:inverseOf <https://w3id.org/gfo-light/relates> ;
+                                       rdfs:range <https://w3id.org/gfo-light/Relator> ;
+                                       rdfs:label "related by"@en .
+
+
+###  https://w3id.org/gfo-light/relates
+<https://w3id.org/gfo-light/relates> rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf <https://w3id.org/gfo-core/attributiveOf> ;
+                                     rdfs:domain <https://w3id.org/gfo-light/Relator> ;
+                                     rdfs:label "relates"@en .
+
+
+###  https://w3id.org/gfo-light/representedBy
+<https://w3id.org/gfo-light/representedBy> rdf:type owl:ObjectProperty ;
+                                           owl:inverseOf <https://w3id.org/gfo-light/represents> ;
+                                           rdfs:domain <https://w3id.org/gfo-core/Entity> ;
+                                           rdfs:range <https://w3id.org/gfo-light/InformationObject> ;
+                                           rdfs:label "represented by"@en .
+
+
+###  https://w3id.org/gfo-light/represents
+<https://w3id.org/gfo-light/represents> rdf:type owl:ObjectProperty ;
+                                        rdfs:domain <https://w3id.org/gfo-light/InformationObject> ;
+                                        rdfs:range <https://w3id.org/gfo-core/Entity> ;
+                                        rdfs:label "represents"@en .
+
+
+###  https://w3id.org/gfo-light/roleIn
+<https://w3id.org/gfo-light/roleIn> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <https://w3id.org/gfo-light/Role> ;
+                                    rdfs:range [ rdf:type owl:Class ;
+                                                 owl:unionOf ( <https://w3id.org/gfo-core/Process>
+                                                               <https://w3id.org/gfo-core/Situation>
+                                                               <https://w3id.org/gfo-light/Object>
+                                                               <https://w3id.org/gfo-light/ObjectAggregate>
+                                                               <https://w3id.org/gfo-light/Relator>
+                                                             )
+                                               ] ;
+                                    rdfs:label "role in"@en .
+
+
+###  https://w3id.org/gfo-light/spatiallyEndsOn
+<https://w3id.org/gfo-light/spatiallyEndsOn> rdf:type owl:ObjectProperty ;
+                                             rdfs:subPropertyOf <https://w3id.org/gfo-light/spatiallyPassesThrough> ;
+                                             rdfs:label "spatially ends on"@en .
+
+
+###  https://w3id.org/gfo-light/spatiallyPassesThrough
+<https://w3id.org/gfo-light/spatiallyPassesThrough> rdf:type owl:ObjectProperty ;
+                                                    rdfs:domain [ rdf:type owl:Class ;
+                                                                  owl:unionOf ( <https://w3id.org/gfo-light/Line>
+                                                                                <https://w3id.org/gfo-light/Surface>
+                                                                              )
+                                                                ] ;
+                                                    rdfs:range <https://w3id.org/gfo-core/Continuant> ;
+                                                    rdfs:label "spatially passes through"@en .
+
+
+###  https://w3id.org/gfo-light/spatiallyStartsOn
+<https://w3id.org/gfo-light/spatiallyStartsOn> rdf:type owl:ObjectProperty ;
+                                               rdfs:subPropertyOf <https://w3id.org/gfo-light/spatiallyPassesThrough> ;
+                                               rdfs:label "spatially starts on"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/gfo-core/Attributive
+<https://w3id.org/gfo-core/Attributive> rdf:type owl:Class .
+
+
+###  https://w3id.org/gfo-core/Continuant
+<https://w3id.org/gfo-core/Continuant> rdf:type owl:Class .
+
+
+###  https://w3id.org/gfo-core/Entity
+<https://w3id.org/gfo-core/Entity> rdf:type owl:Class .
+
+
+###  https://w3id.org/gfo-core/Individual
+<https://w3id.org/gfo-core/Individual> rdf:type owl:Class .
+
+
+###  https://w3id.org/gfo-core/Process
+<https://w3id.org/gfo-core/Process> rdf:type owl:Class .
+
+
+###  https://w3id.org/gfo-core/Situation
+<https://w3id.org/gfo-core/Situation> rdf:type owl:Class .
+
+
+###  https://w3id.org/gfo-light/CohesiveProcess
+<https://w3id.org/gfo-light/CohesiveProcess> rdf:type owl:Class ;
+                                             rdfs:subClassOf <https://w3id.org/gfo-core/Process> ;
+                                             rdfs:label "Cohesive process"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#altLabel> "Temporally connected process"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "A cohesive process is a causally and temporally connected process."@en ;
+                                             <http://www.w3.org/2004/02/skos/core#example> "A treatment of a patient in a hospital"@en ,
+                                                                                           "Football match"@en ,
+                                                                                           "The course of an illness"@en ,
+                                                                                           "The first half of the match"@en .
+
+
+###  https://w3id.org/gfo-light/CohesiveSituation
+<https://w3id.org/gfo-light/CohesiveSituation> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/gfo-core/Situation> ;
+                                               rdfs:label "Cohesive situation"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#altLabel> "Temporally connected situation"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "A cohesive situation is a causally and temporally connected situation."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#example> "A risk situation when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time"@en ,
+                                                                                             "The situation after the wedding of John and Mary (i.e., the situation in which they are married containing the marriage relator with a husband and a wife role)"@en ,
+                                                                                             "The situation at the end of a football match containing players' qualities (e.g., number of goals or assists), teams' qualities (e.g., number of goals or ball possession) and a winner-loser relator with one team playing the winner role and the other team playing the loser role"@en .
+
+
+###  https://w3id.org/gfo-light/InformationObject
+<https://w3id.org/gfo-light/InformationObject> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://w3id.org/gfo-light/Object> ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <https://w3id.org/gfo-light/represents> ;
+                                                                 owl:someValuesFrom <https://w3id.org/gfo-core/Entity>
+                                                               ] ;
+                                               rdfs:label "Information object"@en ;
+                                               <http://www.w3.org/2004/02/skos/core#definition> "Information objects are symbolic entities that denote/designate, describe, specify or represent other entities."@en ;
+                                               <http://www.w3.org/2004/02/skos/core#example> "Computer programme"@en ,
+                                                                                             "Description"@en ,
+                                                                                             "Diagram"@en ,
+                                                                                             "Model"@en ,
+                                                                                             "Title"@en .
+
+
+###  https://w3id.org/gfo-light/Line
+<https://w3id.org/gfo-light/Line> rdf:type owl:Class ;
+                                  rdfs:subClassOf <https://w3id.org/gfo-light/ObjectBoundary> ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <https://w3id.org/gfo-light/boundaryOf> ;
+                                                    owl:allValuesFrom <https://w3id.org/gfo-light/Surface>
+                                                  ] ;
+                                  rdfs:comment "Lines are not necessarily straight. They can be, for example, curves or broken lines that pass through various points and form a corner, a triangle or a polygon."@en ;
+                                  rdfs:label "Line"@en ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "A line is a 1-dimensional object boundary."@en ;
+                                  <http://www.w3.org/2004/02/skos/core#example> "Boundary line of the football field"@en ,
+                                                                                "Longitudinal axis of the human skeleton"@en .
+
+
+###  https://w3id.org/gfo-light/Object
+<https://w3id.org/gfo-light/Object> rdf:type owl:Class ;
+                                    rdfs:subClassOf <https://w3id.org/gfo-core/Continuant> ;
+                                    rdfs:label "Object"@en ;
+                                    <http://www.w3.org/2004/02/skos/core#definition> "Objects are social or material entities that can exist independently of each other."@en ;
+                                    <http://www.w3.org/2004/02/skos/core#example> "Bone"@en ,
+                                                                                  "Chopstick"@en ,
+                                                                                  "Computer"@en ,
+                                                                                  "Person"@en .
+
+
+###  https://w3id.org/gfo-light/ObjectAggregate
+<https://w3id.org/gfo-light/ObjectAggregate> rdf:type owl:Class ;
+                                             rdfs:subClassOf <https://w3id.org/gfo-core/Continuant> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <https://w3id.org/gfo-light/hasMember> ;
+                                                               owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                    owl:unionOf ( <https://w3id.org/gfo-light/Object>
+                                                                                                  <https://w3id.org/gfo-light/ObjectAggregate>
+                                                                                                )
+                                                                                  ]
+                                                             ] ;
+                                             rdfs:label "Object aggregate"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#altLabel> "Collection"@en ,
+                                                                                            "Collective"@en ,
+                                                                                            "Group"@en ;
+                                             <http://www.w3.org/2004/02/skos/core#definition> "Object aggregates are groups of objects that together form a unit."@en ;
+                                             <http://www.w3.org/2004/02/skos/core#example> "Research group"@en ,
+                                                                                           "Sports team"@en .
+
+
+###  https://w3id.org/gfo-light/ObjectBoundary
+<https://w3id.org/gfo-light/ObjectBoundary> rdf:type owl:Class ;
+                                            rdfs:subClassOf <https://w3id.org/gfo-core/Continuant> ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <https://w3id.org/gfo-light/boundaryOf> ;
+                                                              owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                   owl:unionOf ( <https://w3id.org/gfo-light/Line>
+                                                                                                 <https://w3id.org/gfo-light/Object>
+                                                                                                 <https://w3id.org/gfo-light/Surface>
+                                                                                               )
+                                                                                 ]
+                                                            ] ,
+                                                            [ rdf:type owl:Restriction ;
+                                                              owl:onProperty <https://w3id.org/gfo-light/hasOwner> ;
+                                                              owl:someValuesFrom <https://w3id.org/gfo-light/Object>
+                                                            ] ;
+                                            rdfs:label "Object boundary"@en ;
+                                            <http://www.w3.org/2004/02/skos/core#definition> "Object boundaries are 0-, 1-, or 2-dimensional (visible or imaginary) entities (i.e., points, lines and surfaces) that border objects (natural boundaries) or are located inside them (inner boundaries)."@en .
+
+
+###  https://w3id.org/gfo-light/ObjectPart
+<https://w3id.org/gfo-light/ObjectPart> rdf:type owl:Class ;
+                                        rdfs:subClassOf <https://w3id.org/gfo-core/Continuant> ,
+                                                        [ rdf:type owl:Restriction ;
+                                                          owl:onProperty <https://w3id.org/gfo-core/partOf> ;
+                                                          owl:someValuesFrom <https://w3id.org/gfo-light/Object>
+                                                        ] ;
+                                        rdfs:label "Object part"@en ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "Object parts are material entities that cannot exist independently of the corresponding whole object."@en ;
+                                        <http://www.w3.org/2004/02/skos/core#example> "Part of a bone"@en ,
+                                                                                      "Part of a chopstick"@en .
+
+
+###  https://w3id.org/gfo-light/Point
+<https://w3id.org/gfo-light/Point> rdf:type owl:Class ;
+                                   rdfs:subClassOf <https://w3id.org/gfo-light/ObjectBoundary> ,
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty <https://w3id.org/gfo-light/boundaryOf> ;
+                                                     owl:allValuesFrom <https://w3id.org/gfo-light/Line>
+                                                   ] ;
+                                   rdfs:label "Point"@en ;
+                                   <http://www.w3.org/2004/02/skos/core#definition> "A point is a 0-dimensional object boundary."@en ;
+                                   <http://www.w3.org/2004/02/skos/core#example> "Gonion"@en ,
+                                                                                 "Penalty spot"@en .
+
+
+###  https://w3id.org/gfo-light/ProcessAggregate
+<https://w3id.org/gfo-light/ProcessAggregate> rdf:type owl:Class ;
+                                              rdfs:subClassOf <https://w3id.org/gfo-core/Process> ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <https://w3id.org/gfo-light/hasMember> ;
+                                                                owl:someValuesFrom <https://w3id.org/gfo-core/Process>
+                                                              ] ;
+                                              rdfs:label "Process aggregate"@en ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "A process aggregate is a process that consists of other contextually but not necessarily temporally interconnected processes."@en ;
+                                              <http://www.w3.org/2004/02/skos/core#example> "A football league season, consisting of all matches"@en ,
+                                                                                            "A series of lectures in a semester"@en .
+
+
+###  https://w3id.org/gfo-light/Quality
+<https://w3id.org/gfo-light/Quality> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/gfo-core/Attributive> ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <https://w3id.org/gfo-light/qualityOf> ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass <https://w3id.org/gfo-core/Individual>
+                                                     ] ;
+                                     rdfs:comment "Qualities can possess values."@en ;
+                                     rdfs:label "Quality"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#altLabel> "Attribute"@en ,
+                                                                                    "Characteristic"@en ,
+                                                                                    "Feature"@en ,
+                                                                                    "Property"@en ,
+                                                                                    "Trait"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "Qualities are attributives that typically inhere in its bearer."@en ;
+                                     <http://www.w3.org/2004/02/skos/core#example> "Observable or measurable characteristics of single objects, e.g., persons, (such as weight and height, laboratory parameters or symptoms)"@en ,
+                                                                                   "Qualities of object groups (e.g., goals scored by a football team in a match)"@en ,
+                                                                                   "Qualities of processes (e.g., the number of spectators as quality of a football match)"@en .
+
+
+###  https://w3id.org/gfo-light/Relator
+<https://w3id.org/gfo-light/Relator> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/gfo-core/Attributive> ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <https://w3id.org/gfo-light/containsRole> ;
+                                                       owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass <https://w3id.org/gfo-light/Role>
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <https://w3id.org/gfo-light/relates> ;
+                                                       owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass <https://w3id.org/gfo-core/Individual>
+                                                     ] ;
+                                     rdfs:comment "A relator represents an individual relation instance."@en ;
+                                     rdfs:label "Relator"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "Relators are attributives that connect other entities (role players) by relational roles (played by role players)."@en ;
+                                     <http://www.w3.org/2004/02/skos/core#example> "A relator describing the relative location of an object (playing the target object role) in relation to another object (playing the reference object role), e.g., the location of a person relative to the city centre or the location of an anatomical structure relative to the longitudinal axis"@en ,
+                                                                                   "A winner-loser relator connecting a winner and a loser team by a winner and a loser role"@en ,
+                                                                                   "The marriage (relator) of John and Mary (in which Mary plays the wife role and John the husband role)"@en .
+
+
+###  https://w3id.org/gfo-light/Role
+<https://w3id.org/gfo-light/Role> rdf:type owl:Class ;
+                                  rdfs:subClassOf <https://w3id.org/gfo-core/Attributive> ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <https://w3id.org/gfo-light/playedBy> ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass <https://w3id.org/gfo-core/Individual>
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty <https://w3id.org/gfo-light/roleIn> ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass [ rdf:type owl:Class ;
+                                                                  owl:unionOf ( <https://w3id.org/gfo-core/Process>
+                                                                                <https://w3id.org/gfo-core/Situation>
+                                                                                <https://w3id.org/gfo-light/Object>
+                                                                                <https://w3id.org/gfo-light/ObjectAggregate>
+                                                                                <https://w3id.org/gfo-light/Relator>
+                                                                              )
+                                                                ]
+                                                  ] ;
+                                  rdfs:comment "An object part can play a (e.g., functional) role in the whole object (e.g., the processor is part of the computer and has the task/function/role to process commands). A member (object) of a social group (object aggregate) can play a social role in that group (e.g., John is member of the football team and plays the role of midfielder). Objects can play processual or situational roles in processes (e.g., team A plays the home team role and team B plays the visiting team role in a football match) or situations (e.g., scorer and assistant role in a goal situation or roles played by a doctor and a patient in a risk/adverse situation in hospital) in which they participate. Objects can play relational roles in a relation/relator (e.g., wife role and husband role of the marriage relator)."@en ;
+                                  rdfs:label "Role"@en ;
+                                  <http://www.w3.org/2004/02/skos/core#definition> "A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, processual entity, situational entity, relator), in which the continuant plays that role."@en ;
+                                  <http://www.w3.org/2004/02/skos/core#example> "John is member of the football team and plays the role of midfielder."@en ,
+                                                                                "Roles played by a doctor and a patient in a risk/adverse situation in hospital"@en ,
+                                                                                "Target object role and reference object role of a relative location relator (describes the relative location of an object playing the target object role in relation to another object playing the reference object role)"@en ,
+                                                                                "Team A plays the home team role and team B plays the visiting team role in a football match."@en ,
+                                                                                "The processor is part of the computer and has the task/function/role to process commands."@en ,
+                                                                                "Wife role and husband role of the marriage relator"@en ,
+                                                                                "Winner team role and loser team role of the winner-loser relator"@en .
+
+
+###  https://w3id.org/gfo-light/SituationAggregate
+<https://w3id.org/gfo-light/SituationAggregate> rdf:type owl:Class ;
+                                                rdfs:subClassOf <https://w3id.org/gfo-core/Situation> ,
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty <https://w3id.org/gfo-light/hasMember> ;
+                                                                  owl:someValuesFrom <https://w3id.org/gfo-core/Situation>
+                                                                ] ;
+                                                rdfs:label "Situation aggregate"@en ;
+                                                <http://www.w3.org/2004/02/skos/core#definition> "A situation aggregate is a situation that consists of other contextually but not necessarily temporally interconnected situations."@en ;
+                                                <http://www.w3.org/2004/02/skos/core#example> "A situation of increased temperature during the course of an illness, consisting of all not necessarily temporally connected phases"@en .
+
+
+###  https://w3id.org/gfo-light/Surface
+<https://w3id.org/gfo-light/Surface> rdf:type owl:Class ;
+                                     rdfs:subClassOf <https://w3id.org/gfo-light/ObjectBoundary> ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty <https://w3id.org/gfo-light/boundaryOf> ;
+                                                       owl:allValuesFrom <https://w3id.org/gfo-light/Object>
+                                                     ] ;
+                                     rdfs:label "Surface"@en ;
+                                     <http://www.w3.org/2004/02/skos/core#definition> "A surface is a 2-dimensional object boundary."@en ;
+                                     <http://www.w3.org/2004/02/skos/core#example> "Frontal plane of the human skeleton"@en ,
+                                                                                   "Surface of the football field"@en .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

@@ -1,0 +1,667 @@
+<https://w3id.org/gfo-light> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/gfo-light> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/gfo-light/release/2025-04-07> .
+<https://w3id.org/gfo-light> <http://www.w3.org/2002/07/owl#imports> <https://w3id.org/gfo-core/release/2025-04-07> .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/created> "2023-01-01" .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/creator> "Alexandr Uciteli" .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/creator> "Christoph Beger" .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/creator> "Frank Loebe" .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/creator> "Franz Matthies" .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/creator> "Heinrich Herre" .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/creator> "Konrad Höffner" .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/creator> "Patryk Burek" .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/creator> "Ralph Schäfermeier" .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/description> "GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO) and is designed as a framework for the efficient development and foundation of domain/application ontologies."@en .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/modified> "2025-04-07" .
+<https://w3id.org/gfo-light> <http://purl.org/dc/elements/1.1/title> "General Formal Ontology Light (GFO-light)"@en .
+<https://w3id.org/gfo-light> <http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/> .
+<https://w3id.org/gfo-light> <http://purl.org/ontology/bibo/doi> "10.5281/zenodo.14833002" .
+<https://w3id.org/gfo-light> <http://purl.org/vocab/vann/preferredNamespacePrefix> "gfo-light" .
+<https://w3id.org/gfo-light> <http://purl.org/vocab/vann/preferredNamespaceURI> "https://w3id.org/gfo-light/" .
+<https://w3id.org/gfo-light> <http://usefulinc.com/ns/doap#repository> <https://github.com/Onto-Med/gfo-light> .
+<https://w3id.org/gfo-light> <http://www.w3.org/2000/01/rdf-schema#label> "GFO-light"@en .
+<https://w3id.org/gfo-light> <http://www.w3.org/2002/07/owl#priorVersion> <https://w3id.org/gfo-light/release/2025-03-17> .
+<https://w3id.org/gfo-light> <http://www.w3.org/2002/07/owl#versionInfo> "2025-04-07" .
+<https://w3id.org/gfo-light> <http://xmlns.com/foaf/0.1/homepage> "https://github.com/Onto-Med/gfo-light" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/elements/1.1/created
+<http://purl.org/dc/elements/1.1/created> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/modified
+<http://purl.org/dc/elements/1.1/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/ontology/bibo/doi
+<http://purl.org/ontology/bibo/doi> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceURI
+<http://purl.org/vocab/vann/preferredNamespaceURI> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://usefulinc.com/ns/doap#repository
+<http://usefulinc.com/ns/doap#repository> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#comment
+<http://www.w3.org/2000/01/rdf-schema#comment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionInfo
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2004/02/skos/core#example
+<http://www.w3.org/2004/02/skos/core#example> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/homepage
+<http://xmlns.com/foaf/0.1/homepage> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/gfo-core/attributiveOf
+<https://w3id.org/gfo-core/attributiveOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://w3id.org/gfo-core/hasAttributive
+<https://w3id.org/gfo-core/hasAttributive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://w3id.org/gfo-core/partOf
+<https://w3id.org/gfo-core/partOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://w3id.org/gfo-light/boundaryOf
+<https://w3id.org/gfo-light/boundaryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/boundaryOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-light/hasBoundary> .
+<https://w3id.org/gfo-light/boundaryOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-light/ObjectBoundary> .
+<https://w3id.org/gfo-light/boundaryOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#unionOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Surface> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Object> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Line> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/boundaryOf> <http://www.w3.org/2000/01/rdf-schema#label> "boundary of"@en .
+# 
+# https://w3id.org/gfo-light/containsRole
+<https://w3id.org/gfo-light/containsRole> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/containsRole> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-light/roleIn> .
+<https://w3id.org/gfo-light/containsRole> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#unionOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Relator> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/ObjectAggregate> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Object> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/containsRole> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-light/Role> .
+<https://w3id.org/gfo-light/containsRole> <http://www.w3.org/2000/01/rdf-schema#label> "contains role"@en .
+# 
+# https://w3id.org/gfo-light/hasBoundary
+<https://w3id.org/gfo-light/hasBoundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/hasBoundary> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#unionOf> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Surface> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Object> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Line> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/hasBoundary> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-light/ObjectBoundary> .
+<https://w3id.org/gfo-light/hasBoundary> <http://www.w3.org/2000/01/rdf-schema#label> "has boundary"@en .
+# 
+# https://w3id.org/gfo-light/hasInnerBoundary
+<https://w3id.org/gfo-light/hasInnerBoundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/hasInnerBoundary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-light/hasBoundary> .
+<https://w3id.org/gfo-light/hasInnerBoundary> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-light/innerBoundaryOf> .
+<https://w3id.org/gfo-light/hasInnerBoundary> <http://www.w3.org/2000/01/rdf-schema#label> "has inner boundary"@en .
+# 
+# https://w3id.org/gfo-light/hasMember
+<https://w3id.org/gfo-light/hasMember> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/hasMember> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-light/memberOf> .
+<https://w3id.org/gfo-light/hasMember> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#unionOf> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/SituationAggregate> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/ProcessAggregate> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/ObjectAggregate> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/hasMember> <http://www.w3.org/2000/01/rdf-schema#range> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#unionOf> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid22 .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/ObjectAggregate> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Object> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/hasMember> <http://www.w3.org/2000/01/rdf-schema#label> "has member"@en .
+# 
+# https://w3id.org/gfo-light/hasNaturalBoundary
+<https://w3id.org/gfo-light/hasNaturalBoundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/hasNaturalBoundary> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-light/hasBoundary> .
+<https://w3id.org/gfo-light/hasNaturalBoundary> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-light/naturalBoundaryOf> .
+<https://w3id.org/gfo-light/hasNaturalBoundary> <http://www.w3.org/2000/01/rdf-schema#label> "has natural boundary"@en .
+# 
+# https://w3id.org/gfo-light/hasOwner
+<https://w3id.org/gfo-light/hasOwner> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/hasOwner> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-light/ownerOf> .
+<https://w3id.org/gfo-light/hasOwner> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-light/ObjectBoundary> .
+<https://w3id.org/gfo-light/hasOwner> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-light/Object> .
+<https://w3id.org/gfo-light/hasOwner> <http://www.w3.org/2000/01/rdf-schema#label> "has owner"@en .
+# 
+# https://w3id.org/gfo-light/hasQuality
+<https://w3id.org/gfo-light/hasQuality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/hasQuality> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/hasAttributive> .
+<https://w3id.org/gfo-light/hasQuality> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-light/qualityOf> .
+<https://w3id.org/gfo-light/hasQuality> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-light/Quality> .
+<https://w3id.org/gfo-light/hasQuality> <http://www.w3.org/2000/01/rdf-schema#label> "has quality"@en .
+# 
+# https://w3id.org/gfo-light/innerBoundaryOf
+<https://w3id.org/gfo-light/innerBoundaryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/innerBoundaryOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-light/boundaryOf> .
+<https://w3id.org/gfo-light/innerBoundaryOf> <http://www.w3.org/2000/01/rdf-schema#label> "inner boundary of"@en .
+# 
+# https://w3id.org/gfo-light/locatedIn
+<https://w3id.org/gfo-light/locatedIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/locatedIn> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-light/locationOf> .
+<https://w3id.org/gfo-light/locatedIn> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#unionOf> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Object> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/locatedIn> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-light/Object> .
+<https://w3id.org/gfo-light/locatedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Material objects can be located in other material objects (locatedIn, e.g., the driver is located in the car)."@en .
+<https://w3id.org/gfo-light/locatedIn> <http://www.w3.org/2000/01/rdf-schema#comment> "Processes and situations can take place (locatedIn) in material objects (e.g., a football match in a stadium or an illness in a person)."@en .
+<https://w3id.org/gfo-light/locatedIn> <http://www.w3.org/2000/01/rdf-schema#label> "located in"@en .
+# 
+# https://w3id.org/gfo-light/locationOf
+<https://w3id.org/gfo-light/locationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/locationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-light/Object> .
+<https://w3id.org/gfo-light/locationOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid28 .
+_:genid28 <http://www.w3.org/2002/07/owl#unionOf> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Object> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/locationOf> <http://www.w3.org/2000/01/rdf-schema#label> "location of"@en .
+# 
+# https://w3id.org/gfo-light/memberOf
+<https://w3id.org/gfo-light/memberOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/memberOf> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid32 .
+_:genid32 <http://www.w3.org/2002/07/owl#unionOf> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/ObjectAggregate> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Object> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/memberOf> <http://www.w3.org/2000/01/rdf-schema#range> _:genid37 .
+_:genid37 <http://www.w3.org/2002/07/owl#unionOf> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid38 .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/SituationAggregate> .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/ProcessAggregate> .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/ObjectAggregate> .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/memberOf> <http://www.w3.org/2000/01/rdf-schema#label> "member of"@en .
+# 
+# https://w3id.org/gfo-light/naturalBoundaryOf
+<https://w3id.org/gfo-light/naturalBoundaryOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/naturalBoundaryOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-light/boundaryOf> .
+<https://w3id.org/gfo-light/naturalBoundaryOf> <http://www.w3.org/2000/01/rdf-schema#label> "natural boundary of"@en .
+# 
+# https://w3id.org/gfo-light/ownerOf
+<https://w3id.org/gfo-light/ownerOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/ownerOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-light/Object> .
+<https://w3id.org/gfo-light/ownerOf> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-light/ObjectBoundary> .
+<https://w3id.org/gfo-light/ownerOf> <http://www.w3.org/2000/01/rdf-schema#label> "owner of"@en .
+# 
+# https://w3id.org/gfo-light/playedBy
+<https://w3id.org/gfo-light/playedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/playedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/attributiveOf> .
+<https://w3id.org/gfo-light/playedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-light/plays> .
+<https://w3id.org/gfo-light/playedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-light/Role> .
+<https://w3id.org/gfo-light/playedBy> <http://www.w3.org/2000/01/rdf-schema#label> "played by"@en .
+# 
+# https://w3id.org/gfo-light/plays
+<https://w3id.org/gfo-light/plays> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/plays> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/hasAttributive> .
+<https://w3id.org/gfo-light/plays> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-light/Role> .
+<https://w3id.org/gfo-light/plays> <http://www.w3.org/2000/01/rdf-schema#label> "plays"@en .
+# 
+# https://w3id.org/gfo-light/qualityOf
+<https://w3id.org/gfo-light/qualityOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/qualityOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/attributiveOf> .
+<https://w3id.org/gfo-light/qualityOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-light/Quality> .
+<https://w3id.org/gfo-light/qualityOf> <http://www.w3.org/2000/01/rdf-schema#label> "quality of"@en .
+# 
+# https://w3id.org/gfo-light/relatedBy
+<https://w3id.org/gfo-light/relatedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/relatedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/hasAttributive> .
+<https://w3id.org/gfo-light/relatedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-light/relates> .
+<https://w3id.org/gfo-light/relatedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-light/Relator> .
+<https://w3id.org/gfo-light/relatedBy> <http://www.w3.org/2000/01/rdf-schema#label> "related by"@en .
+# 
+# https://w3id.org/gfo-light/relates
+<https://w3id.org/gfo-light/relates> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/relates> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-core/attributiveOf> .
+<https://w3id.org/gfo-light/relates> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-light/Relator> .
+<https://w3id.org/gfo-light/relates> <http://www.w3.org/2000/01/rdf-schema#label> "relates"@en .
+# 
+# https://w3id.org/gfo-light/representedBy
+<https://w3id.org/gfo-light/representedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/representedBy> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/gfo-light/represents> .
+<https://w3id.org/gfo-light/representedBy> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-core/Entity> .
+<https://w3id.org/gfo-light/representedBy> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-light/InformationObject> .
+<https://w3id.org/gfo-light/representedBy> <http://www.w3.org/2000/01/rdf-schema#label> "represented by"@en .
+# 
+# https://w3id.org/gfo-light/represents
+<https://w3id.org/gfo-light/represents> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/represents> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-light/InformationObject> .
+<https://w3id.org/gfo-light/represents> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Entity> .
+<https://w3id.org/gfo-light/represents> <http://www.w3.org/2000/01/rdf-schema#label> "represents"@en .
+# 
+# https://w3id.org/gfo-light/roleIn
+<https://w3id.org/gfo-light/roleIn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/roleIn> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/gfo-light/Role> .
+<https://w3id.org/gfo-light/roleIn> <http://www.w3.org/2000/01/rdf-schema#range> _:genid41 .
+_:genid41 <http://www.w3.org/2002/07/owl#unionOf> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Relator> .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/ObjectAggregate> .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Object> .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/roleIn> <http://www.w3.org/2000/01/rdf-schema#label> "role in"@en .
+# 
+# https://w3id.org/gfo-light/spatiallyEndsOn
+<https://w3id.org/gfo-light/spatiallyEndsOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/spatiallyEndsOn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-light/spatiallyPassesThrough> .
+<https://w3id.org/gfo-light/spatiallyEndsOn> <http://www.w3.org/2000/01/rdf-schema#label> "spatially ends on"@en .
+# 
+# https://w3id.org/gfo-light/spatiallyPassesThrough
+<https://w3id.org/gfo-light/spatiallyPassesThrough> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/spatiallyPassesThrough> <http://www.w3.org/2000/01/rdf-schema#domain> _:genid47 .
+_:genid47 <http://www.w3.org/2002/07/owl#unionOf> _:genid49 .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid48 .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Surface> .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Line> .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/spatiallyPassesThrough> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/gfo-core/Continuant> .
+<https://w3id.org/gfo-light/spatiallyPassesThrough> <http://www.w3.org/2000/01/rdf-schema#label> "spatially passes through"@en .
+# 
+# https://w3id.org/gfo-light/spatiallyStartsOn
+<https://w3id.org/gfo-light/spatiallyStartsOn> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/gfo-light/spatiallyStartsOn> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://w3id.org/gfo-light/spatiallyPassesThrough> .
+<https://w3id.org/gfo-light/spatiallyStartsOn> <http://www.w3.org/2000/01/rdf-schema#label> "spatially starts on"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://w3id.org/gfo-core/Attributive
+<https://w3id.org/gfo-core/Attributive> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/gfo-core/Continuant
+<https://w3id.org/gfo-core/Continuant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/gfo-core/Entity
+<https://w3id.org/gfo-core/Entity> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/gfo-core/Individual
+<https://w3id.org/gfo-core/Individual> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/gfo-core/Process
+<https://w3id.org/gfo-core/Process> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/gfo-core/Situation
+<https://w3id.org/gfo-core/Situation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://w3id.org/gfo-light/CohesiveProcess
+<https://w3id.org/gfo-light/CohesiveProcess> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/CohesiveProcess> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Process> .
+<https://w3id.org/gfo-light/CohesiveProcess> <http://www.w3.org/2000/01/rdf-schema#label> "Cohesive process"@en .
+<https://w3id.org/gfo-light/CohesiveProcess> <http://www.w3.org/2004/02/skos/core#altLabel> "Temporally connected process"@en .
+<https://w3id.org/gfo-light/CohesiveProcess> <http://www.w3.org/2004/02/skos/core#definition> "A cohesive process is a causally and temporally connected process."@en .
+<https://w3id.org/gfo-light/CohesiveProcess> <http://www.w3.org/2004/02/skos/core#example> "A treatment of a patient in a hospital"@en .
+<https://w3id.org/gfo-light/CohesiveProcess> <http://www.w3.org/2004/02/skos/core#example> "Football match"@en .
+<https://w3id.org/gfo-light/CohesiveProcess> <http://www.w3.org/2004/02/skos/core#example> "The course of an illness"@en .
+<https://w3id.org/gfo-light/CohesiveProcess> <http://www.w3.org/2004/02/skos/core#example> "The first half of the match"@en .
+# 
+# https://w3id.org/gfo-light/CohesiveSituation
+<https://w3id.org/gfo-light/CohesiveSituation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/CohesiveSituation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Situation> .
+<https://w3id.org/gfo-light/CohesiveSituation> <http://www.w3.org/2000/01/rdf-schema#label> "Cohesive situation"@en .
+<https://w3id.org/gfo-light/CohesiveSituation> <http://www.w3.org/2004/02/skos/core#altLabel> "Temporally connected situation"@en .
+<https://w3id.org/gfo-light/CohesiveSituation> <http://www.w3.org/2004/02/skos/core#definition> "A cohesive situation is a causally and temporally connected situation."@en .
+<https://w3id.org/gfo-light/CohesiveSituation> <http://www.w3.org/2004/02/skos/core#example> "A risk situation when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time"@en .
+<https://w3id.org/gfo-light/CohesiveSituation> <http://www.w3.org/2004/02/skos/core#example> "The situation after the wedding of John and Mary (i.e., the situation in which they are married containing the marriage relator with a husband and a wife role)"@en .
+<https://w3id.org/gfo-light/CohesiveSituation> <http://www.w3.org/2004/02/skos/core#example> "The situation at the end of a football match containing players' qualities (e.g., number of goals or assists), teams' qualities (e.g., number of goals or ball possession) and a winner-loser relator with one team playing the winner role and the other team playing the loser role"@en .
+# 
+# https://w3id.org/gfo-light/InformationObject
+<https://w3id.org/gfo-light/InformationObject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/InformationObject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-light/Object> .
+<https://w3id.org/gfo-light/InformationObject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid50 .
+_:genid50 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/gfo-core/Entity> .
+_:genid50 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/represents> .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/InformationObject> <http://www.w3.org/2000/01/rdf-schema#label> "Information object"@en .
+<https://w3id.org/gfo-light/InformationObject> <http://www.w3.org/2004/02/skos/core#definition> "Information objects are symbolic entities that denote/designate, describe, specify or represent other entities."@en .
+<https://w3id.org/gfo-light/InformationObject> <http://www.w3.org/2004/02/skos/core#example> "Computer programme"@en .
+<https://w3id.org/gfo-light/InformationObject> <http://www.w3.org/2004/02/skos/core#example> "Description"@en .
+<https://w3id.org/gfo-light/InformationObject> <http://www.w3.org/2004/02/skos/core#example> "Diagram"@en .
+<https://w3id.org/gfo-light/InformationObject> <http://www.w3.org/2004/02/skos/core#example> "Model"@en .
+<https://w3id.org/gfo-light/InformationObject> <http://www.w3.org/2004/02/skos/core#example> "Title"@en .
+# 
+# https://w3id.org/gfo-light/Line
+<https://w3id.org/gfo-light/Line> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/Line> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-light/ObjectBoundary> .
+<https://w3id.org/gfo-light/Line> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid51 .
+_:genid51 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/gfo-light/Surface> .
+_:genid51 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/boundaryOf> .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/Line> <http://www.w3.org/2000/01/rdf-schema#comment> "Lines are not necessarily straight. They can be, for example, curves or broken lines that pass through various points and form a corner, a triangle or a polygon."@en .
+<https://w3id.org/gfo-light/Line> <http://www.w3.org/2000/01/rdf-schema#label> "Line"@en .
+<https://w3id.org/gfo-light/Line> <http://www.w3.org/2004/02/skos/core#definition> "A line is a 1-dimensional object boundary."@en .
+<https://w3id.org/gfo-light/Line> <http://www.w3.org/2004/02/skos/core#example> "Boundary line of the football field"@en .
+<https://w3id.org/gfo-light/Line> <http://www.w3.org/2004/02/skos/core#example> "Longitudinal axis of the human skeleton"@en .
+# 
+# https://w3id.org/gfo-light/Object
+<https://w3id.org/gfo-light/Object> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/Object> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Continuant> .
+<https://w3id.org/gfo-light/Object> <http://www.w3.org/2000/01/rdf-schema#label> "Object"@en .
+<https://w3id.org/gfo-light/Object> <http://www.w3.org/2004/02/skos/core#definition> "Objects are social or material entities that can exist independently of each other."@en .
+<https://w3id.org/gfo-light/Object> <http://www.w3.org/2004/02/skos/core#example> "Bone"@en .
+<https://w3id.org/gfo-light/Object> <http://www.w3.org/2004/02/skos/core#example> "Chopstick"@en .
+<https://w3id.org/gfo-light/Object> <http://www.w3.org/2004/02/skos/core#example> "Computer"@en .
+<https://w3id.org/gfo-light/Object> <http://www.w3.org/2004/02/skos/core#example> "Person"@en .
+# 
+# https://w3id.org/gfo-light/ObjectAggregate
+<https://w3id.org/gfo-light/ObjectAggregate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/ObjectAggregate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Continuant> .
+<https://w3id.org/gfo-light/ObjectAggregate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid52 .
+_:genid52 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid53 .
+_:genid53 <http://www.w3.org/2002/07/owl#unionOf> _:genid55 .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid54 .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/ObjectAggregate> .
+_:genid54 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Object> .
+_:genid55 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid52 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/hasMember> .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/ObjectAggregate> <http://www.w3.org/2000/01/rdf-schema#label> "Object aggregate"@en .
+<https://w3id.org/gfo-light/ObjectAggregate> <http://www.w3.org/2004/02/skos/core#altLabel> "Collection"@en .
+<https://w3id.org/gfo-light/ObjectAggregate> <http://www.w3.org/2004/02/skos/core#altLabel> "Collective"@en .
+<https://w3id.org/gfo-light/ObjectAggregate> <http://www.w3.org/2004/02/skos/core#altLabel> "Group"@en .
+<https://w3id.org/gfo-light/ObjectAggregate> <http://www.w3.org/2004/02/skos/core#definition> "Object aggregates are groups of objects that together form a unit."@en .
+<https://w3id.org/gfo-light/ObjectAggregate> <http://www.w3.org/2004/02/skos/core#example> "Research group"@en .
+<https://w3id.org/gfo-light/ObjectAggregate> <http://www.w3.org/2004/02/skos/core#example> "Sports team"@en .
+# 
+# https://w3id.org/gfo-light/ObjectBoundary
+<https://w3id.org/gfo-light/ObjectBoundary> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/ObjectBoundary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Continuant> .
+<https://w3id.org/gfo-light/ObjectBoundary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid56 .
+_:genid56 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid57 .
+_:genid57 <http://www.w3.org/2002/07/owl#unionOf> _:genid60 .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid59 .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid58 .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Surface> .
+_:genid58 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Object> .
+_:genid59 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Line> .
+_:genid60 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid57 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid56 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/boundaryOf> .
+_:genid56 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/ObjectBoundary> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid61 .
+_:genid61 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/gfo-light/Object> .
+_:genid61 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/hasOwner> .
+_:genid61 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/ObjectBoundary> <http://www.w3.org/2000/01/rdf-schema#label> "Object boundary"@en .
+<https://w3id.org/gfo-light/ObjectBoundary> <http://www.w3.org/2004/02/skos/core#definition> "Object boundaries are 0-, 1-, or 2-dimensional (visible or imaginary) entities (i.e., points, lines and surfaces) that border objects (natural boundaries) or are located inside them (inner boundaries)."@en .
+# 
+# https://w3id.org/gfo-light/ObjectPart
+<https://w3id.org/gfo-light/ObjectPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/ObjectPart> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Continuant> .
+<https://w3id.org/gfo-light/ObjectPart> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid62 .
+_:genid62 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/gfo-light/Object> .
+_:genid62 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-core/partOf> .
+_:genid62 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/ObjectPart> <http://www.w3.org/2000/01/rdf-schema#label> "Object part"@en .
+<https://w3id.org/gfo-light/ObjectPart> <http://www.w3.org/2004/02/skos/core#definition> "Object parts are material entities that cannot exist independently of the corresponding whole object."@en .
+<https://w3id.org/gfo-light/ObjectPart> <http://www.w3.org/2004/02/skos/core#example> "Part of a bone"@en .
+<https://w3id.org/gfo-light/ObjectPart> <http://www.w3.org/2004/02/skos/core#example> "Part of a chopstick"@en .
+# 
+# https://w3id.org/gfo-light/Point
+<https://w3id.org/gfo-light/Point> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-light/ObjectBoundary> .
+<https://w3id.org/gfo-light/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid63 .
+_:genid63 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/gfo-light/Line> .
+_:genid63 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/boundaryOf> .
+_:genid63 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/Point> <http://www.w3.org/2000/01/rdf-schema#label> "Point"@en .
+<https://w3id.org/gfo-light/Point> <http://www.w3.org/2004/02/skos/core#definition> "A point is a 0-dimensional object boundary."@en .
+<https://w3id.org/gfo-light/Point> <http://www.w3.org/2004/02/skos/core#example> "Gonion"@en .
+<https://w3id.org/gfo-light/Point> <http://www.w3.org/2004/02/skos/core#example> "Penalty spot"@en .
+# 
+# https://w3id.org/gfo-light/ProcessAggregate
+<https://w3id.org/gfo-light/ProcessAggregate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/ProcessAggregate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Process> .
+<https://w3id.org/gfo-light/ProcessAggregate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid64 .
+_:genid64 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/gfo-core/Process> .
+_:genid64 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/hasMember> .
+_:genid64 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/ProcessAggregate> <http://www.w3.org/2000/01/rdf-schema#label> "Process aggregate"@en .
+<https://w3id.org/gfo-light/ProcessAggregate> <http://www.w3.org/2004/02/skos/core#definition> "A process aggregate is a process that consists of other contextually but not necessarily temporally interconnected processes."@en .
+<https://w3id.org/gfo-light/ProcessAggregate> <http://www.w3.org/2004/02/skos/core#example> "A football league season, consisting of all matches"@en .
+<https://w3id.org/gfo-light/ProcessAggregate> <http://www.w3.org/2004/02/skos/core#example> "A series of lectures in a semester"@en .
+# 
+# https://w3id.org/gfo-light/Quality
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Attributive> .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid65 .
+_:genid65 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/gfo-core/Individual> .
+_:genid65 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid65 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/qualityOf> .
+_:genid65 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2000/01/rdf-schema#comment> "Qualities can possess values."@en .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2000/01/rdf-schema#label> "Quality"@en .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2004/02/skos/core#altLabel> "Attribute"@en .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2004/02/skos/core#altLabel> "Characteristic"@en .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2004/02/skos/core#altLabel> "Feature"@en .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2004/02/skos/core#altLabel> "Property"@en .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2004/02/skos/core#altLabel> "Trait"@en .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2004/02/skos/core#definition> "Qualities are attributives that typically inhere in its bearer."@en .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2004/02/skos/core#example> "Observable or measurable characteristics of single objects, e.g., persons, (such as weight and height, laboratory parameters or symptoms)"@en .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2004/02/skos/core#example> "Qualities of object groups (e.g., goals scored by a football team in a match)"@en .
+<https://w3id.org/gfo-light/Quality> <http://www.w3.org/2004/02/skos/core#example> "Qualities of processes (e.g., the number of spectators as quality of a football match)"@en .
+# 
+# https://w3id.org/gfo-light/Relator
+<https://w3id.org/gfo-light/Relator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/Relator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Attributive> .
+<https://w3id.org/gfo-light/Relator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid66 .
+_:genid66 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/gfo-light/Role> .
+_:genid66 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid66 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/containsRole> .
+_:genid66 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/Relator> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid67 .
+_:genid67 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/gfo-core/Individual> .
+_:genid67 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "2"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid67 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/relates> .
+_:genid67 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/Relator> <http://www.w3.org/2000/01/rdf-schema#comment> "A relator represents an individual relation instance."@en .
+<https://w3id.org/gfo-light/Relator> <http://www.w3.org/2000/01/rdf-schema#label> "Relator"@en .
+<https://w3id.org/gfo-light/Relator> <http://www.w3.org/2004/02/skos/core#definition> "Relators are attributives that connect other entities (role players) by relational roles (played by role players)."@en .
+<https://w3id.org/gfo-light/Relator> <http://www.w3.org/2004/02/skos/core#example> "A relator describing the relative location of an object (playing the target object role) in relation to another object (playing the reference object role), e.g., the location of a person relative to the city centre or the location of an anatomical structure relative to the longitudinal axis"@en .
+<https://w3id.org/gfo-light/Relator> <http://www.w3.org/2004/02/skos/core#example> "A winner-loser relator connecting a winner and a loser team by a winner and a loser role"@en .
+<https://w3id.org/gfo-light/Relator> <http://www.w3.org/2004/02/skos/core#example> "The marriage (relator) of John and Mary (in which Mary plays the wife role and John the husband role)"@en .
+# 
+# https://w3id.org/gfo-light/Role
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Attributive> .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid68 .
+_:genid68 <http://www.w3.org/2002/07/owl#onClass> <https://w3id.org/gfo-core/Individual> .
+_:genid68 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid68 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/playedBy> .
+_:genid68 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid69 .
+_:genid69 <http://www.w3.org/2002/07/owl#onClass> _:genid70 .
+_:genid70 <http://www.w3.org/2002/07/owl#unionOf> _:genid75 .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid74 .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid73 .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid72 .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid71 .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Relator> .
+_:genid71 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/ObjectAggregate> .
+_:genid72 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-light/Object> .
+_:genid73 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Situation> .
+_:genid74 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://w3id.org/gfo-core/Process> .
+_:genid75 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid70 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid69 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid69 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/roleIn> .
+_:genid69 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2000/01/rdf-schema#comment> "An object part can play a (e.g., functional) role in the whole object (e.g., the processor is part of the computer and has the task/function/role to process commands). A member (object) of a social group (object aggregate) can play a social role in that group (e.g., John is member of the football team and plays the role of midfielder). Objects can play processual or situational roles in processes (e.g., team A plays the home team role and team B plays the visiting team role in a football match) or situations (e.g., scorer and assistant role in a goal situation or roles played by a doctor and a patient in a risk/adverse situation in hospital) in which they participate. Objects can play relational roles in a relation/relator (e.g., wife role and husband role of the marriage relator)."@en .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2000/01/rdf-schema#label> "Role"@en .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2004/02/skos/core#definition> "A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, processual entity, situational entity, relator), in which the continuant plays that role."@en .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2004/02/skos/core#example> "John is member of the football team and plays the role of midfielder."@en .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2004/02/skos/core#example> "Roles played by a doctor and a patient in a risk/adverse situation in hospital"@en .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2004/02/skos/core#example> "Target object role and reference object role of a relative location relator (describes the relative location of an object playing the target object role in relation to another object playing the reference object role)"@en .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2004/02/skos/core#example> "Team A plays the home team role and team B plays the visiting team role in a football match."@en .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2004/02/skos/core#example> "The processor is part of the computer and has the task/function/role to process commands."@en .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2004/02/skos/core#example> "Wife role and husband role of the marriage relator"@en .
+<https://w3id.org/gfo-light/Role> <http://www.w3.org/2004/02/skos/core#example> "Winner team role and loser team role of the winner-loser relator"@en .
+# 
+# https://w3id.org/gfo-light/SituationAggregate
+<https://w3id.org/gfo-light/SituationAggregate> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/SituationAggregate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-core/Situation> .
+<https://w3id.org/gfo-light/SituationAggregate> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid76 .
+_:genid76 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://w3id.org/gfo-core/Situation> .
+_:genid76 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/hasMember> .
+_:genid76 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/SituationAggregate> <http://www.w3.org/2000/01/rdf-schema#label> "Situation aggregate"@en .
+<https://w3id.org/gfo-light/SituationAggregate> <http://www.w3.org/2004/02/skos/core#definition> "A situation aggregate is a situation that consists of other contextually but not necessarily temporally interconnected situations."@en .
+<https://w3id.org/gfo-light/SituationAggregate> <http://www.w3.org/2004/02/skos/core#example> "A situation of increased temperature during the course of an illness, consisting of all not necessarily temporally connected phases"@en .
+# 
+# https://w3id.org/gfo-light/Surface
+<https://w3id.org/gfo-light/Surface> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/gfo-light/Surface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/gfo-light/ObjectBoundary> .
+<https://w3id.org/gfo-light/Surface> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid77 .
+_:genid77 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://w3id.org/gfo-light/Object> .
+_:genid77 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/gfo-light/boundaryOf> .
+_:genid77 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/gfo-light/Surface> <http://www.w3.org/2000/01/rdf-schema#label> "Surface"@en .
+<https://w3id.org/gfo-light/Surface> <http://www.w3.org/2004/02/skos/core#definition> "A surface is a 2-dimensional object boundary."@en .
+<https://w3id.org/gfo-light/Surface> <http://www.w3.org/2004/02/skos/core#example> "Frontal plane of the human skeleton"@en .
+<https://w3id.org/gfo-light/Surface> <http://www.w3.org/2004/02/skos/core#example> "Surface of the football field"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
