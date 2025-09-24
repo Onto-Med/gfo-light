@@ -2,12 +2,12 @@
 
 GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO, [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)) and is designed as a framework for the efficient development and foundation of domain/application ontologies.
 This guide describes the structure and a possible use of this lightweight top-level ontology in domain-specific projects, also for users who are not familiar with the basics of formal ontologies.
-GFO-light is primarily concerned with categories of concrete individuals ([Continuant](#continuant), [Attributive](#attributive), [Process](#process) and [Situation](#situation)), i.e., entities that have an immediate relation to time ([Time Entity](#time-entity)) or to space-time.
+GFO-light is primarily concerned with categories of concrete individuals ([Continuant](#continuant), [Attributive](#attributive) and [Situation](#situation)), i.e., entities that have an immediate relation to time ([Time Entity](#time-entity)) or to space-time.
 
 ⚠ GFO-light extends GFO-core (i.e., adopts all GFO-core axioms), which contains the core GFO entities and serves as a common basis for both GFO variants (light and full).
 For some use cases, it may be sufficient to use GFO-core alone as a kind of minimal top-level ontology.
 
-⚠ When developing a domain-specific ontology using GFO-core or GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *Process*, *Situation* and *TimeEntity* (or their subclasses, the more specific the better).
+⚠ When developing a domain-specific ontology using GFO-core or GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *Situation* and *TimeEntity* (or their subclasses, the more specific the better).
 You can also create the desired object or data properties (if possible as subproperties of GFO-core or GFO-light properties).
 
 ## Overview
@@ -16,20 +16,13 @@ You can also create the desired object or data properties (if possible as subpro
 
 ![GFO-core](images/gfo-core.svg)
 
-**Fig. 1. GFO-core overview** (The figure shows all categories and selected relations.)
-
-#### Detailed Module Views
-
-<table width="100%">
-    <tr><td width="50%"><img src="images/gfo-core-individual.svg"></td><td><b>Individual</b></br></br>Individuals are bearers of attributives (<i>hasAttributive</i>, <i>attributiveOf</i>, see <a href="#user-content-attributive">Attributive</a>), can consist of parts (<i>hasPart</i>, <i>partOf</i>) and can be temporally related to other individuals (subproperties of <i>temporallyRelatedWith</i>, see <a href="#user-content-time-entity">Time Entity</a>). 
-Concrete individuals are related to time (<i>hasTime</i>, see <a href="#user-content-time-entity">Time Entity</a>).</td></tr>
-    <tr><td width="50%"><img src="images/gfo-core-situation-process.svg"></td><td><b>Situation/Process</b></br></br>Situations represent static knowledge, while processes represent dynamic knowledge. 
-Continuants can participate in situations and processes (<i>participatesIn</i>, <i>hasParticipant</i>). 
-Situations can have attributives and further situations as parts (<i>hasSituationPart</i>, <i>situationPartOf</i>). 
-Processes can have attributives, situations and further processes as parts (<i>hasProcessPart</i>, <i>processPartOf</i>). 
-Processes and situations can lead to (<i>leadsTo</i>, <i>resultsFrom</i>) or cause (<i>causes</i>, <i>causedBy</i>) further processes and situations. 
-(see <a href="#user-content-situation">Situation</a>, <a href="#user-content-process">Process</a>)</td></tr>
-</table>
+**Fig. 1. GFO-core overview** (The figure shows all categories and selected relations.).
+Individuals are bearers of attributives (*hasAttributive/attributiveOf*, see [Attributive](#attributive)), can consist of parts (*hasPart/partOf*) and can be temporally related to other individuals (subproperties of *temporallyRelatedWith*, see [Time Entity](#time-entity)). 
+Concrete individuals are related to time (*hasTime*, see [Time Entity](#time-entity)).
+Situations ([Situation](#situation)) can be static ([State](#state)) or dynamic ([Process](#process)).
+States can only consist of static parts (*hasStaticPart* some attributive or state), while processes can consist of both static and dynamic parts (*hasDynamicPart* some process). 
+Continuants ([Continuant](#continuant)) can participate in situations (*participatesIn/hasParticipant*). 
+Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) further situations.
 
 ### GFO-light
 
@@ -117,50 +110,6 @@ Object boundaries can be assigned to a corresponding object using the object pro
 et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)), GFO-light does not support presentic objects (presentials) but only temporally extended objects (continuats). However, GFO-light enables you to define the validity/existence time of attributives of the objects and situations in which they participate, either as a time interval or as a point in time.
 
 ⚠ GFO-full includes a sophisticated space module based on the dual nature of space (phenomenal vs. extensional space) and distinguishes between boundaries of material objects and boundaries of spatial regions (see [Baumann, R. et al. (2016). Towards an Ontology of Space for GFO.](https://doi.org/10.3233/978-1-61499-660-6-53), [Loebe, F. et al. (2021). Developing GFO 2.0 Further – Initiating the Modules of Space and Material Objects.](https://ceur-ws.org/Vol-2969/paper69-FOUST.pdf)). For simplicity, GFO-light only considers boundaries of material objects.
-
-## Process
-
-Processes are concrete individuals that happen in time and have a temporal extension (chronoid/time interval).
-Processes represent dynamic knowledge.
-
-We distinguish between cohesive processes and process aggregates.
-A **cohesive process** (e.g., a football match, a treatment of a patient in a hospital or the course of an illness) is causally and temporally connected, while a **process aggregate** (e.g., a series of lectures in a semester or a football league season, consisting of all matches) consists (*hasMember*) of other contextually but not necessarily temporally interconnected processes.
-
-<table>
-    <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
-    <tr><td>Match</td><td>Process</td><td><i>locatedIn exactly 1 Stadium</br>
-											 hasProcessPart exactly 1 FirstHalf</br>
-											 hasProcessPart exactly 1 SecondHalf</br>
-											 hasParticipant exactly 2 Team</br>
-											 temporallyStartedBy exactly 1 StartOfMatch</br>
-											 temporallyFinishedBy exactly 1 EndOfMatch</i></td></tr>
-    <tr><td>FirstHalf</td><td>Process</td><td><i>processPartOf exactly 1 Match</br>
-												 temporallyStartedBy exactly 1 StartOfMatch</br>
-												 temporallyFinishedBy exactly 1 EndOfFirstHalf</i></td></tr>
-    <tr><td>SecondHalf</td><td>Process</td><td><i>processPartOf exactly 1 Match</br>
-												  temporallyStartedBy exactly 1 StartOfSecondHalf</br>
-												  temporallyFinishedBy exactly 1 EndOfMatch</i></td></tr>
-</table>
-
-**Example 2a.** *Process classes.*
-
-Processes can have parts (*hasProcessPart*, *processPartOf*), which are situations, attributives or further processes, e.g., the first half and the goal situations are parts of the match.
-Continuants can participate in processes (*participatesIn*, *hasParticipant*), e.g., the teams A and B participate in the football match (Example 1b, teamA).
-Processes can take place (*locatedIn*) in objects (e.g., a football match in a stadium or an illness in a person).
-Processes can lead to (*leadsTo*, *resultsFrom*) or cause (*causes*, *causedBy*) further processes and situations.
-
-<table>
-    <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
-    <tr><td>matchX</td><td>Match</td><td><i>locatedIn RedBullArenaLeipzig</br>
-    					 				    temporallyStartedBy startOfMatch</br>
-											temporallyFinishedBy endOfMatch</br>
-      										numberOfSpectators “40000”^^xsd:int</i></td></tr>
-    <tr><td>half1</td><td>FirstHalf</td><td><i>processPartOf matchX</br>
-											   temporallyStartedBy startOfMatch</br>
-											   temporallyFinishedBy endOfFirstHalf</i></td></tr>
-</table>
-
-**Example 2b.** *Process instances.*
 
 ## Attributive
 
@@ -308,6 +257,52 @@ At the end of a football match (process), for example, a situation may arise in 
 **Example 4b.** *Situation instance. The situation at the end of the match contains all relevant attributives: winner-loser relator, teams’ qualities (aGoalsEndOfMatch, aBallPossessionEndOfMatch), teams’ processual roles in match (teamARole, teamBRole), players’ qualities (a1GoalsEndOfMatch, a2AssistsEndOfMatch), players’ social roles in team (a1RoleInTeam, a22RoleInTeam, a33RoleInTeam).*
 
 ⚠ In GFO-full, both static and dynamic situations (object situations, presentic situations and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. et al. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)). GFO-light does not distinguish between different situation types. To make it easier for domain experts to choose an appropriate GFO-light category for a specific use case, it is recommended to use situations for modelling static knowledge and processes for modelling dynamic knowledge.
+
+### Process
+
+Processes are concrete individuals that happen in time and have a temporal extension (chronoid/time interval).
+Processes represent dynamic knowledge.
+
+We distinguish between cohesive processes and process aggregates.
+A **cohesive process** (e.g., a football match, a treatment of a patient in a hospital or the course of an illness) is causally and temporally connected, while a **process aggregate** (e.g., a series of lectures in a semester or a football league season, consisting of all matches) consists (*hasMember*) of other contextually but not necessarily temporally interconnected processes.
+
+<table>
+    <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
+    <tr><td>Match</td><td>Process</td><td><i>locatedIn exactly 1 Stadium</br>
+											 hasProcessPart exactly 1 FirstHalf</br>
+											 hasProcessPart exactly 1 SecondHalf</br>
+											 hasParticipant exactly 2 Team</br>
+											 temporallyStartedBy exactly 1 StartOfMatch</br>
+											 temporallyFinishedBy exactly 1 EndOfMatch</i></td></tr>
+    <tr><td>FirstHalf</td><td>Process</td><td><i>processPartOf exactly 1 Match</br>
+												 temporallyStartedBy exactly 1 StartOfMatch</br>
+												 temporallyFinishedBy exactly 1 EndOfFirstHalf</i></td></tr>
+    <tr><td>SecondHalf</td><td>Process</td><td><i>processPartOf exactly 1 Match</br>
+												  temporallyStartedBy exactly 1 StartOfSecondHalf</br>
+												  temporallyFinishedBy exactly 1 EndOfMatch</i></td></tr>
+</table>
+
+**Example 2a.** *Process classes.*
+
+Processes can have parts (*hasProcessPart*, *processPartOf*), which are situations, attributives or further processes, e.g., the first half and the goal situations are parts of the match.
+Continuants can participate in processes (*participatesIn*, *hasParticipant*), e.g., the teams A and B participate in the football match (Example 1b, teamA).
+Processes can take place (*locatedIn*) in objects (e.g., a football match in a stadium or an illness in a person).
+Processes can lead to (*leadsTo*, *resultsFrom*) or cause (*causes*, *causedBy*) further processes and situations.
+
+<table>
+    <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
+    <tr><td>matchX</td><td>Match</td><td><i>locatedIn RedBullArenaLeipzig</br>
+    					 				    temporallyStartedBy startOfMatch</br>
+											temporallyFinishedBy endOfMatch</br>
+      										numberOfSpectators “40000”^^xsd:int</i></td></tr>
+    <tr><td>half1</td><td>FirstHalf</td><td><i>processPartOf matchX</br>
+											   temporallyStartedBy startOfMatch</br>
+											   temporallyFinishedBy endOfFirstHalf</i></td></tr>
+</table>
+
+**Example 2b.** *Process instances.*
+
+### State
 
 ## Time Entity
 
