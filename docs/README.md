@@ -17,11 +17,11 @@ You can also create the desired object or data properties (if possible as subpro
 ![GFO-core](images/gfo-core.svg)
 
 **Fig. 1. GFO-core overview** (The figure shows all categories and selected relations.).
-Individuals are bearers of attributives (*hasAttributive/attributiveOf*, see [Attributive](#attributive)), can consist of parts (*hasPart/partOf*) and can be temporally related to other individuals (subproperties of *temporallyRelatedWith*, see [Time Entity](#time-entity)). 
+Individuals are bearers of attributives (*hasAttributive/attributiveOf*, see [Attributive](#attributive)), can consist of parts (*hasPart/partOf*) and can be temporally related to other individuals (subproperties of *temporallyRelatedWith*, see [Time Entity](#time-entity)).
 Concrete individuals are related to time (*hasTime*, see [Time Entity](#time-entity)).
 Situations ([Situation](#situation)) can be static ([State](#state)) or dynamic ([Process](#process)).
-States can only consist of static parts (*hasStaticPart* some attributive or state), while processes can consist of both static and dynamic parts (*hasDynamicPart* some process). 
-Continuants ([Continuant](#continuant)) can participate in situations (*participatesIn/hasParticipant*). 
+States can only consist of static parts (*hasStaticPart* some attributive or state), while processes can consist of both static and dynamic parts (*hasDynamicPart* some process).
+Continuants ([Continuant](#continuant)) can participate in situations (*participatesIn/hasParticipant*).
 Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) further situations.
 
 ### GFO-light
@@ -33,9 +33,10 @@ Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) furt
 #### Detailed Module Views
 
 <table width="100%">
-    <tr><td width="50%"><img src="images/gfo-light-continuant.svg"></td><td><b>Continuant</b></br></br>Object parts can be specified using the object properties <i>hasPart</i> or <i>partOf</i>. 
-To model the membership of a member in a group/aggregate, the object properties <i>hasMember</i>/<i>memberOf</i> should be used. 
-Objects can be located in other objects (<i>locatedIn</i>). 
+    <tr><td width="50%"><img src="images/gfo-light-continuant.svg"></td><td><b>Continuant</b></br></br>Object parts can be specified using the object properties <i>hasPart/partOf</i>. 
+To model the membership of a member in a group/aggregate, the object properties <i>hasMember/memberOf</i> should be used. 
+Objects and situations can be located in other objects (<i>locatedIn</i>). 
+Information objects denote/designate, describe, specify or represent (<i>represents/representedBy</i>) other entities. 
 Boundaries of objects are surfaces, boundaries of surfaces are lines and boundaries of lines are points. 
 Lines can pass through (<i>spatiallyPassesThrough</i>, <i>spatiallyStartsOn</i>, <i>spatiallyEndsOn</i>) various points. 
 Object boundaries can be assigned to the corresponding object using the object property <i>hasOwner</i>. 
@@ -44,7 +45,7 @@ Object boundaries can be assigned to the corresponding object using the object p
 A role is a relational entity that links an individual (role player) with some context (object, object aggregate, process, situation, relator), in which the individual plays that role. 
 Roles are assigned to the corresponding context entity using object properties <i>roleIn</i> or <i>containsRole</i>. 
 The role players are associated with the roles they play using object properties <i>plays</i> or <i>playedBy</i>. 
-Individuals are quality bearers (<i>hasQuality</i>, <i>qualityOf</i>) and are related by relators (<i>relatedBy</i>, <i>relates</i>) in which they play a role. 
+Individuals are quality bearers (<i>hasQuality/qualityOf</i>) and are related by relators (<i>relatedBy/relates</i>) in which they play a role. 
 (see <a href="#user-content-attributive">Attributive</a>)</td></tr>
 </table>
 
