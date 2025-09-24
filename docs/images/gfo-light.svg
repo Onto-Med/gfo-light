@@ -20,9 +20,9 @@
       <path fill="none" d="M455.7133 -471.7408 L430.8411 -471.7408" clip-path="url(#clipPath2)"/>
       <path fill="white" d="M415.8411 -471.7408 L431.8411 -465.7408 L431.8411 -477.7408 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M415.8411 -471.7408 L431.8411 -465.7408 L431.8411 -477.7408 Z" clip-path="url(#clipPath2)"/>
-      <path fill="none" d="M293.904 -461.7072 L293.904 -444.7421 L392.7047 -444.7421 L393.4122 -453.7726" clip-path="url(#clipPath2)"/>
-      <path d="M394.037 -461.7481 L388.1151 -450.1753 L393.3341 -452.7756 L398.0845 -449.3943 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <text x="305.614" xml:space="preserve" y="-449.3788" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">instantiatedBy</text>
+      <path fill="none" d="M293.904 -461.7072 L293.904 -444.7421 L394.8198 -444.7421 L394.8198 -453.7481" clip-path="url(#clipPath2)"/>
+      <path d="M394.8198 -461.7481 L389.8198 -449.7481 L394.8198 -452.7481 L399.8198 -449.7481 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <text x="306.6714" xml:space="preserve" y="-449.3788" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">instantiatedBy</text>
       <path fill="none" d="M303.904 -357.36 L303.904 -404 L414.7769 -404" clip-path="url(#clipPath2)"/>
       <path fill="white" d="M429.7769 -404 L413.7769 -410 L413.7769 -398 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M429.7769 -404 L413.7769 -410 L413.7769 -398 Z" clip-path="url(#clipPath2)"/>
