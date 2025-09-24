@@ -42,9 +42,9 @@ Lines can pass through (<i>spatiallyPassesThrough</i>, <i>spatiallyStartsOn</i>,
 Object boundaries can be assigned to the corresponding object using the object property <i>hasOwner</i>. 
 (see <a href="#user-content-continuant">Continuant</a>)</td></tr>
     <tr><td width="50%"><img src="images/gfo-light-attributive.svg"></td><td><b>Attributive</b></br></br>Qualities, relators and roles are attributives. 
-A role is a relational entity that links an individual (role player) with some context (object, object aggregate, process, situation, relator), in which the individual plays that role. 
-Roles are assigned to the corresponding context entity using object properties <i>roleIn</i> or <i>containsRole</i>. 
-The role players are associated with the roles they play using object properties <i>plays</i> or <i>playedBy</i>. 
+A role is a relational entity that links an individual (role player) with some context (object, object aggregate, situation, relator), in which the individual plays that role. 
+Roles are assigned to the corresponding context entity using object properties <i>roleIn/containsRole</i>. 
+The role players are associated with the roles they play using object properties <i>plays/playedBy</i>. 
 Individuals are quality bearers (<i>hasQuality/qualityOf</i>) and are related by relators (<i>relatedBy/relates</i>) in which they play a role. 
 (see <a href="#user-content-attributive">Attributive</a>)</td></tr>
 </table>
