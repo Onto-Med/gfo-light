@@ -20,7 +20,7 @@ You can also create the desired object or data properties (if possible as subpro
 Individuals are bearers of attributives (*hasAttributive/attributiveOf*, see [Attributive](#attributive)), can consist of parts (*hasPart/partOf*) and can be temporally related to other individuals (subproperties of *temporallyRelatedWith*, see [Time Entity](#time-entity)).
 Concrete individuals are related to time (*hasTime*, see [Time Entity](#time-entity)).
 Situations ([Situation](#situation)) can be static ([State](#state)) or dynamic ([Process](#process)).
-States can only consist of static parts (*hasStaticPart* some attributive or state), while processes can consist of both static and dynamic parts (*hasDynamicPart* some process).
+States can only consist of static parts (*hasStaticPart* some *Attributive* or *State*), while processes can consist of both static and dynamic parts (*hasDynamicPart* some *Process*).
 Continuants ([Continuant](#continuant)) can participate in situations (*participatesIn/hasParticipant*).
 Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) further situations.
 
@@ -222,47 +222,16 @@ If the individual roles do not have an existence time to be defined and are no p
 ## Situation
 
 Situations are combinations of contextually related attributives.
-Situations represent static knowledge.
-
-We distinguish between cohesive situations and situation aggregates.
-A **cohesive situation** (e.g., a phase of increased temperature) is causally and temporally connected, while a **situation aggregate** (e.g., a situation of increased temperature during the course of an illness, consisting of all phases) consists (*hasMember*) of other contextually but not necessarily temporally interconnected situations.
-
-A situation can exist at a certain point in time or during a certain period of time and can be part or result of a process or another situation (e.g., a goal situation as a result of an attack in a football match). Situations can lead to (*leadsTo*, *resultsFrom*) or cause (*causes*, *causedBy*) further situations and processes.
-
-<table>
-    <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
-    <tr><td>MatchSituation</td><td>Situation</td><td><i>hasSituationPart some (MatchSituation or PlayerQuality or PlayerRoleInTeam or TeamQuality or TeamRoleInMatch or TeamRoleInWinnerLoserRelator or WinnerLoserRelator)</br>
-														processPartOf exactly 1 Match</i></td></tr>
-</table>
-
-**Example 4a.** *Situation class.*
-
-At the end of a football match (process), for example, a situation may arise in which one team has scored two goals and the other team one (the number of goals is a team's quality). A winner-loser relator can also be seen as part of this situation, with one team playing the winner role and the other team playing the loser role. Another example is a risk situation when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time. The desired attributives can be assigned to a situation using object properties *situationPartOf* or *hasSituationPart*. Continuants can participate in situations (*participatesIn*, *hasParticipant*), e.g., the player A1 participates in a goal situation or the teams participate in the situation at the end of the match.
-
-<table>
-    <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
-    <tr><td>situationEndOfMatch</td><td>MatchSituation</td><td><i>hasSituationPart winnerLoserRelatorEndOfMatch</br>
-																  hasSituationPart aGoalsEndOfMatch</br>
-																  hasSituationPart aBallPossessionEndOfMatch</br>
-																  hasSituationPart teamARole</br>
-																  hasSituationPart teamBRole</br>
-																  hasSituationPart a1GoalsEndOfMatch</br>
-																  hasSituationPart a2AssistsEndOfMatch</br>
-																  hasSituationPart a1RoleInTeam</br>
-																  hasSituationPart a22RoleInTeam</br>
-																  hasSituationPart a33RoleInTeam</br>
-																  hasTime endOfMatch</br>
-																  processPartOf matchX</i></td></tr>
-</table>
-
-**Example 4b.** *Situation instance. The situation at the end of the match contains all relevant attributives: winner-loser relator, teams’ qualities (aGoalsEndOfMatch, aBallPossessionEndOfMatch), teams’ processual roles in match (teamARole, teamBRole), players’ qualities (a1GoalsEndOfMatch, a2AssistsEndOfMatch), players’ social roles in team (a1RoleInTeam, a22RoleInTeam, a33RoleInTeam).*
-
-⚠ In GFO-full, both static and dynamic situations (object situations, presentic situations and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. et al. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)). GFO-light does not distinguish between different situation types. To make it easier for domain experts to choose an appropriate GFO-light category for a specific use case, it is recommended to use situations for modelling static knowledge and processes for modelling dynamic knowledge.
+Situations can be static (**state**) or dynamic (**process**).
+States can only consist of static parts (*hasStaticPart* some *Attributive* or *State*), while processes can consist of both static and dynamic parts (*hasDynamicPart* some *Process*).
+Continuants can participate in situations (*participatesIn/hasParticipant*).
+Situations can take place (*locatedIn*) in objects.
+Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) further situations.
 
 ### Process
 
-Processes are concrete individuals that happen in time and have a temporal extension (chronoid/time interval).
-Processes represent dynamic knowledge.
+Processes are dynamic situations that happen in time and have a temporal extension (period of time/chronoid).
+Processes represent dynamic knowledge, i.e., their attributives or participants change over time.
 
 We distinguish between cohesive processes and process aggregates.
 A **cohesive process** (e.g., a football match, a treatment of a patient in a hospital or the course of an illness) is causally and temporally connected, while a **process aggregate** (e.g., a series of lectures in a semester or a football league season, consisting of all matches) consists (*hasMember*) of other contextually but not necessarily temporally interconnected processes.
@@ -285,10 +254,9 @@ A **cohesive process** (e.g., a football match, a treatment of a patient in a ho
 
 **Example 2a.** *Process classes.*
 
-Processes can have parts (*hasProcessPart*, *processPartOf*), which are situations, attributives or further processes, e.g., the first half and the goal situations are parts of the match.
-Continuants can participate in processes (*participatesIn*, *hasParticipant*), e.g., the teams A and B participate in the football match (Example 1b, teamA).
+Processes can have static parts (*hasStaticPart* some *Attributive* or *State*) or dynamic parts (*hasDynamicPart* some *Process*), e.g., the first half (dynamic) and the goal states (static) are parts of the match.
+Continuants can participate in processes (*participatesIn/hasParticipant*), e.g., the teams A and B participate in the football match (Example 1b, teamA).
 Processes can take place (*locatedIn*) in objects (e.g., a football match in a stadium or an illness in a person).
-Processes can lead to (*leadsTo*, *resultsFrom*) or cause (*causes*, *causedBy*) further processes and situations.
 
 <table>
     <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
@@ -304,6 +272,50 @@ Processes can lead to (*leadsTo*, *resultsFrom*) or cause (*causes*, *causedBy*)
 **Example 2b.** *Process instances.*
 
 ### State
+
+States are static situations that happen either at a point in time (time boundary) or during a period of time (chronoid).
+States represent static knowledge, i.e., their attributives and participants do not change.
+
+We distinguish between cohesive states and state aggregates.
+A **cohesive state** (e.g., a phase of increased temperature) is causally and temporally connected, while a **state aggregate** (e.g., a state of increased temperature during the course of an illness, consisting of all phases) consists (*hasMember*) of other contextually but not necessarily temporally interconnected states.
+
+A state can be part or result of another situation (e.g., a goal state as part of the match and result of an attack).
+
+<table>
+    <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
+    <tr><td>MatchSituation</td><td>Situation</td><td><i>hasSituationPart some (MatchSituation or PlayerQuality or PlayerRoleInTeam or TeamQuality or TeamRoleInMatch or TeamRoleInWinnerLoserRelator or WinnerLoserRelator)</br>
+														processPartOf exactly 1 Match</i></td></tr>
+</table>
+
+**Example 4a.** *Situation class.*
+
+At the end of a football match (process), for example, a state may arise in which one team has scored two goals and the other team one (the number of goals is a team's quality).
+A winner-loser relator can also be seen as part of this state, with one team playing the winner role and the other team playing the loser role.
+Another example is a risk state when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time.
+The desired attributives can be assigned to the state using object properties *staticPartOf/hasStaticPart*.
+Continuants can participate in states (*participatesIn/hasParticipant*), e.g., the player A1 participates in a goal state or the teams participate in the state at the end of the match.
+
+<table>
+    <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
+    <tr><td>situationEndOfMatch</td><td>MatchSituation</td><td><i>hasSituationPart winnerLoserRelatorEndOfMatch</br>
+																  hasSituationPart aGoalsEndOfMatch</br>
+																  hasSituationPart aBallPossessionEndOfMatch</br>
+																  hasSituationPart teamARole</br>
+																  hasSituationPart teamBRole</br>
+																  hasSituationPart a1GoalsEndOfMatch</br>
+																  hasSituationPart a2AssistsEndOfMatch</br>
+																  hasSituationPart a1RoleInTeam</br>
+																  hasSituationPart a22RoleInTeam</br>
+																  hasSituationPart a33RoleInTeam</br>
+																  hasTime endOfMatch</br>
+																  processPartOf matchX</i></td></tr>
+</table>
+
+**Example 4b.** *Situation instance. The situation at the end of the match contains all relevant attributives: winner-loser relator, teams’ qualities (aGoalsEndOfMatch, aBallPossessionEndOfMatch), teams’ processual roles in match (teamARole, teamBRole), players’ qualities (a1GoalsEndOfMatch, a2AssistsEndOfMatch), players’ social roles in team (a1RoleInTeam, a22RoleInTeam, a33RoleInTeam).*
+
+⚠ In GFO-full, several further types of situations (e.g., object situations, presentic situations and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. et al. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)).
+GFO-light only distinguishes between static (states) and dynamic (processes) situations.
+This makes it easier for domain experts to choose an appropriate GFO-light category for a specific use case, i.e., to use states for modelling static knowledge and processes for modelling dynamic knowledge.
 
 ## Time Entity
 
