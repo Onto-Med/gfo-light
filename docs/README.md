@@ -173,7 +173,7 @@ In this case, the existence time can be specified for the quality instances (Exa
 A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, situation, relator), in which the continuant plays that role. 
 - An object part can play a (e.g., **functional**) role in the whole object (e.g., the processor is part of the computer and has the task/function/role to process commands).
 - A member (object) of a social group (object aggregate) can play a **social** role in that group (e.g., John is member of the football team and plays the role of midfielder, Example 2b, a2RoleInTeam).
-- Objects can play **situational** roles in processes (e.g., team A plays the home team role and team B plays the visiting team role in a football match, Example 2b, teamARole) or states (e.g., scorer and assistant role in a goal state or roles played by a doctor and a patient in a risk/adverse state in hospital) in which they participate. 
+- Objects can play **processual** or **situational** roles in processes (e.g., team A plays the home team role and team B plays the visiting team role in a football match, Example 2b, teamARole) or states (e.g., scorer and assistant role in a goal state or roles played by a doctor and a patient in a risk/adverse state in hospital) in which they participate. 
 - Objects can play **relational** roles in a relation (relator, see the next paragraph).
 
 Roles are assigned to the corresponding context entity (object, object aggregate, situation, relator) using object properties *roleIn* or *containsRole*.
