@@ -169,11 +169,7 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/gfo-core/hasParticipant
 :hasParticipant rdf:type owl:ObjectProperty ;
                 owl:inverseOf :participatesIn ;
-                rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( :Process
-                                            :Situation
-                                          )
-                            ] ;
+                rdfs:domain :Situation ;
                 rdfs:range :Continuant ;
                 rdfs:label "has participant"@en .
 
@@ -224,16 +220,8 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/gfo-core/leadsTo
 :leadsTo rdf:type owl:ObjectProperty ;
          owl:inverseOf :resultsFrom ;
-         rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( :Process
-                                     :Situation
-                                   )
-                     ] ;
-         rdfs:range [ rdf:type owl:Class ;
-                      owl:unionOf ( :Process
-                                    :Situation
-                                  )
-                    ] ;
+         rdfs:domain :Situation ;
+         rdfs:range :Situation ;
          rdfs:label "leads to"@en .
 
 
@@ -247,26 +235,14 @@ foaf:homepage rdf:type owl:AnnotationProperty .
 ###  https://w3id.org/gfo-core/participatesIn
 :participatesIn rdf:type owl:ObjectProperty ;
                 rdfs:domain :Continuant ;
-                rdfs:range [ rdf:type owl:Class ;
-                             owl:unionOf ( :Process
-                                           :Situation
-                                         )
-                           ] ;
+                rdfs:range :Situation ;
                 rdfs:label "participates in"@en .
 
 
 ###  https://w3id.org/gfo-core/resultsFrom
 :resultsFrom rdf:type owl:ObjectProperty ;
-             rdfs:domain [ rdf:type owl:Class ;
-                           owl:unionOf ( :Process
-                                         :Situation
-                                       )
-                         ] ;
-             rdfs:range [ rdf:type owl:Class ;
-                          owl:unionOf ( :Process
-                                        :Situation
-                                      )
-                        ] ;
+             rdfs:domain :Situation ;
+             rdfs:range :Situation ;
              rdfs:label "results from"@en .
 
 
