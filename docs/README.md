@@ -19,8 +19,8 @@ You can also create the desired object or data properties (if possible as subpro
 **Fig. 1. GFO-core overview** (The figure shows all categories and selected relations.).
 Individuals are bearers of attributives (*hasAttributive/attributiveOf*, see [Attributive](#attributive)), can consist of parts (*hasPart/partOf*) and can be temporally related to other individuals (subproperties of *temporallyRelatedWith*, see [Time Entity](#time-entity)).
 Concrete individuals are related to time (*hasTime*, see [Time Entity](#time-entity)).
-Situations ([Situation](#situation)) can be static ([State](#state)) or dynamic ([Process](#process)).
-States can only consist of static parts (*hasStaticPart* some *Attributive* or *State*), while processes can consist of both static and dynamic parts (*hasDynamicPart* some *Process*).
+Situations ([Situation](#situation)) can be static ([State](#state)) or dynamic ([Process](#process)) and can have parts (*hasSituationPart/situationPartOf*).
+States can only consist of static parts (i.e., attributives or states), while processes can consist of both static and dynamic parts (i.e., attributives, states or processes).
 Continuants ([Continuant](#continuant)) can participate in situations (*participatesIn/hasParticipant*).
 Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) further situations.
 
@@ -59,7 +59,8 @@ Objects can be located in other objects (*locatedIn*, e.g., the driver is locate
 **Information objects** are symbolic entities that denote/designate, describe, specify or represent (*represents/representedBy*) other entities.
 Titles, descriptions, specifications (e.g., the specification of an algorithm), models (e.g., UML models) or computer programmes are examples of information objects.
 
-⚠ The category *InformationObject* is a simplified way of modelling symbolic objects, their parts and the entities they represent, without distinguishing between, for example, content and information carriers. For advanced use cases, please use specific information artefact ontologies such as [Design Science Artifact Ontology (DS-AO)](https://ceur-ws.org/Vol-3155/short5.pdf) or [Information Artifact Ontology (IAO)](https://ceur-ws.org/Vol-1515/regular10.pdf).
+⚠ The category *InformationObject* is a simplified way of modelling symbolic objects, their parts and the entities they represent, without distinguishing between, for example, content and information carriers.
+For advanced use cases, please use specific information artefact ontologies such as [Design Science Artifact Ontology (DS-AO)](https://ceur-ws.org/Vol-3155/short5.pdf) or [Information Artifact Ontology (IAO)](https://ceur-ws.org/Vol-1515/regular10.pdf).
 
 **Object aggregates** are groups of objects that together form a unit (e.g., a research group at a university or a sports team).
 To model the membership of a member in a group/aggregate, the object properties *memberOf*/*hasMember* should be used (Example 1b, playerA1).
@@ -107,14 +108,15 @@ Object boundaries can be assigned to a corresponding object using the object pro
 
 **Example 1b.** *Continuant instances.*
 
-⚠ In contrast to GFO-full (see [Loebe, F.
-et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)), GFO-light does not support presentic objects (presentials) but only temporally extended objects (continuats). However, GFO-light enables you to define the validity/existence time of attributives of the objects and situations in which they participate, either as a time interval or as a point in time.
+⚠ In contrast to GFO-full (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)), GFO-light does not support presentic objects (presentials) but only temporally extended objects (continuats).
+However, GFO-light enables you to define the validity/existence time of attributives of the objects and states in which they participate, either as a time interval or as a point in time.
 
-⚠ GFO-full includes a sophisticated space module based on the dual nature of space (phenomenal vs. extensional space) and distinguishes between boundaries of material objects and boundaries of spatial regions (see [Baumann, R. et al. (2016). Towards an Ontology of Space for GFO.](https://doi.org/10.3233/978-1-61499-660-6-53), [Loebe, F. et al. (2021). Developing GFO 2.0 Further – Initiating the Modules of Space and Material Objects.](https://ceur-ws.org/Vol-2969/paper69-FOUST.pdf)). For simplicity, GFO-light only considers boundaries of material objects.
+⚠ GFO-full includes a sophisticated space module based on the dual nature of space (phenomenal vs. extensional space) and distinguishes between boundaries of material objects and boundaries of spatial regions (see [Baumann, R. et al. (2016). Towards an Ontology of Space for GFO.](https://doi.org/10.3233/978-1-61499-660-6-53), [Loebe, F. et al. (2021). Developing GFO 2.0 Further – Initiating the Modules of Space and Material Objects.](https://ceur-ws.org/Vol-2969/paper69-FOUST.pdf)).
+For simplicity, GFO-light only considers boundaries of material objects.
 
 ## Attributive
 
-Qualities (attributes, traits, characteristics, etc.) of concrete individuals, relations (relators) between them and roles that objects can play in different contexts are subsumed under the category *Attributive*.
+Qualities (attributes, traits, characteristics, etc.) of individuals, relations (relators) between them and roles they play in different contexts are subsumed under the category *Attributive*.
 Attributives are individuals that depend on other individuals by some kind of dependency relation.
 
 ### Quality
@@ -123,84 +125,84 @@ Qualities are attributives that typically inhere in its bearer and can possess v
 Examples are observable or measurable characteristics of single objects, e.g., persons, (such as weight and height, laboratory parameters or symptoms), qualities of object groups (e.g., goals scored by a football team in a match) or of processes (e.g., the number of spectators as quality of a football match).
 The qualities can be defined in two ways.
 If they have a value (representable as a number, string, date, etc.), do not require the specification of existence time and are no parts of situations, domain-specific data properties can simply be defined as subproperties of *decimalValue* (e.g., *numberOfSpectators*), *stringValue*, *dateTimeValue*, etc.
-These domain-specific properties can then be used in data property assertions for a direct assignment of the value to the corresponding bearer (Example 2b, matchX).
+These domain-specific properties can then be used in data property assertions for a direct assignment of the value to the corresponding bearer (Example 3b, matchX).
 In all other cases, a separate domain-specific class (e.g., *PlayerGoals*) must be created as a subclass of *Quality* and its instances can be assigned to the bearers using the object properties *qualityOf* or *hasQuality*.
-In this case, the existence time can be specified for the quality instances (Example 3b, a1GoalsEndOfFirstHalf, a1GoalsEndOfMatch).
+In this case, the existence time can be specified for the quality instances (Example 2b, a1GoalsEndOfFirstHalf, a1GoalsEndOfMatch).
 
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
     <tr><td>PlayerQuality</br>
 			→ Assists</br>
 			→ PlayerGoals</td><td>Quality</td><td><i>qualityOf exactly 1 Player</br>
-													 processPartOf exactly 1 Match</i></td></tr>
+													 situationPartOf exactly 1 Match</i></td></tr>
     <tr><td>TeamQuality</br>
 			→ BallPossession</br>
 			→ TeamGoals</td><td>Quality</td><td><i>qualityOf exactly 1 Team</br>
-												   processPartOf exactly 1 Match</i></td></tr>
+												   situationPartOf exactly 1 Match</i></td></tr>
     <tr><td>WinnerLoserRelator</td><td>Relator</td><td><i>containsRole exactly 1 WinnerRole</br>
 														  containsRole exactly 1 LoserRole</br>
-														  processPartOf exactly 1 Match</i></td></tr>
+														  situationPartOf exactly 1 Match</i></td></tr>
     <tr><td>PlayerRoleInTeam</br>
 			→ Defender</br>
 			→ Forward</br>
 			→ Midfielder</td><td>Role</td><td><i>roleIn exactly 1 Team</br>
-															   playedBy exactly 1 Player</br>
-															   processPartOf exactly 1 Match</i></td></tr>
+												 playedBy exactly 1 Player</br>
+												 situationPartOf exactly 1 Match</i></td></tr>
     <tr><td>TeamRoleInMatch</br>
 			→ HomeTeamRole</br>
 			→ VisitingTeamRole</td><td>Role</td><td><i>roleIn exactly 1 Match</br>
-																 playedBy exactly 1 Team</br>
-																 processPartOf exactly 1 Match</i></td></tr>
+												       playedBy exactly 1 Team</br>
+													   situationPartOf exactly 1 Match</i></td></tr>
     <tr><td>PlayerRoleInGoal</br>
 			→ AssistantRole</br>
 			→ ScorerRole</td><td>Role</td><td><i>roleIn exactly 1 Goal</br>
-															playedBy exactly 1 Player</br>
-															situationPartOf exactly 1 Goal</br>
-															processPartOf exactly 1 Match</i></td></tr>
+												 playedBy exactly 1 Player</br>
+												 situationPartOf exactly 1 Goal</br>
+												 situationPartOf exactly 1 Match</i></td></tr>
     <tr><td>TeamRoleInWinnerLoserRelator</br>
 			→ WinnerRole</br>
 			→ LoserRole</td><td>Role</td><td><i>roleIn exactly 1 WinnerLoserRelator</br>
-														  playedBy exactly 1 Team</br>
-														  processPartOf exactly 1 Match</i></td></tr>
+												playedBy exactly 1 Team</br>
+												situationPartOf exactly 1 Match</i></td></tr>
 </table>
 
-**Example 3a.** *Attributive classes.*
+**Example 2a.** *Attributive classes.*
 
 ### Role
 
-A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, process, situation, relator), in which the continuant plays that role. 
+A role is a relational entity that links a continuant (role player) with some context (object, object aggregate, situation, relator), in which the continuant plays that role. 
 - An object part can play a (e.g., **functional**) role in the whole object (e.g., the processor is part of the computer and has the task/function/role to process commands).
-- A member (object) of a social group (object aggregate) can play a **social** role in that group (e.g., John is member of the football team and plays the role of midfielder, Example 3b, a2RoleInTeam).
-- Objects can play **processual** or **situational** roles in processes (e.g., team A plays the home team role and team B plays the visiting team role in a football match, Example 3b, teamARole) or situations (e.g., scorer and assistant role in a goal situation or roles played by a doctor and a patient in a risk/adverse situation in hospital) in which they participate. 
+- A member (object) of a social group (object aggregate) can play a **social** role in that group (e.g., John is member of the football team and plays the role of midfielder, Example 2b, a2RoleInTeam).
+- Objects can play **situational** roles in processes (e.g., team A plays the home team role and team B plays the visiting team role in a football match, Example 2b, teamARole) or states (e.g., scorer and assistant role in a goal state or roles played by a doctor and a patient in a risk/adverse state in hospital) in which they participate. 
 - Objects can play **relational** roles in a relation (relator, see the next paragraph).
 
-Roles are assigned to the corresponding context entity (object, object aggregate, process, situation, relator) using object properties *roleIn* or *containsRole*.
+Roles are assigned to the corresponding context entity (object, object aggregate, situation, relator) using object properties *roleIn* or *containsRole*.
 The role players are associated with the roles they play using object properties *plays* or *playedBy*.
 
 <table>
     <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
     <tr><td>a1GoalsEndOfFirstHalf</td><td>PlayerGoals</td><td><i>qualityOf playerA1</br>
-																 processPartOf matchX</br>
+																 situationPartOf matchX</br>
 																 decimalValue 1</br>
 																 startedByDateTimeValue “2020-05-05T21:20:00”^^xsd:dateTime</br>
 																 finishedByDateTimeValue “2020-05-05T22:30:00”^^xsd:dateTime</i></td></tr>
     <tr><td>a1GoalsEndOfMatch</td><td>PlayerGoals</td><td><i>qualityOf playerA1</br>
-															 processPartOf matchX</br>
+															 situationPartOf matchX</br>
 															 decimalValue 2</br>
 															 startedByDateTimeValue “2020-05-05T22:30:00”^^xsd:dateTime</i></td></tr>
     <tr><td>a2RoleInTeam</td><td>Midfielder</td><td><i>roleIn teamA</br>
 													   playedBy playerA2</br>
-													   processPartOf matchX</br>
+													   situationPartOf matchX</br>
 													   finishedByDateTimeValue “2020-05-05T22:40:00”^^xsd:dateTime</i></td></tr>
     <tr><td>teamARole</td><td>HomeTeamRole</td><td><i>roleIn matchX</br>
 													  playedBy teamA</i></td></tr>
     <tr><td>winnerLoserRelatorEndOfMatch</td><td>WinnerLoserRelator</td><td><i>hasTime endOfMatch</br>
-																			   processPartOf matchX</i></td></tr>
+																			   situationPartOf matchX</i></td></tr>
     <tr><td>aWinnerRole</td><td>WinnerRole</td><td><i>roleIn winnerLoserRelatorEndOfMatch</br>
 													  playedBy teamA</i></td></tr>
 </table>
 
-**Example 3b.** *Attributive instances.
+**Example 2b.** *Attributive instances.
 a1GoalsEndOfFirstHalf represents the number of goals of playerA1 in the time period between his first and second goal.
 a1GoalsEndOfMatch is the number of goals of playerA1 after the second goal.
 a2RoleInTeam is a midfielder (social) role in teamA that is played by playerA2 (this role has an end time due to substitution).
@@ -209,21 +211,29 @@ aWinnerRole is the winner (relational) role in winnerLoserRelatorEndOfMatch that
 
 ⚠ GFO-light uses a simplified role model compared to GFO-full.
 In GFO-full there are three types of roles (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Loebe, F. (2007). Abstract vs. social roles: Towards a general theoretical account of roles.](https://doi.org/10.3233/APO-2007-031)): relational role as sibling of quality and subclass of attributive, processual role as subclass of process, and social role as social/socio continuant.
-In GFO-light, no role types (no subclasses of *Role*) are explicitly defined. The roles are implicitly differentiated by their assignment (*roleIn*) to the corresponding context entities (object, object aggregate, process, situation, relator).
+In GFO-light, no role types (no subclasses of *Role*) are explicitly defined. The roles are implicitly differentiated by their assignment (*roleIn*) to the corresponding context entities (object, object aggregate, situation, relator).
 
 ### Relator
 
-Relators are attributives that connect other entities (role players) by relational roles (played by role players), i.e., represent individual relation instances. For example, a relator could be defined that describes the relative location of an object (playing the target object role) in relation to another object (playing the reference object role), e.g., the location of a person relative to the city centre or the location of an anatomical structure relative to the longitudinal axis. Such relators can be further classified, e.g., according to direction (in anthropology/anatomy, e.g., dorsal, ventral or lateral). Other examples are the marriage (relator) of John and Mary (in which Mary plays the wife role and John the husband role) or the winner-loser relator (Example 3b, winnerLoserRelatorEndOfMatch, aWinnerRole).
+Relators are attributives that connect other entities (role players) by relational roles (played by role players), i.e., represent individual relation instances.
+For example, a relator could be defined that describes the relative location of an object (playing the target object role) in relation to another object (playing the reference object role), e.g., the location of a person relative to the city centre or the location of an anatomical structure relative to the longitudinal axis.
+Such relators can be further classified, e.g., according to direction (in anthropology/anatomy, e.g., dorsal, ventral or lateral).
+Other examples are the marriage (relator) of John and Mary (in which Mary plays the wife role and John the husband role) or the winner-loser relator (Example 2b, winnerLoserRelatorEndOfMatch, aWinnerRole).
 
-Similar to qualities, relations can also be represented by simple object properties (such as *hasPart*). However, if the existence time of the relation is relevant or it (or its roles) are parts of some situations, a relator (e.g., with a part and a whole role) should be used instead. An existence time can be defined both for relators themselves and for the individual roles (Example 3b, winnerLoserRelatorEndOfMatch, a2RoleInTeam). 
+Similar to qualities, relations can also be represented by simple object properties (such as *hasPart*).
+However, if the existence time of the relation is relevant or it (or its roles) are parts of some situations, a relator (e.g., with a part and a whole role) should be used instead.
+An existence time can be defined both for relators themselves and for the individual roles (Example 2b, winnerLoserRelatorEndOfMatch, a2RoleInTeam). 
 
-If the individual roles do not have an existence time to be defined and are no parts of situations or processes, they can likewise be represented by object properties. The relative position relator (see above) can, for example, be linked directly to the corresponding objects using the object properties *hasTargetObject* and *hasReferenceObject*. Similarly, football players can be assigned directly to a team using the properties *forwardOf*, *defenderOf*, etc. It also works with processual roles, the two playing teams can be associated to the football match by properties *homeTeamOf* and *visitingTeamOf*.
+If the individual roles do not have an existence time to be defined and are no parts of situations, they can likewise be represented by object properties.
+The relative position relator (see above) can, for example, be linked directly to the corresponding objects using the object properties *hasTargetObject* and *hasReferenceObject*.
+Similarly, football players can be assigned directly to a team using the properties *forwardOf*, *defenderOf*, etc.
+It also works with processual roles, the two playing teams can be associated to the football match by properties *homeTeamOf* and *visitingTeamOf*.
 
 ## Situation
 
 Situations are combinations of contextually related attributives.
-Situations can be static (**state**) or dynamic (**process**).
-States can only consist of static parts (*hasStaticPart* some *Attributive* or *State*), while processes can consist of both static and dynamic parts (*hasDynamicPart* some *Process*).
+Situations can be static (**state**) or dynamic (**process**) and can have parts (*hasSituationPart/situationPartOf*).
+States can only consist of static parts (i.e., attributives or states), while processes can consist of both static and dynamic parts (i.e., attributives, states or processes).
 Continuants can participate in situations (*participatesIn/hasParticipant*).
 Situations can take place (*locatedIn*) in objects.
 Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) further situations.
@@ -239,22 +249,22 @@ A **cohesive process** (e.g., a football match, a treatment of a patient in a ho
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
     <tr><td>Match</td><td>Process</td><td><i>locatedIn exactly 1 Stadium</br>
-											 hasProcessPart exactly 1 FirstHalf</br>
-											 hasProcessPart exactly 1 SecondHalf</br>
+											 hasSituationPart exactly 1 FirstHalf</br>
+											 hasSituationPart exactly 1 SecondHalf</br>
 											 hasParticipant exactly 2 Team</br>
 											 temporallyStartedBy exactly 1 StartOfMatch</br>
 											 temporallyFinishedBy exactly 1 EndOfMatch</i></td></tr>
-    <tr><td>FirstHalf</td><td>Process</td><td><i>processPartOf exactly 1 Match</br>
+    <tr><td>FirstHalf</td><td>Process</td><td><i>situationPartOf exactly 1 Match</br>
 												 temporallyStartedBy exactly 1 StartOfMatch</br>
 												 temporallyFinishedBy exactly 1 EndOfFirstHalf</i></td></tr>
-    <tr><td>SecondHalf</td><td>Process</td><td><i>processPartOf exactly 1 Match</br>
+    <tr><td>SecondHalf</td><td>Process</td><td><i>situationPartOf exactly 1 Match</br>
 												  temporallyStartedBy exactly 1 StartOfSecondHalf</br>
 												  temporallyFinishedBy exactly 1 EndOfMatch</i></td></tr>
 </table>
 
-**Example 2a.** *Process classes.*
+**Example 3a.** *Process classes.*
 
-Processes can have static parts (*hasStaticPart* some *Attributive* or *State*) or dynamic parts (*hasDynamicPart* some *Process*), e.g., the first half (dynamic) and the goal states (static) are parts of the match.
+Processes can have (*hasSituationPart*) both static and dynamic parts (i.e., attributives, states or processes), e.g., the first half (dynamic) and the goal states (static) are parts of the match.
 Continuants can participate in processes (*participatesIn/hasParticipant*), e.g., the teams A and B participate in the football match (Example 1b, teamA).
 Processes can take place (*locatedIn*) in objects (e.g., a football match in a stadium or an illness in a person).
 
@@ -264,12 +274,12 @@ Processes can take place (*locatedIn*) in objects (e.g., a football match in a s
     					 				    temporallyStartedBy startOfMatch</br>
 											temporallyFinishedBy endOfMatch</br>
       										numberOfSpectators “40000”^^xsd:int</i></td></tr>
-    <tr><td>half1</td><td>FirstHalf</td><td><i>processPartOf matchX</br>
+    <tr><td>half1</td><td>FirstHalf</td><td><i>situationPartOf matchX</br>
 											   temporallyStartedBy startOfMatch</br>
 											   temporallyFinishedBy endOfFirstHalf</i></td></tr>
 </table>
 
-**Example 2b.** *Process instances.*
+**Example 3b.** *Process instances.*
 
 ### State
 
@@ -279,39 +289,40 @@ States represent static knowledge, i.e., their attributives and participants do 
 We distinguish between cohesive states and state aggregates.
 A **cohesive state** (e.g., a phase of increased temperature) is causally and temporally connected, while a **state aggregate** (e.g., a state of increased temperature during the course of an illness, consisting of all phases) consists (*hasMember*) of other contextually but not necessarily temporally interconnected states.
 
-A state can be part or result of another situation (e.g., a goal state as part of the match and result of an attack).
+A state can have (*hasSituationPart*) only static parts and can be a static part or result of another situation (e.g., a goal state as part of the match and result of an attack).
 
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
-    <tr><td>MatchSituation</td><td>Situation</td><td><i>hasSituationPart some (MatchSituation or PlayerQuality or PlayerRoleInTeam or TeamQuality or TeamRoleInMatch or TeamRoleInWinnerLoserRelator or WinnerLoserRelator)</br>
-														processPartOf exactly 1 Match</i></td></tr>
+    <tr><td>MatchState</td><td>State</td><td><i>hasSituationPart some (MatchState or PlayerQuality or PlayerRoleInTeam or TeamQuality or TeamRoleInMatch or TeamRoleInWinnerLoserRelator or WinnerLoserRelator)</br>
+												situationPartOf exactly 1 Match</i></td></tr>
 </table>
 
-**Example 4a.** *Situation class.*
+**Example 4a.** *State class.*
 
 At the end of a football match (process), for example, a state may arise in which one team has scored two goals and the other team one (the number of goals is a team's quality).
 A winner-loser relator can also be seen as part of this state, with one team playing the winner role and the other team playing the loser role.
 Another example is a risk state when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time.
-The desired attributives can be assigned to the state using object properties *staticPartOf/hasStaticPart*.
+The desired attributives can be assigned to the state using object properties *situationPartOf/hasSituationPart*.
 Continuants can participate in states (*participatesIn/hasParticipant*), e.g., the player A1 participates in a goal state or the teams participate in the state at the end of the match.
 
 <table>
     <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
-    <tr><td>situationEndOfMatch</td><td>MatchSituation</td><td><i>hasSituationPart winnerLoserRelatorEndOfMatch</br>
-																  hasSituationPart aGoalsEndOfMatch</br>
-																  hasSituationPart aBallPossessionEndOfMatch</br>
-																  hasSituationPart teamARole</br>
-																  hasSituationPart teamBRole</br>
-																  hasSituationPart a1GoalsEndOfMatch</br>
-																  hasSituationPart a2AssistsEndOfMatch</br>
-																  hasSituationPart a1RoleInTeam</br>
-																  hasSituationPart a22RoleInTeam</br>
-																  hasSituationPart a33RoleInTeam</br>
-																  hasTime endOfMatch</br>
-																  processPartOf matchX</i></td></tr>
+    <tr><td>stateEndOfMatch</td><td>MatchState</td><td><i>hasSituationPart winnerLoserRelatorEndOfMatch</br>
+														  hasSituationPart aGoalsEndOfMatch</br>
+														  hasSituationPart aBallPossessionEndOfMatch</br>
+														  hasSituationPart teamARole</br>
+														  hasSituationPart teamBRole</br>
+														  hasSituationPart a1GoalsEndOfMatch</br>
+														  hasSituationPart a2AssistsEndOfMatch</br>
+														  hasSituationPart a1RoleInTeam</br>
+														  hasSituationPart a22RoleInTeam</br>
+														  hasSituationPart a33RoleInTeam</br>
+														  hasTime endOfMatch</br>
+														  situationPartOf matchX</i></td></tr>
 </table>
 
-**Example 4b.** *Situation instance. The situation at the end of the match contains all relevant attributives: winner-loser relator, teams’ qualities (aGoalsEndOfMatch, aBallPossessionEndOfMatch), teams’ processual roles in match (teamARole, teamBRole), players’ qualities (a1GoalsEndOfMatch, a2AssistsEndOfMatch), players’ social roles in team (a1RoleInTeam, a22RoleInTeam, a33RoleInTeam).*
+**Example 4b.** *State instance.
+The state at the end of the match contains all relevant attributives: winner-loser relator, teams’ qualities (aGoalsEndOfMatch, aBallPossessionEndOfMatch), teams’ processual roles in match (teamARole, teamBRole), players’ qualities (a1GoalsEndOfMatch, a2AssistsEndOfMatch), players’ social roles in team (a1RoleInTeam, a22RoleInTeam, a33RoleInTeam).*
 
 ⚠ In GFO-full, several further types of situations (e.g., object situations, presentic situations and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. et al. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)).
 GFO-light only distinguishes between static (states) and dynamic (processes) situations.
@@ -333,7 +344,13 @@ The time entities defined in GFO-light are points in time (time boundaries) and 
 
 **Example 5a.** *Time classes.*
 
-Concrete individuals have an existence time (time boundary/point in time or chronoid/time interval). There are two ways for assigning a timestamp or a time interval/period to concrete individuals in a domain-specific ontology. The simplest option is to use the data property *dateTimeValue* (or its specific subproperties, e.g., *startedByDateTimeValue*/*finishedByDateTimeValue*) in the data property assertion (e.g., Example 3b a1GoalsEndOfFirstHalf/a1GoalsEndOfMatch/a2RoleInTeam). However, if a timestamp or time interval is to be defined once and reused several times for different individuals, instances of the classes *TimeBoundary* or *Chronoid* must be created, data property assertions based on the aforementioned data properties must be defined for them (Example 5b) and the instances must then be used in the object property assertions of the desired individuals based on the object properties such as *hasTime*, *temporallyStartedBy* or *temporallyFinishedBy* (Example 2b half1, Example 3b winnerLoserRelatorEndOfMatch, Example 4b). If an attributive or a situation is assigned to a process or another situation using the object properties *situationPartOf* or *processPartOf* without defining an existence time, this instance exists in the entire time of the process or situation. In the Example 3b (a2RoleInTeam), only the end time of the player’s role in team is defined. The start time of the role coincides with the start of the match and does not need to be defined.
+Concrete individuals have an existence time (time boundary/point in time or chronoid/time interval).
+There are two ways for assigning a timestamp or a time interval/period to concrete individuals in a domain-specific ontology.
+The simplest option is to use the data property *dateTimeValue* (or its specific subproperties, e.g., *startedByDateTimeValue*/*finishedByDateTimeValue*) in the data property assertion (e.g., Example 2b a1GoalsEndOfFirstHalf/a1GoalsEndOfMatch/a2RoleInTeam).
+However, if a timestamp or time interval is to be defined once and reused several times for different individuals, instances of the classes *TimeBoundary* or *Chronoid* must be created, data property assertions based on the aforementioned data properties must be defined for them (Example 5b) and the instances must then be used in the object property assertions of the desired individuals based on the object properties such as *hasTime*, *temporallyStartedBy* or *temporallyFinishedBy* (Example 3b half1, Example 2b winnerLoserRelatorEndOfMatch, Example 4b).
+If an attributive or a situation is assigned to another situation using the object property *situationPartOf* without defining an existence time, this instance exists in the entire time of the situation.
+In the Example 2b (a2RoleInTeam), only the end time of the player’s role in team is defined.
+The start time of the role coincides with the start of the match and does not need to be defined.
 
 <table>
     <tr><th>Instance</th><th>Type</th><th>Assertion</th></tr>
@@ -344,6 +361,16 @@ Concrete individuals have an existence time (time boundary/point in time or chro
 
 **Example 5b.** *Time instance.*
 
-GFO-light defined temporal relations between individuals based on [Allen, J. F. (1983). Maintaining knowledge about temporal intervals.](https://doi.org/10.1145/182.358434). For this purpose, 13 subproperties of the object property *temporallyRelatedWith* were introduced (*after*, *before*, *during*, *temporallyContains*, *temporallyEqual*, *temporallyFinishedBy*, *temporallyFinishes*, *temporallyMeets*, *temporallyMetBy*, *temporallyOverlappedBy*, *temporallyOverlaps*, *temporallyStartedBy* and *temporallyStarts*). In addition, object properties *hasTemporalPart* (as a shortcut for *temporallyStartedBy or temporallyFinishedBy or temporallyContains*) and *temporalPartOf* (as a shortcut for *temporallyStarts or temporallyFinishes or during*) were defined. If a temporal relation is applied to other concrete individuals as time intervals (i.e., attributive, continuant, process or situation), it is propagated to their existence times. *'StartOfMatch temporallyStarts Match'* (Examples 5a and 5b) means that the time of the match (a chronoid) starts at the defined point of time. Some temporal relations can also be applied to points in time (*before*/*after*, *temporallyEqual*) or a point in time and a time interval (*before*, *temporallyStarts*, *temporallyFinishes*, *during* or their inverse relations). For some temporal relations (object properties), corresponding shortcuts (data properties) are defined for direct use in data property assertions (*afterDateTimeValue*, *beforeDateTimeValue*, *containsDateTimeValue*, *finishedByDateTimeValue*, *startedByDateTimeValue*, *hasTemporalPartDateTimeValue*).
+GFO-light defined temporal relations between individuals based on [Allen, J. F. (1983). Maintaining knowledge about temporal intervals.](https://doi.org/10.1145/182.358434).
+For this purpose, 13 subproperties of the object property *temporallyRelatedWith* were introduced (*after*, *before*, *during*, *temporallyContains*, *temporallyEqual*, *temporallyFinishedBy*, *temporallyFinishes*, *temporallyMeets*, *temporallyMetBy*, *temporallyOverlappedBy*, *temporallyOverlaps*, *temporallyStartedBy* and *temporallyStarts*).
+In addition, object properties *hasTemporalPart* (as a shortcut for *temporallyStartedBy or temporallyFinishedBy or temporallyContains*) and *temporalPartOf* (as a shortcut for *temporallyStarts or temporallyFinishes or during*) were defined.
+If a temporal relation is applied to other concrete individuals as time intervals (i.e., attributive, continuant or situation), it is propagated to their existence times.
+*'StartOfMatch temporallyStarts Match'* (Examples 5a and 5b) means that the time of the match (a chronoid) starts at the defined point of time.
+Some temporal relations can also be applied to points in time (*before*/*after*, *temporallyEqual*) or a point in time and a time interval (*before*, *temporallyStarts*, *temporallyFinishes*, *during* or their inverse relations).
+For some temporal relations (object properties), corresponding shortcuts (data properties) are defined for direct use in data property assertions (*afterDateTimeValue*, *beforeDateTimeValue*, *containsDateTimeValue*, *finishedByDateTimeValue*, *startedByDateTimeValue*, *hasTemporalPartDateTimeValue*).
 
-⚠ The basic theory of phenomenal time in GFO-full is inspired by the ideas of Franz Brentano ([Baumann, R. et al. (2014). Axiomatic theories of the ontology of time in GFO.](https://journals.sagepub.com/doi/10.3233/AO-140136)). According to this theory, each chronoid has exactly two extremal time boundaries (which can be understood as its first and last time point) and infinitely many inner time boundaries. Time boundaries can coincide, i.e., have a temporal distance of zero, although they are different entities. GFO-light shares this view, but also provides a simplified option for modelling a point in time simultaneously as the end of a time interval and the start of the following time interval. In addition, GFO-light allows the application of some Allen's relations to points in time, so that, for example, *temporallyEqual*, applied to points in time, can be understood as equivalent to *coincidesWith* from GFO-full.
+⚠ The basic theory of phenomenal time in GFO-full is inspired by the ideas of Franz Brentano ([Baumann, R. et al. (2014). Axiomatic theories of the ontology of time in GFO.](https://journals.sagepub.com/doi/10.3233/AO-140136)).
+According to this theory, each chronoid has exactly two extremal time boundaries (which can be understood as its first and last time point) and infinitely many inner time boundaries.
+Time boundaries can coincide, i.e., have a temporal distance of zero, although they are different entities.
+GFO-light shares this view, but also provides a simplified option for modelling a point in time simultaneously as the end of a time interval and the start of the following time interval.
+In addition, GFO-light allows the application of some Allen's relations to points in time, so that, for example, *temporallyEqual*, applied to points in time, can be understood as equivalent to *coincidesWith* from GFO-full.
