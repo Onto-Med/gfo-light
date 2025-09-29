@@ -602,10 +602,14 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                          ]
                                        )
                          ] ;
-         rdfs:comment "Processes represent dynamic knowledge, i.e., their attributives or participants change over time."@en ,
-                      "We distinguish between cohesive processes and process aggregates."@en ;
+         rdfs:comment "Processes are cohesive, i.e., causally and temporally connected."@en ,
+                      "Processes represent dynamic knowledge, i.e., their attributives or participants change over time."@en ;
          rdfs:label "Process"@en ;
-         skos:definition "Processes are dynamic situations that happen in time and have a temporal extension (period of time/chronoid)."@en .
+         skos:definition "Processes are dynamic situations that happen in time and have a temporal extension (period of time/chronoid)."@en ;
+         skos:example "A treatment of a patient in a hospital"@en ,
+                      "Football match"@en ,
+                      "The course of an illness"@en ,
+                      "The first half of the match"@en .
 
 
 ###  https://w3id.org/gfo-core/Situation
@@ -639,10 +643,13 @@ foaf:homepage rdf:type owl:AnnotationProperty .
                                                          )
                                            ]
                        ] ;
-       rdfs:comment "States represent static knowledge, i.e., their attributives and participants do not change."@en ,
-                    "We distinguish between cohesive states and state aggregates."@en ;
+       rdfs:comment "States are cohesive, i.e., causally and temporally connected."@en ,
+                    "States represent static knowledge, i.e., their attributives and participants do not change."@en ;
        rdfs:label "State"@en ;
-       skos:definition "States are static situations that happen either at a point in time (time boundary) or during a period of time (chronoid)."@en .
+       skos:definition "States are static situations that happen either at a point in time (time boundary) or during a period of time (chronoid)."@en ;
+       skos:example "A risk state when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time"@en ,
+                    "The state after the wedding of John and Mary (i.e., the state in which they are married containing the marriage relator with a husband and a wife role)"@en ,
+                    "The state at the end of a football match containing players' qualities (e.g., number of goals or assists), teams' qualities (e.g., number of goals or ball possession) and a winner-loser relator with one team playing the winner role and the other team playing the loser role"@en .
 
 
 ###  https://w3id.org/gfo-core/TimeBoundary

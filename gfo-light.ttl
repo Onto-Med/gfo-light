@@ -174,13 +174,11 @@ gfo-core:partOf rdf:type owl:ObjectProperty .
            owl:inverseOf :memberOf ;
            rdfs:domain [ rdf:type owl:Class ;
                          owl:unionOf ( :ObjectAggregate
-                                       :ProcessAggregate
-                                       :StateAggregate
+                                       :SituationAggregate
                                      )
                        ] ;
            rdfs:range [ rdf:type owl:Class ;
-                        owl:unionOf ( gfo-core:Process
-                                      gfo-core:State
+                        owl:unionOf ( gfo-core:Situation
                                       :Object
                                       :ObjectAggregate
                                     )
@@ -245,16 +243,14 @@ gfo-core:partOf rdf:type owl:ObjectProperty .
 ###  https://w3id.org/gfo-light/memberOf
 :memberOf rdf:type owl:ObjectProperty ;
           rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( gfo-core:Process
-                                      gfo-core:State
+                        owl:unionOf ( gfo-core:Situation
                                       :Object
                                       :ObjectAggregate
                                     )
                       ] ;
           rdfs:range [ rdf:type owl:Class ;
                        owl:unionOf ( :ObjectAggregate
-                                     :ProcessAggregate
-                                     :StateAggregate
+                                     :SituationAggregate
                                    )
                      ] ;
           rdfs:label "member of"@en .
@@ -389,29 +385,6 @@ gfo-core:Process rdf:type owl:Class .
 gfo-core:Situation rdf:type owl:Class .
 
 
-###  https://w3id.org/gfo-light/CohesiveProcess
-:CohesiveProcess rdf:type owl:Class ;
-                 rdfs:subClassOf gfo-core:Process ;
-                 rdfs:label "Cohesive process"@en ;
-                 skos:altLabel "Temporally connected process"@en ;
-                 skos:definition "A cohesive process is a causally and temporally connected process."@en ;
-                 skos:example "A treatment of a patient in a hospital"@en ,
-                              "Football match"@en ,
-                              "The course of an illness"@en ,
-                              "The first half of the match"@en .
-
-
-###  https://w3id.org/gfo-light/CohesiveState
-:CohesiveState rdf:type owl:Class ;
-               rdfs:subClassOf gfo-core:State ;
-               rdfs:label "Cohesive state"@en ;
-               skos:altLabel "Temporally connected state"@en ;
-               skos:definition "A cohesive state is a causally and temporally connected state."@en ;
-               skos:example "A risk state when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time"@en ,
-                            "The state after the wedding of John and Mary (i.e., the state in which they are married containing the marriage relator with a husband and a wife role)"@en ,
-                            "The state at the end of a football match containing players' qualities (e.g., number of goals or assists), teams' qualities (e.g., number of goals or ball possession) and a winner-loser relator with one team playing the winner role and the other team playing the loser role"@en .
-
-
 ###  https://w3id.org/gfo-light/InformationObject
 :InformationObject rdf:type owl:Class ;
                    rdfs:subClassOf :Object ,
@@ -519,19 +492,6 @@ gfo-core:Situation rdf:type owl:Class .
                     "Penalty spot"@en .
 
 
-###  https://w3id.org/gfo-light/ProcessAggregate
-:ProcessAggregate rdf:type owl:Class ;
-                  rdfs:subClassOf gfo-core:Process ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty :hasMember ;
-                                    owl:someValuesFrom gfo-core:Process
-                                  ] ;
-                  rdfs:label "Process aggregate"@en ;
-                  skos:definition "A process aggregate is a process that consists of other contextually but not necessarily temporally interconnected processes."@en ;
-                  skos:example "A football league season, consisting of all matches"@en ,
-                               "A series of lectures in a semester"@en .
-
-
 ###  https://w3id.org/gfo-light/Quality
 :Quality rdf:type owl:Class ;
          rdfs:subClassOf gfo-core:Attributive ,
@@ -605,16 +565,20 @@ gfo-core:Situation rdf:type owl:Class .
                    "Winner team role and loser team role of the winner-loser relator"@en .
 
 
-###  https://w3id.org/gfo-light/StateAggregate
-:StateAggregate rdf:type owl:Class ;
-                rdfs:subClassOf gfo-core:State ,
-                                [ rdf:type owl:Restriction ;
-                                  owl:onProperty :hasMember ;
-                                  owl:someValuesFrom gfo-core:State
-                                ] ;
-                rdfs:label "State aggregate"@en ;
-                skos:definition "A state aggregate is a state that consists of other contextually but not necessarily temporally interconnected states."@en ;
-                skos:example "A state of increased temperature during the course of an illness, consisting of all not necessarily temporally connected phases"@en .
+###  https://w3id.org/gfo-light/SituationAggregate
+:SituationAggregate rdf:type owl:Class ;
+                    rdfs:subClassOf gfo-core:Situation ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasMember ;
+                                      owl:someValuesFrom gfo-core:Situation
+                                    ] ;
+                    rdfs:comment "It is possible to combine both processes and states, as well as other situation aggregates, in a single situation aggregate."@en ,
+                                 "Processes and states are considered cohesive, i.e. they are causally and temporally connected. For modelling situations (processes or states) that are contextually but not temporally connected, situation aggregates should be used."@en ;
+                    rdfs:label "Situation aggregate"@en ;
+                    skos:definition "A situation aggregate is a situation that consists of other contextually but not temporally interconnected situations."@en ;
+                    skos:example "A football league season consisting of all matches"@en ,
+                                 "A series of lectures in a semester"@en ,
+                                 "A situation consisting of all not temporally interconnected phases/states of increased temperature during the course of an illness"@en .
 
 
 ###  https://w3id.org/gfo-light/Surface
