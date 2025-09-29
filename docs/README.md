@@ -328,8 +328,8 @@ The state at the end of the match contains all relevant attributives: winner-los
 Processes and states are considered cohesive, i.e. they are causally and temporally connected.
 For modelling situations (processes or states) that are contextually but not temporally connected, situation aggregates should be used.
 Examples of process aggregates include a series of lectures in a semester or a football league season, which consist of (*hasMember*) other contextually, but not temporally interconnected processes (i.e., single lectures or football matches).
-A state aggregate is, for example, a combination of all not temporally interconnected phases/states of increased temperature during the course of an illness.
-However, it is also possible to combine both processes and states in a single situation aggregate.
+A state aggregate is, for example, a situation consisting of all not temporally interconnected phases/states of increased temperature during the course of an illness.
+However, it is also possible to combine both processes and states, as well as other situation aggregates, in a single situation aggregate.
 
 ## Time Entity
 
