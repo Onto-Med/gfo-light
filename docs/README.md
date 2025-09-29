@@ -238,13 +238,16 @@ Continuants can participate in situations (*participatesIn/hasParticipant*).
 Situations can take place (*locatedIn*) in objects.
 Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) further situations.
 
+⚠ In GFO-full, several further types of situations (e.g., object situations, presentic situations and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. et al. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)).
+GFO-light only distinguishes between static (states) and dynamic (processes) situations.
+This makes it easier for domain experts to choose an appropriate GFO-light category for a specific use case, i.e., to use states for modelling static knowledge and processes for modelling dynamic knowledge.
+
 ### Process
 
 Processes are dynamic situations that happen in time and have a temporal extension (period of time/chronoid).
 Processes represent dynamic knowledge, i.e., their attributives or participants change over time.
-
-We distinguish between cohesive processes and process aggregates.
-A **cohesive process** (e.g., a football match, a treatment of a patient in a hospital or the course of an illness) is causally and temporally connected, while a **process aggregate** (e.g., a series of lectures in a semester or a football league season, consisting of all matches) consists (*hasMember*) of other contextually but not necessarily temporally interconnected processes.
+Processes are cohesive, i.e., causally and temporally connected (e.g., a football match, a treatment of a patient in a hospital or the course of an illness).
+Processes can have (*hasSituationPart*) both static and dynamic parts (i.e., attributives, states or processes), e.g., the first half (dynamic) and the goal states (static) are parts of the match.
 
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
@@ -264,7 +267,6 @@ A **cohesive process** (e.g., a football match, a treatment of a patient in a ho
 
 **Example 3a.** *Process classes.*
 
-Processes can have (*hasSituationPart*) both static and dynamic parts (i.e., attributives, states or processes), e.g., the first half (dynamic) and the goal states (static) are parts of the match.
 Continuants can participate in processes (*participatesIn/hasParticipant*), e.g., the teams A and B participate in the football match (Example 1b, teamA).
 Processes can take place (*locatedIn*) in objects (e.g., a football match in a stadium or an illness in a person).
 
@@ -285,10 +287,7 @@ Processes can take place (*locatedIn*) in objects (e.g., a football match in a s
 
 States are static situations that happen either at a point in time (time boundary) or during a period of time (chronoid).
 States represent static knowledge, i.e., their attributives and participants do not change.
-
-We distinguish between cohesive states and state aggregates.
-A **cohesive state** (e.g., a phase of increased temperature) is causally and temporally connected, while a **state aggregate** (e.g., a state of increased temperature during the course of an illness, consisting of all phases) consists (*hasMember*) of other contextually but not necessarily temporally interconnected states.
-
+States are cohesive, i.e., causally and temporally connected (e.g., a phase of increased temperature).
 A state can have (*hasSituationPart*) only static parts and can be a static part or result of another situation (e.g., a goal state as part of the match and result of an attack).
 
 <table>
@@ -324,9 +323,13 @@ Continuants can participate in states (*participatesIn/hasParticipant*), e.g., t
 **Example 4b.** *State instance.
 The state at the end of the match contains all relevant attributives: winner-loser relator, teams’ qualities (aGoalsEndOfMatch, aBallPossessionEndOfMatch), teams’ processual roles in match (teamARole, teamBRole), players’ qualities (a1GoalsEndOfMatch, a2AssistsEndOfMatch), players’ social roles in team (a1RoleInTeam, a22RoleInTeam, a33RoleInTeam).*
 
-⚠ In GFO-full, several further types of situations (e.g., object situations, presentic situations and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. et al. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)).
-GFO-light only distinguishes between static (states) and dynamic (processes) situations.
-This makes it easier for domain experts to choose an appropriate GFO-light category for a specific use case, i.e., to use states for modelling static knowledge and processes for modelling dynamic knowledge.
+### Situation aggregate
+
+Processes and states are considered cohesive, i.e. they are causally and temporally connected.
+For modelling situations (processes or states) that are contextually but not temporally connected, situation aggregates should be used.
+Examples of process aggregates include a series of lectures in a semester or a football league season, which consist of (*hasMember*) other contextually, but not temporally interconnected processes (i.e., single lectures or football matches).
+A state aggregate is, for example, a combination of all not temporally interconnected phases/states of increased temperature during the course of an illness.
+However, it is also possible to combine both processes and states in a single situation aggregate.
 
 ## Time Entity
 
