@@ -67,16 +67,16 @@
       <path fill="none" d="M472.77 -357.3882 L472.77 -374 L421.2355 -374 L421.0849 -365.387" clip-path="url(#clipPath2)"/>
       <path d="M420.945 -357.3882 L426.1541 -369.299 L421.1024 -366.3868 L416.1556 -369.4738 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <text x="297.7105" xml:space="preserve" y="-378.1251" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">leadsTo/causes/hasSituationPart</text>
+      <path fill="none" d="M430.7443 -307.3795 L423.2355 -307.3795 L423.2355 -322.4186" clip-path="url(#clipPath2)"/>
+      <path fill="white" d="M423.2355 -337.4186 L417.2355 -321.4186 L429.2355 -321.4186 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <path fill="none" d="M423.2355 -337.4186 L417.2355 -321.4186 L429.2355 -321.4186 Z" clip-path="url(#clipPath2)"/>
+      <path fill="none" d="M489.2355 -317.4186 L489.2355 -329.4023" clip-path="url(#clipPath2)"/>
+      <path d="M489.2355 -337.4023 L484.2355 -325.4023 L489.2355 -328.4023 L494.2355 -325.4023 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <text x="495.2355" xml:space="preserve" y="-322.6657" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">hasMember</text>
       <path fill="none" d="M319.8142 -227.3795 L367.7898 -227.3795 L367.7898 -342.3795 L407.7215 -342.3795" clip-path="url(#clipPath2)"/>
       <path d="M415.7215 -342.3795 L403.7215 -347.3795 L406.7215 -342.3795 L403.7215 -337.3795 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <rect x="350.781" y="-294.2301" clip-path="url(#clipPath2)" fill="white" width="34.0176" height="18.7012" stroke="none"/>
       <text x="352.781" xml:space="preserve" y="-280.1657" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">roleIn</text>
-      <path fill="none" d="M489.2355 -317.4186 L489.2355 -329.4023" clip-path="url(#clipPath2)"/>
-      <path d="M489.2355 -337.4023 L484.2355 -325.4023 L489.2355 -328.4023 L494.2355 -325.4023 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <text x="495.2355" xml:space="preserve" y="-322.6657" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">hasMember</text>
-      <path fill="none" d="M430.7443 -307.3795 L423.2355 -307.3795 L423.2355 -322.4186" clip-path="url(#clipPath2)"/>
-      <path fill="white" d="M423.2355 -337.4186 L417.2355 -321.4186 L429.2355 -321.4186 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <path fill="none" d="M423.2355 -337.4186 L417.2355 -321.4186 L429.2355 -321.4186 Z" clip-path="url(#clipPath2)"/>
       <path fill="none" d="M708.464 -89.4186 L708.464 -77.3828" clip-path="url(#clipPath2)"/>
       <path d="M708.464 -97.4186 L703.464 -85.4186 L708.464 -88.4186 L713.464 -85.4186 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <text x="714.464" xml:space="preserve" y="-82.6657" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">boundaryOf</text>
@@ -92,10 +92,10 @@
       <path fill="none" d="M637.4869 -267.3795 L629.964 -267.3795 L629.964 -322.4186" clip-path="url(#clipPath2)"/>
       <path fill="white" d="M629.964 -337.4186 L623.964 -321.4186 L635.964 -321.4186 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M629.964 -337.4186 L623.964 -321.4186 L635.964 -321.4186 Z" clip-path="url(#clipPath2)"/>
-      <path fill="none" d="M292.844 -217.4186 L292.844 -187.3795 L592.5997 -187.3795 L592.5997 -342.3795 L614.4946 -342.3795" clip-path="url(#clipPath2)"/>
-      <path d="M622.4946 -342.3795 L610.4946 -347.3795 L613.4946 -342.3795 L610.4946 -337.3795 Z" clip-path="url(#clipPath2)" stroke="none"/>
-      <rect x="425.7131" y="-196.7301" clip-path="url(#clipPath2)" fill="white" width="34.0176" height="18.7012" stroke="none"/>
-      <text x="427.7131" xml:space="preserve" y="-182.6657" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">roleIn</text>
+      <path fill="none" d="M292.844 -217.4186 L292.844 -187.3795 L585.0997 -187.3795 L585.0997 -342.3795 L614.4822 -342.3795" clip-path="url(#clipPath2)"/>
+      <path d="M622.4822 -342.3795 L610.4822 -347.3795 L613.4822 -342.3795 L610.4822 -337.3795 Z" clip-path="url(#clipPath2)" stroke="none"/>
+      <rect x="421.9631" y="-196.7301" clip-path="url(#clipPath2)" fill="white" width="34.0176" height="18.7012" stroke="none"/>
+      <text x="423.9631" xml:space="preserve" y="-182.6657" clip-path="url(#clipPath2)" font-family="sans-serif" stroke="none">roleIn</text>
       <path fill="none" d="M652.4364 -107.3795 L644.964 -107.3795 L644.964 -122.4186" clip-path="url(#clipPath2)"/>
       <path fill="white" d="M644.964 -137.4186 L638.964 -121.4186 L650.964 -121.4186 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="none" d="M644.964 -137.4186 L638.964 -121.4186 L650.964 -121.4186 Z" clip-path="url(#clipPath2)"/>
