@@ -4,11 +4,13 @@ GFO-light contains some simplifications compared to the full version of General 
 This guide describes the structure and a possible use of this lightweight top-level ontology in domain-specific projects, also for users who are not familiar with the basics of formal ontologies.
 GFO-light is primarily concerned with categories of concrete individuals ([Continuant](#continuant), [Attributive](#attributive) and [Situation](#situation)), i.e., entities that have an immediate relation to time ([Time Entity](#time-entity)) or to space-time.
 
-⚠ GFO-light extends GFO-core (i.e., adopts all GFO-core axioms), which contains the core GFO entities and serves as a common basis for both GFO variants (light and full).
-For some use cases, it may be sufficient to use GFO-core alone as a kind of minimal top-level ontology.
+> [!TIP]
+> GFO-light extends GFO-core (i.e., adopts all GFO-core axioms), which contains the core GFO entities and serves as a common basis for both GFO variants (light and full).
+> For some use cases, it may be sufficient to use GFO-core alone as a kind of minimal top-level ontology.
 
-⚠ When developing a domain-specific ontology using GFO-core or GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *Situation* and *TimeEntity* (or their subclasses, the more specific the better).
-You can also create the desired object or data properties (if possible as subproperties of GFO-core or GFO-light properties).
+> [!IMPORTANT]
+> When developing a domain-specific ontology using GFO-core or GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *Situation* and *TimeEntity* (or their subclasses, **the more specific the better**).
+> You can also create the desired object or data properties (if possible as subproperties of GFO-core or GFO-light properties).
 
 ## Overview
 
@@ -59,8 +61,9 @@ Objects can be located in other objects (*locatedIn*, e.g., the driver is locate
 **Information objects** are symbolic entities that denote/designate, describe, specify or represent (*represents/representedBy*) other entities.
 Titles, descriptions, specifications (e.g., the specification of an algorithm), models (e.g., UML models) or computer programmes are examples of information objects.
 
-⚠ The category *InformationObject* is a simplified way of modelling symbolic objects, their parts and the entities they represent, without distinguishing between, for example, content and information carriers.
-For advanced use cases, please use specific information artefact ontologies such as [Design Science Artifact Ontology (DS-AO)](https://ceur-ws.org/Vol-3155/short5.pdf) or [Information Artifact Ontology (IAO)](https://ceur-ws.org/Vol-1515/regular10.pdf).
+> [!IMPORTANT]
+> The category *InformationObject* is a simplified way of modelling symbolic objects, their parts and the entities they represent, without distinguishing between, for example, content and information carriers.
+> For advanced use cases, please use specific information artefact ontologies such as [Design Science Artifact Ontology (DS-AO)](https://ceur-ws.org/Vol-3155/short5.pdf) or [Information Artifact Ontology (IAO)](https://ceur-ws.org/Vol-1515/regular10.pdf).
 
 **Object aggregates** are groups of objects that together form a unit (e.g., a research group at a university or a sports team).
 To model the membership of a member in a group/aggregate, the object properties *memberOf*/*hasMember* should be used (Example 1b, playerA1).
@@ -108,11 +111,13 @@ Object boundaries can be assigned to a corresponding object using the object pro
 
 **Example 1b.** *Continuant instances.*
 
-⚠ In contrast to GFO-full (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)), GFO-light does not support presentic objects (presentials) but only temporally extended objects (continuats).
-However, GFO-light enables you to define the validity/existence time of attributives of the objects and states in which they participate, either as a time interval or as a point in time.
+> [!NOTE]
+> In contrast to GFO-full (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)), GFO-light does not support presentic objects (presentials) but only temporally extended objects (continuats).
+> However, GFO-light enables you to define the validity/existence time of attributives of the objects and states in which they participate, either as a time interval or as a point in time.
 
-⚠ GFO-full includes a sophisticated space module based on the dual nature of space (phenomenal vs. extensional space) and distinguishes between boundaries of material objects and boundaries of spatial regions (see [Baumann, R. et al. (2016). Towards an Ontology of Space for GFO.](https://doi.org/10.3233/978-1-61499-660-6-53), [Loebe, F. et al. (2021). Developing GFO 2.0 Further – Initiating the Modules of Space and Material Objects.](https://ceur-ws.org/Vol-2969/paper69-FOUST.pdf)).
-For simplicity, GFO-light only considers boundaries of material objects.
+> [!NOTE]
+> GFO-full includes a sophisticated space module based on the dual nature of space (phenomenal vs. extensional space) and distinguishes between boundaries of material objects and boundaries of spatial regions (see [Baumann, R. et al. (2016). Towards an Ontology of Space for GFO.](https://doi.org/10.3233/978-1-61499-660-6-53), [Loebe, F. et al. (2021). Developing GFO 2.0 Further – Initiating the Modules of Space and Material Objects.](https://ceur-ws.org/Vol-2969/paper69-FOUST.pdf)).
+> For simplicity, GFO-light only considers boundaries of material objects.
 
 ## Attributive
 
@@ -209,9 +214,10 @@ a2RoleInTeam is a midfielder (social) role in teamA that is played by playerA2 (
 teamARole is the home team (processual) role in matchX that is played by teamA.
 aWinnerRole is the winner (relational) role in winnerLoserRelatorEndOfMatch that is also played by teamA.*
 
-⚠ GFO-light uses a simplified role model compared to GFO-full.
-In GFO-full there are three types of roles (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Loebe, F. (2007). Abstract vs. social roles: Towards a general theoretical account of roles.](https://doi.org/10.3233/APO-2007-031)): relational role as sibling of quality and subclass of attributive, processual role as subclass of process, and social role as social/socio continuant.
-In GFO-light, no role types (no subclasses of *Role*) are explicitly defined. The roles are implicitly differentiated by their assignment (*roleIn*) to the corresponding context entities (object, object aggregate, situation, relator).
+> [!NOTE]
+> GFO-light uses a simplified role model compared to GFO-full.
+> In GFO-full there are three types of roles (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Loebe, F. (2007). Abstract vs. social roles: Towards a general theoretical account of roles.](https://doi.org/10.3233/APO-2007-031)): relational role as sibling of quality and subclass of attributive, processual role as subclass of process, and social role as social/socio continuant.
+> In GFO-light, no role types (no subclasses of *Role*) are explicitly defined. The roles are implicitly differentiated by their assignment (*roleIn*) to the corresponding context entities (object, object aggregate, situation, relator).
 
 ### Relator
 
@@ -238,9 +244,10 @@ Continuants can participate in situations (*participatesIn/hasParticipant*).
 Situations can take place (*locatedIn*) in objects.
 Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) further situations.
 
-⚠ In GFO-full, several further types of situations (e.g., object situations, presentic situations and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. et al. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)).
-GFO-light only distinguishes between static (states) and dynamic (processes) situations.
-This makes it easier for domain experts to choose an appropriate GFO-light category for a specific use case, i.e., to use states for modelling static knowledge and processes for modelling dynamic knowledge.
+> [!NOTE]
+> In GFO-full, several further types of situations (e.g., object situations, presentic situations and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. et al. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)).
+> GFO-light only distinguishes between static (states) and dynamic (processes) situations.
+> This makes it easier for domain experts to choose an appropriate GFO-light category for a specific use case, i.e., to use states for modelling static knowledge and processes for modelling dynamic knowledge.
 
 ### Process
 
@@ -372,8 +379,9 @@ If a temporal relation is applied to other concrete individuals as time interval
 Some temporal relations can also be applied to points in time (*before*/*after*, *temporallyEqual*) or a point in time and a time interval (*before*, *temporallyStarts*, *temporallyFinishes*, *during* or their inverse relations).
 For some temporal relations (object properties), corresponding shortcuts (data properties) are defined for direct use in data property assertions (*afterDateTimeValue*, *beforeDateTimeValue*, *containsDateTimeValue*, *finishedByDateTimeValue*, *startedByDateTimeValue*, *hasTemporalPartDateTimeValue*).
 
-⚠ The basic theory of phenomenal time in GFO-full is inspired by the ideas of Franz Brentano ([Baumann, R. et al. (2014). Axiomatic theories of the ontology of time in GFO.](https://journals.sagepub.com/doi/10.3233/AO-140136)).
-According to this theory, each chronoid has exactly two extremal time boundaries (which can be understood as its first and last time point) and infinitely many inner time boundaries.
-Time boundaries can coincide, i.e., have a temporal distance of zero, although they are different entities.
-GFO-light shares this view, but also provides a simplified option for modelling a point in time simultaneously as the end of a time interval and the start of the following time interval.
-In addition, GFO-light allows the application of some Allen's relations to points in time, so that, for example, *temporallyEqual*, applied to points in time, can be understood as equivalent to *coincidesWith* from GFO-full.
+> [!NOTE]
+> The basic theory of phenomenal time in GFO-full is inspired by the ideas of Franz Brentano ([Baumann, R. et al. (2014). Axiomatic theories of the ontology of time in GFO.](https://journals.sagepub.com/doi/10.3233/AO-140136)).
+> According to this theory, each chronoid has exactly two extremal time boundaries (which can be understood as its first and last time point) and infinitely many inner time boundaries.
+> Time boundaries can coincide, i.e., have a temporal distance of zero, although they are different entities.
+> GFO-light shares this view, but also provides a simplified option for modelling a point in time simultaneously as the end of a time interval and the start of the following time interval.
+> In addition, GFO-light allows the application of some Allen's relations to points in time, so that, for example, *temporallyEqual*, applied to points in time, can be understood as equivalent to *coincidesWith* from GFO-full.
