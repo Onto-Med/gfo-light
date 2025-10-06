@@ -2,14 +2,14 @@
 
 GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO, [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264)) and is designed as a framework for the efficient development and foundation of domain/application ontologies.
 This guide describes the structure and a possible use of this lightweight top-level ontology in domain-specific projects, also for users who are not familiar with the basics of formal ontologies.
-GFO-light is primarily concerned with categories of concrete individuals ([Continuant](#continuant), [Attributive](#attributive) and [Situation](#situation)), i.e., entities that have an immediate relation to time ([Time Entity](#time-entity)) or to space-time.
+GFO-light is primarily concerned with categories of concrete individuals ([Continuant](#continuant), [Attributive](#attributive), and [Situation](#situation)), i.e., entities that have an immediate relation to time ([Time Entity](#time-entity)) or to space-time.
 
 > [!TIP]
 > GFO-light extends GFO-core (i.e., adopts all GFO-core axioms), which contains the core GFO entities and serves as a common basis for both GFO variants (light and full).
 > For some use cases, it may be sufficient to use GFO-core alone as a kind of minimal top-level ontology.
 
 > [!IMPORTANT]
-> When developing a domain-specific ontology using GFO-core or GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *Situation* and *TimeEntity* (or their subclasses, **the more specific the better**).
+> When developing a domain-specific ontology using GFO-core or GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *Situation*, and *TimeEntity* (or their subclasses, **the more specific the better**).
 > You can also create the desired object or data properties (if possible as subproperties of GFO-core or GFO-light properties).
 
 ## Overview
@@ -19,10 +19,10 @@ GFO-light is primarily concerned with categories of concrete individuals ([Conti
 ![GFO-core](images/gfo-core.svg)
 
 **Fig. 1. GFO-core overview** (The figure shows all categories and selected relations.).
-Individuals are bearers of attributives (*hasAttributive/attributiveOf*, see [Attributive](#attributive)), can consist of parts (*hasPart/partOf*) and can be temporally related to other individuals (subproperties of *temporallyRelatedWith*, see [Time Entity](#time-entity)).
+Individuals are bearers of attributives (*hasAttributive/attributiveOf*, see [Attributive](#attributive)), can consist of parts (*hasPart/partOf*), and can be temporally related to other individuals (subproperties of *temporallyRelatedWith*, see [Time Entity](#time-entity)).
 Concrete individuals are related to time (*hasTime*, see [Time Entity](#time-entity)).
 Situations ([Situation](#situation)) can be static ([State](#state)) or dynamic ([Process](#process)) and can have parts (*hasSituationPart/situationPartOf*).
-States can only consist of static parts (i.e., attributives or states), while processes can consist of both static and dynamic parts (i.e., attributives, states or processes).
+States can only consist of static parts (i.e., attributives or states), while processes can consist of both static and dynamic parts (i.e., attributives, states, or processes).
 Continuants ([Continuant](#continuant)) can participate in situations (*participatesIn/hasParticipant*).
 Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) further situations.
 
@@ -38,12 +38,12 @@ Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) furt
     <tr><td width="50%"><img src="images/gfo-light-continuant.svg"></td><td><b>Continuant</b></br></br>Object parts can be specified using the object properties <i>hasPart/partOf</i>. 
 To model the membership of a member in a group/aggregate, the object properties <i>hasMember/memberOf</i> should be used. 
 Objects and situations can be located in other objects (<i>locatedIn</i>). 
-Information objects denote/designate, describe, specify or represent (<i>represents/representedBy</i>) other entities. 
-Boundaries of objects are surfaces, boundaries of surfaces are lines and boundaries of lines are points. 
+Information objects denote/designate, describe, specify, or represent (<i>represents/representedBy</i>) other entities. 
+Boundaries of objects are surfaces, boundaries of surfaces are lines, and boundaries of lines are points. 
 Lines can pass through (<i>spatiallyPassesThrough</i>, <i>spatiallyStartsOn</i>, <i>spatiallyEndsOn</i>) various points. 
 Object boundaries can be assigned to the corresponding object using the object property <i>hasOwner</i>. 
 (see <a href="#user-content-continuant">Continuant</a>)</td></tr>
-    <tr><td width="50%"><img src="images/gfo-light-attributive.svg"></td><td><b>Attributive</b></br></br>Qualities, relators and roles are attributives. 
+    <tr><td width="50%"><img src="images/gfo-light-attributive.svg"></td><td><b>Attributive</b></br></br>Qualities, relators, and roles are attributives. 
 A role is a relational entity that links an individual (role player) with some context (object, object aggregate, situation, relator), in which the individual plays that role. 
 Roles are assigned to the corresponding context entity using object properties <i>roleIn/containsRole</i>. 
 The role players are associated with the roles they play using object properties <i>plays/playedBy</i>. 
@@ -53,16 +53,16 @@ Individuals are quality bearers (<i>hasQuality/qualityOf</i>) and are related by
 
 ## Continuant
 
-Social or material (three-dimensional) objects, their groups/aggregates, parts and boundaries (two-, one- and zero-dimensional entities, i.e., surfaces, lines and points) are subsumed under the category *Continuant*.
+Social or material (three-dimensional) objects, their groups/aggregates, parts, and boundaries (two-, one-, and zero-dimensional entities, i.e., surfaces, lines, and points) are subsumed under the category *Continuant*.
 Continuants are concrete individuals that persist through time and are wholly present at every point of their existence time (lifetime). 
 
-**Objects** are social or material entities that can exist independently of each other (e.g., a person, a computer, a chopstick or a football stadium).
+**Objects** are social or material entities that can exist independently of each other (e.g., a person, a computer, a chopstick, or a football stadium).
 Objects can be located in other objects (*locatedIn*, e.g., the driver is located in the car).
-**Information objects** are symbolic entities that denote/designate, describe, specify or represent (*represents/representedBy*) other entities.
-Titles, descriptions, specifications (e.g., the specification of an algorithm), models (e.g., UML models) or computer programmes are examples of information objects.
+**Information objects** are symbolic entities that denote/designate, describe, specify, or represent (*represents/representedBy*) other entities.
+Titles, descriptions, specifications (e.g., the specification of an algorithm), models (e.g., UML models), or computer programmes are examples of information objects.
 
 > [!IMPORTANT]
-> The category *InformationObject* is a simplified way of modelling symbolic objects, their parts and the entities they represent, without distinguishing between, for example, content and information carriers.
+> The category *InformationObject* is a simplified way of modelling symbolic objects, their parts, and the entities they represent, without distinguishing between, for example, content and information carriers.
 > For advanced use cases, please use specific information artefact ontologies such as [Design Science Artifact Ontology (DS-AO)](https://ceur-ws.org/Vol-3155/short5.pdf) or [Information Artifact Ontology (IAO)](https://ceur-ws.org/Vol-1515/regular10.pdf).
 
 **Object aggregates** are groups of objects that together form a unit (e.g., a research group at a university or a sports team).
@@ -89,13 +89,13 @@ However, if the components are thrown into the case without being correctly conn
 
 **Example 1a.** *Continuant classes.*
 
-**Object boundaries** are 0-, 1-, or 2-dimensional (visible or imaginary) entities (i.e., points, lines and surfaces) that border objects (natural boundaries) or are located inside them (inner boundaries).
-In the anthropology use case, for example, these can be certain planes (e.g., frontal plane), axes (e.g., longitudinal axis) and points (e.g., gonion) of the human skeleton.
+**Object boundaries** are 0-, 1-, or 2-dimensional (visible or imaginary) entities (i.e., points, lines, and surfaces) that border objects (natural boundaries) or are located inside them (inner boundaries).
+In the anthropology use case, for example, these can be certain planes (e.g., frontal plane), axes (e.g., longitudinal axis), and points (e.g., gonion) of the human skeleton.
 Other examples are the surface and the boundary lines of the football field or the penalty spot.
 Boundaries of objects are surfaces, boundaries of surfaces are lines and boundaries of lines are points.
-Such relationships are specified using object properties *boundaryOf*, *innerBoundaryOf* or *naturalBoundaryOf*.
+Such relationships are specified using object properties *boundaryOf*, *innerBoundaryOf*, or *naturalBoundaryOf*.
 Lines are not necessarily straight.
-They can be, for example, curves or broken lines that pass through (*spatiallyPassesThrough*, *spatiallyStartsOn*, *spatiallyEndsOn*) various points and form a corner, a triangle or a polygon.
+They can be, for example, curves or broken lines that pass through (*spatiallyPassesThrough*, *spatiallyStartsOn*, *spatiallyEndsOn*) various points and form a corner, a triangle, or a polygon.
 Object boundaries can be assigned to a corresponding object using the object property *hasOwner*. 
 
 <table>
@@ -121,13 +121,13 @@ Object boundaries can be assigned to a corresponding object using the object pro
 
 ## Attributive
 
-Qualities (attributes, traits, characteristics, etc.) of individuals, relations (relators) between them and roles they play in different contexts are subsumed under the category *Attributive*.
+Qualities (attributes, traits, characteristics, etc.) of individuals, relations (relators) between them, and roles they play in different contexts are subsumed under the category *Attributive*.
 Attributives are individuals that depend on other individuals by some kind of dependency relation.
 
 ### Quality
 
 Qualities are attributives that typically inhere in its bearer and can possess values.
-Examples are observable or measurable characteristics of single objects, e.g., persons, (such as weight and height, laboratory parameters or symptoms), qualities of object groups (e.g., goals scored by a football team in a match) or of processes (e.g., the number of spectators as quality of a football match).
+Examples are observable or measurable characteristics of single objects, e.g., persons, (such as weight and height, laboratory parameters, or symptoms), qualities of object groups (e.g., goals scored by a football team in a match), or of processes (e.g., the number of spectators as quality of a football match).
 The qualities can be defined in two ways.
 If they have a value (representable as a number, string, date, etc.), do not require the specification of existence time and are no parts of situations, domain-specific data properties can simply be defined as subproperties of *decimalValue* (e.g., *numberOfSpectators*), *stringValue*, *dateTimeValue*, etc.
 These domain-specific properties can then be used in data property assertions for a direct assignment of the value to the corresponding bearer (Example 3b, matchX).
@@ -223,7 +223,7 @@ aWinnerRole is the winner (relational) role in winnerLoserRelatorEndOfMatch that
 
 Relators are attributives that connect other entities (role players) by relational roles (played by role players), i.e., represent individual relation instances.
 For example, a relator could be defined that describes the relative location of an object (playing the target object role) in relation to another object (playing the reference object role), e.g., the location of a person relative to the city centre or the location of an anatomical structure relative to the longitudinal axis.
-Such relators can be further classified, e.g., according to direction (in anthropology/anatomy, e.g., dorsal, ventral or lateral).
+Such relators can be further classified, e.g., according to direction (in anthropology/anatomy, e.g., dorsal, ventral, or lateral).
 Other examples are the marriage (relator) of John and Mary (in which Mary plays the wife role and John the husband role) or the winner-loser relator (Example 2b, winnerLoserRelatorEndOfMatch, aWinnerRole).
 
 Similar to qualities, relations can also be represented by simple object properties (such as *hasPart*).
@@ -239,13 +239,13 @@ It also works with processual roles, the two playing teams can be associated to 
 
 Situations are combinations of contextually related attributives.
 Situations can be static (**state**) or dynamic (**process**) and can have parts (*hasSituationPart/situationPartOf*).
-States can only consist of static parts (i.e., attributives or states), while processes can consist of both static and dynamic parts (i.e., attributives, states or processes).
+States can only consist of static parts (i.e., attributives or states), while processes can consist of both static and dynamic parts (i.e., attributives, states, or processes).
 Continuants can participate in situations (*participatesIn/hasParticipant*).
 Situations can take place (*locatedIn*) in objects.
 Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) further situations.
 
 > [!NOTE]
-> In GFO-full, several further types of situations (e.g., object situations, presentic situations and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. et al. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)).
+> In GFO-full, several further types of situations (e.g., object situations, presentic situations, and situoids) are considered (see [Loebe, F. et al. (2022). GFO: The General Formal Ontology.](https://doi.org/10.3233/AO-220264), [Burek, P. et al. (2024). Ontologically Founded Design Patterns for Situation Modeling.](https://doi.org/10.62036/ISD.2024.85)).
 > GFO-light only distinguishes between static (states) and dynamic (processes) situations.
 > This makes it easier for domain experts to choose an appropriate GFO-light category for a specific use case, i.e., to use states for modelling static knowledge and processes for modelling dynamic knowledge.
 
@@ -253,8 +253,8 @@ Situations can lead to (*leadsTo/resultsFrom*) or cause (*causes/causedBy*) furt
 
 Processes are dynamic situations that happen in time and have a temporal extension (period of time/chronoid).
 Processes represent dynamic knowledge, i.e., their attributives or participants change over time.
-Processes are cohesive, i.e., causally and temporally connected (e.g., a football match, a treatment of a patient in a hospital or the course of an illness).
-Processes can have (*hasSituationPart*) both static and dynamic parts (i.e., attributives, states or processes), e.g., the first half (dynamic) and the goal states (static) are parts of the match.
+Processes are cohesive, i.e., causally and temporally connected (e.g., a football match, a treatment of a patient in a hospital, or the course of an illness).
+Processes can have (*hasSituationPart*) both static and dynamic parts (i.e., attributives, states, or processes), e.g., the first half (dynamic) and the goal states (static) are parts of the match.
 
 <table>
     <tr><th>Domain class</th><th>GFO-light superclass</th><th>Restriction</th></tr>
@@ -357,7 +357,7 @@ The time entities defined in GFO-light are points in time (time boundaries) and 
 Concrete individuals have an existence time (time boundary/point in time or chronoid/time interval).
 There are two ways for assigning a timestamp or a time interval/period to concrete individuals in a domain-specific ontology.
 The simplest option is to use the data property *dateTimeValue* (or its specific subproperties, e.g., *startedByDateTimeValue*/*finishedByDateTimeValue*) in the data property assertion (e.g., Example 2b a1GoalsEndOfFirstHalf/a1GoalsEndOfMatch/a2RoleInTeam).
-However, if a timestamp or time interval is to be defined once and reused several times for different individuals, instances of the classes *TimeBoundary* or *Chronoid* must be created, data property assertions based on the aforementioned data properties must be defined for them (Example 5b) and the instances must then be used in the object property assertions of the desired individuals based on the object properties such as *hasTime*, *temporallyStartedBy* or *temporallyFinishedBy* (Example 3b half1, Example 2b winnerLoserRelatorEndOfMatch, Example 4b).
+However, if a timestamp or time interval is to be defined once and reused several times for different individuals, instances of the classes *TimeBoundary* or *Chronoid* must be created, data property assertions based on the aforementioned data properties must be defined for them (Example 5b), and the instances must then be used in the object property assertions of the desired individuals based on the object properties such as *hasTime*, *temporallyStartedBy*, or *temporallyFinishedBy* (Example 3b half1, Example 2b winnerLoserRelatorEndOfMatch, Example 4b).
 If an attributive or a situation is assigned to another situation using the object property *situationPartOf* without defining an existence time, this instance exists in the entire time of the situation.
 In the Example 2b (a2RoleInTeam), only the end time of the player’s role in team is defined.
 The start time of the role coincides with the start of the match and does not need to be defined.
@@ -372,11 +372,11 @@ The start time of the role coincides with the start of the match and does not ne
 **Example 5b.** *Time instance.*
 
 GFO-light defined temporal relations between individuals based on [Allen, J. F. (1983). Maintaining knowledge about temporal intervals.](https://doi.org/10.1145/182.358434).
-For this purpose, 13 subproperties of the object property *temporallyRelatedWith* were introduced (*after*, *before*, *during*, *temporallyContains*, *temporallyEqual*, *temporallyFinishedBy*, *temporallyFinishes*, *temporallyMeets*, *temporallyMetBy*, *temporallyOverlappedBy*, *temporallyOverlaps*, *temporallyStartedBy* and *temporallyStarts*).
+For this purpose, 13 subproperties of the object property *temporallyRelatedWith* were introduced (*after*, *before*, *during*, *temporallyContains*, *temporallyEqual*, *temporallyFinishedBy*, *temporallyFinishes*, *temporallyMeets*, *temporallyMetBy*, *temporallyOverlappedBy*, *temporallyOverlaps*, *temporallyStartedBy*, and *temporallyStarts*).
 In addition, object properties *hasTemporalPart* (as a shortcut for *temporallyStartedBy or temporallyFinishedBy or temporallyContains*) and *temporalPartOf* (as a shortcut for *temporallyStarts or temporallyFinishes or during*) were defined.
-If a temporal relation is applied to other concrete individuals as time intervals (i.e., attributive, continuant or situation), it is propagated to their existence times.
+If a temporal relation is applied to other concrete individuals as time intervals (i.e., attributive, continuant, or situation), it is propagated to their existence times.
 *'StartOfMatch temporallyStarts Match'* (Examples 5a and 5b) means that the time of the match (a chronoid) starts at the defined point of time.
-Some temporal relations can also be applied to points in time (*before*/*after*, *temporallyEqual*) or a point in time and a time interval (*before*, *temporallyStarts*, *temporallyFinishes*, *during* or their inverse relations).
+Some temporal relations can also be applied to points in time (*before*/*after*, *temporallyEqual*) or a point in time and a time interval (*before*, *temporallyStarts*, *temporallyFinishes*, *during*, or their inverse relations).
 For some temporal relations (object properties), corresponding shortcuts (data properties) are defined for direct use in data property assertions (*afterDateTimeValue*, *beforeDateTimeValue*, *containsDateTimeValue*, *finishedByDateTimeValue*, *startedByDateTimeValue*, *hasTemporalPartDateTimeValue*).
 
 > [!NOTE]
