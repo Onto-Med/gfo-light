@@ -26,7 +26,7 @@ If you prefer to import only GFO-core, simply use the IRI <https://w3id.org/gfo-
 When developing a domain-specific ontology using GFO-core or GFO-light, please create your classes as subclasses of *Continuant*, *Attributive*, *Situation*, and *TimeEntity* (or their subclasses, **the more specific the better**).
 You can also create the desired object or data properties (if possible as subproperties of GFO-core or GFO-light properties).
 
-For more information, see our [user guide](docs/README.md), the [GFO-light documentation](https://w3id.org/gfo-light) or the [GFO-core documentation](https://w3id.org/gfo-core).
+For more information, see our [user guide](docs/README.md), the [GFO-light documentation](https://w3id.org/gfo-light), or the [GFO-core documentation](https://w3id.org/gfo-core).
 
 Individual IRIs of GFO-core and GFO-light classes and properties (e.g., <https://w3id.org/gfo-light/Quality>) are pointing to the RDF browser [RickView](https://github.com/KonradHoeffner/rickview).
 
