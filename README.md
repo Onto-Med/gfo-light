@@ -44,15 +44,7 @@ Additional [examples](examples) are available.
 
 ## Revision History
 
-### 2025-10-01
-* *Situation* is now a supercategory of *State* and *Process*
-
-### 2025-04-07
-* *ProcessualEntity* is renamed to *Process*
-* *SituationalEntity* is renamed to *Situation*
-
-### 2025-03-17
-Initial release.
+Please see [changelog](CHANGELOG.md).
 
 ## How to Contribute
 
