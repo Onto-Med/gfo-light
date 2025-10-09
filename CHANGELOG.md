@@ -1,20 +1,28 @@
 # Changelog
 
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
+
 ## 2025-10-01
 
 ### Added
+
 - *State*
 
 ### Changed
+
 - Define *Situation* as supercategory of *State*, *Process*, and *SituationAggregate*
 
 ### Removed
+
 - *CohesiveSituation*
 - *CohesiveProcess*
 - *ProcessAggregate*
 - *hasProcessPart/processPartOf*
 
 ### Migration
+
 - Use *SituationAggregate* instead of *ProcessAggregate*
 - Use *Process* instead of *CohesiveProcess*
 - Use *State* instead of *CohesiveSituation*
@@ -23,15 +31,18 @@
 ## 2025-04-07
 
 ### Added
+
 - **gfo-core** as part of **gfo-light**
 
 ### Changed
+
 - Rename *Situation* to *CohesiveSituation*
 - Rename *Process* to *CohesiveProcess*
 - Rename *SituationalEntity* to *Situation*
 - Rename *ProcessualEntity* to *Process*
 
 ### Migration
+
 - Use *CohesiveSituation* instead of *Situation*
 - Use *CohesiveProcess* instead of *Process*
 - Use *Situation* instead of *SituationalEntity*
@@ -40,12 +51,14 @@
 ## 2025-03-17
 
 ### Added
+
 - *SituationalEntity*
 - *SituationAggregate*
 - *ProcessualEntity*
 - *ProcessAggregate*
 
 ### Removed
+
 - *RelationalRole*
 - *SituationalRole*
 - *ProcessualRole*
