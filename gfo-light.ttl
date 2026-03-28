@@ -15,8 +15,8 @@
 @base <https://w3id.org/gfo-light/> .
 
 <https://w3id.org/gfo-light> rdf:type owl:Ontology ;
-                              owl:versionIRI <https://w3id.org/gfo-light/release/2025-04-07> ;
-                              owl:imports <https://w3id.org/gfo-core/release/2025-04-07> ;
+                              owl:versionIRI <https://w3id.org/gfo-light/release/2025-10-01> ;
+                              owl:imports <https://w3id.org/gfo-core/release/2025-10-01> ;
                               dc:created "2023-01-01" ;
                               dc:creator "Alexandr Uciteli" ,
                                          "Christoph Beger" ,
@@ -27,7 +27,7 @@
                                          "Patryk Burek" ,
                                          "Ralph Schäfermeier" ;
                               dc:description "GFO-light contains some simplifications compared to the full version of General Formal Ontology (GFO) and is designed as a framework for the efficient development and foundation of domain/application ontologies."@en ;
-                              dc:modified "2025-04-07" ;
+                              dc:modified "2025-10-01" ;
                               dc:title "General Formal Ontology Light (GFO-light)"@en ;
                               terms:license <http://creativecommons.org/licenses/by/4.0/> ;
                               bibo:doi "10.5281/zenodo.14833002" ;
@@ -36,7 +36,7 @@
                               doap:repository <https://github.com/Onto-Med/gfo-light> ;
                               rdfs:label "GFO-light"@en ;
                               owl:priorVersion <https://w3id.org/gfo-light/release/2025-03-17> ;
-                              owl:versionInfo "2025-04-07" ;
+                              owl:versionInfo "2025-10-01" ;
                               foaf:homepage "https://github.com/Onto-Med/gfo-light" .
 
 #################################################################
@@ -140,8 +140,7 @@ gfo-core:partOf rdf:type owl:ObjectProperty .
 :containsRole rdf:type owl:ObjectProperty ;
               owl:inverseOf :roleIn ;
               rdfs:domain [ rdf:type owl:Class ;
-                            owl:unionOf ( gfo-core:Process
-                                          gfo-core:Situation
+                            owl:unionOf ( gfo-core:Situation
                                           :Object
                                           :ObjectAggregate
                                           :Relator
@@ -175,13 +174,11 @@ gfo-core:partOf rdf:type owl:ObjectProperty .
            owl:inverseOf :memberOf ;
            rdfs:domain [ rdf:type owl:Class ;
                          owl:unionOf ( :ObjectAggregate
-                                       :ProcessAggregate
                                        :SituationAggregate
                                      )
                        ] ;
            rdfs:range [ rdf:type owl:Class ;
-                        owl:unionOf ( gfo-core:Process
-                                      gfo-core:Situation
+                        owl:unionOf ( gfo-core:Situation
                                       :Object
                                       :ObjectAggregate
                                     )
@@ -222,8 +219,7 @@ gfo-core:partOf rdf:type owl:ObjectProperty .
 :locatedIn rdf:type owl:ObjectProperty ;
            owl:inverseOf :locationOf ;
            rdfs:domain [ rdf:type owl:Class ;
-                         owl:unionOf ( gfo-core:Process
-                                       gfo-core:Situation
+                         owl:unionOf ( gfo-core:Situation
                                        :Object
                                      )
                        ] ;
@@ -237,8 +233,7 @@ gfo-core:partOf rdf:type owl:ObjectProperty .
 :locationOf rdf:type owl:ObjectProperty ;
             rdfs:domain :Object ;
             rdfs:range [ rdf:type owl:Class ;
-                         owl:unionOf ( gfo-core:Process
-                                       gfo-core:Situation
+                         owl:unionOf ( gfo-core:Situation
                                        :Object
                                      )
                        ] ;
@@ -248,15 +243,13 @@ gfo-core:partOf rdf:type owl:ObjectProperty .
 ###  https://w3id.org/gfo-light/memberOf
 :memberOf rdf:type owl:ObjectProperty ;
           rdfs:domain [ rdf:type owl:Class ;
-                        owl:unionOf ( gfo-core:Process
-                                      gfo-core:Situation
+                        owl:unionOf ( gfo-core:Situation
                                       :Object
                                       :ObjectAggregate
                                     )
                       ] ;
           rdfs:range [ rdf:type owl:Class ;
                        owl:unionOf ( :ObjectAggregate
-                                     :ProcessAggregate
                                      :SituationAggregate
                                    )
                      ] ;
@@ -332,8 +325,7 @@ gfo-core:partOf rdf:type owl:ObjectProperty .
 :roleIn rdf:type owl:ObjectProperty ;
         rdfs:domain :Role ;
         rdfs:range [ rdf:type owl:Class ;
-                     owl:unionOf ( gfo-core:Process
-                                   gfo-core:Situation
+                     owl:unionOf ( gfo-core:Situation
                                    :Object
                                    :ObjectAggregate
                                    :Relator
@@ -391,29 +383,6 @@ gfo-core:Process rdf:type owl:Class .
 
 ###  https://w3id.org/gfo-core/Situation
 gfo-core:Situation rdf:type owl:Class .
-
-
-###  https://w3id.org/gfo-light/CohesiveProcess
-:CohesiveProcess rdf:type owl:Class ;
-                 rdfs:subClassOf gfo-core:Process ;
-                 rdfs:label "Cohesive process"@en ;
-                 skos:altLabel "Temporally connected process"@en ;
-                 skos:definition "A cohesive process is a causally and temporally connected process."@en ;
-                 skos:example "A treatment of a patient in a hospital"@en ,
-                              "Football match"@en ,
-                              "The course of an illness"@en ,
-                              "The first half of the match"@en .
-
-
-###  https://w3id.org/gfo-light/CohesiveSituation
-:CohesiveSituation rdf:type owl:Class ;
-                   rdfs:subClassOf gfo-core:Situation ;
-                   rdfs:label "Cohesive situation"@en ;
-                   skos:altLabel "Temporally connected situation"@en ;
-                   skos:definition "A cohesive situation is a causally and temporally connected situation."@en ;
-                   skos:example "A risk situation when treating a patient in hospital if his laboratory values (qualities) are in the critical range over a certain period of time"@en ,
-                                "The situation after the wedding of John and Mary (i.e., the situation in which they are married containing the marriage relator with a husband and a wife role)"@en ,
-                                "The situation at the end of a football match containing players' qualities (e.g., number of goals or assists), teams' qualities (e.g., number of goals or ball possession) and a winner-loser relator with one team playing the winner role and the other team playing the loser role"@en .
 
 
 ###  https://w3id.org/gfo-light/InformationObject
@@ -523,19 +492,6 @@ gfo-core:Situation rdf:type owl:Class .
                     "Penalty spot"@en .
 
 
-###  https://w3id.org/gfo-light/ProcessAggregate
-:ProcessAggregate rdf:type owl:Class ;
-                  rdfs:subClassOf gfo-core:Process ,
-                                  [ rdf:type owl:Restriction ;
-                                    owl:onProperty :hasMember ;
-                                    owl:someValuesFrom gfo-core:Process
-                                  ] ;
-                  rdfs:label "Process aggregate"@en ;
-                  skos:definition "A process aggregate is a process that consists of other contextually but not necessarily temporally interconnected processes."@en ;
-                  skos:example "A football league season, consisting of all matches"@en ,
-                               "A series of lectures in a semester"@en .
-
-
 ###  https://w3id.org/gfo-light/Quality
 :Quality rdf:type owl:Class ;
          rdfs:subClassOf gfo-core:Attributive ,
@@ -590,8 +546,7 @@ gfo-core:Situation rdf:type owl:Class .
                         owl:onProperty :roleIn ;
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onClass [ rdf:type owl:Class ;
-                                      owl:unionOf ( gfo-core:Process
-                                                    gfo-core:Situation
+                                      owl:unionOf ( gfo-core:Situation
                                                     :Object
                                                     :ObjectAggregate
                                                     :Relator
@@ -617,9 +572,13 @@ gfo-core:Situation rdf:type owl:Class .
                                       owl:onProperty :hasMember ;
                                       owl:someValuesFrom gfo-core:Situation
                                     ] ;
+                    rdfs:comment "It is possible to combine both processes and states, as well as other situation aggregates, in a single situation aggregate."@en ,
+                                 "Processes and states are considered cohesive, i.e. they are causally and temporally connected. For modelling situations (processes or states) that are contextually but not temporally connected, situation aggregates should be used."@en ;
                     rdfs:label "Situation aggregate"@en ;
-                    skos:definition "A situation aggregate is a situation that consists of other contextually but not necessarily temporally interconnected situations."@en ;
-                    skos:example "A situation of increased temperature during the course of an illness, consisting of all not necessarily temporally connected phases"@en .
+                    skos:definition "A situation aggregate is a situation that consists of other contextually but not temporally interconnected situations."@en ;
+                    skos:example "A football league season consisting of all matches"@en ,
+                                 "A series of lectures in a semester"@en ,
+                                 "A situation consisting of all not temporally interconnected phases/states of increased temperature during the course of an illness"@en .
 
 
 ###  https://w3id.org/gfo-light/Surface
