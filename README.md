@@ -42,6 +42,10 @@ Here is a selection of ontologies we maintain that are founded in GFO-light and 
 
 Additional [examples](examples) are available.
 
+## Reference
+
+> Schäfermeier R, Loebe F, Burek P, Beger C, Höffner K, Matthies F, Herre H, Uciteli A. GFO-Light: A Simplified Top-Level Ontology — Introduction and Biomedical Case Studies. In: Medical Informatics Europe (MIE) 2026. Studies in Health Technology and Informatics. IOS Press; 2026. DOI: [10.3233/SHTI260386](https://doi.org/10.3233/SHTI260386).
+
 ## Revision History
 
 Please see [changelog](CHANGELOG.md).
