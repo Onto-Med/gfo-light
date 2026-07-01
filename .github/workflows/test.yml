@@ -20,6 +20,6 @@ jobs:
       matrix:
         ontology: [ 'gfo-core.ttl', 'gfo-light.ttl' ]
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - run: check-rdfxml ${{ matrix.ontology }}
       - run: robot report --profile qc_report/profile.txt -i ${{ matrix.ontology }}
